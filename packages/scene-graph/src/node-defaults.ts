@@ -14,8 +14,14 @@ export function createDefaultNode(
     childIds: [],
     x: 0,
     y: 0,
-    width: 100,
-    height: 100,
+    width: type === 'PATHWAY_PROCESS' ? 24
+         : type === 'PATHWAY_ARC' ? 0
+         : type === 'COMPARTMENT' ? 800
+         : 100,
+    height: type === 'PATHWAY_PROCESS' ? 24
+          : type === 'PATHWAY_ARC' ? 0
+          : type === 'COMPARTMENT' ? 600
+          : 100,
     rotation: 0,
     source: {
       format: null,
@@ -160,5 +166,6 @@ export const CONTAINER_TYPES = new Set<NodeType>([
   'SECTION',
   'COMPONENT',
   'COMPONENT_SET',
-  'INSTANCE'
+  'INSTANCE',
+  'COMPARTMENT'
 ])

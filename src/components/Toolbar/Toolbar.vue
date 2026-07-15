@@ -36,7 +36,11 @@ const toolLabels = computed<Record<Tool, string>>(() => ({
   STAR: toolTexts.value.star,
   PEN: toolTexts.value.pen,
   TEXT: toolTexts.value.text,
-  HAND: toolTexts.value.hand
+  HAND: toolTexts.value.hand,
+  PATHWAY_GLYPH: 'Pathway Entity',
+  PATHWAY_PROCESS: 'Pathway Process',
+  PATHWAY_ARC: 'Pathway Arc',
+  COMPARTMENT: 'Compartment'
 }))
 
 const toolShortcuts: Record<Tool, string> = {
@@ -50,7 +54,11 @@ const toolShortcuts: Record<Tool, string> = {
   STAR: '',
   PEN: 'P',
   TEXT: 'T',
-  HAND: 'H'
+  HAND: 'H',
+  PATHWAY_GLYPH: 'W',
+  PATHWAY_PROCESS: '',
+  PATHWAY_ARC: 'Q',
+  COMPARTMENT: ''
 }
 
 const flyoutMenuCls = useMenuUI({ content: 'min-w-32' })

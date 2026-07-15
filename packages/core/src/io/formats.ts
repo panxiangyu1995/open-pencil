@@ -2,6 +2,7 @@ import { sceneNodeToJSX, selectionToJSX } from '#core/design-jsx'
 
 import { exportFigFile, parseFigFile } from './formats/fig'
 import { parsePenFile } from './formats/pen'
+import { sbgnmlFormat } from './formats/sbgn-ml/adapter'
 import { headlessRenderNodes, renderNodesToImage, type RasterExportFormat } from './formats/raster'
 import { renderNodesToSVG } from './formats/svg'
 import { extractExportGraph, findPageId } from './subgraph'
@@ -323,6 +324,7 @@ export const jsxFormat: IOFormatAdapter = {
 export const BUILTIN_IO_FORMATS: IOFormatAdapter[] = [
   figFormat,
   penFormat,
+  sbgnmlFormat,
   pngFormat,
   jpgFormat,
   webpFormat,

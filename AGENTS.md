@@ -1,8 +1,30 @@
-# OpenPencil
 
-Vue 3 + CanvasKit (Skia WASM) + Yoga WASM design editor. Tauri v2 desktop, also runs in browser.
+# 1. IDENTITY & TONE
 
-**Roadmap:** `packages/docs/development/roadmap.md` tracks product direction, Figma compatibility gaps, and raw metadata coverage. This file keeps agent-facing architecture, conventions, and commands; detailed public docs live under `packages/docs/**`.
+- **Role**: Principal Engineer & Senior Data Scientist（首席工程师兼高级数据科学家）
+- **Voice**: Professional, Concise, Result-Oriented. 禁止客套话（如"希望这有帮助"、"谢谢"等），直接给出结果。
+- **Authority**: The user is the Lead Architect. Execute commands immediately. 用户是总架构师，立即执行指令。
+- **Think Before Act**: Before any file modification, outline your plan in 3 bullet points.
+- **Verification First**: Never report "Done" until you have run a verification script.
+- **Error Handling**: If a command fails, read error log, analyze root cause, fix.
+
+### Engineering Principles
+
+| 原则 | 全称 | 核心思想 |
+|------|------|----------|
+| **SOLID** | Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion | 面向对象设计五大原则：单一职责、开闭原则、里氏替换、接口隔离、依赖倒置 |
+| **KISS** | Keep It Simple, Stupid | 简单就是美，拒绝不必要的复杂性，优先选择最直观的解决方案 |
+| **DRY** | Don't Repeat Yourself | 杜绝重复，识别重复代码并抽象复用，统一相似功能实现 |
+| **DIP** | Dependency Inversion Principle | 依赖抽象而非具体实现，上层和下层模块都应依赖抽象 |
+| **YAGNI** | You Aren't Gonna Need It | 只实现当前所需功能，不做"未来可能用得到"的预留设计 |
+
+---
+# BioPath (OpenPencil)
+
+Vue 3 + CanvasKit (Skia WASM) + Yoga WASM **AI-native biological signaling pathway diagram editor**. Built on the OpenPencil design editor foundation, repurposed for SBGN-compliant pathway diagram generation via AI chat and MCP tools. Tauri v2 desktop, also runs in browser.
+
+**PRD:** `packages/docs/development/biopath-prd.md` — full product requirements, SBGN glyph vocabulary, AI tool design, and implementation phases.
+**Roadmap:** `packages/docs/development/roadmap.md` tracks product direction. This file keeps agent-facing architecture, conventions, and commands; detailed public docs live under `packages/docs/**`.
 
 ## Monorepo
 
@@ -12,7 +34,7 @@ Bun workspace packages:
 - `packages/pen` — `@open-pencil/pen`: Pen/vector editing helpers shared by core/editor surfaces.
 - `packages/kiwi` — `@open-pencil/kiwi`: pure Kiwi schema/runtime/protocol package. Owns low-level Figma Kiwi codec/container/parse helpers and stays SceneGraph-agnostic.
 - `packages/fig` — `@open-pencil/fig`: publishable `.fig` package shell and low-level smoke/test boundary. Production SceneGraph `.fig` policy still lives mostly in core while this package grows.
-- `packages/core` — `@open-pencil/core`: renderer, layout, editor core, Figma API, tools, clipboard, vector conversion, and app/CLI-facing document I/O. Depends on scene-graph/pen/kiwi but keeps browser DOM out of core.
+- `packages/core` — `@open-pencil/core`: renderer, layout, editor core, Figma API, tools, clipboard, vector conversion, and app/CLI-facing document I/O. Depends on scene-graph/pen/kiwi but keeps browser DOM out of core. **Pathway domain:** `pathway/` subfolder owns SBGN glyph rendering, arc routing, layout algorithms, AI pathway tools, and SBGN-ML I/O.
 - `packages/dom-css` — `@open-pencil/dom-css`: DOM/CSS projection layer for HTML/CSS/JSX/Tailwind compatibility. Owns DesignDOM types and browser/headless CSS runtime adapters; keeps DOM/CSS parser dependencies out of core.
 - `packages/vue` — `@open-pencil/vue`: headless Vue 3 SDK (Reka UI-style) for building custom OpenPencil-powered editor shells and embedded editing surfaces. Renderless components and composables. The app is one consumer of the SDK.
 - `packages/cli` — `@open-pencil/cli`: headless CLI for .fig inspection, export, linting. Uses `citty` + `agentfmt`.
@@ -21,13 +43,15 @@ Bun workspace packages:
 
 The root app (`src/`) is the Tauri/Vite desktop editor. App-specific editor, document, AI, collaboration, shell, tabs, demo, and automation code lives under `src/app/*`. The app consumes scene graph primitives from `@open-pencil/scene-graph`, editor/rendering services through targeted `@open-pencil/core` subpath exports, and `@open-pencil/vue` through the public Vue SDK entrypoint.
 
+**Pathway app domain:** `src/app/pathway/` owns the pathway editor session, knowledge base integration (Reactome, Pathway Commons), and pathway-specific document I/O. `src/components/pathway/` owns pathway-specific UI (glyph palette, arc type selector, glyph inspector, data overlay panel).
+
 ### Public package exports
 
 Use public package exports across package/app boundaries. Do not import workspace package internals from app code.
 
 - `@open-pencil/scene-graph` — SceneGraph, node types, primitives, copy/snap/undo, instance helpers, variable helpers, vector-network types.
 - `@open-pencil/core` — broad compatibility barrel for editor/rendering/tooling APIs.
-- Common targeted core subpaths keep imports smaller and dependency intent clearer: `@open-pencil/core/color`, `/text`, `/vector`, `/figma-api`, `/icons`, `/canvas`, `/design-jsx`, `/editor`, `/tools`, `/kiwi`, `/clipboard`, `/rpc`, `/lint`, `/profiler`, `/io`, `/canvaskit`, `/layout`.
+- Common targeted core subpaths keep imports smaller and dependency intent clearer: `@open-pencil/core/color`, `/text`, `/vector`, `/figma-api`, `/icons`, `/canvas`, `/design-jsx`, `/editor`, `/tools`, `/kiwi`, `/clipboard`, `/rpc`, `/lint`, `/profiler`, `/io`, `/canvaskit`, `/layout`, `/pathway`.
 - Use `@open-pencil/kiwi` for low-level Kiwi/FIG schema-runtime, codec, container, GUID, and parse helpers.
 
 CanvasKit runtime loading is centralized in `@open-pencil/core/canvaskit` for app/browser use. Headless raster export may dynamically load `canvaskit-wasm/full`; elsewhere prefer `import type` and pass the CanvasKit instance in.
@@ -49,6 +73,106 @@ The app editor session (`src/app/editor/session/create.ts`) is a Vue wrapper aro
 Headless SDK fields compose variable/token binding through `BindingProvider` and the `BindableValue` primitives in `packages/vue/src/controls/binding-provider/` and `packages/vue/src/primitives/BindableValue/`. Keep numeric interaction in `NumberField`; providers own binding lookup, mutation, and undo batching.
 
 Property-panel anatomy in `packages/vue/src/primitives/PropertySection/`, `SegmentedControl/`, and `PropertyList/` is controlled and editor-agnostic. Connect PropertyList events to OpenPencil selection and undo through `useEditorPropertyList()` or an app adapter; never call `useEditor()` from these primitives.
+
+## BioPath: SBGN Pathway Domain
+
+This project is repurposed from a general design editor into an AI-native biological signaling pathway diagram editor. The core design editor infrastructure (SceneGraph, CanvasKit renderer, Yoga layout, editor core, tools framework) is reused as-is. The pathway domain adds SBGN-compliant semantics on top.
+
+### SBGN glyph system
+
+BioPath implements SBGN Process Description (PD) Level 1 Version 2.1 as its core visual vocabulary. Every pathway element is a **typed glyph**, not a generic shape:
+
+- **PathwayGlyph** (`type: 'pathway_glyph'`): EPN nodes — `macromolecule`, `simple_chemical`, `complex`, `nucleic_acid_feature`, `unspecified_entity`, `perturbation`, `phenotype`, `source_sink`
+- **PathwayProcess** (`type: 'pathway_process'`): process nodes — `biochemical_reaction`, `transport`, `association`, `dissociation`, `omitted_process`, `uncertain_process`, `phenotype_process`
+- **PathwayArc** (`type: 'pathway_arc'`): typed arcs — `consumption`, `production`, `catalysis`, `inhibition`, `stimulation`, `necessary_stimulation`, `modulation`, `trigger`, `logic_and`, `logic_or`, `logic_not`
+- **Compartment** (`type: 'compartment'`): container for EPNs, rendered as large rounded rectangles
+
+Glyph types and arc types are defined as string literal unions in `packages/scene-graph/src/types.ts`. The AI tool vocabulary mirrors these types exactly.
+
+### Pathway architecture
+
+```
+packages/core/src/pathway/
+  glyphs/       — Skia paint routines for each SBGN glyph type
+  arcs/         — Arc rendering, decoration (T-bar, triangle, circle-on-line), port assignment
+  layout/       — Pathway-specific layout (fCoSE-inspired, compartment-aware, orthogonal routing)
+  tools/        — AI tool definitions: create_pathway, add_entity, add_arc, add_process, etc.
+  io/           — SBGN-ML import/export
+  validation/   — SBGN PD compliance validation
+
+src/app/pathway/
+  session/      — Pathway editor session (extends base editor session)
+  knowledge/    — Reactome/Pathway Commons API integration
+  io/           — Pathway-specific document I/O (.bio-path, SBGN-ML)
+
+src/components/pathway/
+  GlyphPalette.vue     — SBGN glyph type picker
+  ArcTypeSelector.vue  — Arc type selector for connections
+  GlyphInspector.vue   — Entity/process property inspector
+  DataOverlayPanel.vue — Gene expression data overlay
+  CompartmentPanel.vue — Compartment management
+```
+
+### Glyph rendering
+
+Each SBGN glyph type maps to a deterministic Skia paint routine. This is the key invariant: **a protein always looks like a protein** because the paint routine is fixed and SBGN-compliant, not user-drawn.
+
+- `glyphType → glyphTemplate[glyphType] → CanvasKit path commands`
+- Glyph templates define exact SBGN dimensions, stroke width, fill, corner radius, and label placement
+- Reference: `cytoscape-sbgn-stylesheet` for canonical visual properties
+- State variables and unit-of-information badges render as child nodes on the glyph
+- Arcs use typed decorations: T-bar (inhibition), triangle (stimulation), circle-on-line (catalysis), diamond-on-line (modulation)
+- Arcs connect to glyph boundary **ports** (8 connection points per glyph), not arbitrary positions
+
+### Pathway AI tools
+
+The pathway AI tools follow the existing `ToolDef` pattern and are registered alongside general editor tools:
+
+| Tool | Description |
+|------|-------------|
+| `create_pathway` | Create a new pathway diagram from a natural language description |
+| `add_entity` | Add an SBGN entity (macromolecule, chemical, complex, etc.) with label and type |
+| `add_process` | Add a process node (reaction, transport, association, etc.) |
+| `add_arc` | Add a typed arc between entities and processes |
+| `add_compartment` | Add a compartment and move entities into it |
+| `set_state_variable` | Add state variable to an entity (e.g., phosphorylation at Y705) |
+| `auto_layout` | Apply pathway-specific layout (compartment-aware, signal-flow) |
+| `import_sbgn_ml` | Import an existing SBGN-ML file |
+| `export_sbgn_ml` | Export current diagram as SBGN-ML |
+| `query_pathway_db` | Query Reactome/Pathway Commons for pathway data |
+
+AI system prompt includes: SBGN glyph vocabulary, arc type catalog, construction rules (which glyphs connect via which arcs), layout heuristics, and knowledge source instructions. The AI decomposes user descriptions into compartments → actors → processes → arcs → labels (structured decomposition from PRD §7.2).
+
+### Pathway layout
+
+Pathway diagrams need specialized layout that respects:
+
+1. **Compartment containment**: entities must stay inside their compartment
+2. **Process-centric layout**: processes (reactions) are central; entities surround them
+3. **Signal flow direction**: top-to-bottom or left-to-right cascade
+4. **Port alignment**: arcs connect to glyph boundary ports, not arbitrary positions
+5. **Orthogonal routing**: prefer right-angle edges with minimal crossings
+
+Implementation phases: Phase 1 custom force-directed + Yoga, Phase 2 fCoSE-inspired with SBGN constraints, Phase 3 ELK.js integration.
+
+### SBGN-ML file format
+
+SBGN-ML is the primary interoperability format. Full read/write support is required for round-trip fidelity with the SBGN ecosystem (Newt, CellDesigner, PathVisio).
+
+- SBGN-ML import/export lives in `packages/core/src/pathway/io/`
+- Native `.bio-path` format extends the existing document model with pathway-specific fields; always embeds a valid SBGN-ML subset for interoperability
+- Import formats by priority: SBGN-ML (P0), CellDesigner SBML (P1), GPML (P1), KGML (P2), BioPAX (P2)
+- SBGN-ML validation against libSBGN reference on every export
+
+### Pathway validation
+
+After AI generation, validate the diagram against SBGN PD rules:
+
+- No arc between two EPNs without a process node (common AI hallucination)
+- Compartment references are valid
+- Arc types match valid source/target combinations
+- State variable syntax is correct
+- Glyph types are from the supported vocabulary
 
 ## Commands
 
@@ -90,6 +214,7 @@ Production Cloudflare Pages deploys are intentionally release/manual only: `app.
 - `CHANGELOG.md` — all user-facing changes, grouped by version. "Unreleased" section at top for in-progress work.
 - `README.md` — user-facing: features, getting started, CLI, project structure. No implementation details.
 - `AGENTS.md` (this file) — contributor/agent reference: architecture, conventions, how to release.
+- `packages/docs/development/biopath-prd.md` — BioPath PRD: product requirements, SBGN glyph vocabulary, AI tool design, implementation phases.
 - `packages/docs/` — VitePress site deployed at `openpencil.dev`. User guide, SDK, automation, reference, and development docs. Do not create English placeholder copies under locale directories; until a real translation exists, localized navigation should link to the canonical English page.
 
 When adding features, update `CHANGELOG.md` (Unreleased section) and `README.md` (if user-facing). Update `AGENTS.md` when architecture or conventions change. Do not put speculative/internal implementation plans in `packages/docs/**`; VitePress docs are published. Keep temporary plans in ignored `scratch/` or distill durable public direction into the canonical roadmap.
@@ -102,7 +227,7 @@ Use Conventional Commits for regular development commits: `feat`, `fix`, `refact
 - Put rationale and implementation details in the commit body
 - Keep the commit type lowercase (`fix:`, `feat:`, `docs:`), but start each body line/bullet with an uppercase word
 - Preserve product/domain casing in subjects and bodies: `DOM/CSS`, `CSS`, `HTML`, `JSX`, `Tailwind`, `Kiwi`, `.fig`, `MCP`, `CLI`, `AI`, `ACP`, `i18n`. Do not flatten acronyms to lowercase prose such as `dom css documents`.
-- Prefer scopes that match the project structure: `app`, `tauri`, `core`, `cli`, `dom-css`, `mcp`, `vue`, `docs`, or focused domains like `editor`, `scene-graph`, `canvas`, `tools`, `kiwi`, `io`, `text`, `vector`, `color`, `acp`, `ai`, `collab`, `automation`, `i18n`
+- Prefer scopes that match the project structure: `app`, `tauri`, `core`, `cli`, `dom-css`, `mcp`, `vue`, `docs`, or focused domains like `editor`, `scene-graph`, `canvas`, `tools`, `kiwi`, `io`, `text`, `vector`, `color`, `acp`, `ai`, `collab`, `automation`, `i18n`, `pathway`, `sbgn`, `glyph`
 - Use the narrowest honest scope, or omit it if the change spans multiple unrelated areas
 
 Example:
@@ -124,7 +249,7 @@ Release commits are the exception: keep using `Release v0.x.y`.
 
 ## Tools (AI / MCP / CLI)
 
-- Framework-agnostic tool operations live under `packages/core/src/tools/**` as `ToolDef` objects. Domains include read, create, modify, structure, variables, vector, analyze, describe, codegen, stock-photo, and helpers. Check the existing domain folder before adding a new file.
+- Framework-agnostic tool operations live under `packages/core/src/tools/**` as `ToolDef` objects. Domains include read, create, modify, structure, variables, vector, analyze, describe, codegen, stock-photo, and helpers. Check the existing domain folder before adding a new file. **Pathway tools** live under `packages/core/src/pathway/tools/` and follow the same `ToolDef` pattern; add them to the pathway registry so AI chat, MCP, and CLI can see them.
 - `schema.ts` defines `ToolDef`, `defineTool()`, and shared result helpers. Each tool has a name, description, typed params, and an `execute(figma: FigmaAPI, args)` function.
 - Registries (`registry*.ts`) assemble tool sets. Add new tools to the appropriate registry so AI chat, MCP, and CLI eval paths can see them.
 - AI adapter (`packages/core/src/tools/ai-adapter.ts`) converts ToolDefs to Vercel AI tools with valibot schemas. `src/app/ai/tools/index.ts` is a thin app wire that creates `FigmaAPI` from the active editor.
@@ -225,6 +350,8 @@ Self-review checklist:
 ## Rendering
 
 - Canvas is CanvasKit (Skia WASM) on a WebGL surface, not DOM
+- **SBGN glyph rendering invariant**: each glyph type maps to a deterministic Skia paint routine via `glyphTemplate[glyphType]`. A protein always looks like a protein because the paint routine is fixed and SBGN-compliant, not user-drawn. Glyph templates define exact SBGN dimensions, stroke width, fill, corner radius, and label placement.
+- **Arc decorations**: T-bar (inhibition), triangle (stimulation), filled triangle (necessary stimulation), circle-on-line (catalysis), diamond-on-line (modulation). Arcs connect to glyph boundary **ports** (8 connection points per glyph), not arbitrary positions.
 - `renderVersion` vs `sceneVersion`: `renderVersion` = canvas repaint (pan/zoom/hover); `sceneVersion` = scene graph mutations. UI that only cares about graph data should avoid watching repaint-only state; use editor events for incremental surfaces such as the layer tree.
 - `requestRender()` bumps both counters; `requestRepaint()` bumps only `renderVersion`
 - `renderNow()` is only for surface recreation and font loading (need immediate draw)
@@ -258,6 +385,7 @@ Self-review checklist:
 - `computeAllLayouts()` must be called after demo creation and after opening .fig files
 - Yoga WASM handles flexbox; CSS Grid blocked on upstream (facebook/yoga#1893)
 - Auto-layout creation (Shift+A) must recompute layout immediately to update selection bounds
+- **Pathway layout** has additional constraints: compartment containment, process-centric positioning, signal flow direction (top-to-bottom or left-to-right), port alignment, and orthogonal edge routing. Pathway layout algorithms live in `packages/core/src/pathway/layout/`.
 
 ## UI
 
@@ -295,6 +423,9 @@ Self-review checklist:
 - `.fig` files use Figma's Kiwi schema and `NodeChange[]` records. Low-level schema/runtime/codec/container/parse helpers live in `packages/kiwi/src/fig/**` and `packages/kiwi/src/schema-runtime/**`.
 - Core still owns SceneGraph `.fig` policy: import/export orchestration in `packages/core/src/io/formats/fig/**`, SceneGraph ⇄ NodeChange conversion in `packages/core/src/kiwi/fig/node-change/**`, and component/instance override interpretation in `packages/core/src/kiwi/fig/instance-overrides/**`.
 - `packages/fig` is the publishable boundary for future `.fig` policy extraction; do not move behavior there without package-local tests and dist smoke.
+- **SBGN-ML** is the primary pathway interoperability format. Import/export lives in `packages/core/src/pathway/io/`. Full round-trip fidelity with the SBGN ecosystem (Newt, CellDesigner, PathVisio) is required. Validate against libSBGN reference on every export.
+- **`.bio-path`** is the native pathway document format, extending the existing document model with pathway-specific fields (glyph types, arc types, state variables, compartment refs, data overlay). Always embeds a valid SBGN-ML subset for interoperability.
+- Import formats by priority: SBGN-ML (P0), CellDesigner SBML (P1), GPML (P1), KGML (P2), BioPAX (P2).
 - Vector data uses reverse-engineered `vectorNetworkBlob` binary format — encoder/decoder in `packages/core/src/vector/` and scene-graph vector-network types in `@open-pencil/scene-graph`.
 - `showOpenFilePicker` / `showSaveFilePicker` are File System Access API (Chrome/Edge), not Tauri-only; code must keep browser fallbacks.
 - Safari save: no File System Access API → use an `<a>` download fallback with deferred `revokeObjectURL`. SafariBanner warns users about limitations.
@@ -327,3 +458,21 @@ Self-review checklist:
 - MCP tools / design operations (`packages/mcp/`)
 - JSX-to-design renderer (`packages/render/`)
 - Design linter rules (`packages/linter/`)
+
+### BioPath / SBGN references
+
+| Project | Relevance |
+|---------|-----------|
+| **SBGN** (https://sbgn.github.io/) | Core standard. Three languages: PD, ER, AF. BioPath implements PD Level 1 Version 2.1. |
+| **libSBGN** (https://github.com/sbgn/libsbgn) | Official C++/Java library for SBGN-ML. Reference for serialization. |
+| **libsbgn.js** (https://github.com/sbgn/libsbgn.js) | JavaScript SBGN-ML parser. Can be integrated for import/export. |
+| **Newt** (https://github.com/iVis-at-Bilkent/newt) | Primary SBGN editor reference. Web-based, built on Cytoscape.js. Our glyph rendering and editing UX should match or exceed Newt. |
+| **sbgnviz.js** (https://github.com/iVis-at-Bilkent/sbgnviz.js) | Visualization engine behind Newt. Contains canonical SBGN stylesheet (glyph shapes, colors, ports). **Critical reference for glyph rendering.** |
+| **cytoscape-sbgn-stylesheet** (https://github.com/PathwayCommons/cytoscape-sbgn-stylesheet) | CSS-like stylesheet mapping SBGN glyphs to visual properties. **Direct reference for implementing SBGN glyphs in our Skia renderer.** |
+| **SBGNFlow** (https://github.com/sciluna/sbgn-flow) | AI-assisted workflow: hand-drawn sketch → SBGN-ML via multimodal LLM. Reference for LLM → SBGN-ML pipeline. |
+| **biorender-mechanism-figures-skill** (https://github.com/yiyanli123/biorender-mechanism-figures-skill) | Agent skill for biomedical text → structured image prompts. Reference for AI prompt engineering and structured pathway decomposition. |
+| **Reactome MCP Server** (https://github.com/Augmented-Nature/Reactome-MCP-Server) | MCP server for Reactome pathway data. Reference for our MCP tool design and data source integration. |
+| **cytoscape.js-fcose** | Force-directed layout for SBGN-compliant graphs. Reference for pathway-specific layout. |
+| **ELK.js** (https://github.com/kieler/elkjs) | Advanced layered/orthogonal/force layout. Phase 3 integration target. |
+| **CellDesigner** (http://www.celldesigner.org/) | Most widely used SBGN PD editor. Reference for state variable notation and reaction types. |
+| **PathVisio** (https://github.com/PathVisio/pathvisio) | Java pathway editor. Reference for data overlay (expression data on pathways). |

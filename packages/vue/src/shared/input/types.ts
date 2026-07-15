@@ -118,6 +118,15 @@ export interface DragBendHandle {
   targetTangentField: 'tangentStart' | 'tangentEnd' | null
 }
 
+export interface DragPathwayArc {
+  type: 'pathway-arc'
+  sourceId: string
+  sourceX: number
+  sourceY: number
+  currentX: number
+  currentY: number
+}
+
 export type DragState =
   | DragDraw
   | DragMove
@@ -130,6 +139,7 @@ export type DragState =
   | DragEditNode
   | DragEditHandle
   | DragBendHandle
+  | DragPathwayArc
 
 export const TOOL_TO_NODE: Partial<Record<Tool, NodeType>> = {
   FRAME: 'FRAME',
@@ -139,5 +149,8 @@ export const TOOL_TO_NODE: Partial<Record<Tool, NodeType>> = {
   LINE: 'LINE',
   POLYGON: 'POLYGON',
   STAR: 'STAR',
-  TEXT: 'TEXT'
+  TEXT: 'TEXT',
+  PATHWAY_GLYPH: 'PATHWAY_GLYPH',
+  PATHWAY_PROCESS: 'PATHWAY_PROCESS',
+  COMPARTMENT: 'COMPARTMENT',
 }

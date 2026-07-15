@@ -6,6 +6,7 @@ import { computeDescendantVisualBounds } from '@open-pencil/scene-graph/geometry
 import type { Color } from '@open-pencil/scene-graph/primitives'
 
 import { DROP_HIGHLIGHT_ALPHA, DROP_HIGHLIGHT_STROKE, SECTION_CORNER_RADIUS } from '#core/constants'
+import { renderPathwayGlyph, renderPathwayProcess, renderPathwayArc, renderCompartment } from '#core/pathway/render'
 import { vectorNetworkToCenterlinePath } from '#core/vector'
 
 import { figmaBlendModeToSkia, needsIsolatedBlendLayer } from './blend'
@@ -97,6 +98,14 @@ function renderNodeContent(
     r.renderComponentSet(canvas, node, graph)
   } else if (node.type === 'BOOLEAN_OPERATION') {
     renderBooleanOperation(r, canvas, node, graph)
+  } else if (node.type === 'PATHWAY_GLYPH') {
+    renderPathwayGlyph(r, canvas, node)
+  } else if (node.type === 'PATHWAY_PROCESS') {
+    renderPathwayProcess(r, canvas, node)
+  } else if (node.type === 'PATHWAY_ARC') {
+    renderPathwayArc(r, canvas, node, graph)
+  } else if (node.type === 'COMPARTMENT') {
+    renderCompartment(r, canvas, node)
   } else {
     r.renderShape(canvas, node, graph)
   }

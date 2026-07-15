@@ -11,12 +11,20 @@ import { copyFills, copyStrokes, copyEffects } from '@open-pencil/scene-graph/co
 import { computeBounds } from '@open-pencil/scene-graph/geometry'
 import { computeImageHash } from '@open-pencil/scene-graph/images'
 import type { Rect, Vector } from '@open-pencil/scene-graph/primitives'
+import {
+  getPathwayData,
+  updatePathwayData,
+  type PathwayGlyphType,
+  type PathwayProcessType,
+  type PathwayArcType
+} from '@open-pencil/scene-graph'
 
 import type { SkiaRenderer } from '#core/canvas'
 import { canMakeBooleanSourceNode } from '#core/canvas/boolean'
 import { flattenNodesToVectorProps } from '#core/canvas/flatten'
 import { IS_BROWSER } from '#core/constants'
 import type { RasterExportFormat } from '#core/io/formats/raster'
+import { findNearestPort } from '#core/pathway/ports'
 
 import type {
   FigmaBooleanOperationNode,
@@ -80,8 +88,21 @@ export class FigmaAPI implements NodeProxyHost {
     this._currentPageId = pages[0]?.id ?? graph.rootId
   }
 
+  private _pathwayStyle: 'sbgn' | 'publication' = 'sbgn'
+
   setRenderer(renderer: SkiaRenderer | null): void {
     this._renderer = renderer
+  }
+
+  setPathwayStyle(style: 'sbgn' | 'publication'): void {
+    this._pathwayStyle = style
+    if (this._renderer) {
+      this._renderer.pathwayStyle = style
+    }
+  }
+
+  get pathwayStyle(): 'sbgn' | 'publication' {
+    return this._pathwayStyle
   }
 
   get currentPageId(): string {
@@ -176,6 +197,51 @@ export class FigmaAPI implements NodeProxyHost {
 
   createSection(): FigmaSectionNode {
     return this._createNode('SECTION') as FigmaSectionNode
+  }
+
+  createPathwayGlyph(glyphType: PathwayGlyphType, overrides?: Partial<CoreSceneNode>): FigmaNodeProxy {
+    const node = this.graph.createNode('PATHWAY_GLYPH', this._currentPageId, overrides)
+    updatePathwayData(node, { glyphType })
+    return this.wrapNode(node.id)
+  }
+
+  createPathwayProcess(processType: PathwayProcessType, overrides?: Partial<CoreSceneNode>): FigmaNodeProxy {
+    const node = this.graph.createNode('PATHWAY_PROCESS', this._currentPageId, overrides)
+    updatePathwayData(node, { processType })
+    return this.wrapNode(node.id)
+  }
+
+  createPathwayArc(arcType: PathwayArcType, sourceId: string, targetId: string, overrides?: Partial<CoreSceneNode>): FigmaNodeProxy {
+    const node = this.graph.createNode('PATHWAY_ARC', this._currentPageId, overrides)
+
+    let sourcePort: { side: string; x: number; y: number } | undefined
+    let targetPort: { side: string; x: number; y: number } | undefined
+
+    const sourceNode = this.graph.getNode(sourceId)
+    const targetNode = this.graph.getNode(targetId)
+    if (sourceNode && targetNode) {
+      const sourceData = getPathwayData(sourceNode)
+      const targetData = getPathwayData(targetNode)
+      const sourceAbs = this.graph.getAbsolutePosition(sourceId)
+      const targetAbs = this.graph.getAbsolutePosition(targetId)
+
+      sourcePort = findNearestPort(sourceNode, sourceData ?? {}, {
+        x: targetAbs.x + targetNode.width / 2 - sourceAbs.x,
+        y: targetAbs.y + targetNode.height / 2 - sourceAbs.y
+      })
+      targetPort = findNearestPort(targetNode, targetData ?? {}, {
+        x: sourceAbs.x + sourceNode.width / 2 - targetAbs.x,
+        y: sourceAbs.y + sourceNode.height / 2 - targetAbs.y
+      })
+    }
+
+    updatePathwayData(node, { arcType, sourceId, targetId, sourcePort, targetPort })
+    return this.wrapNode(node.id)
+  }
+
+  createCompartment(label: string, overrides?: Partial<CoreSceneNode>): FigmaNodeProxy {
+    const node = this.graph.createNode('COMPARTMENT', this._currentPageId, { name: label, ...overrides })
+    return this.wrapNode(node.id)
   }
 
   createPage(): FigmaNodeProxy {

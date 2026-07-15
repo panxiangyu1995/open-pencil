@@ -1,0 +1,147 @@
+import { evalCode } from './analyze'
+import { calc } from './calc'
+import { createPage, render } from './create'
+import { describe } from './describe'
+import {
+  setFill,
+  setLayout,
+  setLayoutChild,
+  setLocked,
+  setOpacity,
+  setStroke,
+  setText,
+  setTextProperties,
+  setVisible,
+  updateNode
+} from './modify'
+import {
+  addArc,
+  addCompartment,
+  addEntity,
+  addMultimer,
+  addProcess,
+  annotatePathway,
+  autoLayoutPathway,
+  createPathway,
+  exportSbgnMl,
+  importSbgnMl,
+  mergePathway,
+  modifyArc,
+  overlayExpressionData,
+  queryPathwayDb,
+  removeArc,
+  setActiveState,
+  setCloneMarker,
+  setPathwayStyle,
+  setStateVariable,
+  setUnitOfInformation,
+  splitPathway,
+  validatePathway
+} from './pathway'
+import {
+  findNodes,
+  getCurrentPage,
+  getJsx,
+  getNode,
+  getPageTree,
+  getSelection,
+  listPages,
+  selectNodes,
+  switchPage
+} from './read'
+import type { ToolDef } from './schema'
+import {
+  batchUpdate,
+  cloneNode,
+  deleteNode,
+  groupNodes,
+  nodeAncestors,
+  nodeBounds,
+  nodeChildren,
+  nodeMove,
+  nodeResize,
+  nodeTree,
+  reparentNode,
+  renameNode,
+  ungroupNode
+} from './structure'
+import {
+  exportImage,
+  exportPdf,
+  exportSvg,
+  viewportZoomToFit
+} from './vector'
+
+export const BIOPATH_CORE_TOOLS: ToolDef[] = [
+  getSelection,
+  getNode,
+  findNodes,
+  getPageTree,
+  getCurrentPage,
+  listPages,
+  selectNodes,
+  switchPage,
+  createPage,
+  updateNode,
+  deleteNode,
+  reparentNode,
+  nodeResize,
+  nodeMove,
+  renameNode,
+  nodeBounds,
+  nodeChildren,
+  nodeTree,
+  viewportZoomToFit,
+  calc,
+  exportSvg,
+  exportPdf,
+  exportImage,
+  createPathway,
+  addEntity,
+  addProcess,
+  addArc,
+  addCompartment,
+  setStateVariable,
+  setUnitOfInformation,
+  setPathwayStyle,
+  validatePathway,
+  autoLayoutPathway,
+  queryPathwayDb,
+]
+
+export const BIOPATH_EXTENDED_TOOLS: ToolDef[] = [
+  getJsx,
+  render,
+  setFill,
+  setStroke,
+  setText,
+  setTextProperties,
+  setOpacity,
+  setVisible,
+  setLocked,
+  setLayout,
+  setLayoutChild,
+  batchUpdate,
+  cloneNode,
+  groupNodes,
+  ungroupNode,
+  nodeAncestors,
+  describe,
+  evalCode,
+  importSbgnMl,
+  exportSbgnMl,
+  removeArc,
+  modifyArc,
+  setCloneMarker,
+  addMultimer,
+  annotatePathway,
+  mergePathway,
+  splitPathway,
+  setActiveState,
+  overlayExpressionData,
+]
+
+export const BIOPATH_TOOLS: ToolDef[] = [
+  ...BIOPATH_CORE_TOOLS,
+  ...BIOPATH_EXTENDED_TOOLS,
+]

@@ -10,6 +10,7 @@ import {
   updateNodeEditHover
 } from '#vue/canvas/node-edit-input/use'
 import { handlePenDragMove, updatePenHover } from '#vue/canvas/pen-input/use'
+import { handlePathwayArcMove, handlePathwayArcUp } from '#vue/canvas/pathway-arc-input/use'
 import { createCanvasPointer } from '#vue/canvas/pointer/use'
 import { createTextEditInput } from '#vue/canvas/text-edit/input'
 import { handleToolMouseDown } from '#vue/canvas/tool-input/use'
@@ -243,6 +244,11 @@ export function useCanvasInput(
       return
     }
 
+    if (d.type === 'pathway-arc') {
+      handlePathwayArcMove(d, cx, cy)
+      return
+    }
+
     handleMarqueeMove(d, cx, cy)
   }
 
@@ -276,6 +282,7 @@ export function useCanvasInput(
       }
       editor.setRotationPreview(null)
     } else if (d.type === 'draw') handleDrawUp(d, editor)
+    else if (d.type === 'pathway-arc') handlePathwayArcUp(d, editor, hitFns)
     else if (d.type === 'marquee') editor.setMarquee(null)
 
     drag.value = null

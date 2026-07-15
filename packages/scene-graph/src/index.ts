@@ -43,6 +43,14 @@ import type {
 
 export { cloneVectorNetwork, normalizeVectorNetwork, validateVectorNetwork } from './vector-network'
 
+export {
+  PATHWAY_PLUGIN_ID, PATHWAY_PLUGIN_KEY, ANNOTATION_PLUGIN_KEY,
+  getPathwayData, setPathwayData, updatePathwayData,
+  type PathwayGlyphType, type PathwayProcessType, type PathwayArcType,
+  type PathwayNodeData,
+  type PathwayAnnotationType, type PathwayAnnotation,
+} from './pathway-data'
+
 function removeStaleBindings(
   node: SceneNode,
   field: 'fills' | 'strokes',

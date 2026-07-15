@@ -3,6 +3,7 @@ import type { Ref } from 'vue'
 import type { Editor } from '@open-pencil/core/editor'
 
 import { startPenInput } from '#vue/canvas/pen-input/use'
+import { startPathwayArcInput } from '#vue/canvas/pathway-arc-input/use'
 import { startShapeDraw, startTextTool } from '#vue/shared/input/draw'
 import { startPanDrag } from '#vue/shared/input/pan'
 import { handleSelectDown } from '#vue/shared/input/select'
@@ -68,6 +69,11 @@ export function handleToolMouseDown({
 
   if (tool === 'TEXT') {
     startTextTool(cx, cy, editor)
+    return
+  }
+
+  if (tool === 'PATHWAY_ARC') {
+    startPathwayArcInput(cx, cy, editor, hitFns, setDrag)
     return
   }
 

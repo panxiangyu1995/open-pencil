@@ -10,6 +10,8 @@ import IconHand from '~icons/lucide/hand'
 import IconSection from '~icons/lucide/layout-grid'
 import IconMinus from '~icons/lucide/minus'
 import IconMousePointer from '~icons/lucide/mouse-pointer'
+import IconGitBranch from '~icons/lucide/git-branch'
+import IconBoxSelect from '~icons/lucide/box-select'
 import IconPenTool from '~icons/lucide/pen-tool'
 import IconRows from '~icons/lucide/rows-3'
 import IconSquare from '~icons/lucide/square'
@@ -30,7 +32,11 @@ export const toolIcons: Record<Tool, Component> = {
   STAR: IconStar,
   PEN: IconPenTool,
   TEXT: IconType,
-  HAND: IconHand
+  HAND: IconHand,
+  PATHWAY_GLYPH: IconBoxSelect,
+  PATHWAY_PROCESS: IconSquare,
+  PATHWAY_ARC: IconGitBranch,
+  COMPARTMENT: IconFrame
 }
 
 export const NODE_ICONS: Partial<Record<string, typeof IconSquare>> = {

@@ -27,6 +27,10 @@ export type Tool =
   | 'TEXT'
   | 'PEN'
   | 'HAND'
+  | 'PATHWAY_GLYPH'
+  | 'PATHWAY_PROCESS'
+  | 'PATHWAY_ARC'
+  | 'COMPARTMENT'
 
 export interface EditorState {
   activeTool: Tool
@@ -85,6 +89,7 @@ export interface EditorState {
   nodeEditState?: RenderOverlays['nodeEditState'] | null
   cursorCanvasX?: number | null
   cursorCanvasY?: number | null
+  pathwayStyle: 'sbgn' | 'publication'
 }
 
 export interface EditorEvents extends SceneGraphEvents {
@@ -128,6 +133,7 @@ export interface EditorContext {
   ) => void
   setSelectedIds: (ids: Set<string>) => void
   setActiveTool: (tool: Tool) => void
+  setPathwayStyle: (style: 'sbgn' | 'publication') => void
   runLayoutForNode: (id: string) => void
   subscribeToGraph: () => void
 }

@@ -20,6 +20,27 @@ const BLACK_FILL: Fill = {
   visible: true
 }
 
+const NO_FILL: Fill = {
+  type: 'SOLID',
+  color: { r: 1, g: 1, b: 1, a: 0 },
+  opacity: 0,
+  visible: true
+}
+
+const PATHWAY_ENTITY_FILL: Fill = {
+  type: 'SOLID',
+  color: { r: 1, g: 1, b: 1, a: 1 },
+  opacity: 1,
+  visible: true
+}
+
+const COMPARTMENT_FILL: Fill = {
+  type: 'SOLID',
+  color: { r: 0.95, g: 0.95, b: 0.95, a: 0.15 },
+  opacity: 1,
+  visible: true
+}
+
 const DEFAULT_FILLS: Record<string, Fill> = {
   FRAME: DEFAULT_FRAME_FILL,
   SECTION: SECTION_DEFAULT_FILL,
@@ -28,7 +49,11 @@ const DEFAULT_FILLS: Record<string, Fill> = {
   POLYGON: DEFAULT_SHAPE_FILL,
   STAR: DEFAULT_SHAPE_FILL,
   LINE: BLACK_FILL,
-  TEXT: BLACK_FILL
+  TEXT: BLACK_FILL,
+  PATHWAY_GLYPH: PATHWAY_ENTITY_FILL,
+  PATHWAY_PROCESS: PATHWAY_ENTITY_FILL,
+  PATHWAY_ARC: NO_FILL,
+  COMPARTMENT: COMPARTMENT_FILL
 }
 
 export function createShapeActions(ctx: EditorContext) {

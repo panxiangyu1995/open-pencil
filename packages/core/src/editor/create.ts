@@ -111,6 +111,11 @@ export function createEditor(options?: EditorOptions) {
     if (previous !== tool) emitEditorEvent('tool:changed', tool, previous)
   }
 
+  function setPathwayStyle(style: 'sbgn' | 'publication') {
+    state.pathwayStyle = style
+    requestRender()
+  }
+
   const graphReads = createGraphReadActions(() => _graph)
   const { runLayoutForNode } = createLayoutRunner(() => _graph)
   const { scheduleComponentSync } = createComponentSyncScheduler(() => _graph, requestRender)
@@ -147,6 +152,7 @@ export function createEditor(options?: EditorOptions) {
     emitEditorEvent,
     setSelectedIds,
     setActiveTool,
+    setPathwayStyle,
     runLayoutForNode,
     subscribeToGraph
   }

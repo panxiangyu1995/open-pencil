@@ -1,3 +1,5 @@
+import { FigmaAPI } from '@open-pencil/core/figma-api'
+
 import {
   resolveAutomationTarget,
   responseWithTarget,
@@ -34,8 +36,34 @@ export async function handleNewDocument(
   _target: AutomationTarget,
   args: unknown
 ): Promise<unknown> {
-  const path = (args as { path?: string }).path
+  const { path, template } = args as { path?: string; template?: string }
   const tab = createTab()
+
+  if (template === 'pathway') {
+    const figma = new FigmaAPI(tab.store.graph)
+    const page = figma.currentPage
+
+    const extracellular = figma.createCompartment('Extracellular', {
+      x: 0, y: 0, width: 1200, height: 200
+    })
+    page.appendChild(extracellular)
+
+    const membrane = figma.createCompartment('Membrane', {
+      x: 0, y: 200, width: 1200, height: 150
+    })
+    page.appendChild(membrane)
+
+    const cytoplasm = figma.createCompartment('Cytoplasm', {
+      x: 0, y: 350, width: 1200, height: 500
+    })
+    page.appendChild(cytoplasm)
+
+    const nucleus = figma.createCompartment('Nucleus', {
+      x: 400, y: 400, width: 400, height: 350
+    })
+    cytoplasm.appendChild(nucleus)
+  }
+
   if (path) {
     tab.store.setPlannedFilePath(path)
     await ensureTauriParentDirectory(path)

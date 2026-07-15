@@ -81,6 +81,48 @@ function vectorShapeElements(
     : [svg('rect', { width: round(node.width), height: round(node.height), ...common })]
 }
 
+function pathwayNodeToSVGElements(
+  node: SceneNode,
+  common: Record<string, string | number | undefined>,
+  strokeAttrs: Record<string, string | number | undefined>
+): SVGNode[] {
+  const w = node.width
+  const h = node.height
+
+  if (node.type === 'PATHWAY_ARC') {
+    return [svg('line', { x1: 0, y1: 0, x2: round(w), y2: round(h), fill: 'none', ...strokeAttrs })]
+  }
+
+  if (node.type === 'COMPARTMENT') {
+    const inset = 0.03
+    const x0 = round(w * inset)
+    const x1 = round(w * (1 - inset))
+    const y0 = round(h * inset)
+    const y1 = round(h * (1 - inset))
+    const d = [
+      `M ${round(w * 0.05)},${y0}`,
+      `L ${round(w * 0.25)},0`,
+      `L ${round(w * 0.75)},0`,
+      `L ${round(w * 0.95)},${y0}`,
+      `Q ${w},${round(h * 0.25)} ${x1},${round(h * 0.25)}`,
+      `Q ${x1},${round(h * 0.5)} ${x1},${round(h * 0.75)}`,
+      `Q ${round(w * 0.95)},${h} ${round(w * 0.75)},${h}`,
+      `L ${round(w * 0.25)},${h}`,
+      `Q ${round(w * 0.05)},${h} ${x0},${round(h * 0.75)}`,
+      `Q ${x0},${round(h * 0.5)} ${x0},${round(h * 0.25)}`,
+      'Z',
+    ].join(' ')
+    return [svg('path', { d, ...common })]
+  }
+
+  if (node.type === 'PATHWAY_PROCESS') {
+    return [svg('rect', { width: round(w), height: round(h), ...common })]
+  }
+
+  const cr = round(Math.min(w, h) * 0.12)
+  return [svg('rect', { width: round(w), height: round(h), rx: cr, ry: cr, ...common })]
+}
+
 function nodeShapeElements(
   node: SceneNode,
   fillAttr: string | null,
@@ -125,6 +167,12 @@ function nodeShapeElements(
 
     case 'VECTOR':
       return vectorShapeElements(node, common, strokeAttrs)
+
+    case 'PATHWAY_GLYPH':
+    case 'PATHWAY_PROCESS':
+    case 'PATHWAY_ARC':
+    case 'COMPARTMENT':
+      return pathwayNodeToSVGElements(node, common, strokeAttrs)
 
     default: {
       if (hasRadius(node)) {

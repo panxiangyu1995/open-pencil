@@ -18,7 +18,10 @@ export const EDITOR_TOOLS: EditorToolDef[] = [
   },
   { key: 'PEN', label: 'Pen', shortcut: 'P' },
   { key: 'TEXT', label: 'Text', shortcut: 'T' },
-  { key: 'HAND', label: 'Hand', shortcut: 'H' }
+  { key: 'HAND', label: 'Hand', shortcut: 'H' },
+  { key: 'PATHWAY_GLYPH', label: 'Pathway Entity', shortcut: 'W',
+    flyout: ['PATHWAY_GLYPH', 'PATHWAY_PROCESS', 'COMPARTMENT'] },
+  { key: 'PATHWAY_ARC', label: 'Pathway Arc', shortcut: 'Q' },
 ]
 
 export const TOOL_SHORTCUTS: Partial<Record<string, Tool>> = {
@@ -30,5 +33,7 @@ export const TOOL_SHORTCUTS: Partial<Record<string, Tool>> = {
   KeyL: 'LINE',
   KeyT: 'TEXT',
   KeyP: 'PEN',
-  KeyH: 'HAND'
+  KeyH: 'HAND',
+  KeyW: 'PATHWAY_GLYPH',
+  KeyQ: 'PATHWAY_ARC',
 }

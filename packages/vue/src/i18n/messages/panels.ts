@@ -190,7 +190,25 @@ export const panelMessageDefaults = {
   setToCurrentHeight: 'Set to current height',
   sizingFillFr: 'Fill (fr)',
   sizingFixedPx: 'Fixed (px)',
-  searchFonts: 'Search fonts...'
+  searchFonts: 'Search fonts...',
+
+  pathway: 'Pathway',
+  glyphType: 'Glyph type',
+  processType: 'Process type',
+  arcType: 'Arc type',
+  stateVariable: 'State variable',
+  unitOfInformation: 'Unit of information',
+  compartment: 'Compartment',
+  cloneMarker: 'Clone marker',
+  variable: 'Variable',
+  value: 'Value',
+  addStateVariable: 'Add state variable',
+  addUnitOfInformation: 'Add unit of information',
+  removeStateVariable: 'Remove state variable',
+  removeUnitOfInformation: 'Remove unit of information',
+  source: 'Source',
+  target: 'Target',
+  inspector: 'Inspector'
 } as const
 
 export const panelMessages = i18n('panels', panelMessageDefaults)

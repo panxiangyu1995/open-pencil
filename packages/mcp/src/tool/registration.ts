@@ -4,7 +4,7 @@ import { resolve } from 'node:path'
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { z } from 'zod'
 
-import { ALL_TOOLS, CODEGEN_PROMPT } from '@open-pencil/core/tools'
+import { BIOPATH_TOOLS } from '@open-pencil/core/tools'
 
 import type { RpcJsonObject } from '#mcp/json'
 import { MAX_RESULT_BYTES, fail, ok, resultTooLargeMessage } from '#mcp/result'
@@ -44,7 +44,7 @@ export function registerTools(mcpServer: McpServer, options: RegisterToolsOption
   const resolvedRoot = options.mcpRoot ? resolve(options.mcpRoot) : null
   const register = mcpServer.registerTool.bind(mcpServer) as (...a: unknown[]) => void
 
-  for (const def of ALL_TOOLS) {
+  for (const def of BIOPATH_TOOLS) {
     if (!enableEval && def.name === 'eval') continue
     const shape: Record<string, z.ZodType> = {}
     for (const [key, param] of Object.entries(def.params)) {
@@ -158,7 +158,7 @@ export function registerTools(mcpServer: McpServer, options: RegisterToolsOption
     register(
       'open_file',
       {
-        description: `Open a .fig or .pen file from disk into a new tab. Path must be inside ${resolvedRoot}.`,
+        description: `Open a .fig, .pen, .sbgn, or .sbgnml file from disk into a new tab. Path must be inside ${resolvedRoot}. .sbgn/.sbgnml files are automatically imported as pathway diagrams.`,
         inputSchema: z.object({
           path: z.string().describe('Absolute path to the design file'),
           ...automationTargetSchema
@@ -181,20 +181,21 @@ export function registerTools(mcpServer: McpServer, options: RegisterToolsOption
     register(
       'new_document',
       {
-        description: `Create a new empty document. Optionally set a save path inside ${resolvedRoot}.`,
-        inputSchema: z.object({
-          path: z.string().describe('Optional absolute path for the new file').optional(),
-          ...automationTargetSchema
-        })
-      },
-      async (args: { path?: string; document_id?: string; page_id?: string }) => {
+      description: `Create a new empty document. Optionally set a save path inside ${resolvedRoot}. Use template="pathway" to create a document with default compartments (extracellular, membrane, cytoplasm, nucleus).`,
+      inputSchema: z.object({
+        path: z.string().describe('Optional absolute path for the new file').optional(),
+        template: z.enum(['blank', 'pathway']).describe('Document template. "pathway" creates a document with default compartments.').optional().default('blank'),
+        ...automationTargetSchema
+      }),
+    },
+    async (args: { path?: string; document_id?: string; page_id?: string; template?: 'blank' | 'pathway' }) => {
         try {
           const safePath = args.path ? resolveSafePath(args.path, resolvedRoot) : undefined
           const { target } = splitAutomationTarget(args)
-          const result = await sendRpc({
-            command: 'new_document',
-            args: { ...target, path: safePath }
-          })
+        const result = await sendRpc({
+          command: 'new_document',
+          args: { ...target, path: safePath, template: args.template ?? 'blank' }
+        })
           const res = result as { ok?: boolean; result?: unknown; target?: unknown; error?: string }
           if (res.ok === false) return fail(new Error(res.error))
           return ok({ created: true, ...(res.target ? { target: res.target } : {}) })
@@ -205,13 +206,4 @@ export function registerTools(mcpServer: McpServer, options: RegisterToolsOption
     )
   }
 
-  register(
-    'get_codegen_prompt',
-    {
-      description:
-        'Get design-to-code generation guidelines. Call before generating frontend code.',
-      inputSchema: z.object({})
-    },
-    async () => ok({ prompt: CODEGEN_PROMPT })
-  )
 }

@@ -175,5 +175,22 @@
   "blendModeHue": "色相",
   "blendModeSaturation": "饱和度",
   "blendModeColor": "颜色",
-  "blendModeLuminosity": "明度"
+  "blendModeLuminosity": "明度",
+  "pathway": "通路",
+  "glyphType": "实体类型",
+  "processType": "过程类型",
+  "arcType": "弧线类型",
+  "stateVariable": "状态变量",
+  "unitOfInformation": "信息单元",
+  "compartment": "区室",
+  "cloneMarker": "克隆标记",
+  "variable": "变量",
+  "value": "值",
+  "addStateVariable": "添加状态变量",
+  "addUnitOfInformation": "添加信息单元",
+  "removeStateVariable": "移除状态变量",
+  "removeUnitOfInformation": "移除信息单元",
+  "source": "源",
+  "target": "目标",
+  "inspector": "检查器"
 }

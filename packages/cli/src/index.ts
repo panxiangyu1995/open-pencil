@@ -13,6 +13,7 @@ import info from './commands/info'
 import lint from './commands/lint'
 import node from './commands/node'
 import pages from './commands/pages'
+import pathway from './commands/pathway'
 import query from './commands/query'
 import selection from './commands/selection'
 import tree from './commands/tree'
@@ -40,6 +41,7 @@ const main = defineCommand({
     query,
     node,
     pages,
+    pathway,
     selection,
     tree,
     variables

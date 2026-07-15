@@ -93,6 +93,10 @@ export type NodeType =
   | 'INSTANCE'
   | 'CONNECTOR'
   | 'SHAPE_WITH_TEXT'
+  | 'PATHWAY_GLYPH'
+  | 'PATHWAY_PROCESS'
+  | 'PATHWAY_ARC'
+  | 'COMPARTMENT'
 
 export type FillType =
   | 'SOLID'

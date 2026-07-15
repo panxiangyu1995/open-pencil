@@ -17,6 +17,7 @@ import type { ToolDef } from './schema'
 import { stockPhoto } from './stock-photo'
 import { batchUpdate, deleteNode, nodeResize, reparentNode } from './structure'
 import { viewportZoomToFit } from './vector'
+import { PATHWAY_TOOLS } from './pathway'
 
 /**
  * Core tools registered by default in AI chat (~30 tools, ~3K schema tokens).
@@ -50,5 +51,6 @@ export const CORE_TOOLS: ToolDef[] = [
   describe,
   calc,
   evalCode,
-  viewportZoomToFit
+  viewportZoomToFit,
+  ...PATHWAY_TOOLS
 ]

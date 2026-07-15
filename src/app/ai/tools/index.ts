@@ -3,7 +3,7 @@ import { tool } from 'ai'
 import * as v from 'valibot'
 
 import { computeAllLayouts } from '@open-pencil/core/layout'
-import { CORE_TOOLS, toolsToAI } from '@open-pencil/core/tools'
+import { BIOPATH_CORE_TOOLS, toolsToAI } from '@open-pencil/core/tools'
 import type { StepBudget, ToolLogEntry } from '@open-pencil/core/tools'
 import type { SceneNode } from '@open-pencil/scene-graph'
 
@@ -87,7 +87,7 @@ export function createAITools(store: EditorStore) {
   const runState = getRunState(store)
 
   return toolsToAI(
-    CORE_TOOLS,
+    BIOPATH_CORE_TOOLS,
     {
       getFigma: () => makeFigmaFromStore(store),
       onBeforeExecute: (def) => {

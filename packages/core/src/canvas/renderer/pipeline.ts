@@ -49,6 +49,7 @@ export function renderFromEditorState(
   r.pageColor = state.pageColor
   r.rulerTheme = state.rulerTheme ?? null
   r.pageId = state.currentPageId
+  r.pathwayStyle = state.pathwayStyle
   render(
     r,
     graph,

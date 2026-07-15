@@ -55,7 +55,13 @@ export function handleDrawMove(
 export function handleDrawUp(d: DragDraw, editor: Editor) {
   const node = editor.graph.getNode(d.nodeId)
   if (node && node.width < 2 && node.height < 2) {
-    editor.updateNode(d.nodeId, { width: 100, height: 100 })
+    const defaults: Record<string, { w: number; h: number }> = {
+      PATHWAY_GLYPH: { w: 96, h: 48 },
+      PATHWAY_PROCESS: { w: 24, h: 24 },
+      COMPARTMENT: { w: 800, h: 600 }
+    }
+    const def = defaults[node.type] ?? { w: 100, h: 100 }
+    editor.updateNode(d.nodeId, { width: def.w, height: def.h })
   }
   if (node?.type === 'SECTION') {
     editor.adoptNodesIntoSection(node.id)
