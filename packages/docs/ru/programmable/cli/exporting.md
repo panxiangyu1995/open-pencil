@@ -10,10 +10,10 @@ description: Рендер .fig-файлов в PNG, JPG, WEBP, SVG или JSX с
 ## Экспорт изображений
 
 ```sh
-openpencil export design.fig                          # PNG (по умолчанию)
-openpencil export design.fig -f jpg -s 2 -q 90       # JPG в 2×, качество 90
-openpencil export design.fig -f webp -s 3             # WEBP в 3×
-openpencil export design.fig -f svg                   # SVG-вектор
+signalforge export design.fig                          # PNG (по умолчанию)
+signalforge export design.fig -f jpg -s 2 -q 90       # JPG в 2×, качество 90
+signalforge export design.fig -f webp -s 3             # WEBP в 3×
+signalforge export design.fig -f svg                   # SVG-вектор
 ```
 
 Параметры:
@@ -30,7 +30,7 @@ openpencil export design.fig -f svg                   # SVG-вектор
 Экспорт в JSX с утилитарными классами Tailwind:
 
 ```sh
-openpencil export design.fig -f jsx --style tailwind
+signalforge export design.fig -f jsx --style tailwind
 ```
 
 Результат:
@@ -42,12 +42,12 @@ openpencil export design.fig -f jsx --style tailwind
 </div>
 ```
 
-Также поддерживается `--style openpencil` для нативного JSX-формата (см. [JSX-рендерер](../jsx-renderer)).
+Также поддерживается `--style signalforge` для нативного JSX-формата (см. [JSX-рендерер](../jsx-renderer)).
 
 ## Миниатюры
 
 ```sh
-openpencil export design.fig --thumbnail --width 1920 --height 1080
+signalforge export design.fig --thumbnail --width 1920 --height 1080
 ```
 
 ## Режим работы с приложением
@@ -55,5 +55,5 @@ openpencil export design.fig --thumbnail --width 1920 --height 1080
 Опустите файл для экспорта из запущенного приложения:
 
 ```sh
-openpencil export -f png    # снимок текущего холста
+signalforge export -f png    # снимок текущего холста
 ```

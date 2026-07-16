@@ -3,7 +3,7 @@ import { useTemplateRef, watch } from 'vue'
 import { nodeIcon } from '@/app/editor/icons'
 import LayerTreeDisclosure from './LayerTreeDisclosure.vue'
 
-import type { LayerNode } from '@open-pencil/vue'
+import type { LayerNode } from '@signal-forge/vue'
 import type { LayerRenameControls, LayerTreeItemActions } from './types'
 
 const { renameControls } = defineProps<{

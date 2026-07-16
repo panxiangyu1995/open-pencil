@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'bun:test'
 
-import type { Vector } from '@open-pencil/core'
+import type { Vector } from '@signal-forge/core'
 
 import { clipBoundsToPolygon, clipPolygon } from '#core/geometry'
 

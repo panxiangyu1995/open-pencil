@@ -5,7 +5,7 @@ import {
   type PathwayProcessType,
   type PathwayArcType,
   updatePathwayData
-} from '@open-pencil/scene-graph'
+} from '@signal-forge/scene-graph'
 
 interface EntitySpec {
   name: string

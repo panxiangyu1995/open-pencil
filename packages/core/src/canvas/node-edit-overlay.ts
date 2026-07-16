@@ -5,8 +5,8 @@ import type {
   VectorSegment,
   VectorRegion,
   SceneGraph
-} from '@open-pencil/scene-graph'
-import type { Vector } from '@open-pencil/scene-graph/primitives'
+} from '@signal-forge/scene-graph'
+import type { Vector } from '@signal-forge/scene-graph/primitives'
 
 import { PEN_HANDLE_RADIUS, PEN_VERTEX_RADIUS } from '#core/constants'
 import { vectorNetworkToPath } from '#core/vector'

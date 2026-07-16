@@ -1,7 +1,7 @@
 import type { Canvas } from 'canvaskit-wasm'
 
-import type { SceneNode } from '@open-pencil/scene-graph'
-import type { Color } from '@open-pencil/scene-graph/primitives'
+import type { SceneNode } from '@signal-forge/scene-graph'
+import type { Color } from '@signal-forge/scene-graph/primitives'
 
 import { SELECTION_COLOR } from '#core/constants'
 

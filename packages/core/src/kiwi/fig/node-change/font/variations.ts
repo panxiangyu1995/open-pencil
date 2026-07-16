@@ -1,5 +1,5 @@
-import type { NodeChange } from '@open-pencil/kiwi/fig/codec'
-import type { FontVariation } from '@open-pencil/scene-graph'
+import type { NodeChange } from '@signal-forge/kiwi/fig/codec'
+import type { FontVariation } from '@signal-forge/scene-graph'
 
 export function figmaAxisTagToString(axisTag: number): string {
   return String.fromCharCode(

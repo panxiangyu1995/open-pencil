@@ -1,7 +1,7 @@
 import type { CanvasKit, Path } from 'canvaskit-wasm'
 
-import type { VectorNetwork } from '@open-pencil/scene-graph'
-import type { Vector } from '@open-pencil/scene-graph/primitives'
+import type { VectorNetwork } from '@signal-forge/scene-graph'
+import type { Vector } from '@signal-forge/scene-graph/primitives'
 
 import { addOpenSegmentsToPath } from './path-helpers'
 

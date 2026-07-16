@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'bun:test'
 
-import type { SceneNode } from '@open-pencil/scene-graph'
+import type { SceneNode } from '@signal-forge/scene-graph'
 
 import {
   widthSizingForNode,

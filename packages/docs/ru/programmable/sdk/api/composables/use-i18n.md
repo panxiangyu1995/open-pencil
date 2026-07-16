@@ -1,18 +1,18 @@
 ---
 title: useI18n
-description: Чтение локализованных сообщений интерфейса OpenPencil и переключение активной локали SDK.
+description: Чтение локализованных сообщений интерфейса SignalForge и переключение активной локали SDK.
 ---
 
 # useI18n
 
-`useI18n()` возвращает реактивные группы переводов и элементы управления локалью для оболочек редактора на базе OpenPencil.
+`useI18n()` возвращает реактивные группы переводов и элементы управления локалью для оболочек редактора на базе SignalForge.
 
 Используйте его, когда нужны метки меню, команд, панелей, страниц и диалогов, поддерживаемые SDK, или когда нужно позволить пользователям переключать локаль.
 
 ## Использование
 
 ```ts
-import { useI18n } from '@open-pencil/vue'
+import { useI18n } from '@signal-forge/vue'
 
 const { menu, commands, panels, locale, availableLocales, localeLabels, setLocale } = useI18n()
 ```
@@ -34,7 +34,7 @@ const { menu, commands, panels, locale, availableLocales, localeLabels, setLocal
 
 ```vue
 <script setup lang="ts">
-import { useI18n } from '@open-pencil/vue'
+import { useI18n } from '@signal-forge/vue'
 
 const { menu, locale, availableLocales, localeLabels, setLocale } = useI18n()
 </script>

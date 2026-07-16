@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'bun:test'
 
-import type { SceneNode } from '@open-pencil/core'
-import { applyPadding, isVarRef, type VarContext } from '@open-pencil/core/io/formats/pen'
+import type { SceneNode } from '@signal-forge/core'
+import { applyPadding, isVarRef, type VarContext } from '@signal-forge/core/io/formats/pen'
 
 /**
  * Regression test for open-pencil/open-pencil#201

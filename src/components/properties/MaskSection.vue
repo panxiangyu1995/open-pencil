@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { useI18n, useMask } from '@open-pencil/vue'
+import { useI18n, useMask } from '@signal-forge/vue'
 
 import AppSelect from '@/components/ui/AppSelect.vue'
 import PanelSection from '@/components/ui/panel/PanelSection.vue'
 import Tip from '@/components/ui/Tip.vue'
 
-import type { MaskType } from '@open-pencil/scene-graph'
+import type { MaskType } from '@signal-forge/scene-graph'
 
 const { panels } = useI18n()
 const { active, maskType, setMaskType } = useMask()

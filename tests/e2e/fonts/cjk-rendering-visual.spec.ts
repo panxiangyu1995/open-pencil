@@ -23,7 +23,7 @@ test('renders Simplified Chinese, Traditional Chinese, Japanese, and Korean fall
 
   const smoke = await editor.page.evaluate(async () => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const pageId = store.state.currentPageId
     const { fontManager } = await import('/packages/core/src/text/fonts.ts')
 

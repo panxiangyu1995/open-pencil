@@ -1,6 +1,7 @@
 import type { SceneNode } from './types'
 
-export const PATHWAY_PLUGIN_ID = 'open-pencil'
+export const PATHWAY_PLUGIN_ID = 'signal-forge'
+export const LEGACY_PATHWAY_PLUGIN_ID = 'open-pencil'
 export const PATHWAY_PLUGIN_KEY = 'pathway'
 export const ANNOTATION_PLUGIN_KEY = 'pathway-annotations'
 
@@ -45,7 +46,7 @@ export interface PathwayNodeData {
 
 export function getPathwayData(node: SceneNode): PathwayNodeData | null {
   const entry = node.pluginData.find(
-    e => e.pluginId === PATHWAY_PLUGIN_ID && e.key === PATHWAY_PLUGIN_KEY
+    e => (e.pluginId === PATHWAY_PLUGIN_ID || e.pluginId === LEGACY_PATHWAY_PLUGIN_ID) && e.key === PATHWAY_PLUGIN_KEY
   )
   if (!entry) return null
   try { return JSON.parse(entry.value) as PathwayNodeData }
@@ -55,7 +56,7 @@ export function getPathwayData(node: SceneNode): PathwayNodeData | null {
 export function setPathwayData(node: SceneNode, data: PathwayNodeData): void {
   const json = JSON.stringify(data)
   const idx = node.pluginData.findIndex(
-    e => e.pluginId === PATHWAY_PLUGIN_ID && e.key === PATHWAY_PLUGIN_KEY
+    e => (e.pluginId === PATHWAY_PLUGIN_ID || e.pluginId === LEGACY_PATHWAY_PLUGIN_ID) && e.key === PATHWAY_PLUGIN_KEY
   )
   if (idx !== -1) {
     node.pluginData[idx] = { pluginId: PATHWAY_PLUGIN_ID, key: PATHWAY_PLUGIN_KEY, value: json }
@@ -77,7 +78,7 @@ export function computeUpdatedPluginData(
   const merged = { ...existing, ...partial }
   const json = JSON.stringify(merged)
   const idx = node.pluginData.findIndex(
-    e => e.pluginId === PATHWAY_PLUGIN_ID && e.key === PATHWAY_PLUGIN_KEY
+    e => (e.pluginId === PATHWAY_PLUGIN_ID || e.pluginId === LEGACY_PATHWAY_PLUGIN_ID) && e.key === PATHWAY_PLUGIN_KEY
   )
   const entry = { pluginId: PATHWAY_PLUGIN_ID, key: PATHWAY_PLUGIN_KEY, value: json }
   if (idx !== -1) {

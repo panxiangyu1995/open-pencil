@@ -1,4 +1,4 @@
-import type { SceneNode } from '@open-pencil/scene-graph'
+import type { SceneNode } from '@signal-forge/scene-graph'
 
 import { buildCloneIndex, instanceAndClones } from '#core/kiwi/fig/instance-overrides/clone-index'
 import { applyComponentPropRef } from '#core/kiwi/fig/instance-overrides/component-props/apply'

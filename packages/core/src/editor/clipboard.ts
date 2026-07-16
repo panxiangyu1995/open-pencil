@@ -1,10 +1,10 @@
-import type { SceneNode } from '@open-pencil/scene-graph'
-import type { Vector } from '@open-pencil/scene-graph/primitives'
+import type { SceneNode } from '@signal-forge/scene-graph'
+import type { Vector } from '@signal-forge/scene-graph/primitives'
 
 import {
   importClipboardNodes,
   parseFigmaClipboard,
-  parseOpenPencilClipboard
+  parseSignalForgeClipboard
 } from '#core/clipboard'
 import { computeAllLayouts } from '#core/layout'
 
@@ -85,9 +85,9 @@ export function createClipboardActions(ctx: EditorContext) {
   }
 
   async function pasteFromHTML(html: string, cursorPos?: Vector, options: PasteOptions = {}) {
-    const openPencil = parseOpenPencilClipboard(html)
+    const openPencil = parseSignalForgeClipboard(html)
     if (openPencil) {
-      pasteOpenPencilNodes(openPencil.nodes, openPencil.images, cursorPos, options)
+      pasteSignalForgeNodes(openPencil.nodes, openPencil.images, cursorPos, options)
       return
     }
 
@@ -126,7 +126,7 @@ export function createClipboardActions(ctx: EditorContext) {
     }
   }
 
-  function pasteOpenPencilNodes(
+  function pasteSignalForgeNodes(
     nodes: Array<SceneNode & { children?: SceneNode[] }>,
     images: Map<string, Uint8Array>,
     cursorPos?: Vector,

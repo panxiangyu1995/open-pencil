@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { inputNumberValue } from '@open-pencil/vue'
+import { inputNumberValue } from '@signal-forge/vue'
 import { usePickerSliderUI } from '@/components/ui/picker-slider'
 
 type PickerSliderDisplay = {

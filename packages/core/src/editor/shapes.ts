@@ -1,4 +1,4 @@
-import type { Fill, NodeType, SceneNode } from '@open-pencil/scene-graph'
+import type { Fill, NodeType, SceneNode } from '@signal-forge/scene-graph'
 
 import {
   BLACK,

@@ -12,7 +12,7 @@ Es fügt einen wiederverwendbaren Standard-Füllungswert hinzu.
 ## Verwendung
 
 ```ts
-import { useFillControls } from '@open-pencil/vue'
+import { useFillControls } from '@signal-forge/vue'
 
 const fills = useFillControls()
 ```

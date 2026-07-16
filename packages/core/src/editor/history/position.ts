@@ -1,4 +1,4 @@
-import type { Vector } from '@open-pencil/scene-graph/primitives'
+import type { Vector } from '@signal-forge/scene-graph/primitives'
 
 import type { EditorContext } from '#core/editor/types'
 

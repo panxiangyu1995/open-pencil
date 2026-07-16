@@ -1,7 +1,7 @@
 import { computed } from 'vue'
 
-import type { MenuEntry } from '@open-pencil/vue'
-import { useEditorCommands, useI18n } from '@open-pencil/vue'
+import type { MenuEntry } from '@signal-forge/vue'
+import { useEditorCommands, useI18n } from '@signal-forge/vue'
 
 import { useEditorStore } from '@/app/editor/active-store'
 import { executeClipboardCommand } from '@/app/editor/clipboard/system'

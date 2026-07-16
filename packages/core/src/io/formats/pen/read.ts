@@ -1,1 +1,1 @@
-export { parsePenFile, readPenFile } from '@open-pencil/pen'
+export { parsePenFile, readPenFile } from '@signal-forge/pen'

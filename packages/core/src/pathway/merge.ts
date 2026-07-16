@@ -1,5 +1,5 @@
-import type { SceneGraph, SceneNode } from '@open-pencil/scene-graph'
-import { getPathwayData, updatePathwayData } from '@open-pencil/scene-graph'
+import type { SceneGraph, SceneNode } from '@signal-forge/scene-graph'
+import { getPathwayData, updatePathwayData } from '@signal-forge/scene-graph'
 
 export interface MergeResult {
   mergedEntities: number

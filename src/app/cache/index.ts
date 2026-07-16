@@ -1,7 +1,7 @@
-import { IS_TAURI } from '@open-pencil/core/constants'
+import { IS_TAURI } from '@signal-forge/core/constants'
 
 const APP_CACHE_DIR = 'cache/v1'
-const STORAGE_PREFIX = 'open-pencil:cache:v1:'
+const STORAGE_PREFIX = 'signal-forge:cache:v1:'
 
 const textEncoder = new TextEncoder()
 const textDecoder = new TextDecoder()

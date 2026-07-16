@@ -1,6 +1,6 @@
-import type { NodeChange } from '@open-pencil/kiwi/fig/codec'
-import type { GeometryPath, VectorNetwork, WindingRule } from '@open-pencil/scene-graph'
-import type { Vector } from '@open-pencil/scene-graph/primitives'
+import type { NodeChange } from '@signal-forge/kiwi/fig/codec'
+import type { GeometryPath, VectorNetwork, WindingRule } from '@signal-forge/scene-graph'
+import type { Vector } from '@signal-forge/scene-graph/primitives'
 
 import { decodeVectorNetworkBlob } from '#core/vector'
 

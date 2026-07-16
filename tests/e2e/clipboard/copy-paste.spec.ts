@@ -6,7 +6,7 @@ const editor = useEditorSetup()
 function getPageChildCount() {
   return editor.page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     return store.graph.getChildren(store.state.currentPageId).length
   })
 }
@@ -14,7 +14,7 @@ function getPageChildCount() {
 function getSelectedCount() {
   return editor.page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     return store.state.selectedIds.size
   })
 }
@@ -27,7 +27,7 @@ test('copy + paste via store duplicates a shape', async () => {
 
   await editor.page.evaluate(async () => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const data = new DataTransfer()
     await store.writeCopyData(data)
     const html = data.getData('text/html')
@@ -65,7 +65,7 @@ test('duplicate preserves fills', async () => {
   // Set a custom fill on the selected node
   await editor.page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const id = [...store.state.selectedIds][0]
     store.updateNodeWithUndo(
       id,
@@ -101,7 +101,7 @@ test('cut removes original', async () => {
   // Cut via store
   await editor.page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const data = new DataTransfer()
     store.writeCopyData(data)
     store.deleteSelected()

@@ -34,7 +34,7 @@ async function chooseFormat(page: Page, label: 'RGB' | 'HSL' | 'HSB' | 'OkHCL') 
 async function getSelectedStroke(page: Page) {
   return page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const id = [...store.state.selectedIds][0]
     const node = store.graph.getNode(id)
     return node?.strokes?.[0] ?? null
@@ -90,7 +90,7 @@ test('stroke picker hsb saturation and brightness sliders update stroke color on
 
   await page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const nodes = Array.from(store.graph.nodes.values())
     const card =
       nodes.find((node) => node.name === 'Card' && node.type === 'COMPONENT') ??

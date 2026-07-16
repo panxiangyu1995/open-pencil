@@ -1,12 +1,12 @@
 import { CSSFontFaceRule } from '@acemir/cssom'
 import { parseFragment, serialize, type DefaultTreeAdapterTypes } from 'parse5'
 
-import { normalizeFontFamily } from '@open-pencil/core/text'
+import { normalizeFontFamily } from '@signal-forge/core/text'
 import {
   exportWebFontFaceAssets,
   type WebFontFaceAsset,
   type WebFontFaceRequest
-} from '@open-pencil/core/text/web-font/assets'
+} from '@signal-forge/core/text/web-font/assets'
 
 import { mergeClassNames, serializeHTML, splitWhitespace } from './serialize'
 import type { DesignDocument, DesignElement, DesignNode, DesignStyleDeclaration } from './types'

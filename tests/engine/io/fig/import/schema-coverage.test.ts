@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs'
 
 import ts from 'typescript'
 
-import { parseSchema } from '@open-pencil/kiwi/schema-runtime'
+import { parseSchema } from '@signal-forge/kiwi/schema-runtime'
 
 import { FIGMA_RAW_NODE_FIELD_KEYS } from '#core/kiwi/fig/node-change/convert'
 

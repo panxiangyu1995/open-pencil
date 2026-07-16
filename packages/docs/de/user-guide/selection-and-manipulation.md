@@ -1,6 +1,6 @@
 ---
 title: Auswahl & Bearbeitung
-description: Auswählen, Bewegen, Skalieren, Drehen, Duplizieren und Organisieren von Knoten in OpenPencil.
+description: Auswählen, Bewegen, Skalieren, Drehen, Duplizieren und Organisieren von Knoten in SignalForge.
 ---
 
 # Auswahl & Bearbeitung

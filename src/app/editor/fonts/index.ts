@@ -10,9 +10,9 @@ import {
   type FontFamilyOption,
   type LocalFontAccessState,
   type WebFontProviderId
-} from '@open-pencil/core/text'
-import type { SceneGraph } from '@open-pencil/scene-graph'
-import { dialogMessages } from '@open-pencil/vue'
+} from '@signal-forge/core/text'
+import type { SceneGraph } from '@signal-forge/scene-graph'
+import { dialogMessages } from '@signal-forge/vue'
 
 import {
   clearDownloadedFontCache as clearTauriDownloadedFontCache,

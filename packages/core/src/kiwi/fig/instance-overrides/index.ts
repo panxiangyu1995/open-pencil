@@ -10,9 +10,9 @@ export type {
   SymbolOverride
 } from './types'
 
-import type { SceneGraph, SceneNode } from '@open-pencil/scene-graph'
-import { copyFills, copyStyleRuns } from '@open-pencil/scene-graph/copy'
-import type { JsonObject } from '@open-pencil/scene-graph/primitives'
+import type { SceneGraph, SceneNode } from '@signal-forge/scene-graph'
+import { copyFills, copyStyleRuns } from '@signal-forge/scene-graph/copy'
+import type { JsonObject } from '@signal-forge/scene-graph/primitives'
 
 import { guidToString } from '#core/kiwi/fig/node-change/convert'
 

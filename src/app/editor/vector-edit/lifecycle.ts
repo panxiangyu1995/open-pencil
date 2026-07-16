@@ -1,7 +1,7 @@
-import type { Editor } from '@open-pencil/core/editor'
-import { computeAccurateBounds } from '@open-pencil/core/vector'
-import { cloneVectorNetwork } from '@open-pencil/scene-graph'
-import type { SceneGraph, VectorNetwork } from '@open-pencil/scene-graph'
+import type { Editor } from '@signal-forge/core/editor'
+import { computeAccurateBounds } from '@signal-forge/core/vector'
+import { cloneVectorNetwork } from '@signal-forge/scene-graph'
+import type { SceneGraph, VectorNetwork } from '@signal-forge/scene-graph'
 
 import { getLiveNetwork } from './network'
 import type { VectorEditState } from './types'

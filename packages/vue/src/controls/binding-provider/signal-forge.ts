@@ -1,7 +1,7 @@
 import { useFilter } from 'reka-ui'
 
-import type { Editor } from '@open-pencil/core/editor'
-import type { Variable, VariableType } from '@open-pencil/scene-graph'
+import type { Editor } from '@signal-forge/core/editor'
+import type { Variable, VariableType } from '@signal-forge/scene-graph'
 
 import type {
   BindingProvider,
@@ -11,15 +11,15 @@ import type {
 import { useEditor } from '#vue/editor/context'
 import { useSceneComputed } from '#vue/internal/scene-computed/use'
 
-export interface OpenPencilBindingProviderOptions<V> {
+export interface SignalForgeBindingProviderOptions<V> {
   type: VariableType
   resolve(editor: Editor, variableId: string): V | undefined
   create?(editor: Editor, target: BindingTarget, value: V, name: string): void
   setValue?(editor: Editor, variableId: string, value: V): void
 }
 
-export function useOpenPencilBindingProvider<V>(
-  options: OpenPencilBindingProviderOptions<V>
+export function useSignalForgeBindingProvider<V>(
+  options: SignalForgeBindingProviderOptions<V>
 ): BindingProvider<V> {
   const editor = useEditor()
   const revision = useSceneComputed(() => editor.state.sceneVersion)

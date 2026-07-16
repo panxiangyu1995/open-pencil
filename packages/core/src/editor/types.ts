@@ -6,10 +6,10 @@ import type {
   SceneNode,
   VectorSegment,
   VectorVertex
-} from '@open-pencil/scene-graph'
-import type { Color, Rect, Vector } from '@open-pencil/scene-graph/primitives'
-import type { SnapGuide } from '@open-pencil/scene-graph/snap'
-import type { UndoManager } from '@open-pencil/scene-graph/undo'
+} from '@signal-forge/scene-graph'
+import type { Color, Rect, Vector } from '@signal-forge/scene-graph/primitives'
+import type { SnapGuide } from '@signal-forge/scene-graph/snap'
+import type { UndoManager } from '@signal-forge/scene-graph/undo'
 
 import type { RulerTheme, SkiaRenderer } from '#core/canvas/renderer'
 import type { RenderOverlays } from '#core/canvas/renderer/types'

@@ -2,8 +2,8 @@ import { describe, expect, test } from 'bun:test'
 
 import { computed, ref } from 'vue'
 
-import type { SceneNode } from '@open-pencil/scene-graph'
-import type { MixedValue } from '@open-pencil/vue'
+import type { SceneNode } from '@signal-forge/scene-graph'
+import type { MixedValue } from '@signal-forge/vue'
 
 import { createAppearanceState } from '#vue/controls/appearance/helpers'
 

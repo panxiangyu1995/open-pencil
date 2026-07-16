@@ -1,15 +1,15 @@
 ---
 title: Vue SDK
-description: Créez des éditeurs propulsés par OpenPencil avec des composables Vue headless et des primitives.
+description: Créez des éditeurs propulsés par SignalForge avec des composables Vue headless et des primitives.
 ---
 
 # Vue SDK
 
-`@open-pencil/vue` existe pour qu'OpenPencil puisse être bien plus qu'une application de design autonome.
+`@signal-forge/vue` existe pour qu'SignalForge puisse être bien plus qu'une application de design autonome.
 
-L'objectif est de faire d'OpenPencil une boîte à outils intégrable dans d'autres produits, outils internes, et éditeurs spécialisés — pas seulement une interface par défaut.
+L'objectif est de faire d'SignalForge une boîte à outils intégrable dans d'autres produits, outils internes, et éditeurs spécialisés — pas seulement une interface par défaut.
 
-L'application OpenPencil est une composition de cette boîte à outils. Le SDK est la façon dont vous en construisez une différente.
+L'application SignalForge est une composition de cette boîte à outils. Le SDK est la façon dont vous en construisez une différente.
 
 Il vous offre :
 
@@ -41,7 +41,7 @@ Le SDK est la couche qui rend tout cela possible.
 - **Headless en priorité** : logique et structure, sans style applicatif
 - **Composables plutôt que wrappers** : utiliser des composables quand il n'y a pas de coordination structurelle significative
 - **API publique intentionnelle** : exports stables depuis `packages/vue/src/index.ts`
-- **Intégration framework** : intégration Vue au-dessus de `@open-pencil/core`
+- **Intégration framework** : intégration Vue au-dessus de `@signal-forge/core`
 
 ## Comment penser ce package
 

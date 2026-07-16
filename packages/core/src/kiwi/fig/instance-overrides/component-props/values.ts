@@ -1,4 +1,4 @@
-import type { GUID } from '@open-pencil/kiwi/fig/codec'
+import type { GUID } from '@signal-forge/kiwi/fig/codec'
 
 import type {
   ComponentPropAssignment,

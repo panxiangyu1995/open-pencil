@@ -8,7 +8,7 @@ import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
 
 import packageJson from './package.json'
-import { createOpenPencilAliases } from './vite/aliases'
+import { createSignalForgeAliases } from './vite/aliases'
 import { localAutomationToken, openPencilAutomationPlugin } from './vite/automation'
 import { copyCanvasKitAssetsPlugin } from './vite/canvaskit-assets'
 import { openPencilPwaPlugin } from './vite/pwa'
@@ -19,7 +19,7 @@ const host = process.env.TAURI_DEV_HOST
 
 export default defineConfig(async ({ command }) => ({
   resolve: {
-    alias: createOpenPencilAliases(__dirname)
+    alias: createSignalForgeAliases(__dirname)
   },
   define: {
     __OPENPENCIL_APP_VERSION__: JSON.stringify(packageJson.version),

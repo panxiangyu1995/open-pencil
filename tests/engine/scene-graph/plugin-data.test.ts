@@ -8,7 +8,7 @@ import {
   parseFigFile,
   SceneGraph,
   type NodeChange
-} from '@open-pencil/core'
+} from '@signal-forge/core'
 
 import { deduplicateNodeChangePluginData } from '#core/kiwi'
 

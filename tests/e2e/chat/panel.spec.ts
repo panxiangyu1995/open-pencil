@@ -254,7 +254,7 @@ test('transport errors show an actionable toast', async () => {
 })
 
 test('"Get API key" link opens external URL via window.open', async () => {
-  await page.evaluate("localStorage.removeItem('open-pencil:ai-key:openrouter')")
+  await page.evaluate("localStorage.removeItem('signal-forge:ai-key:openrouter')")
   await page.reload()
   await canvas.waitForInit()
   await chatTab().click()

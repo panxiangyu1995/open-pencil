@@ -11,7 +11,7 @@ test('large layer trees stay virtualized and scrollable', async ({ page }) => {
 
   await page.evaluate((count: number) => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
 
     for (let i = 0; i < count; i++) {
       store.graph.createNode('RECTANGLE', store.state.currentPageId, {
@@ -51,7 +51,7 @@ test('large layer trees stay virtualized and scrollable', async ({ page }) => {
 
   await page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
 
     const pageNode = store.graph.getNode(store.state.currentPageId)
     const firstId = pageNode?.childIds[0]
@@ -70,7 +70,7 @@ test('large layer trees stay virtualized and scrollable', async ({ page }) => {
 
   await page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
 
     const pageNode = store.graph.getNode(store.state.currentPageId)
     const lastId = pageNode?.childIds.at(-1)

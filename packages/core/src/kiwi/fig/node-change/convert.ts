@@ -1,5 +1,5 @@
-import { guidToString } from '@open-pencil/kiwi/fig/guid'
-import { parseVariantName } from '@open-pencil/scene-graph/variant-name'
+import { guidToString } from '@signal-forge/kiwi/fig/guid'
+import { parseVariantName } from '@signal-forge/scene-graph/variant-name'
 
 /* eslint-disable max-lines -- kiwi↔scene conversion helpers are tightly coupled */
 import { DEFAULT_FONT_FAMILY, DEFAULT_STROKE_MITER_LIMIT } from '#core/constants'
@@ -19,7 +19,7 @@ import {
   extractExportSettings,
   extractPluginData,
   extractPluginRelaunchData,
-  getOpenPencilPluginValue,
+  getSignalForgePluginValue,
   LAYOUT_DIRECTION_PLUGIN_KEY,
   NODE_TYPE_PLUGIN_KEY,
   TEXT_DIRECTION_PLUGIN_KEY
@@ -27,7 +27,7 @@ import {
 import { resolveGeometryPaths, resolveVectorNetwork } from './vector-geometry'
 export { resolveGeometryPaths } from './vector-geometry'
 
-import type { NodeChange } from '@open-pencil/kiwi/fig/codec'
+import type { NodeChange } from '@signal-forge/kiwi/fig/codec'
 import type {
   SceneNode,
   NodeType,
@@ -49,10 +49,10 @@ import type {
   ComponentPropertyType,
   SymbolLink,
   VariantPropSpec
-} from '@open-pencil/scene-graph'
-import type { GUID } from '@open-pencil/scene-graph/primitives'
+} from '@signal-forge/scene-graph'
+import type { GUID } from '@signal-forge/scene-graph/primitives'
 
-export { guidToString, stringToGuid } from '@open-pencil/kiwi/fig/guid'
+export { guidToString, stringToGuid } from '@signal-forge/kiwi/fig/guid'
 
 export const VARIABLE_BINDING_FIELDS: Record<string, string> = {
   // Corner radius
@@ -388,7 +388,7 @@ function convertTextProps(nc: NodeChange, blobs: Uint8Array[]): TextProps {
     fontFeatures: convertFontFeatures(nc),
     textTruncation: (nc.textTruncation as string) === 'ENDING' ? 'ENDING' : 'DISABLED',
     textDirection:
-      (getOpenPencilPluginValue(nc, TEXT_DIRECTION_PLUGIN_KEY) as
+      (getSignalForgePluginValue(nc, TEXT_DIRECTION_PLUGIN_KEY) as
         | SceneNode['textDirection']
         | null) || 'AUTO',
     figmaDerivedLayout: nc.derivedTextData?.layoutSize
@@ -485,7 +485,7 @@ function convertLayoutProps(
     itemReverseZIndex: (nc.stackReverseZIndex ?? false) as boolean,
     strokesIncludedInLayout: (nc.strokesIncludedInLayout ?? false) as boolean,
     layoutDirection:
-      (getOpenPencilPluginValue(nc, LAYOUT_DIRECTION_PLUGIN_KEY) as
+      (getSignalForgePluginValue(nc, LAYOUT_DIRECTION_PLUGIN_KEY) as
         | SceneNode['layoutDirection']
         | null) || 'AUTO',
     ...(figmaDerivedLayout ? { figmaDerivedLayout } : {})
@@ -529,7 +529,7 @@ function resolveNodeType(nc: NodeChange): NodeType | 'DOCUMENT' | 'VARIABLE' {
   const nodeType = mapNodeType(nc.type)
   if (
     (nodeType === 'FRAME' && isComponentSet(nc)) ||
-    getOpenPencilPluginValue(nc, NODE_TYPE_PLUGIN_KEY) === 'COMPONENT_SET'
+    getSignalForgePluginValue(nc, NODE_TYPE_PLUGIN_KEY) === 'COMPONENT_SET'
   ) {
     return 'COMPONENT_SET'
   }

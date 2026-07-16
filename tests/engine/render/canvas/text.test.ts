@@ -5,8 +5,8 @@ import {
   resolveTextDirection,
   SceneGraph,
   SkiaRenderer as SkiaRendererClass
-} from '@open-pencil/core'
-import type { SceneNode } from '@open-pencil/scene-graph'
+} from '@signal-forge/core'
+import type { SceneNode } from '@signal-forge/scene-graph'
 
 import { initCanvasKit } from '#cli/headless'
 import type { SkiaRenderer } from '#core/canvas/renderer'

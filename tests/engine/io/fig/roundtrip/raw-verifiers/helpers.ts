@@ -1,4 +1,4 @@
-import type { JsonObject } from '@open-pencil/scene-graph/primitives'
+import type { JsonObject } from '@signal-forge/scene-graph/primitives'
 
 import type { VerifierContext } from '../helpers'
 

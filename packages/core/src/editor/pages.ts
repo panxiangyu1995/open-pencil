@@ -1,4 +1,4 @@
-import type { Color } from '@open-pencil/scene-graph/primitives'
+import type { Color } from '@signal-forge/scene-graph/primitives'
 
 import { populateLazyFigImportRoots } from '#core/kiwi/fig/lazy-import'
 import { computeAllLayouts } from '#core/layout'

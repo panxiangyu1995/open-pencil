@@ -9,7 +9,7 @@ Das CLI ermöglicht es, `.fig`-Dateien zu erkunden, ohne den Editor zu öffnen. 
 
 ::: tip Installation
 ```sh
-npm install -g @open-pencil/cli
+npm install -g @signal-forge/cli
 # oder
 brew install open-pencil/tap/open-pencil
 ```
@@ -20,7 +20,7 @@ brew install open-pencil/tap/open-pencil
 Erhalte einen schnellen Überblick — Seitenanzahl, Gesamtknoten, verwendete Schriften, Dateigröße:
 
 ```sh
-openpencil info design.fig
+signalforge info design.fig
 ```
 
 ## Knotenbaum
@@ -28,7 +28,7 @@ openpencil info design.fig
 Gibt die vollständige Knotenhierarchie aus:
 
 ```sh
-openpencil tree design.fig
+signalforge tree design.fig
 ```
 
 ```
@@ -45,13 +45,13 @@ openpencil tree design.fig
 Nach Typ suchen:
 
 ```sh
-openpencil find design.fig --type TEXT
+signalforge find design.fig --type TEXT
 ```
 
 Nach Name suchen:
 
 ```sh
-openpencil find design.fig --name "Button"
+signalforge find design.fig --name "Button"
 ```
 
 Beide Flags können kombiniert werden, um Ergebnisse weiter einzugrenzen.
@@ -61,7 +61,7 @@ Beide Flags können kombiniert werden, um Ergebnisse weiter einzugrenzen.
 Alle Eigenschaften eines bestimmten Knotens anhand seiner ID inspizieren:
 
 ```sh
-openpencil node design.fig --id 1:23
+signalforge node design.fig --id 1:23
 ```
 
 ## Seiten
@@ -69,7 +69,7 @@ openpencil node design.fig --id 1:23
 Alle Seiten im Dokument auflisten:
 
 ```sh
-openpencil pages design.fig
+signalforge pages design.fig
 ```
 
 ## Variablen
@@ -77,7 +77,7 @@ openpencil pages design.fig
 Designvariablen und ihre Sammlungen auflisten:
 
 ```sh
-openpencil variables design.fig
+signalforge variables design.fig
 ```
 
 ## Live-App-Modus
@@ -85,8 +85,8 @@ openpencil variables design.fig
 Wenn die Desktop-App läuft, lass das Dateiargument weg — das CLI verbindet sich über RPC und arbeitet auf der Live-Zeichenfläche:
 
 ```sh
-openpencil tree              # das Live-Dokument inspizieren
-openpencil eval -c "..."     # den Editor abfragen
+signalforge tree              # das Live-Dokument inspizieren
+signalforge eval -c "..."     # den Editor abfragen
 ```
 
 ## JSON-Ausgabe
@@ -94,5 +94,5 @@ openpencil eval -c "..."     # den Editor abfragen
 Alle Befehle unterstützen `--json` für maschinenlesbare Ausgabe — weiterleiten an `jq`, in CI-Skripte einspeisen oder mit anderen Werkzeugen verarbeiten:
 
 ```sh
-openpencil tree design.fig --json | jq '.[] | .name'
+signalforge tree design.fig --json | jq '.[] | .name'
 ```

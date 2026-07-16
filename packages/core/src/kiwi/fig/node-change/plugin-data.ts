@@ -1,14 +1,15 @@
-import type { NodeChange, PluginData, PluginRelaunchData } from '@open-pencil/kiwi/fig/codec'
-import { guidToString } from '@open-pencil/kiwi/fig/guid'
+import type { NodeChange, PluginData, PluginRelaunchData } from '@signal-forge/kiwi/fig/codec'
+import { guidToString } from '@signal-forge/kiwi/fig/guid'
 import {
   clampExportScale,
   type ExportFormatId,
   type ExportSetting,
   type PluginDataEntry,
   type PluginRelaunchDataEntry
-} from '@open-pencil/scene-graph'
+} from '@signal-forge/scene-graph'
 
-export const OPEN_PENCIL_PLUGIN_ID = 'open-pencil'
+export const SIGNAL_FORGE_PLUGIN_ID = 'signal-forge'
+export const LEGACY_PLUGIN_ID = 'open-pencil'
 export const TEXT_DIRECTION_PLUGIN_KEY = 'textDirection'
 export const LAYOUT_DIRECTION_PLUGIN_KEY = 'layoutDirection'
 export const NODE_TYPE_PLUGIN_KEY = 'nodeType'
@@ -28,9 +29,9 @@ export function upsertPluginData(
   value: string
 ): void {
   const pluginData = node.pluginData.filter(
-    (entry) => !(entry.pluginId === OPEN_PENCIL_PLUGIN_ID && entry.key === key)
+    (entry) => !(entry.pluginId === SIGNAL_FORGE_PLUGIN_ID && entry.key === key)
   )
-  pluginData.push({ pluginId: OPEN_PENCIL_PLUGIN_ID, key, value })
+  pluginData.push({ pluginId: SIGNAL_FORGE_PLUGIN_ID, key, value })
   node.pluginData = pluginData
 }
 
@@ -41,7 +42,7 @@ export function applyExportSettingsPluginData(node: {
 }): void {
   if (node.exportSettings.length === 0) return
   if (
-    !hasOpenPencilExportSettingsPluginData(node.pluginData) &&
+    !hasSignalForgeExportSettingsPluginData(node.pluginData) &&
     Array.isArray(node.source?.fig?.rawNodeFields?.exportSettings)
   ) {
     return
@@ -49,9 +50,9 @@ export function applyExportSettingsPluginData(node: {
   upsertPluginData(node, EXPORT_SETTINGS_PLUGIN_KEY, JSON.stringify(node.exportSettings))
 }
 
-function hasOpenPencilExportSettingsPluginData(pluginData: PluginDataEntry[]): boolean {
+function hasSignalForgeExportSettingsPluginData(pluginData: PluginDataEntry[]): boolean {
   return pluginData.some(
-    (entry) => entry.pluginId === OPEN_PENCIL_PLUGIN_ID && entry.key === EXPORT_SETTINGS_PLUGIN_KEY
+    (entry) => (entry.pluginId === SIGNAL_FORGE_PLUGIN_ID || entry.pluginId === LEGACY_PLUGIN_ID) && entry.key === EXPORT_SETTINGS_PLUGIN_KEY
   )
 }
 
@@ -73,7 +74,7 @@ function parseBoundVariablesPluginValue(value: string | null): Record<string, st
 
 export function extractBoundVariables(nc: NodeChange): Record<string, string> {
   const bindings = parseBoundVariablesPluginValue(
-    getOpenPencilPluginValue(nc, BOUND_VARIABLES_PLUGIN_KEY)
+    getSignalForgePluginValue(nc, BOUND_VARIABLES_PLUGIN_KEY)
   )
   nc.fillPaints?.forEach((paint, i) => {
     if (paint.colorVariableBinding) {
@@ -136,7 +137,7 @@ function extractNativeConstraintScale(constraint: unknown): number {
 
 export function extractExportSettings(nc: NodeChange): ExportSetting[] {
   const pluginSettings = parseExportSettingsPluginValue(
-    getOpenPencilPluginValue(nc, EXPORT_SETTINGS_PLUGIN_KEY)
+    getSignalForgePluginValue(nc, EXPORT_SETTINGS_PLUGIN_KEY)
   )
   if (pluginSettings) return pluginSettings
 
@@ -161,9 +162,9 @@ export function extractPluginData(nc: NodeChange): PluginDataEntry[] {
   }))
 }
 
-export function getOpenPencilPluginValue(nc: NodeChange, key: string): string | null {
+export function getSignalForgePluginValue(nc: NodeChange, key: string): string | null {
   return (
-    nc.pluginData?.find((entry) => entry.pluginID === OPEN_PENCIL_PLUGIN_ID && entry.key === key)
+    nc.pluginData?.find((entry) => (entry.pluginID === SIGNAL_FORGE_PLUGIN_ID || entry.pluginID === LEGACY_PLUGIN_ID) && entry.key === key)
       ?.value ?? null
   )
 }

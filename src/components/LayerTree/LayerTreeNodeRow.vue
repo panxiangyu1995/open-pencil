@@ -4,7 +4,7 @@ import LayerTreeActions from './LayerTreeActions.vue'
 import LayerTreeDisclosure from './LayerTreeDisclosure.vue'
 import LayerTreeDropIndicator from './LayerTreeDropIndicator.vue'
 
-import type { LayerNode } from '@open-pencil/vue'
+import type { LayerNode } from '@signal-forge/vue'
 import type { LayerTreeChrome, LayerTreeItemActions } from './types'
 
 const { node, level, hasChildren, selected, padLeft, expanded, actions, chrome } = defineProps<{

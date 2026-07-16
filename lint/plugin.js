@@ -123,7 +123,7 @@ const noInlineNamedTypes = {
         if (namedType) {
           context.report({
             node,
-            message: `Use '${namedType}' instead of inline type literal. Import from '@open-pencil/core'.`
+            message: `Use '${namedType}' instead of inline type literal. Import from '@signal-forge/core'.`
           })
         }
       }
@@ -165,7 +165,7 @@ const noStructuredCloneSceneArrays = {
           if (props.has(arg.property.name)) {
             context.report({
               node,
-              message: `Use the typed copy helper instead of structuredClone for '${arg.property.name}'. Import from '@open-pencil/core'.`
+              message: `Use the typed copy helper instead of structuredClone for '${arg.property.name}'. Import from '@signal-forge/core'.`
             })
           }
         }
@@ -1007,10 +1007,10 @@ const noTypeofWindowCheck = {
 }
 
 const noVueSelfPackageImports = createImportSourceRule({
-  description: 'Disallow @open-pencil/vue self-imports inside the Vue SDK — use #vue/* aliases',
+  description: 'Disallow @signal-forge/vue self-imports inside the Vue SDK — use #vue/* aliases',
   applies: (file) => file.includes('/packages/vue/src/'),
   check: (source) =>
-    source.startsWith('@open-pencil/vue') &&
+    source.startsWith('@signal-forge/vue') &&
     `Use #vue/* for internal Vue SDK imports instead of self-package import '${source}'.`
 })
 
@@ -1093,37 +1093,37 @@ function createExactCoreBarrelImportRule({ description, applies, message }) {
   return createImportSourceRule({
     description,
     applies,
-    check: (source) => source === '@open-pencil/core' && message
+    check: (source) => source === '@signal-forge/core' && message
   })
 }
 
 const noMcpCoreBarrelImports = createExactCoreBarrelImportRule({
-  description: 'Disallow MCP imports from @open-pencil/core root barrel — use domain subpaths',
+  description: 'Disallow MCP imports from @signal-forge/core root barrel — use domain subpaths',
   applies: (file) => file.includes('/packages/mcp/src/'),
   message:
-    'Use a targeted @open-pencil/core subpath in MCP code instead of the compatibility barrel.'
+    'Use a targeted @signal-forge/core subpath in MCP code instead of the compatibility barrel.'
 })
 
 const noCliCoreBarrelImports = createExactCoreBarrelImportRule({
-  description: 'Disallow CLI imports from @open-pencil/core root barrel — use domain subpaths',
+  description: 'Disallow CLI imports from @signal-forge/core root barrel — use domain subpaths',
   applies: (file) => file.includes('/packages/cli/src/'),
   message:
-    'Use a targeted @open-pencil/core subpath in CLI code instead of the compatibility barrel.'
+    'Use a targeted @signal-forge/core subpath in CLI code instead of the compatibility barrel.'
 })
 
 const noScriptCoreBarrelImports = createExactCoreBarrelImportRule({
-  description: 'Disallow script imports from @open-pencil/core root barrel — use domain subpaths',
+  description: 'Disallow script imports from @signal-forge/core root barrel — use domain subpaths',
   applies: (file) => file.includes('/scripts/'),
   message:
-    'Use a targeted @open-pencil/core subpath or #core/* alias in scripts instead of the compatibility barrel.'
+    'Use a targeted @signal-forge/core subpath or #core/* alias in scripts instead of the compatibility barrel.'
 })
 
 const noCoreSelfPackageImports = createImportSourceRule({
-  description: 'Disallow @open-pencil/core self-imports inside packages/core/src',
+  description: 'Disallow @signal-forge/core self-imports inside packages/core/src',
   applies: (file) => file.includes('/packages/core/src/'),
   check: (source) =>
-    source.startsWith('@open-pencil/core') &&
-    'Core internals must import local modules directly instead of importing the @open-pencil/core public package entrypoints.'
+    source.startsWith('@signal-forge/core') &&
+    'Core internals must import local modules directly instead of importing the @signal-forge/core public package entrypoints.'
 })
 
 const noInlinePromptConstants = {
@@ -1150,11 +1150,11 @@ const noInlinePromptConstants = {
 
 const noAppVueCoreBarrelImports = createExactCoreBarrelImportRule({
   description:
-    'Disallow app and Vue SDK imports from @open-pencil/core root barrel — use domain subpaths',
+    'Disallow app and Vue SDK imports from @signal-forge/core root barrel — use domain subpaths',
   applies: (file) =>
     (file.includes('/src/') && !file.includes('/packages/')) || file.includes('/packages/vue/src/'),
   message:
-    'Use a targeted @open-pencil/core subpath (editor, scene-graph, constants, io, etc.) instead of the compatibility barrel.'
+    'Use a targeted @signal-forge/core subpath (editor, scene-graph, constants, io, etc.) instead of the compatibility barrel.'
 })
 
 const noAppImportsInPackages = createImportSourceRule({
@@ -1164,14 +1164,14 @@ const noAppImportsInPackages = createImportSourceRule({
     source.startsWith('@/') && `Workspace packages must not import app-shell alias '${source}'.`
 })
 
-const frameworkImportPrefixes = ['@vue/', '@open-pencil/vue', '@tauri-apps/', '@/']
+const frameworkImportPrefixes = ['@vue/', '@signal-forge/vue', '@tauri-apps/', '@/']
 
 const noCoreFrameworkImports = createImportSourceRule({
-  description: 'Keep @open-pencil/core framework-agnostic by disallowing Vue/Tauri/app imports',
+  description: 'Keep @signal-forge/core framework-agnostic by disallowing Vue/Tauri/app imports',
   applies: (file) => file.includes('/packages/core/src/'),
   check: (source) =>
     (source === 'vue' || frameworkImportPrefixes.some((prefix) => source.startsWith(prefix))) &&
-    `@open-pencil/core must stay framework-agnostic; do not import '${source}'.`
+    `@signal-forge/core must stay framework-agnostic; do not import '${source}'.`
 })
 
 const noDirectStorageAccess = {
@@ -1778,7 +1778,7 @@ const noFunctionAliasImports = {
   }
 }
 
-const noDirectOpenPencilBrowserStore = {
+const noDirectSignalForgeBrowserStore = {
   meta: {
     docs: {
       description: 'Disallow direct window.openPencil.store access'
@@ -1791,7 +1791,7 @@ const noDirectOpenPencilBrowserStore = {
       return null
     }
 
-    function isOpenPencilMember(node) {
+    function isSignalForgeMember(node) {
       return (
         node?.type === 'MemberExpression' &&
         propertyName(node.property) === 'openPencil' &&
@@ -1803,7 +1803,7 @@ const noDirectOpenPencilBrowserStore = {
     return {
       MemberExpression(node) {
         if (propertyName(node.property) !== 'store') return
-        if (!isOpenPencilMember(node.object)) return
+        if (!isSignalForgeMember(node.object)) return
         context.report({
           node,
           message:
@@ -1814,10 +1814,10 @@ const noDirectOpenPencilBrowserStore = {
   }
 }
 
-const noDirectOpenPencilWindowInternals = {
+const noDirectSignalForgeWindowInternals = {
   meta: {
     docs: {
-      description: 'Disallow direct access to private OpenPencil window internals'
+      description: 'Disallow direct access to private SignalForge window internals'
     }
   },
   create(context) {
@@ -2076,7 +2076,7 @@ const noLocalJsonObjectAliases = {
         context.report({
           node,
           message:
-            'Import JsonObject from @open-pencil/scene-graph/primitives instead of declaring a local alias.'
+            'Import JsonObject from @signal-forge/scene-graph/primitives instead of declaring a local alias.'
         })
       }
     }
@@ -2117,7 +2117,7 @@ const noFlatKiwiModules = createProgramFilenameRule({
 })
 
 const plugin = {
-  meta: { name: 'open-pencil' },
+  meta: { name: 'signal-forge' },
   rules: {
     'no-inline-named-types': noInlineNamedTypes,
     'no-import-type-annotations': noImportTypeAnnotations,
@@ -2168,8 +2168,8 @@ const plugin = {
     'no-function-type': noFunctionType,
     'no-reflect-delete-global-this-outside-tests': noReflectDeleteGlobalThisOutsideTests,
     'no-core-browser-globals': noCoreBrowserGlobals,
-    'no-direct-open-pencil-window-internals': noDirectOpenPencilWindowInternals,
-    'no-direct-open-pencil-browser-store': noDirectOpenPencilBrowserStore,
+    'no-direct-signal-forge-window-internals': noDirectSignalForgeWindowInternals,
+    'no-direct-signal-forge-browser-store': noDirectSignalForgeBrowserStore,
     'no-direct-graph-emitter-subscriptions': noDirectGraphEmitterSubscriptions,
     'no-on-unmounted-in-composition-roots': noOnUnmountedInCompositionRoots,
     'no-composable-state-wrappers': noComposableStateWrappers,

@@ -1,5 +1,5 @@
 {
-  "name": "@open-pencil/pr-review-guidance",
+  "name": "@signal-forge/pr-review-guidance",
   "private": true,
   "type": "module",
   "scripts": {

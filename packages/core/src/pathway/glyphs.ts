@@ -1,7 +1,7 @@
 import type { Canvas, CanvasKit } from 'canvaskit-wasm'
 
-import type { SceneNode } from '@open-pencil/scene-graph'
-import type { PathwayNodeData, PathwayGlyphType } from '@open-pencil/scene-graph'
+import type { SceneNode } from '@signal-forge/scene-graph'
+import type { PathwayNodeData, PathwayGlyphType } from '@signal-forge/scene-graph'
 
 import type { SkiaRenderer } from '#core/canvas/renderer'
 

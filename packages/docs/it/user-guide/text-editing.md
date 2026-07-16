@@ -1,6 +1,6 @@
 ---
 title: Modifica testo
-description: Creare e modificare testo con formattazione rich in OpenPencil.
+description: Creare e modificare testo con formattazione rich in SignalForge.
 ---
 # Modifica testo
 

@@ -1,5 +1,5 @@
-import type { NodeChange } from '@open-pencil/kiwi/fig/codec'
-import type { CharacterStyleOverride, StyleRun } from '@open-pencil/scene-graph'
+import type { NodeChange } from '@signal-forge/kiwi/fig/codec'
+import type { CharacterStyleOverride, StyleRun } from '@signal-forge/scene-graph'
 
 import { styleToWeight } from '#core/text/fonts'
 

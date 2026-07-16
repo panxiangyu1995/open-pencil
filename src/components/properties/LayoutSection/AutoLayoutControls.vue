@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import IconButton from '@/components/ui/IconButton.vue'
 import PanelRow from '@/components/ui/panel/PanelRow.vue'
-import { useI18n, useLayoutControlsContext } from '@open-pencil/vue'
+import { useI18n, useLayoutControlsContext } from '@signal-forge/vue'
 
-import type { LayoutMode } from '@open-pencil/scene-graph'
+import type { LayoutMode } from '@signal-forge/scene-graph'
 
 const ctx = useLayoutControlsContext()
 

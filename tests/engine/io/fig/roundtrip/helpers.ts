@@ -1,5 +1,5 @@
-import type { SceneGraph, SceneNode } from '@open-pencil/core'
-import type { JsonObject } from '@open-pencil/scene-graph/primitives'
+import type { SceneGraph, SceneNode } from '@signal-forge/core'
+import type { JsonObject } from '@signal-forge/scene-graph/primitives'
 
 import { verifyComponentPropDefs, verifyDerivedTextData } from './raw-verifiers/helpers'
 

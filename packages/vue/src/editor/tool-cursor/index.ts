@@ -1,4 +1,4 @@
-import type { Tool } from '@open-pencil/core/editor'
+import type { Tool } from '@signal-forge/core/editor'
 
 const TOOL_CURSORS: Record<Tool, string> = {
   SELECT: 'default',

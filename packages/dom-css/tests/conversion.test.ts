@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'bun:test'
 
-import type { SceneGraph, SceneNode } from '@open-pencil/scene-graph'
+import type { SceneGraph, SceneNode } from '@signal-forge/scene-graph'
 
 import type { DesignElement, DesignNode } from '../src/index'
 import {
@@ -156,7 +156,7 @@ function expectStyleRoundTripHTML(graph: SceneGraph) {
   expectRoundTripHeadingStyle(roundTripHeading)
 }
 
-describe('@open-pencil/dom-css conversion', () => {
+describe('@signal-forge/dom-css conversion', () => {
   it('converts HTML and CSS to DesignDOM with one API call', async () => {
     const document = await htmlToDesignDocument(cardHTML, {
       cssText: cardCSS,
@@ -250,7 +250,7 @@ describe('@open-pencil/dom-css conversion', () => {
     const document = sceneGraphToDesignDocument(graph)
     const html = serializeHTML(document)
 
-    expect(html).toContain('OpenPencil')
+    expect(html).toContain('SignalForge')
     expect(html).toContain('box-shadow')
   })
 

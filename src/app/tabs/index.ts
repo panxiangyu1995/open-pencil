@@ -1,11 +1,11 @@
 import { shallowRef, computed, triggerRef } from 'vue'
 
-import { BUILTIN_IO_FORMATS, IORegistry } from '@open-pencil/core/io'
-import { readFigFile } from '@open-pencil/core/io/formats/fig'
-import { computeAllLayouts } from '@open-pencil/core/layout'
-import type { SceneGraph } from '@open-pencil/scene-graph'
+import { BUILTIN_IO_FORMATS, IORegistry } from '@signal-forge/core/io'
+import { readFigFile } from '@signal-forge/core/io/formats/fig'
+import { computeAllLayouts } from '@signal-forge/core/layout'
+import type { SceneGraph } from '@signal-forge/scene-graph'
 
-import { setOpenPencilStore } from '@/app/browser-bridge'
+import { setSignalForgeStore } from '@/app/browser-bridge'
 import { setActiveEditorStore } from '@/app/editor/active-store'
 import { createEditorStore } from '@/app/editor/session'
 import type { EditorStore } from '@/app/editor/session'
@@ -70,7 +70,7 @@ function activateTab(tab: Tab) {
   activeTabId.value = tab.id
   setActiveEditorStore(tab.store)
   triggerRef(tabsRef)
-  setOpenPencilStore(tab.store)
+  setSignalForgeStore(tab.store)
 }
 
 export function switchTab(tabId: string) {

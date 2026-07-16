@@ -3,7 +3,7 @@ export {}
 const mod = await import('../dist/index.js')
 
 if (mod.FIG_PACKAGE_STATUS !== 'container-api') {
-  throw new Error('Expected @open-pencil/fig container API export')
+  throw new Error('Expected @signal-forge/fig container API export')
 }
 
 const bytes = mod.writeFigContainer({
@@ -13,5 +13,5 @@ const bytes = mod.writeFigContainer({
 const document = mod.readFigContainer(bytes)
 
 if (document.dataRaw[0] !== 2) {
-  throw new Error('Expected @open-pencil/fig container round-trip')
+  throw new Error('Expected @signal-forge/fig container round-trip')
 }

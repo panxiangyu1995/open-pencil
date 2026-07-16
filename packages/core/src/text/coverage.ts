@@ -1,4 +1,4 @@
-import type { SceneNode } from '@open-pencil/scene-graph'
+import type { SceneNode } from '@signal-forge/scene-graph'
 
 import { DEFAULT_FONT_FAMILY } from '#core/constants'
 import type { FontFallbackScript } from '#core/text/fallbacks'

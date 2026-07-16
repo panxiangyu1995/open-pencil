@@ -14,7 +14,7 @@
 import { beforeAll, describe, expect, test } from 'bun:test'
 import { readFileSync } from 'node:fs'
 
-import { SceneGraph } from '@open-pencil/scene-graph'
+import { SceneGraph } from '@signal-forge/scene-graph'
 
 import { initCanvasKit } from '#cli/headless'
 import { SkiaRenderer } from '#core/canvas'

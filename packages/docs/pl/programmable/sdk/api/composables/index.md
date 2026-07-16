@@ -1,11 +1,11 @@
 ---
 title: Kompozyty
-description: Podstawowe API kompozytów w @open-pencil/vue.
+description: Podstawowe API kompozytów w @signal-forge/vue.
 ---
 
 # Kompozyty
 
-Są to główne kompozyty, z których korzysta większość konsumentów `@open-pencil/vue`.
+Są to główne kompozyty, z których korzysta większość konsumentów `@signal-forge/vue`.
 
 ## Kontekst i kanvas
 

@@ -1,4 +1,4 @@
-import { FigmaAPI, SceneGraph } from '@open-pencil/core'
+import { FigmaAPI, SceneGraph } from '@signal-forge/core'
 export function createAPI(): FigmaAPI {
   return new FigmaAPI(new SceneGraph())
 }

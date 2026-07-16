@@ -11,7 +11,7 @@ test('dragging a nested card uses repaint-only position previews', async ({ page
 
   await page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     store.state.zoom = 1
     store.state.panX = 0
     store.state.panY = 0
@@ -48,7 +48,7 @@ test('dragging a nested card uses repaint-only position previews', async ({ page
 
   await page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const originalStoreUpdate = store.updateNode.bind(store)
     const originalGraphUpdate = store.graph.updateNode.bind(store.graph)
     let storeUpdateCount = 0

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { PathwayGlyphType } from '@open-pencil/scene-graph'
+import type { PathwayGlyphType } from '@signal-forge/scene-graph'
 
 const props = defineProps<{
   glyphType: PathwayGlyphType | string

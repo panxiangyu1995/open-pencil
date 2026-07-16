@@ -1,21 +1,21 @@
 import { deflateSync, inflateSync } from 'fflate'
 
-import type { SceneGraph, SceneNode } from '@open-pencil/scene-graph'
-import type { JsonObject } from '@open-pencil/scene-graph/primitives'
+import type { SceneGraph, SceneNode } from '@signal-forge/scene-graph'
+import type { JsonObject } from '@signal-forge/scene-graph/primitives'
 
-// --- Internal copy/paste (OpenPencil ↔ OpenPencil) ---
+// --- Internal copy/paste (SignalForge ↔ SignalForge) ---
 
-export interface OpenPencilClipboardData {
+export interface SignalForgeClipboardData {
   nodes: Array<SceneNode & { children?: SceneNode[] }>
   images: Map<string, Uint8Array>
 }
 
-export function parseOpenPencilClipboard(html: string): OpenPencilClipboardData | null {
-  const match = html.match(/<!--\(openpencil\)(.*?)\(\/openpencil\)-->/s)
+export function parseSignalForgeClipboard(html: string): SignalForgeClipboardData | null {
+  const match = html.match(/<!--\(signalforge\)(.*?)\(\/signalforge\)-->|<!--\(openpencil\)(.*?)\(\/openpencil\)-->/s)
   if (!match) return null
 
   try {
-    const raw = Uint8Array.fromBase64(match[1])
+    const raw = Uint8Array.fromBase64(match[1] ?? match[2])
     let bytes: Uint8Array
     try {
       bytes = inflateSync(raw)
@@ -23,7 +23,7 @@ export function parseOpenPencilClipboard(html: string): OpenPencilClipboardData 
       bytes = raw
     }
     const decoded = JSON.parse(new TextDecoder().decode(bytes))
-    if (decoded.format === 'openpencil/v1' && Array.isArray(decoded.nodes)) {
+    if ((decoded.format === 'signalforge/v1' || decoded.format === 'openpencil/v1') && Array.isArray(decoded.nodes)) {
       restoreTextPictures(decoded.nodes)
       const images = new Map<string, Uint8Array>()
       if (decoded.images && typeof decoded.images === 'object') {
@@ -36,7 +36,7 @@ export function parseOpenPencilClipboard(html: string): OpenPencilClipboardData 
       return { nodes: decoded.nodes, images }
     }
   } catch (e) {
-    console.warn('Failed to parse OpenPencil clipboard data:', e)
+    console.warn('Failed to parse SignalForge clipboard data:', e)
   }
   return null
 }
@@ -68,7 +68,7 @@ function collectImageHashes(nodes: SceneNode[], graph: SceneGraph): Set<string> 
   return hashes
 }
 
-export function buildOpenPencilClipboardHTML(
+export function buildSignalForgeClipboardHTML(
   nodes: SceneNode[],
   graph: SceneGraph,
   textPictureBuilder?: TextPictureBuilder
@@ -81,12 +81,12 @@ export function buildOpenPencilClipboardHTML(
     if (bytes) images[hash] = bytes.toBase64()
   }
   const data = {
-    format: 'openpencil/v1',
+    format: 'signalforge/v1',
     nodes: nodeTree,
     images
   }
   const compressed = deflateSync(new TextEncoder().encode(JSON.stringify(data)))
-  return `<!--(openpencil)${compressed.toBase64()}(/openpencil)-->`
+  return `<!--(signalforge)${compressed.toBase64()}(/signalforge)-->`
 }
 
 function collectNodeTree(

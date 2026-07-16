@@ -1,5 +1,5 @@
-import type { NodeChange } from '@open-pencil/kiwi/fig/codec'
-import type { FigmaDerivedTextGlyph } from '@open-pencil/scene-graph'
+import type { NodeChange } from '@signal-forge/kiwi/fig/codec'
+import type { FigmaDerivedTextGlyph } from '@signal-forge/scene-graph'
 
 export function convertFigmaDerivedTextGlyphs(
   derivedTextData: NodeChange['derivedTextData'],

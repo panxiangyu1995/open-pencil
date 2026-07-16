@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { getPathwayData } from '@open-pencil/scene-graph'
-import { useSelectionState } from '@open-pencil/vue'
+import { getPathwayData } from '@signal-forge/scene-graph'
+import { useSelectionState } from '@signal-forge/vue'
 
 import ArcInspector from './ArcInspector.vue'
 import CompartmentInspector from './CompartmentInspector.vue'

@@ -1,5 +1,5 @@
-import { TRANSPARENT } from '@open-pencil/core/constants'
-import type { Color, Effect } from '@open-pencil/scene-graph'
+import { TRANSPARENT } from '@signal-forge/core/constants'
+import type { Color, Effect } from '@signal-forge/scene-graph'
 
 export function dropShadow(
   ox = 0,

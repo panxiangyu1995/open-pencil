@@ -1,5 +1,5 @@
-import type { PathwayArcType } from '@open-pencil/scene-graph'
-import { updatePathwayData } from '@open-pencil/scene-graph'
+import type { PathwayArcType } from '@signal-forge/scene-graph'
+import { updatePathwayData } from '@signal-forge/scene-graph'
 
 import { defineTool, nodeNotFound } from '#core/tools/schema'
 

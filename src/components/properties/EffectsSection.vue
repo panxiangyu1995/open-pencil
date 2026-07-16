@@ -6,11 +6,11 @@ import IconButton from '@/components/ui/IconButton.vue'
 import PanelSection from '@/components/ui/panel/PanelSection.vue'
 import Tip from '@/components/ui/Tip.vue'
 import PropertyListRoot from '@/components/properties/PropertyListRoot.vue'
-import { vTestId, useEffectsControls, useI18n } from '@open-pencil/vue'
+import { vTestId, useEffectsControls, useI18n } from '@signal-forge/vue'
 
-import { colorToCSS } from '@open-pencil/core/color'
+import { colorToCSS } from '@signal-forge/core/color'
 
-import type { Effect } from '@open-pencil/scene-graph'
+import type { Effect } from '@signal-forge/scene-graph'
 
 const effectsCtx = useEffectsControls()
 const { panels } = useI18n()

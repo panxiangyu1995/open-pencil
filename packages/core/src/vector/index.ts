@@ -19,7 +19,7 @@ import type {
   VectorSegment,
   VectorVertex,
   WindingRule
-} from '@open-pencil/scene-graph'
+} from '@signal-forge/scene-graph'
 
 import { addOpenSegmentsToPath, addSegmentDirected } from './path-helpers'
 export { vectorNetworkToCenterlinePath, fitCircleArc, isClosedThinCrescent } from './centerline'

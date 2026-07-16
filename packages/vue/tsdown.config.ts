@@ -59,9 +59,9 @@ export default defineConfig({
     neverBundle: [
       'vue',
       /^vue\//,
-      '@open-pencil/core',
+      '@signal-forge/core',
       /^@open-pencil\/core\//,
-      '@open-pencil/scene-graph',
+      '@signal-forge/scene-graph',
       /^@open-pencil\/scene-graph\//,
       'canvaskit-wasm',
       'opentype.js',

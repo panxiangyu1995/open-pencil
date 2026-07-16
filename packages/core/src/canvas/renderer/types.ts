@@ -1,6 +1,6 @@
-import type { VectorRegion, VectorVertex } from '@open-pencil/scene-graph'
-import type { Color, Rect, Vector } from '@open-pencil/scene-graph/primitives'
-import type { SnapGuide } from '@open-pencil/scene-graph/snap'
+import type { VectorRegion, VectorVertex } from '@signal-forge/scene-graph'
+import type { Color, Rect, Vector } from '@signal-forge/scene-graph/primitives'
+import type { SnapGuide } from '@signal-forge/scene-graph/snap'
 
 import type { TextEditor } from '#core/text/editor'
 

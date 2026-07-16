@@ -1,5 +1,5 @@
-import type { GeometryPath, SceneGraph, SceneNode, VectorNetwork } from '@open-pencil/scene-graph'
-import { copyGeometryPaths } from '@open-pencil/scene-graph/copy'
+import type { GeometryPath, SceneGraph, SceneNode, VectorNetwork } from '@signal-forge/scene-graph'
+import { copyGeometryPaths } from '@signal-forge/scene-graph/copy'
 
 import { buildClonesMap } from './sync'
 import type { OverrideContext } from './types'

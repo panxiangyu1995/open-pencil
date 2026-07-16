@@ -7,7 +7,7 @@ import {
   rgbaToOkHCL,
   SceneGraph,
   setNodeFillOkHCL
-} from '@open-pencil/core'
+} from '@signal-forge/core'
 
 import { expectDefined, getNodeOrThrow } from '#tests/helpers/assert'
 

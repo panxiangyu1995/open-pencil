@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { PathwayGlyphType, PathwayProcessType, PathwayArcType } from '@open-pencil/scene-graph'
+import type { PathwayGlyphType, PathwayProcessType, PathwayArcType } from '@signal-forge/scene-graph'
 
 import GlyphButton from './GlyphButton.vue'
 import ArcButton from './ArcButton.vue'

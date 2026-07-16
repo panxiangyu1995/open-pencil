@@ -1,13 +1,13 @@
 # MCP Server
 
-OpenPencil includes an MCP (Model Context Protocol) server that lets AI coding tools — Claude Code, Cursor, Windsurf, etc. — read and modify `.fig` files headlessly.
+SignalForge includes an MCP (Model Context Protocol) server that lets AI coding tools — Claude Code, Cursor, Windsurf, etc. — read and modify `.fig` files headlessly.
 
 Two transports: **stdio** for MCP clients, **HTTP** for everything else.
 
 ## Install
 
 ```sh
-npm install -g @open-pencil/mcp
+npm install -g @signal-forge/mcp
 ```
 
 ## Stdio (Claude Code, Cursor, etc.)
@@ -17,8 +17,8 @@ Add to your MCP config (e.g. `~/.claude/settings.json` or `.cursor/mcp.json`):
 ```json
 {
   "mcpServers": {
-    "open-pencil": {
-      "command": "openpencil-mcp"
+    "signal-forge": {
+      "command": "signalforge-mcp"
     }
   }
 }
@@ -30,9 +30,9 @@ Or run from source without installing:
 ```json [Bun]
 {
   "mcpServers": {
-    "open-pencil": {
+    "signal-forge": {
       "command": "bun",
-      "args": ["/path/to/open-pencil/packages/mcp/src/stdio.ts"]
+      "args": ["/path/to/signal-forge/packages/mcp/src/stdio.ts"]
     }
   }
 }
@@ -40,9 +40,9 @@ Or run from source without installing:
 ```json [Node.js]
 {
   "mcpServers": {
-    "open-pencil": {
+    "signal-forge": {
       "command": "npx",
-      "args": ["tsx", "/path/to/open-pencil/packages/mcp/src/stdio.ts"]
+      "args": ["tsx", "/path/to/signal-forge/packages/mcp/src/stdio.ts"]
     }
   }
 }
@@ -54,7 +54,7 @@ Or run from source without installing:
 For browser extensions, scripts, CI, or any HTTP client:
 
 ```sh
-openpencil-mcp-http
+signalforge-mcp-http
 ```
 
 Or from source: `bun packages/mcp/src/index.ts` / `npx tsx packages/mcp/src/index.ts`
@@ -83,7 +83,7 @@ Server starts on port 7600 (override with `PORT` env var). Endpoints:
 
 ## AI Agent Skill
 
-Teach your AI coding agent to use OpenPencil tools:
+Teach your AI coding agent to use SignalForge tools:
 
 ```sh
 npx skills add open-pencil/skills@open-pencil

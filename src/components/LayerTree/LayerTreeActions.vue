@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useI18n } from '@open-pencil/vue'
+import { useI18n } from '@signal-forge/vue'
 import Tip from '../ui/Tip.vue'
 
-import type { LayerNode } from '@open-pencil/vue'
+import type { LayerNode } from '@signal-forge/vue'
 
 const { node, selected } = defineProps<{
   node: LayerNode

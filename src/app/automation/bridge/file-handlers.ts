@@ -1,4 +1,4 @@
-import { FigmaAPI } from '@open-pencil/core/figma-api'
+import { FigmaAPI } from '@signal-forge/core/figma-api'
 
 import {
   resolveAutomationTarget,

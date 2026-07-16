@@ -1,7 +1,7 @@
-import type { Editor } from '@open-pencil/core/editor'
-import { resolveNodeLayoutDirection } from '@open-pencil/core/text'
-import type { SceneNode } from '@open-pencil/scene-graph'
-import type { Vector } from '@open-pencil/scene-graph/primitives'
+import type { Editor } from '@signal-forge/core/editor'
+import { resolveNodeLayoutDirection } from '@signal-forge/core/text'
+import type { SceneNode } from '@signal-forge/scene-graph'
+import type { Vector } from '@signal-forge/scene-graph/primitives'
 
 import type { DragMove } from '#vue/shared/input/types'
 

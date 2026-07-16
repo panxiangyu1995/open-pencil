@@ -1,6 +1,6 @@
 import { orderBy } from 'es-toolkit/array'
 
-import type { Color } from '@open-pencil/scene-graph/primitives'
+import type { Color } from '@signal-forge/scene-graph/primitives'
 
 import { colorDistance, colorToHex } from '#core/color'
 import type { ColorUsageEntry } from '#core/color/analysis'

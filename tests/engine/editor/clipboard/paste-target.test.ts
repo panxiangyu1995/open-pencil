@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'bun:test'
 
-import { createEditor, type EditorState } from '@open-pencil/core/editor'
-import { SceneGraph } from '@open-pencil/scene-graph'
+import { createEditor, type EditorState } from '@signal-forge/core/editor'
+import { SceneGraph } from '@signal-forge/scene-graph'
 
 import { resolvePasteTarget } from '#core/editor/clipboard/paste-target'
 

@@ -3,7 +3,7 @@ import {
   buildFigKiwi,
   decompressFigKiwiData,
   parseFigKiwiChunks
-} from '@open-pencil/kiwi/fig/container'
+} from '@signal-forge/kiwi/fig/container'
 
 export interface FigDocumentSource {
   readonly bytes?: Uint8Array
@@ -66,6 +66,6 @@ export function writeFigContainer(
 
 export function assertFigPackageReady(): void {
   throw new Error(
-    '@open-pencil/fig currently exposes low-level container APIs; use @open-pencil/core for SceneGraph .fig read/write APIs for now.'
+    '@signal-forge/fig currently exposes low-level container APIs; use @signal-forge/core for SceneGraph .fig read/write APIs for now.'
   )
 }

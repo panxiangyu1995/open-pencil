@@ -8,7 +8,7 @@ import {
   PATHWAY_PLUGIN_ID,
   PATHWAY_PLUGIN_KEY,
   type PathwayNodeData
-} from '@open-pencil/scene-graph'
+} from '@signal-forge/scene-graph'
 
 function pageId(graph: SceneGraph) {
   return graph.getPages()[0].id

@@ -1,6 +1,6 @@
 ---
 title: Nawigacja po płótnie
-description: Przesuwanie, powiększanie i narzędzie rączka w OpenPencil.
+description: Przesuwanie, powiększanie i narzędzie rączka w SignalForge.
 ---
 
 # Nawigacja po płótnie

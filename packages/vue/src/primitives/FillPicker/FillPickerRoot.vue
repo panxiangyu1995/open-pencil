@@ -4,7 +4,7 @@ import { PopoverContent, PopoverPortal, PopoverRoot, PopoverTrigger } from 'reka
 
 import { useFillPicker } from '#vue/primitives/FillPicker/useFillPicker'
 
-import type { Fill } from '@open-pencil/scene-graph'
+import type { Fill } from '@signal-forge/scene-graph'
 
 export interface FillPickerUI {
   content?: string

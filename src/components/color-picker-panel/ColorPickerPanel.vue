@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { Color } from '@open-pencil/scene-graph/primitives'
-import type { OkHCLControls } from '@open-pencil/vue'
+import type { Color } from '@signal-forge/scene-graph/primitives'
+import type { OkHCLControls } from '@signal-forge/vue'
 
 import ColorAreaControl from '@/components/color-picker-panel/ColorAreaControl.vue'
 import FormatControls from '@/components/color-picker-panel/FormatControls.vue'

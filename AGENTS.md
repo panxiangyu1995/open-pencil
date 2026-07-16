@@ -19,9 +19,9 @@
 | **YAGNI** | You Aren't Gonna Need It | 只实现当前所需功能，不做"未来可能用得到"的预留设计 |
 
 ---
-# BioPath (OpenPencil)
+# BioPath (SignalForge)
 
-Vue 3 + CanvasKit (Skia WASM) + Yoga WASM **AI-native biological signaling pathway diagram editor**. Built on the OpenPencil design editor foundation, repurposed for SBGN-compliant pathway diagram generation via AI chat and MCP tools. Tauri v2 desktop, also runs in browser.
+Vue 3 + CanvasKit (Skia WASM) + Yoga WASM **AI-native biological signaling pathway diagram editor**. Built on the SignalForge design editor foundation, repurposed for SBGN-compliant pathway diagram generation via AI chat and MCP tools. Tauri v2 desktop, also runs in browser.
 
 **PRD:** `packages/docs/development/biopath-prd.md` — full product requirements, SBGN glyph vocabulary, AI tool design, and implementation phases.
 **Roadmap:** `packages/docs/development/roadmap.md` tracks product direction. This file keeps agent-facing architecture, conventions, and commands; detailed public docs live under `packages/docs/**`.
@@ -30,18 +30,18 @@ Vue 3 + CanvasKit (Skia WASM) + Yoga WASM **AI-native biological signaling pathw
 
 Bun workspace packages:
 
-- `packages/scene-graph` — `@open-pencil/scene-graph`: SceneGraph, node types, copy/snap/undo helpers, variables, instances, hit testing. Framework-agnostic.
-- `packages/pen` — `@open-pencil/pen`: Pen/vector editing helpers shared by core/editor surfaces.
-- `packages/kiwi` — `@open-pencil/kiwi`: pure Kiwi schema/runtime/protocol package. Owns low-level Figma Kiwi codec/container/parse helpers and stays SceneGraph-agnostic.
-- `packages/fig` — `@open-pencil/fig`: publishable `.fig` package shell and low-level smoke/test boundary. Production SceneGraph `.fig` policy still lives mostly in core while this package grows.
-- `packages/core` — `@open-pencil/core`: renderer, layout, editor core, Figma API, tools, clipboard, vector conversion, and app/CLI-facing document I/O. Depends on scene-graph/pen/kiwi but keeps browser DOM out of core. **Pathway domain:** `pathway/` subfolder owns SBGN glyph rendering, arc routing, layout algorithms, AI pathway tools, and SBGN-ML I/O.
-- `packages/dom-css` — `@open-pencil/dom-css`: DOM/CSS projection layer for HTML/CSS/JSX/Tailwind compatibility. Owns DesignDOM types and browser/headless CSS runtime adapters; keeps DOM/CSS parser dependencies out of core.
-- `packages/vue` — `@open-pencil/vue`: headless Vue 3 SDK (Reka UI-style) for building custom OpenPencil-powered editor shells and embedded editing surfaces. Renderless components and composables. The app is one consumer of the SDK.
-- `packages/cli` — `@open-pencil/cli`: headless CLI for .fig inspection, export, linting. Uses `citty` + `agentfmt`.
-- `packages/mcp` — `@open-pencil/mcp`: MCP server for AI coding tools. Stdio + HTTP (Hono). Reuses core tools.
-- `packages/docs` — `@open-pencil/docs`: published VitePress documentation site. Run with `bun run docs:dev`.
+- `packages/scene-graph` — `@signal-forge/scene-graph`: SceneGraph, node types, copy/snap/undo helpers, variables, instances, hit testing. Framework-agnostic.
+- `packages/pen` — `@signal-forge/pen`: Pen/vector editing helpers shared by core/editor surfaces.
+- `packages/kiwi` — `@signal-forge/kiwi`: pure Kiwi schema/runtime/protocol package. Owns low-level Figma Kiwi codec/container/parse helpers and stays SceneGraph-agnostic.
+- `packages/fig` — `@signal-forge/fig`: publishable `.fig` package shell and low-level smoke/test boundary. Production SceneGraph `.fig` policy still lives mostly in core while this package grows.
+- `packages/core` — `@signal-forge/core`: renderer, layout, editor core, Figma API, tools, clipboard, vector conversion, and app/CLI-facing document I/O. Depends on scene-graph/pen/kiwi but keeps browser DOM out of core. **Pathway domain:** `pathway/` subfolder owns SBGN glyph rendering, arc routing, layout algorithms, AI pathway tools, and SBGN-ML I/O.
+- `packages/dom-css` — `@signal-forge/dom-css`: DOM/CSS projection layer for HTML/CSS/JSX/Tailwind compatibility. Owns DesignDOM types and browser/headless CSS runtime adapters; keeps DOM/CSS parser dependencies out of core.
+- `packages/vue` — `@signal-forge/vue`: headless Vue 3 SDK (Reka UI-style) for building custom SignalForge-powered editor shells and embedded editing surfaces. Renderless components and composables. The app is one consumer of the SDK.
+- `packages/cli` — `@signal-forge/cli`: headless CLI for .fig inspection, export, linting. Uses `citty` + `agentfmt`.
+- `packages/mcp` — `@signal-forge/mcp`: MCP server for AI coding tools. Stdio + HTTP (Hono). Reuses core tools.
+- `packages/docs` — `@signal-forge/docs`: published VitePress documentation site. Run with `bun run docs:dev`.
 
-The root app (`src/`) is the Tauri/Vite desktop editor. App-specific editor, document, AI, collaboration, shell, tabs, demo, and automation code lives under `src/app/*`. The app consumes scene graph primitives from `@open-pencil/scene-graph`, editor/rendering services through targeted `@open-pencil/core` subpath exports, and `@open-pencil/vue` through the public Vue SDK entrypoint.
+The root app (`src/`) is the Tauri/Vite desktop editor. App-specific editor, document, AI, collaboration, shell, tabs, demo, and automation code lives under `src/app/*`. The app consumes scene graph primitives from `@signal-forge/scene-graph`, editor/rendering services through targeted `@signal-forge/core` subpath exports, and `@signal-forge/vue` through the public Vue SDK entrypoint.
 
 **Pathway app domain:** `src/app/pathway/` owns the pathway editor session, knowledge base integration (Reactome, Pathway Commons), and pathway-specific document I/O. `src/components/pathway/` owns pathway-specific UI (glyph palette, arc type selector, glyph inspector, data overlay panel).
 
@@ -49,12 +49,12 @@ The root app (`src/`) is the Tauri/Vite desktop editor. App-specific editor, doc
 
 Use public package exports across package/app boundaries. Do not import workspace package internals from app code.
 
-- `@open-pencil/scene-graph` — SceneGraph, node types, primitives, copy/snap/undo, instance helpers, variable helpers, vector-network types.
-- `@open-pencil/core` — broad compatibility barrel for editor/rendering/tooling APIs.
-- Common targeted core subpaths keep imports smaller and dependency intent clearer: `@open-pencil/core/color`, `/text`, `/vector`, `/figma-api`, `/icons`, `/canvas`, `/design-jsx`, `/editor`, `/tools`, `/kiwi`, `/clipboard`, `/rpc`, `/lint`, `/profiler`, `/io`, `/canvaskit`, `/layout`, `/pathway`.
-- Use `@open-pencil/kiwi` for low-level Kiwi/FIG schema-runtime, codec, container, GUID, and parse helpers.
+- `@signal-forge/scene-graph` — SceneGraph, node types, primitives, copy/snap/undo, instance helpers, variable helpers, vector-network types.
+- `@signal-forge/core` — broad compatibility barrel for editor/rendering/tooling APIs.
+- Common targeted core subpaths keep imports smaller and dependency intent clearer: `@signal-forge/core/color`, `/text`, `/vector`, `/figma-api`, `/icons`, `/canvas`, `/design-jsx`, `/editor`, `/tools`, `/kiwi`, `/clipboard`, `/rpc`, `/lint`, `/profiler`, `/io`, `/canvaskit`, `/layout`, `/pathway`.
+- Use `@signal-forge/kiwi` for low-level Kiwi/FIG schema-runtime, codec, container, GUID, and parse helpers.
 
-CanvasKit runtime loading is centralized in `@open-pencil/core/canvaskit` for app/browser use. Headless raster export may dynamically load `canvaskit-wasm/full`; elsewhere prefer `import type` and pass the CanvasKit instance in.
+CanvasKit runtime loading is centralized in `@signal-forge/core/canvaskit` for app/browser use. Headless raster export may dynamically load `canvaskit-wasm/full`; elsewhere prefer `import type` and pass the CanvasKit instance in.
 
 ### Editor architecture
 
@@ -72,7 +72,7 @@ The app editor session (`src/app/editor/session/create.ts`) is a Vue wrapper aro
 
 Headless SDK fields compose variable/token binding through `BindingProvider` and the `BindableValue` primitives in `packages/vue/src/controls/binding-provider/` and `packages/vue/src/primitives/BindableValue/`. Keep numeric interaction in `NumberField`; providers own binding lookup, mutation, and undo batching.
 
-Property-panel anatomy in `packages/vue/src/primitives/PropertySection/`, `SegmentedControl/`, and `PropertyList/` is controlled and editor-agnostic. Connect PropertyList events to OpenPencil selection and undo through `useEditorPropertyList()` or an app adapter; never call `useEditor()` from these primitives.
+Property-panel anatomy in `packages/vue/src/primitives/PropertySection/`, `SegmentedControl/`, and `PropertyList/` is controlled and editor-agnostic. Connect PropertyList events to SignalForge selection and undo through `useEditorPropertyList()` or an app adapter; never call `useEditor()` from these primitives.
 
 ## BioPath: SBGN Pathway Domain
 
@@ -185,7 +185,7 @@ After AI generation, validate the diagram against SBGN PD rules:
 - `bun run test:unit` — engine/unit tests
 - `bun run test` — Playwright E2E and visual regression tests
 - `bun run tauri dev` — desktop app with hot reload
-- `bun open-pencil --help` — list CLI commands. Common commands include `info`, `tree`, `find`, `node`, `pages`, `variables`, `export`, `import`, `convert`, `lint`, `query`, `selection`, `formats`, `analyze ...`, and `eval` for Figma Plugin API scripting.
+- `bun signalforge --help` — list CLI commands. Common commands include `info`, `tree`, `find`, `node`, `pages`, `variables`, `export`, `import`, `convert`, `lint`, `query`, `selection`, `formats`, `analyze ...`, and `eval` for Figma Plugin API scripting.
 
 ## Releases & CI
 
@@ -215,7 +215,7 @@ Production Cloudflare Pages deploys are intentionally release/manual only: `app.
 - `README.md` — user-facing: features, getting started, CLI, project structure. No implementation details.
 - `AGENTS.md` (this file) — contributor/agent reference: architecture, conventions, how to release.
 - `packages/docs/development/biopath-prd.md` — BioPath PRD: product requirements, SBGN glyph vocabulary, AI tool design, implementation phases.
-- `packages/docs/` — VitePress site deployed at `openpencil.dev`. User guide, SDK, automation, reference, and development docs. Do not create English placeholder copies under locale directories; until a real translation exists, localized navigation should link to the canonical English page.
+- `packages/docs/` — VitePress site deployed at `signalforge.dev`. User guide, SDK, automation, reference, and development docs. Do not create English placeholder copies under locale directories; until a real translation exists, localized navigation should link to the canonical English page.
 
 When adding features, update `CHANGELOG.md` (Unreleased section) and `README.md` (if user-facing). Update `AGENTS.md` when architecture or conventions change. Do not put speculative/internal implementation plans in `packages/docs/**`; VitePress docs are published. Keep temporary plans in ignored `scratch/` or distill durable public direction into the canonical roadmap.
 
@@ -275,7 +275,7 @@ Keep this section light; implementation details move often.
 
 ### File and folder naming
 
-OpenPencil uses domain namespaces rather than full Feature-Sliced Design ceremony:
+SignalForge uses domain namespaces rather than full Feature-Sliced Design ceremony:
 
 - App services/state/integration live under `src/app/**`; route/layout views live under `src/views/**`; app UI lives under `src/components/**`.
 - `src/components/ui/**` is the shared app design-system layer. `packages/vue/src/primitives/**` is the headless SDK primitive layer. App wrappers around SDK primitives should stay in app component domains and only move to `ui/**` when genuinely generic.
@@ -305,8 +305,8 @@ Use `scripts/` only for tiny compatibility entrypoint shims that import `../tool
 - No `any` — use proper types, generics, declaration merging
 - No `!` non-null assertions — use guards, `?.`, `??`
 - No `Math.random()` — use `crypto.getRandomValues()` everywhere
-- No inline type definitions when a named type exists — use `Color` not `{ r: number; g: number; b: number; a: number }`, use `Vector` not `{ x: number; y: number }`, and import `SceneNode` / `Effect` / `Fill` / `Stroke` from `@open-pencil/scene-graph` instead of re-spelling their shapes.
-- Shared geometry/color primitives live in `packages/scene-graph/src/primitives.ts`; scene/node domain types live in `packages/scene-graph/src/types.ts` and are exported from `@open-pencil/scene-graph`.
+- No inline type definitions when a named type exists — use `Color` not `{ r: number; g: number; b: number; a: number }`, use `Vector` not `{ x: number; y: number }`, and import `SceneNode` / `Effect` / `Fill` / `Stroke` from `@signal-forge/scene-graph` instead of re-spelling their shapes.
+- Shared geometry/color primitives live in `packages/scene-graph/src/primitives.ts`; scene/node domain types live in `packages/scene-graph/src/types.ts` and are exported from `@signal-forge/scene-graph`.
 - Window API extensions (showOpenFilePicker, queryLocalFonts) live in `src/global.d.ts` and `packages/core/src/global.d.ts`
 - Use `culori` for color conversions — don't reimplement parseColor/colorToRgba
 - Use `@vueuse/core` hooks — prefer higher-level composables (`useBreakpoints`, `useEventListener`, `onClickOutside`, etc.) over raw APIs (`useMediaQuery`, manual `addEventListener`)
@@ -361,7 +361,7 @@ Self-review checklist:
 - Section/frame title text never scales — render at fixed font size, ellipsize to fit
 - Rulers are rendered on the canvas (not DOM), with selection range badges that don't overlap tick numbers
 - Remote cursors: Figma-style colored arrows with white border + name pill, rendered in screen space
-- Pixel-affecting renderer features need committed visual coverage, not just mock/geometry assertions. Add or update a Playwright canvas snapshot for changes to fills, gradients, images, blend modes, masks, boolean geometry, corners, strokes, shadows, blur, text rendering, or demo showcase scenes. Use targeted snapshot updates such as `bunx playwright test tests/e2e/canvas/renderer-visuals.spec.ts --project=openpencil --update-snapshots` and then rerun the same test without `--update-snapshots`.
+- Pixel-affecting renderer features need committed visual coverage, not just mock/geometry assertions. Add or update a Playwright canvas snapshot for changes to fills, gradients, images, blend modes, masks, boolean geometry, corners, strokes, shadows, blur, text rendering, or demo showcase scenes. Use targeted snapshot updates such as `bunx playwright test tests/e2e/canvas/renderer-visuals.spec.ts --project=signalforge --update-snapshots` and then rerun the same test without `--update-snapshots`.
 
 ## Scene graph
 
@@ -378,7 +378,7 @@ Self-review checklist:
 - Instance children map to component children via `componentId` for 1:1 sync
 - Override key format: `"childId:propName"` in instance's `overrides` record
 - Editing a component must propagate to instances through the editor/component sync path; do not hand-copy instance fields in app UI code.
-- Instance property copying lives in `@open-pencil/scene-graph` helpers and uses structured copies for nested values.
+- Instance property copying lives in `@signal-forge/scene-graph` helpers and uses structured copies for nested values.
 
 ## Layout
 
@@ -401,7 +401,7 @@ Self-review checklist:
 - Vue UI styling APIs follow the Nuxt UI architecture: static Tailwind Variants themes live under `src/theme/**` with `slots`, `variants`, `compoundVariants`, and `defaultVariants`; components resolve the theme with `tv()` and merge per-instance `ui` overrides at each rendered slot. Single-root components expose `class` rather than a one-slot `ui` object. Do not add one-off `fooClass`, `barClass`, `emptyActionClass`, etc. props. Use `UI` casing in type names (`SelectUI`, not `SelectUi`).
 - Storybook is the internal component-state workshop (`bun run storybook`, `bun run build-storybook`), while VitePress is the canonical public SDK documentation. Colocate `*.stories.ts` with app UI components and use toolbar themes for light/dark states instead of adding test-only routes or showcase pages to the app.
 - Reuse colocated Vue demo components between Storybook and VitePress rather than maintaining separate examples. Style shared demos with Tailwind; the docs theme scans Vue SDK primitive demos through its dedicated Tailwind source.
-- Public component API tables are generated from Vue source and JSDoc with `vue-component-meta`; do not manually duplicate props, events, slots, or exposed APIs in Markdown. SDK examples are processed by VitePress Twoslash and must resolve against the public `@open-pencil/vue` API.
+- Public component API tables are generated from Vue source and JSDoc with `vue-component-meta`; do not manually duplicate props, events, slots, or exposed APIs in Markdown. SDK examples are processed by VitePress Twoslash and must resolve against the public `@signal-forge/vue` API.
 - Do not pass imperative setters/actions through slots as `:set-*`, `:update-*`, `:request-*`, `:toggle-*`, etc. unless the component is explicitly a renderless primitive whose whole contract is slot actions. Prefer `v-model`, emitted events, normal component props, or owned default UI. For DOM refs/focus, use VueUse (`templateRef`, `unrefElement`, `useFocus`, etc.) instead of ref callback plumbing through slots.
 - App wrappers around SDK primitives should compose a single `ui` object from shared UI helpers (`useSelectUI`, `usePopoverUI`, etc.) rather than bypassing the design system with raw Tailwind strings spread across multiple props.
 - Editor commands share `packages/vue/src/editor/commands/registry.ts` as the canonical source for shortcut display tokens, keyboard bindings, and context-menu test IDs. Store portable shortcuts such as `MOD+D`, `MOD+SHIFT+H`, and `MOD+ALT+K`; format them with `formatShortcut()` at render time so macOS shows `⌘`/`⌥` and Windows/Linux show `Ctrl`/`Alt`.
@@ -426,10 +426,10 @@ Self-review checklist:
 - **SBGN-ML** is the primary pathway interoperability format. Import/export lives in `packages/core/src/pathway/io/`. Full round-trip fidelity with the SBGN ecosystem (Newt, CellDesigner, PathVisio) is required. Validate against libSBGN reference on every export.
 - **`.bio-path`** is the native pathway document format, extending the existing document model with pathway-specific fields (glyph types, arc types, state variables, compartment refs, data overlay). Always embeds a valid SBGN-ML subset for interoperability.
 - Import formats by priority: SBGN-ML (P0), CellDesigner SBML (P1), GPML (P1), KGML (P2), BioPAX (P2).
-- Vector data uses reverse-engineered `vectorNetworkBlob` binary format — encoder/decoder in `packages/core/src/vector/` and scene-graph vector-network types in `@open-pencil/scene-graph`.
+- Vector data uses reverse-engineered `vectorNetworkBlob` binary format — encoder/decoder in `packages/core/src/vector/` and scene-graph vector-network types in `@signal-forge/scene-graph`.
 - `showOpenFilePicker` / `showSaveFilePicker` are File System Access API (Chrome/Edge), not Tauri-only; code must keep browser fallbacks.
 - Safari save: no File System Access API → use an `<a>` download fallback with deferred `revokeObjectURL`. SafariBanner warns users about limitations.
-- Tauri detection: use `IS_TAURI` from `@open-pencil/core/constants` / `src/constants.ts`; don't inline `__TAURI_INTERNALS__` checks.
+- Tauri detection: use `IS_TAURI` from `@signal-forge/core/constants` / `src/constants.ts`; don't inline `__TAURI_INTERNALS__` checks.
 - `.fig` export compression uses fflate in browser paths and Tauri Rust commands where available.
 - Test `.fig` round-trip by exporting and reimporting in Figma when changing file-format behavior.
 - Test fixtures (`tests/fixtures/*.fig`) are Git LFS. If no `.fig` fixtures changed, `git push --no-verify` can skip the slow LFS pre-push hook; use regular `git push` when fixtures changed.
@@ -445,7 +445,7 @@ Self-review checklist:
 - `bun publish` from package dirs — resolves `workspace:*` → actual versions
 - Public packages publish built `dist/` output, not runtime TypeScript entrypoints
 - Public workspace packages build before publishing; most use tsdown, and split packages may also run `tsc --emitDeclarationOnly` plus dist smoke checks. Keep release tooling package lists in sync with `.github/workflows/build.yml`.
-- CLI publishes a Node-compatible `bin/openpencil.js` wrapper; do not point package `bin` entries at TypeScript source
+- CLI publishes a Node-compatible `bin/signalforge.js` wrapper; do not point package `bin` entries at TypeScript source
 
 ## Reference
 

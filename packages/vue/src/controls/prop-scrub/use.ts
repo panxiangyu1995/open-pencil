@@ -1,5 +1,5 @@
-import type { Editor } from '@open-pencil/core/editor'
-import type { SceneNode } from '@open-pencil/scene-graph'
+import type { Editor } from '@signal-forge/core/editor'
+import type { SceneNode } from '@signal-forge/scene-graph'
 
 export function usePropScrub(editor: Editor) {
   const previousValues = new Map<string, Record<string, number | string>>()

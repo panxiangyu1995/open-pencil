@@ -2,7 +2,7 @@
 
 ## Попробовать онлайн
 
-OpenPencil работает в браузере — установка не требуется. Откройте [app.openpencil.dev](https://app.openpencil.dev), чтобы начать проектирование.
+SignalForge работает в браузере — установка не требуется. Откройте [app.signalforge.dev](https://app.signalforge.dev), чтобы начать проектирование.
 
 ## Скачать десктоп-приложение
 
@@ -36,7 +36,7 @@ brew install open-pencil/tap/open-pencil
 
 ```sh
 git clone https://github.com/open-pencil/open-pencil.git
-cd open-pencil
+cd signal-forge
 bun install
 ```
 

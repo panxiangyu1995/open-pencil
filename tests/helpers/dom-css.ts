@@ -1,5 +1,5 @@
-import { colorToCSS } from '@open-pencil/core/color'
-import type { DesignDocument } from '@open-pencil/dom-css'
+import { colorToCSS } from '@signal-forge/core/color'
+import type { DesignDocument } from '@signal-forge/dom-css'
 
 export const DOM_CSS_COLORS = {
   white: colorToCSS({ r: 1, g: 1, b: 1, a: 1 }),
@@ -23,14 +23,14 @@ export const simpleCardDocument: DesignDocument = {
       type: 'element',
       tagName: 'div',
       attrs: { class: 'card', 'data-id': 'node-1' },
-      children: [{ type: 'text', text: 'OpenPencil' }]
+      children: [{ type: 'text', text: 'SignalForge' }]
     }
   ]
 }
 
 export const cssCardHTML = `
   <article class="card">
-    <h1 class="title">OpenPencil</h1>
+    <h1 class="title">SignalForge</h1>
     <p class="description">Design with code-shaped CSS.</p>
   </article>
 `
@@ -88,7 +88,7 @@ export const computedCardDocument: DesignDocument = {
             'font-weight': '700',
             'line-height': '32px'
           },
-          children: [{ type: 'text', text: 'OpenPencil' }]
+          children: [{ type: 'text', text: 'SignalForge' }]
         }
       ]
     }
@@ -124,7 +124,7 @@ export const tailwindButtonClasses = [
 export const fixtureMatrixHTML = `
   <section class="fixture-shell">
     <nav class="navbar">
-      <span class="brand">OpenPencil</span>
+      <span class="brand">SignalForge</span>
       <div class="nav-actions">
         <span class="nav-item">Docs</span>
         <span class="badge">Beta</span>
@@ -133,7 +133,7 @@ export const fixtureMatrixHTML = `
     <dialog class="dialog" open>
       <h2 class="dialog-title">Import from web</h2>
       <p class="dialog-description">Convert HTML and CSS into editable design layers.</p>
-      <input class="input" value="https://openpencil.dev" />
+      <input class="input" value="https://signalforge.dev" />
       <button class="primary-button">Create design</button>
     </dialog>
   </section>

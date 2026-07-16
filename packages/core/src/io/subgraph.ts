@@ -1,4 +1,4 @@
-import { SceneGraph } from '@open-pencil/scene-graph'
+import { SceneGraph } from '@signal-forge/scene-graph'
 
 import type { ExportTarget } from './types'
 

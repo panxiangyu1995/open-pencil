@@ -1,10 +1,10 @@
 import { computed } from 'vue'
 import type { ComputedRef } from 'vue'
 
-import type { Editor } from '@open-pencil/core/editor'
-import { BUILTIN_IO_FORMATS, IORegistry } from '@open-pencil/core/io'
-import { MAX_EXPORT_SCALE, MIN_EXPORT_SCALE, clampExportScale } from '@open-pencil/scene-graph'
-import type { ExportFormatId, ExportSetting, PluginDataEntry } from '@open-pencil/scene-graph'
+import type { Editor } from '@signal-forge/core/editor'
+import { BUILTIN_IO_FORMATS, IORegistry } from '@signal-forge/core/io'
+import { MAX_EXPORT_SCALE, MIN_EXPORT_SCALE, clampExportScale } from '@signal-forge/scene-graph'
+import type { ExportFormatId, ExportSetting, PluginDataEntry } from '@signal-forge/scene-graph'
 
 import { useSceneComputed } from '#vue/internal/scene-computed/use'
 
@@ -13,7 +13,8 @@ export const EXPORT_FORMATS: ExportFormatId[] = ['png', 'jpg', 'webp', 'svg', 'p
 
 export type ExportPanelTarget = 'selection' | 'page'
 
-const OPEN_PENCIL_PLUGIN_ID = 'open-pencil'
+const SIGNAL_FORGE_PLUGIN_ID = 'signal-forge'
+const LEGACY_PLUGIN_ID = 'open-pencil'
 const EXPORT_SETTINGS_PLUGIN_KEY = 'exportSettings'
 
 // Re-exported from core so the UI and the .fig file-format boundary share one
@@ -109,13 +110,13 @@ function syncExportSettingsPluginData(
 ): PluginDataEntry[] {
   const withoutExportSettings = pluginData.filter(
     (entry) =>
-      !(entry.pluginId === OPEN_PENCIL_PLUGIN_ID && entry.key === EXPORT_SETTINGS_PLUGIN_KEY)
+      !((entry.pluginId === SIGNAL_FORGE_PLUGIN_ID || entry.pluginId === LEGACY_PLUGIN_ID) && entry.key === EXPORT_SETTINGS_PLUGIN_KEY)
   )
   if (settings.length === 0) return withoutExportSettings
   return [
     ...withoutExportSettings,
     {
-      pluginId: OPEN_PENCIL_PLUGIN_ID,
+      pluginId: SIGNAL_FORGE_PLUGIN_ID,
       key: EXPORT_SETTINGS_PLUGIN_KEY,
       value: JSON.stringify(settings)
     }

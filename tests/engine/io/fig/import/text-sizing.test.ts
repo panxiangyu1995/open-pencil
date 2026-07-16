@@ -1,8 +1,8 @@
 import { describe, expect, test } from 'bun:test'
 
-import type { Vector } from '@open-pencil/core'
-import { importNodeChanges } from '@open-pencil/core/kiwi'
-import type { NodeChange } from '@open-pencil/kiwi/fig/codec'
+import type { Vector } from '@signal-forge/core'
+import { importNodeChanges } from '@signal-forge/core/kiwi'
+import type { NodeChange } from '@signal-forge/kiwi/fig/codec'
 
 import { getNodeOrThrow } from '#tests/helpers/assert'
 

@@ -6,8 +6,8 @@ export type {
   EditorEventName,
   Tool,
   EditorToolDef
-} from '@open-pencil/core/editor'
-export { createEditor, EDITOR_TOOLS, TOOL_SHORTCUTS } from '@open-pencil/core/editor'
+} from '@signal-forge/core/editor'
+export { createEditor, EDITOR_TOOLS, TOOL_SHORTCUTS } from '@signal-forge/core/editor'
 
 /**
  * Public editor-context API for the Vue SDK.
@@ -223,7 +223,7 @@ export type {
 export {
   provideBindingProvider,
   useBindingProvider,
-  useOpenPencilBindingProvider,
+  useSignalForgeBindingProvider,
   useNumberBindingProvider
 } from '#vue/controls/binding-provider'
 export type {
@@ -232,7 +232,7 @@ export type {
   BindingState,
   BindingTarget,
   BoundEditPolicy,
-  OpenPencilBindingProviderOptions
+  SignalForgeBindingProviderOptions
 } from '#vue/controls/binding-provider'
 export {
   NumberFieldRoot,

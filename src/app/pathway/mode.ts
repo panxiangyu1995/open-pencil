@@ -1,6 +1,6 @@
 import { computed } from 'vue'
 
-import type { NodeType } from '@open-pencil/scene-graph'
+import type { NodeType } from '@signal-forge/scene-graph'
 
 import { useEditorStore } from '@/app/editor/active-store'
 

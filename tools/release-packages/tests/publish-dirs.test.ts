@@ -10,17 +10,17 @@ import {
 } from '../src/publish-dirs'
 
 async function fixtureRoot() {
-  const root = join(tmpdir(), `open-pencil-release-packages-${crypto.randomUUID()}`)
+  const root = join(tmpdir(), `signal-forge-release-packages-${crypto.randomUUID()}`)
   await mkdir(join(root, 'packages/example/dist'), { recursive: true })
   await writeFile(join(root, 'packages/example/dist/index.js'), 'export {}\n')
   await writeFile(
     join(root, 'packages/example/package.json'),
     JSON.stringify(
       {
-        name: '@open-pencil/example',
+        name: '@signal-forge/example',
         version: '1.0.0',
         scripts: { build: 'tsdown' },
-        dependencies: { '@open-pencil/core': 'workspace:*', zod: '^4.0.0' },
+        dependencies: { '@signal-forge/core': 'workspace:*', zod: '^4.0.0' },
         devDependencies: { typescript: '^5.0.0' },
         publishConfig: { access: 'public', main: './dist/index.js', types: './dist/index.d.ts' }
       },
@@ -35,9 +35,9 @@ describe('publishPackageJSON', () => {
   test('rewrites workspace dependencies and strips private build fields', () => {
     const json = publishPackageJSON(
       {
-        name: '@open-pencil/example',
+        name: '@signal-forge/example',
         scripts: { build: 'tsdown' },
-        dependencies: { '@open-pencil/core': 'workspace:*', zod: '^4.0.0' },
+        dependencies: { '@signal-forge/core': 'workspace:*', zod: '^4.0.0' },
         devDependencies: { typescript: '^5.0.0' },
         publishConfig: { access: 'public', main: './dist/index.js' }
       },
@@ -45,8 +45,8 @@ describe('publishPackageJSON', () => {
     )
 
     expect(json).toEqual({
-      name: '@open-pencil/example',
-      dependencies: { '@open-pencil/core': '^0.13.2', zod: '^4.0.0' },
+      name: '@signal-forge/example',
+      dependencies: { '@signal-forge/core': '^0.13.2', zod: '^4.0.0' },
       main: './dist/index.js'
     })
   })
@@ -82,9 +82,9 @@ describe('preparePublishDirectories', () => {
 
     expect(await readFile(join(outRoot, 'example/dist/index.js'), 'utf8')).toBe('export {}\n')
     expect(JSON.parse(await readFile(join(outRoot, 'example/package.json'), 'utf8'))).toEqual({
-      name: '@open-pencil/example',
+      name: '@signal-forge/example',
       version: '1.0.0',
-      dependencies: { '@open-pencil/core': '^0.13.2', zod: '^4.0.0' },
+      dependencies: { '@signal-forge/core': '^0.13.2', zod: '^4.0.0' },
       main: './dist/index.js',
       types: './dist/index.d.ts'
     })

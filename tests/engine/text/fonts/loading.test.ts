@@ -13,7 +13,7 @@ import {
   weightToStyle,
   FontManager,
   SceneGraph
-} from '@open-pencil/core'
+} from '@signal-forge/core'
 
 import { expectDefined } from '#tests/helpers/assert'
 

@@ -1,4 +1,4 @@
-import type { DownloadedFontCache } from '@open-pencil/core/text'
+import type { DownloadedFontCache } from '@signal-forge/core/text'
 
 import {
   readCacheBytes,

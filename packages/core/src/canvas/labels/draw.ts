@@ -1,6 +1,6 @@
 import type { Canvas, Font } from 'canvaskit-wasm'
 
-import type { SceneNode, SceneGraph } from '@open-pencil/scene-graph'
+import type { SceneNode, SceneGraph } from '@signal-forge/scene-graph'
 
 import type { SkiaRenderer } from '#core/canvas/renderer'
 import {

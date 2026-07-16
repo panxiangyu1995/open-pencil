@@ -1,6 +1,6 @@
 import { twirl } from 'twirlwind'
 
-import type { GridTrack, SceneGraph, SceneNode } from '@open-pencil/scene-graph'
+import type { GridTrack, SceneGraph, SceneNode } from '@signal-forge/scene-graph'
 
 import { colorToCSSCompact } from '#core/color'
 import { DEFAULT_FONT_FAMILY } from '#core/constants'

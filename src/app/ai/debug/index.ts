@@ -1,8 +1,8 @@
 import type { UIMessage } from 'ai'
 
-import { buildDebugLog } from '@open-pencil/core/tools'
-import type { ToolDebugLog, ToolLogEntry } from '@open-pencil/core/tools'
-import type { JsonObject } from '@open-pencil/scene-graph/primitives'
+import { buildDebugLog } from '@signal-forge/core/tools'
+import type { ToolDebugLog, ToolLogEntry } from '@signal-forge/core/tools'
+import type { JsonObject } from '@signal-forge/scene-graph/primitives'
 
 import { getStepUsages, getToolLogEntries } from '@/app/ai/tools'
 

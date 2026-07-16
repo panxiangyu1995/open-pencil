@@ -1,4 +1,4 @@
-import type { Effect } from '@open-pencil/scene-graph'
+import type { Effect } from '@signal-forge/scene-graph'
 
 import { parseColor } from '#core/color'
 import { DEFAULT_SHADOW_COLOR, TRANSPARENT } from '#core/constants'

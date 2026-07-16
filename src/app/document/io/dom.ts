@@ -1,5 +1,5 @@
-import type { Editor, EditorState } from '@open-pencil/core/editor'
-import { browserHTMLToSceneGraph } from '@open-pencil/dom-css/browser'
+import type { Editor, EditorState } from '@signal-forge/core/editor'
+import { browserHTMLToSceneGraph } from '@signal-forge/dom-css/browser'
 
 import { yieldToUI } from '@/app/document/io/browser'
 import { applyImportedDocument } from '@/app/document/io/imported-document'

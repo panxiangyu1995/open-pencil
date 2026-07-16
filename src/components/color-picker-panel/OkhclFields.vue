@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { colorToCSS } from '@open-pencil/core/color'
-import { fromPercent, toPercent } from '@open-pencil/vue'
+import { colorToCSS } from '@signal-forge/core/color'
+import { fromPercent, toPercent } from '@signal-forge/vue'
 
 import PickerSlider from '@/components/color-picker-panel/PickerSlider.vue'
 import { useColorPickerPanelContext } from '@/components/color-picker-panel/context'

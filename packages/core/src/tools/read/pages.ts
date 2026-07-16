@@ -1,4 +1,4 @@
-import { computeBounds } from '@open-pencil/scene-graph/geometry'
+import { computeBounds } from '@signal-forge/scene-graph/geometry'
 
 import { defineTool } from '#core/tools/schema'
 

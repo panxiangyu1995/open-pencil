@@ -1,6 +1,6 @@
 ---
 title: Pierwsze kroki z SDK
-description: Skonfiguruj @open-pencil/vue z createEditor, provideEditor i kanwasem.
+description: Skonfiguruj @signal-forge/vue z createEditor, provideEditor i kanwasem.
 ---
 
 # Pierwsze kroki z SDK
@@ -8,22 +8,22 @@ description: Skonfiguruj @open-pencil/vue z createEditor, provideEditor i kanwas
 ## Instalacja
 
 ```bash
-bun add @open-pencil/core @open-pencil/vue canvaskit-wasm
+bun add @signal-forge/core @signal-forge/vue canvaskit-wasm
 ```
 
-SDK mieszka dziś w monorepo i jest również publikowany jako `@open-pencil/vue`.
+SDK mieszka dziś w monorepo i jest również publikowany jako `@signal-forge/vue`.
 
 ```ts
-import { createEditor } from '@open-pencil/core/editor'
-import { provideEditor, useCanvas } from '@open-pencil/vue'
+import { createEditor } from '@signal-forge/core/editor'
+import { provideEditor, useCanvas } from '@signal-forge/vue'
 ```
 
 ## Model mentalny
 
 Są trzy warstwy:
 
-1. `@open-pencil/core` — silnik edytora niezależny od frameworka
-2. `@open-pencil/vue` — kompozyty Vue i bezstanowe prymitywy
+1. `@signal-forge/core` — silnik edytora niezależny od frameworka
+2. `@signal-forge/vue` — kompozyty Vue i bezstanowe prymitywy
 3. twoja aplikacja — stylowanie, routing, przepływy plików, UI specyficzne dla produktu
 
 ## Minimalna konfiguracja
@@ -31,7 +31,7 @@ Są trzy warstwy:
 ### 1. Utwórz edytor
 
 ```ts
-import { createEditor } from '@open-pencil/core/editor'
+import { createEditor } from '@signal-forge/core/editor'
 
 const editor = createEditor({
   width: 1200,
@@ -43,9 +43,9 @@ const editor = createEditor({
 
 ```vue
 <script setup lang="ts">
-import { provideEditor } from '@open-pencil/vue'
+import { provideEditor } from '@signal-forge/vue'
 
-import type { Editor } from '@open-pencil/core/editor'
+import type { Editor } from '@signal-forge/core/editor'
 
 const props = defineProps<{
   editor: Editor
@@ -67,7 +67,7 @@ Możesz traktować to jako warstwę dostawcy dla drzewa edytora. Dokumentacja pr
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import { useCanvas, useEditor } from '@open-pencil/vue'
+import { useCanvas, useEditor } from '@signal-forge/vue'
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 const editor = useEditor()
@@ -85,7 +85,7 @@ useCanvas(canvasRef, editor)
 Gdy edytor jest dostarczony, komponenty potomne mogą odczytywać selekcję i wydawać polecenia:
 
 ```ts
-import { useEditorCommands, useSelectionState } from '@open-pencil/vue'
+import { useEditorCommands, useSelectionState } from '@signal-forge/vue'
 
 const selection = useSelectionState()
 const commands = useEditorCommands()
@@ -97,7 +97,7 @@ const commands = useEditorCommands()
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import { useCanvas, useEditor, useSelectionState } from '@open-pencil/vue'
+import { useCanvas, useEditor, useSelectionState } from '@signal-forge/vue'
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 const editor = useEditor()

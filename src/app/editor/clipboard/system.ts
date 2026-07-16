@@ -1,4 +1,4 @@
-import type { Vector } from '@open-pencil/scene-graph/primitives'
+import type { Vector } from '@signal-forge/scene-graph/primitives'
 
 import type { EditorStore } from '@/app/editor/active-store'
 import { readTauriClipboardText, writeTauriClipboardHtml } from '@/app/tauri/clipboard'
@@ -10,7 +10,7 @@ function createTransfer() {
 }
 
 function isDesignClipboardHtml(text: string) {
-  return text.includes('<!--(openpencil)') || text.includes('(figma)')
+  return text.includes('<!--(signalforge)') || text.includes('<!--(openpencil)') || text.includes('(figma)')
 }
 
 export async function copySelectionToTauriClipboard(store: EditorStore) {

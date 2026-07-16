@@ -1,5 +1,5 @@
-import type { Editor } from '@open-pencil/core/editor'
-import type { SceneGraph } from '@open-pencil/scene-graph'
+import type { Editor } from '@signal-forge/core/editor'
+import type { SceneGraph } from '@signal-forge/scene-graph'
 
 import { createVectorEditHandleActions } from './handle-actions'
 import { createVectorEditLifecycle } from './lifecycle'

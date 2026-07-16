@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { colorToCSS } from '@open-pencil/core/color'
+import { colorToCSS } from '@signal-forge/core/color'
 
 import PickerSlider from '@/components/color-picker-panel/PickerSlider.vue'
 import { useColorPickerPanelContext } from '@/components/color-picker-panel/context'

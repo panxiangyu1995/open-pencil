@@ -1,4 +1,4 @@
-import type { SceneGraph, SceneNode } from '@open-pencil/scene-graph'
+import type { SceneGraph, SceneNode } from '@signal-forge/scene-graph'
 
 import type { EditorContext } from '#core/editor/types'
 import { computeAllLayouts } from '#core/layout'

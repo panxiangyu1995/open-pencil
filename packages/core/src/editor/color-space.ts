@@ -1,5 +1,5 @@
-import type { DocumentColorSpace, SceneNode } from '@open-pencil/scene-graph'
-import { copyEffects, copyFill, copyStyleRuns, copyStroke } from '@open-pencil/scene-graph/copy'
+import type { DocumentColorSpace, SceneNode } from '@signal-forge/scene-graph'
+import { copyEffects, copyFill, copyStyleRuns, copyStroke } from '@signal-forge/scene-graph/copy'
 
 import { resolveOkHCLForPreview } from '#core/color/management'
 import { rgbaToOkHCL } from '#core/color/okhcl'

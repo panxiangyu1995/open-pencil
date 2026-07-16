@@ -1,6 +1,6 @@
 ---
 title: Référence API
-description: Documentation de référence pour les composants, composables et API avancées de @open-pencil/vue.
+description: Documentation de référence pour les composants, composables et API avancées de @signal-forge/vue.
 ---
 
 # Référence API

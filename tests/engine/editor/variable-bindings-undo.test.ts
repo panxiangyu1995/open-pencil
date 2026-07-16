@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'bun:test'
 
-import { createEditor } from '@open-pencil/core/editor'
+import { createEditor } from '@signal-forge/core/editor'
 
 function pageId(editor: ReturnType<typeof createEditor>): string {
   return editor.graph.getPages()[0].id

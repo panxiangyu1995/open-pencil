@@ -1,15 +1,15 @@
 import { useLocalStorage, usePreferredDark } from '@vueuse/core'
 import { computed, watch } from 'vue'
 
-import type { RulerTheme } from '@open-pencil/core/canvas'
-import { parseColor } from '@open-pencil/core/color'
-import { IS_BROWSER } from '@open-pencil/core/constants'
+import type { RulerTheme } from '@signal-forge/core/canvas'
+import { parseColor } from '@signal-forge/core/color'
+import { IS_BROWSER } from '@signal-forge/core/constants'
 
 import { getActiveEditorStoreOrNull } from '@/app/editor/active-store'
 
 export type AppTheme = 'dark' | 'light' | 'auto'
 
-const THEME_STORAGE_KEY = 'open-pencil:theme'
+const THEME_STORAGE_KEY = 'signal-forge:theme'
 const DEFAULT_THEME: AppTheme = 'dark'
 
 const theme = useLocalStorage<AppTheme>(THEME_STORAGE_KEY, DEFAULT_THEME)

@@ -18,7 +18,7 @@ import {
 } from './support.ts'
 
 const preferDomainFoldersOverFilenamePrefixes: Rule = {
-  name: 'open-pencil/prefer-domain-folders-over-filename-prefixes',
+  name: 'signal-forge/prefer-domain-folders-over-filename-prefixes',
   check(root) {
     const diagnostics: Diagnostic[] = []
     for (const folder of collectFolders(root)) {
@@ -46,7 +46,7 @@ const preferDomainFoldersOverFilenamePrefixes: Rule = {
 }
 
 const scriptsAreEntrypointShims = createTextRule(
-  'open-pencil/scripts-are-entrypoint-shims',
+  'signal-forge/scripts-are-entrypoint-shims',
   (sourceRel, content) => {
     if (!sourceRel.startsWith('scripts/')) return []
     if (/^#!\/usr\/bin\/env bun\s+import ['"]\.\.\/tools\/[^'"]+['"]\s*;?$/u.test(content.trim()))
@@ -62,7 +62,7 @@ const scriptsAreEntrypointShims = createTextRule(
 const TOOL_LAYOUT_MESSAGE =
   'Tool files must live under tools/<domain>/src/** or tools/<domain>/tests/*.test.ts.'
 
-const strictToolsLayout = createFileRule('open-pencil/strict-tools-layout', (sourceRel) => {
+const strictToolsLayout = createFileRule('signal-forge/strict-tools-layout', (sourceRel) => {
   if (!sourceRel.startsWith('tools/') || !TEXT_EXTENSIONS.has(path.extname(sourceRel))) return null
   if (sourceRel === 'tools/test.ts') return null
   const [, domain, segment] = sourceRel.split('/')
@@ -74,7 +74,7 @@ const strictToolsLayout = createFileRule('open-pencil/strict-tools-layout', (sou
 })
 
 const strictTestFilePlacement = createFileRule(
-  'open-pencil/strict-test-file-placement',
+  'signal-forge/strict-test-file-placement',
   (sourceRel) => {
     if (!sourceRel.startsWith('tests/')) return null
     if (!TEXT_EXTENSIONS.has(path.extname(sourceRel))) return null
@@ -130,7 +130,7 @@ const ENGINE_TEST_DOMAIN_REDIRECTS: Array<{
 ]
 
 const noMisplacedEngineTestDomainPaths = createFileRule(
-  'open-pencil/no-misplaced-engine-test-domain-paths',
+  'signal-forge/no-misplaced-engine-test-domain-paths',
   (sourceRel) => {
     const redirect = ENGINE_TEST_DOMAIN_REDIRECTS.find(({ from }) => sourceRel.startsWith(from))
     if (redirect) {
@@ -144,7 +144,7 @@ const noMisplacedEngineTestDomainPaths = createFileRule(
 )
 
 const noKitchenSinkEngineBasicTests: Rule = {
-  name: 'open-pencil/no-kitchen-sink-engine-basic-tests',
+  name: 'signal-forge/no-kitchen-sink-engine-basic-tests',
   check(root) {
     const diagnostics: Diagnostic[] = []
     for (const file of collectFiles(root)) {
@@ -167,7 +167,7 @@ const noKitchenSinkEngineBasicTests: Rule = {
 }
 
 const noEngineOnlyAssertionsInE2E = createImportRule(
-  'open-pencil/no-engine-only-assertions-in-e2e',
+  'signal-forge/no-engine-only-assertions-in-e2e',
   (sourceRel, specifier, resolved) => {
     if (!sourceRel.startsWith('tests/e2e/')) return null
     if (specifier === 'bun:test' || resolved?.startsWith('tests/engine/')) {
@@ -178,7 +178,7 @@ const noEngineOnlyAssertionsInE2E = createImportRule(
 )
 
 const noE2EImportsInEngineTests = createImportRule(
-  'open-pencil/no-e2e-imports-in-engine-tests',
+  'signal-forge/no-e2e-imports-in-engine-tests',
   (sourceRel, _specifier, resolved) => {
     if (!sourceRel.startsWith('tests/engine/')) return null
     if (resolved?.startsWith('tests/e2e/')) {
@@ -189,7 +189,7 @@ const noE2EImportsInEngineTests = createImportRule(
 )
 
 const noRootMarkdownClutter = createFileRule(
-  'open-pencil/no-root-markdown-clutter',
+  'signal-forge/no-root-markdown-clutter',
   (sourceRel) => {
     if (sourceRel.includes('/')) return null
     if (!sourceRel.endsWith('.md')) return null
@@ -199,7 +199,7 @@ const noRootMarkdownClutter = createFileRule(
 )
 
 const noPrototypeOrGeneratedImports = createImportRule(
-  'open-pencil/no-prototype-or-generated-imports',
+  'signal-forge/no-prototype-or-generated-imports',
   (sourceRel, _specifier, resolved) => {
     if (!resolved) return null
     if (resolved.startsWith('scratch/')) {
@@ -220,7 +220,7 @@ const noPrototypeOrGeneratedImports = createImportRule(
 )
 
 const noPropertyPanelImportsInCanvas = createImportRule(
-  'open-pencil/no-property-panel-imports-in-canvas',
+  'signal-forge/no-property-panel-imports-in-canvas',
   (sourceRel, _specifier, resolved) => {
     const isCanvasSurface =
       sourceRel === 'src/components/EditorCanvas.vue' ||
@@ -236,7 +236,7 @@ const noPropertyPanelImportsInCanvas = createImportRule(
 )
 
 const noAppImportsInWorkspacePackages = createImportRule(
-  'open-pencil/no-app-imports-in-workspace-packages',
+  'signal-forge/no-app-imports-in-workspace-packages',
   (sourceRel, specifier, resolved) => {
     const isWorkspacePackage = /^packages\/[^/]+\/src\//.test(sourceRel)
     if (isWorkspacePackage && (specifier.startsWith('@/') || resolved?.startsWith('src/'))) {
@@ -247,14 +247,14 @@ const noAppImportsInWorkspacePackages = createImportRule(
 )
 
 const noPackageInternalsInApp = createImportRule(
-  'open-pencil/no-package-internals-in-app',
+  'signal-forge/no-package-internals-in-app',
   (sourceRel, specifier, resolved) => {
     if (!sourceRel.startsWith('src/')) return null
     if (
       specifier in PACKAGE_ALIASES ||
       Object.keys(PACKAGE_ALIASES).some((alias) => specifier.startsWith(alias))
     ) {
-      return 'App code must use package public exports such as @open-pencil/core or @open-pencil/vue, not package-local aliases.'
+      return 'App code must use package public exports such as @signal-forge/core or @signal-forge/vue, not package-local aliases.'
     }
     if (resolved?.startsWith('packages/')) {
       return 'App code must not import workspace package internals. Use package public exports instead.'
@@ -264,7 +264,7 @@ const noPackageInternalsInApp = createImportRule(
 )
 
 const noForeignPackageLocalAliases = createImportRule(
-  'open-pencil/no-foreign-package-local-aliases',
+  'signal-forge/no-foreign-package-local-aliases',
   (sourceRel, specifier) => {
     if (sourceRel.startsWith('scripts/') || sourceRel.startsWith('tests/')) return null
     for (const [alias, owner] of Object.entries(PACKAGE_ALIAS_OWNERS)) {
@@ -277,7 +277,7 @@ const noForeignPackageLocalAliases = createImportRule(
 )
 
 const noAppImportsComponentsOrViews = createImportRule(
-  'open-pencil/no-app-imports-components-or-views',
+  'signal-forge/no-app-imports-components-or-views',
   (sourceRel, _specifier, resolved) => {
     if (!sourceRel.startsWith('src/app/')) return null
     const importsAppComponent =
@@ -290,7 +290,7 @@ const noAppImportsComponentsOrViews = createImportRule(
 )
 
 const noComponentsImportViews = createImportRule(
-  'open-pencil/no-components-import-views',
+  'signal-forge/no-components-import-views',
   (sourceRel, _specifier, resolved) => {
     if (!sourceRel.startsWith('src/components/')) return null
     if (resolved?.startsWith('src/views/')) {
@@ -301,7 +301,7 @@ const noComponentsImportViews = createImportRule(
 )
 
 const noNonUiImportsInSharedUi = createImportRule(
-  'open-pencil/no-non-ui-imports-in-shared-ui',
+  'signal-forge/no-non-ui-imports-in-shared-ui',
   (sourceRel, _specifier, resolved) => {
     if (!sourceRel.startsWith('src/components/ui/')) return null
     if (resolved?.startsWith('src/components/') && !resolved.startsWith('src/components/ui/')) {
@@ -312,7 +312,7 @@ const noNonUiImportsInSharedUi = createImportRule(
 )
 
 const noViewsImportedOutsideEntry = createImportRule(
-  'open-pencil/no-views-imported-outside-entry',
+  'signal-forge/no-views-imported-outside-entry',
   (sourceRel, _specifier, resolved) => {
     if (!resolved?.startsWith('src/views/')) return null
     if (sourceRel === 'src/App.vue' || sourceRel === 'src/main.ts' || sourceRel === 'src/router.ts')
@@ -322,7 +322,7 @@ const noViewsImportedOutsideEntry = createImportRule(
 )
 
 const noAppImportsInSharedUi = createImportRule(
-  'open-pencil/no-app-imports-in-shared-ui',
+  'signal-forge/no-app-imports-in-shared-ui',
   (sourceRel, _specifier, resolved) => {
     if (!sourceRel.startsWith('src/components/ui/')) return null
     if (resolved?.startsWith('src/app/')) {
@@ -333,7 +333,7 @@ const noAppImportsInSharedUi = createImportRule(
 )
 
 const noPropertyPanelInternalsOutsidePanel = createImportRule(
-  'open-pencil/no-property-panel-internals-outside-panel',
+  'signal-forge/no-property-panel-internals-outside-panel',
   (sourceRel, _specifier, resolved) => {
     if (!resolved?.startsWith('src/components/properties/')) return null
     if (sourceRel.startsWith('src/components/properties/')) return null
@@ -345,7 +345,7 @@ const noPropertyPanelInternalsOutsidePanel = createImportRule(
 const MACOS_MODIFIER_GLYPH_PATTERN = /[⌘⌥⌃]/u
 
 const noHardcodedMacOSShortcutGlyphs = createTextRule(
-  'open-pencil/no-hardcoded-macos-shortcut-glyphs',
+  'signal-forge/no-hardcoded-macos-shortcut-glyphs',
   (sourceRel, content) => {
     if (!sourceRel.endsWith('.vue')) return []
     const diagnostics: Array<{ message: string; line?: number; column?: number }> = []
@@ -391,7 +391,7 @@ const SHARED_TEST_ID_ALLOWLIST = new Set([
 ])
 
 const noProductionTestIdsInSharedLayers = createTextRule(
-  'open-pencil/no-production-test-ids-in-shared-layers',
+  'signal-forge/no-production-test-ids-in-shared-layers',
   (sourceRel, content) => {
     const inSharedLayer =
       sourceRel.startsWith('src/components/ui/') ||
@@ -415,7 +415,7 @@ const noProductionTestIdsInSharedLayers = createTextRule(
 )
 
 const noNativeTitleAttributesInVue = createTextRule(
-  'open-pencil/no-native-title-attributes-in-vue',
+  'signal-forge/no-native-title-attributes-in-vue',
   (sourceRel, content) => {
     if (
       !sourceRel.endsWith('.vue') ||
@@ -444,7 +444,7 @@ const noNativeTitleAttributesInVue = createTextRule(
 const SHORTCUT_LABEL_PATTERN = /(?:Shift|Ctrl|Alt|Option|Cmd|Command|⌘|⇧|⌥|⌃)\s*[+)\w]/u
 
 const noShortcutTextInLabels = createTextRule(
-  'open-pencil/no-shortcut-text-in-labels',
+  'signal-forge/no-shortcut-text-in-labels',
   (sourceRel, content) => {
     if (
       sourceRel !== 'packages/vue/src/i18n/messages.ts' &&
@@ -472,7 +472,7 @@ const noShortcutTextInLabels = createTextRule(
 )
 
 const noUiImportsInCore = createImportRule(
-  'open-pencil/no-ui-imports-in-core',
+  'signal-forge/no-ui-imports-in-core',
   (sourceRel, specifier) => {
     if (!sourceRel.startsWith('packages/core/src/')) return null
     if (
@@ -480,7 +480,7 @@ const noUiImportsInCore = createImportRule(
       specifier.startsWith('@vueuse/') ||
       specifier === 'reka-ui' ||
       specifier.startsWith('#vue/') ||
-      specifier.startsWith('@open-pencil/vue')
+      specifier.startsWith('@signal-forge/vue')
     ) {
       return 'Core must stay framework-agnostic and cannot import Vue/UI modules.'
     }
@@ -489,7 +489,7 @@ const noUiImportsInCore = createImportRule(
 )
 
 export const openPencilArchitecturePlugin = {
-  meta: { name: 'open-pencil-architecture', version: '0.0.0' },
+  meta: { name: 'signal-forge-architecture', version: '0.0.0' },
   ruleDefinitions: [
     preferDomainFoldersOverFilenamePrefixes,
     scriptsAreEntrypointShims,

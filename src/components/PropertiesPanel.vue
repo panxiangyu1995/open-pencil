@@ -2,7 +2,7 @@
 import { computed, ref, watch } from 'vue'
 import { CollapsibleContent, CollapsibleRoot, CollapsibleTrigger, TabsContent, TabsList, TabsRoot, TabsTrigger } from 'reka-ui'
 
-import { useI18n, useSelectionState } from '@open-pencil/vue'
+import { useI18n, useSelectionState } from '@signal-forge/vue'
 
 import { useAIChat } from '@/app/ai/chat/use'
 import { usePathwayMode } from '@/app/pathway/mode'

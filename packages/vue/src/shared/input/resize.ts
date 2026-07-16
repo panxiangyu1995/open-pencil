@@ -1,8 +1,8 @@
 export { constrainToAspectRatio } from '#vue/shared/input/resize/rect'
 export { tryStartResize } from '#vue/shared/input/resize/start'
-import type { Editor } from '@open-pencil/core/editor'
-import { computeLayout } from '@open-pencil/core/layout'
-import type { SceneNode } from '@open-pencil/scene-graph'
+import type { Editor } from '@signal-forge/core/editor'
+import { computeLayout } from '@signal-forge/core/layout'
+import type { SceneNode } from '@signal-forge/scene-graph'
 
 import { calculateResizeRect } from '#vue/shared/input/resize/rect'
 import { scaleVectorNetworkForResize } from '#vue/shared/input/resize/vector'

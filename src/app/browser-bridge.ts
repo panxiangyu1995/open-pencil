@@ -2,37 +2,37 @@ import type { ChatTransport, UIMessage } from 'ai'
 
 import type { EditorStore } from '@/app/editor/session/create'
 
-export interface OpenPencilTestHooks {
+export interface SignalForgeTestHooks {
   writeCount?: () => number
   mockHandle?: FileSystemFileHandle
   savedOpen?: Window['open']
 }
 
-export interface OpenPencilWindowAPI {
+export interface SignalForgeWindowAPI {
   getStore?: () => EditorStore
   setChatTransport?: (factory: () => ChatTransport<UIMessage>) => void
   openFile?: (path: string) => Promise<void>
-  test?: OpenPencilTestHooks
+  test?: SignalForgeTestHooks
 }
 
 declare global {
   interface Window {
-    openPencil?: OpenPencilWindowAPI
+    openPencil?: SignalForgeWindowAPI
   }
 }
 
 let activeStore: EditorStore | null = null
 
-function windowApi(): OpenPencilWindowAPI {
+function windowApi(): SignalForgeWindowAPI {
   window.openPencil ??= {}
   window.openPencil.getStore ??= () => {
-    if (!activeStore) throw new Error('OpenPencil store not initialized')
+    if (!activeStore) throw new Error('SignalForge store not initialized')
     return activeStore
   }
   return window.openPencil
 }
 
-export function setOpenPencilStore(store: EditorStore) {
+export function setSignalForgeStore(store: EditorStore) {
   activeStore = store
   windowApi()
 }
@@ -43,6 +43,6 @@ export function exposeChatTransportOverride(
   windowApi().setChatTransport = setChatTransport
 }
 
-export function setOpenPencilOpenFileHandler(openFile: (path: string) => Promise<void>) {
+export function setSignalForgeOpenFileHandler(openFile: (path: string) => Promise<void>) {
   windowApi().openFile = openFile
 }

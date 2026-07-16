@@ -10,12 +10,12 @@ export {
   decompressFigKiwiDataAsync,
   FIG_KIWI_DEFAULT_VERSION,
   parseFigKiwiChunks
-} from '@open-pencil/kiwi/fig/container'
+} from '@signal-forge/kiwi/fig/container'
 export { buildFontDigestMap } from './font/digests'
 
-import type { NodeChange, Paint, VariableConsumptionEntry } from '@open-pencil/kiwi/fig/codec'
-import type { SceneGraph, SceneNode } from '@open-pencil/scene-graph'
-import type { Color, GUID, JsonObject, Matrix } from '@open-pencil/scene-graph/primitives'
+import type { NodeChange, Paint, VariableConsumptionEntry } from '@signal-forge/kiwi/fig/codec'
+import type { SceneGraph, SceneNode } from '@signal-forge/scene-graph'
+import type { Color, GUID, JsonObject, Matrix } from '@signal-forge/scene-graph/primitives'
 
 import { guidToString, stringToGuid, VARIABLE_BINDING_FIELDS } from './convert'
 import {

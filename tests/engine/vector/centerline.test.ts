@@ -1,8 +1,8 @@
 import { describe, test, expect } from 'bun:test'
 
-import type { Vector } from '@open-pencil/core'
-import { fitCircleArc, isClosedThinCrescent } from '@open-pencil/core/vector'
-import type { VectorNetwork } from '@open-pencil/scene-graph'
+import type { Vector } from '@signal-forge/core'
+import { fitCircleArc, isClosedThinCrescent } from '@signal-forge/core/vector'
+import type { VectorNetwork } from '@signal-forge/scene-graph'
 
 import { expectDefined } from '#tests/helpers/assert'
 

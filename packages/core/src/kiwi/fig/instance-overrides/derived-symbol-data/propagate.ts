@@ -1,5 +1,5 @@
-import type { SceneNode } from '@open-pencil/scene-graph'
-import { copyGeometryPaths } from '@open-pencil/scene-graph/copy'
+import type { SceneNode } from '@signal-forge/scene-graph'
+import { copyGeometryPaths } from '@signal-forge/scene-graph/copy'
 
 import { buildClonesMap } from '#core/kiwi/fig/instance-overrides/sync'
 import type { OverrideContext } from '#core/kiwi/fig/instance-overrides/types'

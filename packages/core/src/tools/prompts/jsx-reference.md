@@ -1,4 +1,4 @@
-# OpenPencil JSX Reference
+# SignalForge JSX Reference
 
 ## Elements
 

@@ -1,11 +1,11 @@
 ---
 title: CanvasRoot
-description: Headless-примитив холста для поверхностей рендеринга OpenPencil.
+description: Headless-примитив холста для поверхностей рендеринга SignalForge.
 ---
 
 # CanvasRoot
 
-`CanvasRoot` — структурный примитив холста в `@open-pencil/vue`.
+`CanvasRoot` — структурный примитив холста в `@signal-forge/vue`.
 
 Используйте его, когда хотите структуру холста и контекст, предоставляемые SDK, при собственном макете и стилях.
 

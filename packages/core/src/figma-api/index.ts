@@ -6,18 +6,18 @@ import type {
   VariableCollection,
   VariableType,
   VariableValue
-} from '@open-pencil/scene-graph'
-import { copyFills, copyStrokes, copyEffects } from '@open-pencil/scene-graph/copy'
-import { computeBounds } from '@open-pencil/scene-graph/geometry'
-import { computeImageHash } from '@open-pencil/scene-graph/images'
-import type { Rect, Vector } from '@open-pencil/scene-graph/primitives'
+} from '@signal-forge/scene-graph'
+import { copyFills, copyStrokes, copyEffects } from '@signal-forge/scene-graph/copy'
+import { computeBounds } from '@signal-forge/scene-graph/geometry'
+import { computeImageHash } from '@signal-forge/scene-graph/images'
+import type { Rect, Vector } from '@signal-forge/scene-graph/primitives'
 import {
   getPathwayData,
   updatePathwayData,
   type PathwayGlyphType,
   type PathwayProcessType,
   type PathwayArcType
-} from '@open-pencil/scene-graph'
+} from '@signal-forge/scene-graph'
 
 import type { SkiaRenderer } from '#core/canvas'
 import { canMakeBooleanSourceNode } from '#core/canvas/boolean'

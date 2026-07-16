@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'bun:test'
 
-import { SceneGraph, type SceneNode } from '@open-pencil/core'
-import { cloneNodeProps } from '@open-pencil/scene-graph/copy'
+import { SceneGraph, type SceneNode } from '@signal-forge/core'
+import { cloneNodeProps } from '@signal-forge/scene-graph/copy'
 
 function pageId(graph: SceneGraph): string {
   return graph.getPages()[0].id

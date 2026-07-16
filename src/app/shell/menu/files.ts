@@ -1,6 +1,6 @@
 import { useFileDialog } from '@vueuse/core'
 
-import { setOpenPencilOpenFileHandler } from '@/app/browser-bridge'
+import { setSignalForgeOpenFileHandler } from '@/app/browser-bridge'
 import { openFileInNewTab } from '@/app/tabs'
 import { isTauri } from '@/app/tauri/env'
 import { IS_BROWSER } from '@/constants'
@@ -17,7 +17,7 @@ fileDialog.onChange((files) => {
 })
 
 if (IS_BROWSER && 'window' in globalThis) {
-  setOpenPencilOpenFileHandler(async (path: string) => {
+  setSignalForgeOpenFileHandler(async (path: string) => {
     const response = await fetch(path)
     const blob = await response.blob()
     const name = path.split('/').pop() ?? 'file.fig'

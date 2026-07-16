@@ -1,4 +1,4 @@
-import { parseFigBuffer } from '@open-pencil/kiwi/fig/parse'
+import { parseFigBuffer } from '@signal-forge/kiwi/fig/parse'
 
 import { importNodeChanges } from '#core/kiwi/fig/import'
 import {

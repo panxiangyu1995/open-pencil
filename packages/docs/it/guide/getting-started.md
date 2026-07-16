@@ -2,7 +2,7 @@
 
 ## Prova online
 
-OpenPencil funziona nel browser — nessuna installazione richiesta. Apri [app.openpencil.dev](https://app.openpencil.dev) per iniziare a progettare.
+SignalForge funziona nel browser — nessuna installazione richiesta. Apri [app.signalforge.dev](https://app.signalforge.dev) per iniziare a progettare.
 
 ## Scarica l'app desktop
 
@@ -27,7 +27,7 @@ Binari precompilati per macOS, Windows e Linux sono disponibili nella [pagina de
 
 ```sh
 git clone https://github.com/open-pencil/open-pencil.git
-cd open-pencil
+cd signal-forge
 bun install
 ```
 

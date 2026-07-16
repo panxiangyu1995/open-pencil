@@ -2,7 +2,7 @@ import { expect, mock, test } from 'bun:test'
 
 import type { Canvas, Image as CKImage, Surface } from 'canvaskit-wasm'
 
-import type { SceneGraph } from '@open-pencil/scene-graph'
+import type { SceneGraph } from '@signal-forge/scene-graph'
 
 import type { SkiaRenderer } from '#core/canvas/renderer'
 import { renderSceneBacking } from '#core/canvas/renderer/retained-backing'

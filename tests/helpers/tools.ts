@@ -1,4 +1,4 @@
-import { ALL_TOOLS, FigmaAPI, SceneGraph } from '@open-pencil/core'
+import { ALL_TOOLS, FigmaAPI, SceneGraph } from '@signal-forge/core'
 
 export { ALL_TOOLS }
 

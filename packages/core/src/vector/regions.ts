@@ -1,4 +1,4 @@
-import type { VectorRegion, VectorSegment } from '@open-pencil/scene-graph'
+import type { VectorRegion, VectorSegment } from '@signal-forge/scene-graph'
 
 export function remapRegions(
   regions: VectorRegion[],

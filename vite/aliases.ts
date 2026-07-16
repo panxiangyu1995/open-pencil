@@ -1,6 +1,6 @@
 import { resolve } from 'node:path'
 
-export function createOpenPencilAliases(rootDir: string) {
+export function createSignalForgeAliases(rootDir: string) {
   const emptyNodeModule = resolve(rootDir, 'vite/empty-node-module.ts')
 
   return [
@@ -11,36 +11,36 @@ export function createOpenPencilAliases(rootDir: string) {
     { find: '#core', replacement: resolve(rootDir, 'packages/core/src') },
     { find: '#dom-css', replacement: resolve(rootDir, 'packages/dom-css/src') },
     {
-      find: /^@open-pencil\/dom-css\/browser$/,
+      find: /^@signal-forge\/dom-css\/browser$/,
       replacement: resolve(rootDir, 'packages/dom-css/src/browser.ts')
     },
     {
-      find: /^@open-pencil\/dom-css\/jsx-runtime$/,
+      find: /^@signal-forge\/dom-css\/jsx-runtime$/,
       replacement: resolve(rootDir, 'packages/dom-css/src/jsx/runtime.ts')
     },
     {
-      find: /^@open-pencil\/dom-css\/jsx-dev-runtime$/,
+      find: /^@signal-forge\/dom-css\/jsx-dev-runtime$/,
       replacement: resolve(rootDir, 'packages/dom-css/src/jsx/dev-runtime.ts')
     },
     {
-      find: /^@open-pencil\/dom-css$/,
+      find: /^@signal-forge\/dom-css$/,
       replacement: resolve(rootDir, 'packages/dom-css/src/index.ts')
     },
     {
-      find: /^@open-pencil\/scene-graph$/,
+      find: /^@signal-forge\/scene-graph$/,
       replacement: resolve(rootDir, 'packages/scene-graph/src/index.ts')
     },
-    { find: '@open-pencil/scene-graph', replacement: resolve(rootDir, 'packages/scene-graph/src') },
-    { find: /^@open-pencil\/pen$/, replacement: resolve(rootDir, 'packages/pen/src/index.ts') },
-    { find: '@open-pencil/pen', replacement: resolve(rootDir, 'packages/pen/src') },
-    { find: /^@open-pencil\/kiwi$/, replacement: resolve(rootDir, 'packages/kiwi/src/index.ts') },
-    { find: '@open-pencil/kiwi', replacement: resolve(rootDir, 'packages/kiwi/src') },
-    { find: /^@open-pencil\/fig$/, replacement: resolve(rootDir, 'packages/fig/src/index.ts') },
-    { find: '@open-pencil/fig', replacement: resolve(rootDir, 'packages/fig/src') },
-    { find: /^@open-pencil\/vue$/, replacement: resolve(rootDir, 'packages/vue/src/index.ts') },
-    { find: '@open-pencil/vue', replacement: resolve(rootDir, 'packages/vue/src') },
-    { find: /^@open-pencil\/core$/, replacement: resolve(rootDir, 'packages/core/src/index.ts') },
-    { find: '@open-pencil/core', replacement: resolve(rootDir, 'packages/core/src') },
+    { find: '@signal-forge/scene-graph', replacement: resolve(rootDir, 'packages/scene-graph/src') },
+    { find: /^@signal-forge\/pen$/, replacement: resolve(rootDir, 'packages/pen/src/index.ts') },
+    { find: '@signal-forge/pen', replacement: resolve(rootDir, 'packages/pen/src') },
+    { find: /^@signal-forge\/kiwi$/, replacement: resolve(rootDir, 'packages/kiwi/src/index.ts') },
+    { find: '@signal-forge/kiwi', replacement: resolve(rootDir, 'packages/kiwi/src') },
+    { find: /^@signal-forge\/fig$/, replacement: resolve(rootDir, 'packages/fig/src/index.ts') },
+    { find: '@signal-forge/fig', replacement: resolve(rootDir, 'packages/fig/src') },
+    { find: /^@signal-forge\/vue$/, replacement: resolve(rootDir, 'packages/vue/src/index.ts') },
+    { find: '@signal-forge/vue', replacement: resolve(rootDir, 'packages/vue/src') },
+    { find: /^@signal-forge\/core$/, replacement: resolve(rootDir, 'packages/core/src/index.ts') },
+    { find: '@signal-forge/core', replacement: resolve(rootDir, 'packages/core/src') },
     {
       find: 'opentype.js',
       replacement: resolve(rootDir, 'node_modules/opentype.js/dist/opentype.module.js')

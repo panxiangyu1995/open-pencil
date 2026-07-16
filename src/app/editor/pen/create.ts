@@ -1,5 +1,5 @@
-import type { Editor, Tool } from '@open-pencil/core/editor'
-import type { SceneGraph } from '@open-pencil/scene-graph'
+import type { Editor, Tool } from '@signal-forge/core/editor'
+import type { SceneGraph } from '@signal-forge/scene-graph'
 
 import {
   absoluteVertices,

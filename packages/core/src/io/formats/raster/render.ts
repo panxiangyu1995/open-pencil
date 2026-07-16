@@ -1,7 +1,7 @@
 import type { CanvasKit, Canvas } from 'canvaskit-wasm'
 
-import type { SceneGraph } from '@open-pencil/scene-graph'
-import { computeDescendantVisualBounds } from '@open-pencil/scene-graph/geometry'
+import type { SceneGraph } from '@signal-forge/scene-graph'
+import { computeDescendantVisualBounds } from '@signal-forge/scene-graph/geometry'
 
 import type { SkiaRenderer } from '#core/canvas'
 import type { RenderColorSpace } from '#core/color/management'

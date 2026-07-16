@@ -1,5 +1,5 @@
-import type { Editor } from '@open-pencil/core/editor'
-import { breakAtVertex, deleteVertex } from '@open-pencil/core/vector'
+import type { Editor } from '@signal-forge/core/editor'
+import { breakAtVertex, deleteVertex } from '@signal-forge/core/vector'
 
 import { getLiveNetwork, setNodeEditNetwork } from './network'
 import type { VectorEditState } from './types'

@@ -4,9 +4,9 @@ import {
   type ImageScaleMode,
   type SceneNode,
   type Stroke
-} from '@open-pencil/scene-graph'
-import { TRANSPARENT } from '@open-pencil/scene-graph/constants'
-import { computeImageHash } from '@open-pencil/scene-graph/images'
+} from '@signal-forge/scene-graph'
+import { TRANSPARENT } from '@signal-forge/scene-graph/constants'
+import { computeImageHash } from '@signal-forge/scene-graph/images'
 
 import {
   colorToFillFromCSS,

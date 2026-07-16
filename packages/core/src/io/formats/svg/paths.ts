@@ -3,8 +3,8 @@ import type {
   VectorNetwork,
   VectorSegment,
   VectorVertex
-} from '@open-pencil/scene-graph'
-import { polygonVertices } from '@open-pencil/scene-graph/geometry'
+} from '@signal-forge/scene-graph'
+import { polygonVertices } from '@signal-forge/scene-graph/geometry'
 
 import { nodeHasRadius } from '#core/canvas/shapes'
 

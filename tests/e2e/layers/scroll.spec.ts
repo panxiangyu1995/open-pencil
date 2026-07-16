@@ -10,7 +10,7 @@ test('pages and layers panels scroll inside splitter panes', async ({ page }) =>
 
   await page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     for (let i = 0; i < 40; i++) store.addPage(`Page ${i + 2}`)
     const pageId = store.state.currentPageId
     for (let i = 0; i < 80; i++) {

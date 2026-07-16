@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'bun:test'
 
-import { computeAllLayouts, SceneGraph, setTextMeasurer } from '@open-pencil/core'
+import { computeAllLayouts, SceneGraph, setTextMeasurer } from '@signal-forge/core'
 
 import { createEditorStore } from '@/app/editor/session'
 

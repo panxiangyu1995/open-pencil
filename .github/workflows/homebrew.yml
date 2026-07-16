@@ -25,12 +25,12 @@ jobs:
           TMPDIR=$(mktemp -d)
           gh release download "$TAG" \
             --repo "$GITHUB_REPOSITORY" \
-            --pattern 'OpenPencil_aarch64.app.tar.gz' \
-            --pattern 'OpenPencil_x64.app.tar.gz' \
+            --pattern 'SignalForge_aarch64.app.tar.gz' \
+            --pattern 'SignalForge_x64.app.tar.gz' \
             --dir "$TMPDIR"
 
-          SHA_ARM=$(shasum -a 256 "$TMPDIR/OpenPencil_aarch64.app.tar.gz" | cut -d' ' -f1)
-          SHA_X64=$(shasum -a 256 "$TMPDIR/OpenPencil_x64.app.tar.gz" | cut -d' ' -f1)
+          SHA_ARM=$(shasum -a 256 "$TMPDIR/SignalForge_aarch64.app.tar.gz" | cut -d' ' -f1)
+          SHA_X64=$(shasum -a 256 "$TMPDIR/SignalForge_x64.app.tar.gz" | cut -d' ' -f1)
 
           git clone "https://x-access-token:${GH_TOKEN}@github.com/open-pencil/homebrew-tap.git" "$TMPDIR/tap"
           cd "$TMPDIR/tap"
@@ -44,5 +44,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add Casks/open-pencil.rb
-          git commit -m "Update OpenPencil to $VERSION"
+          git commit -m "Update SignalForge to $VERSION"
           git push

@@ -19,7 +19,7 @@ Expone:
 ## Uso
 
 ```ts
-import { usePageList } from '@open-pencil/vue'
+import { usePageList } from '@signal-forge/vue'
 
 const pageList = usePageList()
 ```

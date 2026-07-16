@@ -7,7 +7,7 @@ export function automationPlugin(authToken: string | null, corsOrigin: string): 
   let child: ReturnType<typeof spawn> | null = null
 
   return {
-    name: 'open-pencil-automation',
+    name: 'signal-forge-automation',
     configureServer() {
       if (child) return
 
@@ -26,7 +26,7 @@ export function automationPlugin(authToken: string | null, corsOrigin: string): 
         const text = data.toString()
         if (text.includes('EADDRINUSE')) {
           console.error(
-            '\x1b[31m[MCP] Port 7600 already in use. Is another OpenPencil instance running?\x1b[0m'
+            '\x1b[31m[MCP] Port 7600 already in use. Is another SignalForge instance running?\x1b[0m'
           )
           child?.kill()
           child = null

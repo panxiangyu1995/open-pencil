@@ -14,9 +14,9 @@ import {
   useI18n,
   useToolbarState,
   useViewportKind
-} from '@open-pencil/vue'
+} from '@signal-forge/vue'
 
-import type { Tool } from '@open-pencil/vue'
+import type { Tool } from '@signal-forge/vue'
 import type { ToolbarActionItem } from '@/components/Toolbar/types'
 
 const store = useEditorStore()

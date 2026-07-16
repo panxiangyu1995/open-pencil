@@ -1,5 +1,5 @@
-import type { Rect } from '@open-pencil/scene-graph/primitives'
-import type { SnapGuide } from '@open-pencil/scene-graph/snap'
+import type { Rect } from '@signal-forge/scene-graph/primitives'
+import type { SnapGuide } from '@signal-forge/scene-graph/snap'
 
 import type { EditorContext } from '#core/editor/types'
 

@@ -1,7 +1,7 @@
 import { defineTool } from '#core/tools/schema'
 import { readSbgnMl } from '#core/io/formats/sbgn-ml/read'
 import { writeSbgnMl } from '#core/io/formats/sbgn-ml/write'
-import { getPathwayData, updatePathwayData } from '@open-pencil/scene-graph'
+import { getPathwayData, updatePathwayData } from '@signal-forge/scene-graph'
 
 export const importSbgnMl = defineTool({
   name: 'import_sbgn_ml',
@@ -54,7 +54,7 @@ export const importSbgnMl = defineTool({
         }
 
         for (const entry of sourceNode.pluginData) {
-          if (entry.pluginId === 'open-pencil' && entry.key === 'pathway') continue
+          if (entry.pluginId === 'signal-forge' || entry.pluginId === 'open-pencil' && entry.key === 'pathway') continue
           const existing = newNode.pluginData.findIndex(e => e.pluginId === entry.pluginId && e.key === entry.key)
           if (existing !== -1) newNode.pluginData[existing] = entry
           else newNode.pluginData.push(entry)

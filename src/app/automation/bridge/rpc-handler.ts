@@ -1,4 +1,4 @@
-import { executeRpcCommand } from '@open-pencil/core/rpc'
+import { executeRpcCommand } from '@signal-forge/core/rpc'
 
 import type { AutomationTarget } from '@/app/automation/bridge/target'
 

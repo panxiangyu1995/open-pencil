@@ -1,8 +1,8 @@
 import type { Ref } from 'vue'
 
-import { BLACK } from '@open-pencil/core/constants'
-import type { Editor } from '@open-pencil/core/editor'
-import type { SceneNode, Stroke } from '@open-pencil/scene-graph'
+import { BLACK } from '@signal-forge/core/constants'
+import type { Editor } from '@signal-forge/core/editor'
+import type { SceneNode, Stroke } from '@signal-forge/scene-graph'
 
 export type StrokeSides = 'ALL' | 'TOP' | 'BOTTOM' | 'LEFT' | 'RIGHT' | 'CUSTOM'
 

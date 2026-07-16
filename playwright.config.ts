@@ -26,12 +26,12 @@ export default defineConfig({
   },
   projects: [
     {
-      name: 'openpencil',
+      name: 'signalforge',
       testDir: './tests/e2e',
       fullyParallel: false
     },
     {
-      name: 'openpencil-webkit',
+      name: 'signalforge-webkit',
       testDir: './tests/e2e',
       testMatch: [
         '**/*.webkit.spec.ts',

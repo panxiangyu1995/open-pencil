@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'bun:test'
 
-import { exportFigFile, parseFigFile, SceneGraph, sceneNodeToKiwi } from '@open-pencil/core'
+import { exportFigFile, parseFigFile, SceneGraph, sceneNodeToKiwi } from '@signal-forge/core'
 
 import { expectDefined, getNodeOrThrow } from '#tests/helpers/assert'
 

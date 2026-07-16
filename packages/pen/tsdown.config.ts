@@ -15,7 +15,7 @@ export default defineConfig({
     moduleSideEffects: false
   },
   deps: {
-    neverBundle: ['@open-pencil/scene-graph', /^@open-pencil\/scene-graph\//, /^node:/],
+    neverBundle: ['@signal-forge/scene-graph', /^@open-pencil\/scene-graph\//, /^node:/],
     onlyBundle: false
   },
   outputOptions: {

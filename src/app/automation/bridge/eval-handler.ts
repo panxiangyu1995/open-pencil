@@ -1,5 +1,5 @@
-import type { FigmaAPI } from '@open-pencil/core/figma-api'
-import { wrapEvalCode } from '@open-pencil/core/tools'
+import type { FigmaAPI } from '@signal-forge/core/figma-api'
+import { wrapEvalCode } from '@signal-forge/core/tools'
 
 import type { AutomationTarget } from '@/app/automation/bridge/target'
 

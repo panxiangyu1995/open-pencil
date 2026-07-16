@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'bun:test'
 
-import { SceneGraph } from '@open-pencil/core'
+import { SceneGraph } from '@signal-forge/core'
 
 import { pageId, toKiwi } from './helpers'
 

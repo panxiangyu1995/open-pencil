@@ -1,4 +1,4 @@
-import type { Rect } from '@open-pencil/scene-graph/primitives'
+import type { Rect } from '@signal-forge/scene-graph/primitives'
 
 import { parseColor } from '#core/color'
 import { createPathStroke } from '#core/icons/path-style'

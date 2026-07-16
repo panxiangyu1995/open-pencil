@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, setDefaultTimeout, test } from 'bun:test'
 
-import { exportFigFile, initCodec, parseFigFile, SceneGraph } from '@open-pencil/core'
+import { exportFigFile, initCodec, parseFigFile, SceneGraph } from '@signal-forge/core'
 
 import { collectAllNodes } from '#tests/helpers/fig-traversal'
 

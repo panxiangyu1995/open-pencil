@@ -52,7 +52,7 @@ describe('Tauri MCP spawning', () => {
     expect(handle?.authToken).toBe('server-token')
     expect(calls[0]?.cmd).toBe('plugin:shell|spawn')
     expect(calls[0]?.args).toMatchObject({
-      program: 'openpencil-mcp-http',
+      program: 'signalforge-mcp-http',
       args: [],
       options: {
         env: {

@@ -1,8 +1,8 @@
 import { computed, ref, type Ref } from 'vue'
 
-import { colorToCSS, parseColor } from '@open-pencil/core/color'
-import type { Fill, GradientStop, GradientTransform } from '@open-pencil/scene-graph'
-import type { Color } from '@open-pencil/scene-graph/primitives'
+import { colorToCSS, parseColor } from '@signal-forge/core/color'
+import type { Fill, GradientStop, GradientTransform } from '@signal-forge/scene-graph'
+import type { Color } from '@signal-forge/scene-graph/primitives'
 
 type GradientSubtype =
   | 'GRADIENT_LINEAR'

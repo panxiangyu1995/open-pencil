@@ -1,11 +1,11 @@
 ---
 title: Componentes
-description: Referencia de componentes para los primitivos headless de Vue en @open-pencil/vue.
+description: Referencia de componentes para los primitivos headless de Vue en @signal-forge/vue.
 ---
 
 # Componentes
 
-`@open-pencil/vue` expone primitivos estructurales headless para el cableado del canvas, la UI de navegación, los paneles de propiedades y los controles de entrada enfocados.
+`@signal-forge/vue` expone primitivos estructurales headless para el cableado del canvas, la UI de navegación, los paneles de propiedades y los controles de entrada enfocados.
 
 ## Primitivos principales del editor
 

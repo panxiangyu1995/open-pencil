@@ -1,8 +1,8 @@
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 
-import { parseFigFile } from '@open-pencil/core'
-import type { SceneGraph, SceneNode } from '@open-pencil/core'
+import { parseFigFile } from '@signal-forge/core'
+import type { SceneGraph, SceneNode } from '@signal-forge/core'
 
 import { collectAllNodes } from './fig-traversal'
 

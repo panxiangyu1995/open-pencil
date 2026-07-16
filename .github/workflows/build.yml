@@ -111,7 +111,7 @@ jobs:
           tauriScript: bunx tauri
           args: --target ${{ matrix.target }}
           tagName: ${{ startsWith(github.ref, 'refs/tags/v') && github.ref_name || '' }}
-          releaseName: ${{ startsWith(github.ref, 'refs/tags/v') && format('OpenPencil {0}', github.ref_name) || '' }}
+          releaseName: ${{ startsWith(github.ref, 'refs/tags/v') && format('SignalForge {0}', github.ref_name) || '' }}
           releaseBody: ${{ steps.release_body.outputs.body || steps.changelog.outputs.release_notes }}
           releaseDraft: true
           uploadUpdaterJson: true
@@ -169,7 +169,7 @@ jobs:
             pack_if_new "$dir"
           done
           ls -la .npm-packages
-          for tarball in .npm-packages/open-pencil-*.tgz; do
+          for tarball in .npm-packages/signal-forge-*.tgz; do
             echo "Contents of $tarball"
             tar -tf "$tarball" | sed -n '1,60p' || true
           done
@@ -185,7 +185,7 @@ jobs:
               echo "${name}@${version} already published, skipping"
             else
               local tarball
-              tarball=$(cd .npm-packages && ls open-pencil-$(basename "$dir")-${version}.tgz)
+              tarball=$(cd .npm-packages && ls signal-forge-$(basename "$dir")-${version}.tgz)
               npm publish "./.npm-packages/${tarball}" --access public --provenance
             fi
           }

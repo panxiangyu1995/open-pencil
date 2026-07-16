@@ -1,5 +1,5 @@
 {
-  "name": "@open-pencil/tool-unit-tests",
+  "name": "@signal-forge/tool-unit-tests",
   "private": true,
   "type": "module",
   "scripts": {

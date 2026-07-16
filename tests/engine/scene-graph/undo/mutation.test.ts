@@ -1,7 +1,7 @@
 import { describe, test, expect } from 'bun:test'
 
-import { SceneGraph, UndoManager } from '@open-pencil/core'
-import type { JsonObject } from '@open-pencil/scene-graph/primitives'
+import { SceneGraph, UndoManager } from '@signal-forge/core'
+import type { JsonObject } from '@signal-forge/scene-graph/primitives'
 
 import { getNodeOrThrow } from '#tests/helpers/assert'
 

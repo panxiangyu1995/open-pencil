@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { colorToHexRaw, parseColor } from '@open-pencil/core/color'
+import { colorToHexRaw, parseColor } from '@signal-forge/core/color'
 
-import type { Color } from '@open-pencil/scene-graph/primitives'
+import type { Color } from '@signal-forge/scene-graph/primitives'
 import type { OkHCLControls } from '#vue/primitives/ColorPicker/types'
 
 const {

@@ -1,6 +1,6 @@
 ---
 title: Edición de texto
-description: Crear y editar texto con formato enriquecido en OpenPencil.
+description: Crear y editar texto con formato enriquecido en SignalForge.
 ---
 # Edición de texto
 

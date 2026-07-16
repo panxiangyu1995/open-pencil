@@ -1,4 +1,4 @@
-import type { LayoutMode, SceneGraph, SceneNode } from '@open-pencil/scene-graph'
+import type { LayoutMode, SceneGraph, SceneNode } from '@signal-forge/scene-graph'
 
 import {
   raw,

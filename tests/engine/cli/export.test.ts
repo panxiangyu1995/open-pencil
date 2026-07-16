@@ -3,9 +3,9 @@ import { mkdtemp } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 
-import { BUILTIN_IO_FORMATS, IORegistry } from '@open-pencil/core/io'
+import { BUILTIN_IO_FORMATS, IORegistry } from '@signal-forge/core/io'
 
-import { runOpenPencilCLI } from '#tests/helpers/cli'
+import { runSignalForgeCLI } from '#tests/helpers/cli'
 import { createRect, firstPageId, makeSceneGraph } from '#tests/helpers/scene'
 
 setDefaultTimeout(30_000)
@@ -13,7 +13,7 @@ setDefaultTimeout(30_000)
 const io = new IORegistry(BUILTIN_IO_FORMATS)
 
 async function createFigFixture() {
-  const dir = await mkdtemp(join(tmpdir(), 'open-pencil-export-cli-'))
+  const dir = await mkdtemp(join(tmpdir(), 'signal-forge-export-cli-'))
   const figPath = join(dir, 'card.fig')
   const graph = makeSceneGraph('Export Page')
   const rect = createRect(graph, firstPageId(graph), {
@@ -40,7 +40,7 @@ test('export CLI writes HTML with inline styles by default', async () => {
   const { dir, figPath } = await createFigFixture()
   const output = join(dir, 'card.html')
 
-  const { stderr, exitCode } = await runOpenPencilCLI([
+  const { stderr, exitCode } = await runSignalForgeCLI([
     'export',
     figPath,
     '--format',
@@ -62,7 +62,7 @@ test('export CLI can write HTML styles as Tailwind classes', async () => {
   const { dir, figPath } = await createFigFixture()
   const output = join(dir, 'card-tailwind.html')
 
-  const { stderr, exitCode } = await runOpenPencilCLI([
+  const { stderr, exitCode } = await runSignalForgeCLI([
     'export',
     figPath,
     '--format',
@@ -87,7 +87,7 @@ test('export CLI can write standalone HTML', async () => {
   const { dir, figPath } = await createFigFixture()
   const output = join(dir, 'card-standalone.html')
 
-  const { stderr, exitCode } = await runOpenPencilCLI([
+  const { stderr, exitCode } = await runSignalForgeCLI([
     'export',
     figPath,
     '--format',
@@ -113,7 +113,7 @@ test('export CLI precompiles Tailwind CSS for standalone Tailwind HTML', async (
   const { dir, figPath } = await createFigFixture()
   const output = join(dir, 'card-standalone-tailwind.html')
 
-  const { stderr, exitCode } = await runOpenPencilCLI([
+  const { stderr, exitCode } = await runSignalForgeCLI([
     'export',
     figPath,
     '--format',
@@ -141,7 +141,7 @@ test('export CLI can write external standalone HTML assets', async () => {
   const { dir, figPath } = await createFigFixture()
   const output = join(dir, 'card-external.html')
 
-  const { stderr, exitCode } = await runOpenPencilCLI([
+  const { stderr, exitCode } = await runSignalForgeCLI([
     'export',
     figPath,
     '--format',

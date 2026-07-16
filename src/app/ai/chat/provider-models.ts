@@ -1,5 +1,5 @@
-import { AI_PROVIDERS } from '@open-pencil/core/constants'
-import type { AIProviderID, ModelOption } from '@open-pencil/core/constants'
+import { AI_PROVIDERS } from '@signal-forge/core/constants'
+import type { AIProviderID, ModelOption } from '@signal-forge/core/constants'
 
 import { readCacheJson, writeCacheJson } from '@/app/cache'
 

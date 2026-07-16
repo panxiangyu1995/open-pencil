@@ -7,9 +7,9 @@ import IconButton from '@/components/ui/IconButton.vue'
 import PanelSection from '@/components/ui/panel/PanelSection.vue'
 import Tip from '@/components/ui/Tip.vue'
 import { useEditorStore } from '@/app/editor/active-store'
-import { useExport, useI18n } from '@open-pencil/vue'
+import { useExport, useI18n } from '@signal-forge/vue'
 
-import type { ExportFormatId } from '@open-pencil/vue'
+import type { ExportFormatId } from '@signal-forge/vue'
 
 const editorStore = useEditorStore()
 const { panels } = useI18n()

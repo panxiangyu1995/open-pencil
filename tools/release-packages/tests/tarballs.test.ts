@@ -4,16 +4,16 @@ import { packageBinTargets } from '../src/tarballs'
 
 describe('packageBinTargets', () => {
   test('normalizes string bin fields', () => {
-    expect(packageBinTargets({ name: '@open-pencil/cli', bin: './bin/openpencil.js' })).toEqual({
-      '@open-pencil/cli': './bin/openpencil.js'
+    expect(packageBinTargets({ name: '@signal-forge/cli', bin: './bin/signalforge.js' })).toEqual({
+      '@signal-forge/cli': './bin/signalforge.js'
     })
   })
 
   test('keeps named bin fields', () => {
     expect(
-      packageBinTargets({ name: '@open-pencil/cli', bin: { openpencil: './bin/openpencil.js' } })
+      packageBinTargets({ name: '@signal-forge/cli', bin: { signalforge: './bin/signalforge.js' } })
     ).toEqual({
-      openpencil: './bin/openpencil.js'
+      signalforge: './bin/signalforge.js'
     })
   })
 })

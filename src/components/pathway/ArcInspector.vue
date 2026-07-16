@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import type { SceneNode, PathwayNodeData, PathwayArcType } from '@open-pencil/scene-graph'
+import type { SceneNode, PathwayNodeData, PathwayArcType } from '@signal-forge/scene-graph'
 
-import { useI18n } from '@open-pencil/vue'
+import { useI18n } from '@signal-forge/vue'
 
 import { useEditorStore } from '@/app/editor/active-store'
 import PanelSection from '@/components/ui/panel/PanelSection.vue'

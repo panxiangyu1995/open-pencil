@@ -6,7 +6,7 @@
  * and MCP (JSON Schema) are generated from these definitions.
  */
 
-import type { SceneNode } from '@open-pencil/scene-graph'
+import type { SceneNode } from '@signal-forge/scene-graph'
 
 import type { FigmaAPI, FigmaNodeProxy } from '#core/figma-api'
 

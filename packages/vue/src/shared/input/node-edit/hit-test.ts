@@ -1,5 +1,5 @@
-import type { Editor } from '@open-pencil/core/editor'
-import type { VectorSegment, VectorVertex } from '@open-pencil/scene-graph'
+import type { Editor } from '@signal-forge/core/editor'
+import type { VectorSegment, VectorVertex } from '@signal-forge/scene-graph'
 
 export type NodeEditState = {
   nodeId: string

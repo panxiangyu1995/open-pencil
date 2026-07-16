@@ -1,5 +1,5 @@
-import type { GUID, NodeChange } from '@open-pencil/kiwi/fig/codec'
-import { guidToString } from '@open-pencil/kiwi/fig/guid'
+import type { GUID, NodeChange } from '@signal-forge/kiwi/fig/codec'
+import { guidToString } from '@signal-forge/kiwi/fig/guid'
 
 const TEXT_STYLE_FIELDS = [
   'fontSize',

@@ -46,7 +46,7 @@ async function getSceneTree(): Promise<SceneTreeNode> {
 async function getSelectedCount(): Promise<number> {
   return editor.page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     return store.state.selectedIds.size
   })
 }

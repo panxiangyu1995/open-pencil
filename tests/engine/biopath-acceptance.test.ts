@@ -7,7 +7,7 @@
  */
 import { describe, it, expect } from 'bun:test'
 
-import { SceneGraph } from '@open-pencil/scene-graph'
+import { SceneGraph } from '@signal-forge/scene-graph'
 import {
   getPathwayData,
   setPathwayData,
@@ -17,16 +17,16 @@ import {
   type PathwayNodeData,
   type PathwayAnnotation,
   type PathwayAnnotationType,
-} from '@open-pencil/scene-graph'
+} from '@signal-forge/scene-graph'
 
-import { FigmaAPI } from '@open-pencil/core/figma-api'
+import { FigmaAPI } from '@signal-forge/core/figma-api'
 import {
   BIOPATH_CORE_TOOLS,
   BIOPATH_EXTENDED_TOOLS,
   BIOPATH_TOOLS,
   type ToolDef,
   type ParamType,
-} from '@open-pencil/core/tools'
+} from '@signal-forge/core/tools'
 
 const VALID_PARAM_TYPES: ReadonlySet<string> = new Set<string>([
   'string', 'number', 'boolean', 'color', 'string[]'

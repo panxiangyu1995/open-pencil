@@ -1,5 +1,5 @@
-import type { Effect, Fill, SceneNode, Stroke } from '@open-pencil/scene-graph'
-import { copyEffects, copyFills, copyStrokes } from '@open-pencil/scene-graph/copy'
+import type { Effect, Fill, SceneNode, Stroke } from '@signal-forge/scene-graph'
+import { copyEffects, copyFills, copyStrokes } from '@signal-forge/scene-graph/copy'
 
 import { normalizeColor } from '#core/color'
 import {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useFillControls, useOkHCL, useI18n, inputValue } from '@open-pencil/vue'
-import { colorToHexRaw, parseColor } from '@open-pencil/core/color'
+import { useFillControls, useOkHCL, useI18n, inputValue } from '@signal-forge/vue'
+import { colorToHexRaw, parseColor } from '@signal-forge/core/color'
 
 import FillPicker from '@/components/fill-picker/FillPicker.vue'
 import PropertyListRoot from '@/components/properties/PropertyListRoot.vue'
@@ -14,7 +14,7 @@ import {
 import { fillLabel } from '@/components/properties/fill-label'
 import { createFillOkhclAdapter } from '@/components/properties/fill-okhcl'
 
-import type { Fill, SceneNode } from '@open-pencil/scene-graph'
+import type { Fill, SceneNode } from '@signal-forge/scene-graph'
 
 const fillCtx = useFillControls()
 const okhcl = useOkHCL()

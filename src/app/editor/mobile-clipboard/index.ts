@@ -1,4 +1,4 @@
-import type { Editor, EditorState } from '@open-pencil/core/editor'
+import type { Editor, EditorState } from '@signal-forge/core/editor'
 
 type MobileClipboardState = EditorState & { clipboardHtml: string }
 

@@ -18,7 +18,7 @@ Expone estado y acciones para:
 ## Uso
 
 ```ts
-import { useLayout } from '@open-pencil/vue'
+import { useLayout } from '@signal-forge/vue'
 
 const layout = useLayout()
 ```

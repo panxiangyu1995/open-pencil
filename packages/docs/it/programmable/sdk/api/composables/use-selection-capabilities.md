@@ -18,7 +18,7 @@ Usalo quando costruisci:
 ## Utilizzo
 
 ```ts
-import { useSelectionCapabilities } from '@open-pencil/vue'
+import { useSelectionCapabilities } from '@signal-forge/vue'
 
 const caps = useSelectionCapabilities()
 ```
@@ -27,7 +27,7 @@ const caps = useSelectionCapabilities()
 
 ```vue
 <script setup lang="ts">
-import { useSelectionCapabilities } from '@open-pencil/vue'
+import { useSelectionCapabilities } from '@signal-forge/vue'
 
 const { canDelete, canDuplicate, canCreateComponent } = useSelectionCapabilities()
 </script>

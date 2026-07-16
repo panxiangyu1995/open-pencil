@@ -9,7 +9,7 @@ test('tool-created CJK text requests fallback through app font loading', async (
 
   const result = await page.evaluate(async () => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
 
     const { ensureGraphFonts, loadFont } = await import('/src/app/editor/fonts/index.ts')
     await loadFont('Inter', 'Regular')
@@ -64,9 +64,9 @@ test('CJK text waits for fallback fonts and repaints after they load', async ({ 
 
   const result = await page.evaluate(async () => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const renderer = store.renderer
-    if (!renderer) throw new Error('OpenPencil renderer not initialized')
+    if (!renderer) throw new Error('SignalForge renderer not initialized')
 
     const { fontManager } = await import('/packages/core/src/text/fonts.ts')
     const manager = fontManager as typeof fontManager & {

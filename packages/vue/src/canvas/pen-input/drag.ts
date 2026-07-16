@@ -1,5 +1,5 @@
-import type { Editor } from '@open-pencil/core/editor'
-import type { Vector } from '@open-pencil/scene-graph/primitives'
+import type { Editor } from '@signal-forge/core/editor'
+import type { Vector } from '@signal-forge/scene-graph/primitives'
 
 import type { DragState } from '#vue/shared/input/types'
 

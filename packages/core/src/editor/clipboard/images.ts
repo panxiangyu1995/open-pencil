@@ -1,4 +1,4 @@
-import type { Fill } from '@open-pencil/scene-graph'
+import type { Fill } from '@signal-forge/scene-graph'
 
 import { TRANSPARENT } from '#core/constants'
 import { resolvePasteTarget } from '#core/editor/clipboard/paste-target'

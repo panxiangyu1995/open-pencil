@@ -1,7 +1,7 @@
 import type { Canvas, Path } from 'canvaskit-wasm'
 
-import type { SceneNode } from '@open-pencil/scene-graph'
-import { polygonVertices } from '@open-pencil/scene-graph/geometry'
+import type { SceneNode } from '@signal-forge/scene-graph'
+import { polygonVertices } from '@signal-forge/scene-graph/geometry'
 
 import { vectorNetworkToPath, geometryBlobToPath } from '#core/vector'
 

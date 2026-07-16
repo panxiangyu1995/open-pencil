@@ -42,11 +42,11 @@ test('selecting a rectangle shows JSX code', async () => {
   expect(code).toContain('Rectangle')
 })
 
-test('format toggle switches between OpenPencil and Tailwind', async () => {
+test('format toggle switches between SignalForge and Tailwind', async () => {
   await expect(formatToggle()).toBeVisible()
 
   const initialFormat = await formatToggle().textContent()
-  expect(initialFormat).toContain('OpenPencil')
+  expect(initialFormat).toContain('SignalForge')
 
   await formatToggle().click()
   await expect(formatToggle()).toContainText('Tailwind')
@@ -55,7 +55,7 @@ test('format toggle switches between OpenPencil and Tailwind', async () => {
   expect(code).toContain('div')
 
   await formatToggle().click()
-  await expect(formatToggle()).toContainText('OpenPencil')
+  await expect(formatToggle()).toContainText('SignalForge')
 })
 
 test('copy button works and shows confirmation', async () => {
@@ -78,7 +78,7 @@ test('selecting a frame shows Frame in JSX', async () => {
   // Create a frame via store to avoid click-targeting issues
   await editor.page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const id = store.createShape('FRAME', 300, 100, 200, 200)
     store.select([id])
   })
@@ -104,7 +104,7 @@ test('shows import errors in the Code panel', async () => {
   await editor.page.getByTestId('code-panel-import-toggle').click()
   await editor.page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const importDOMText = store.importDOMText
     store.importDOMText = async () => {
       store.importDOMText = importDOMText
@@ -141,7 +141,7 @@ test('imports HTML and CSS into the canvas', async () => {
 
   const imported = await editor.page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     return store.graph.getAllNodes().some((node) => node.name.includes('Hello DOM'))
   })
   expect(imported).toBe(true)

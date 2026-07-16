@@ -1,7 +1,7 @@
-import type { NodeChange, Paint } from '@open-pencil/kiwi/fig/codec'
-import { stringToGuid } from '@open-pencil/kiwi/fig/guid'
-import type { SceneGraph, SceneNode } from '@open-pencil/scene-graph'
-import type { Color, GUID, Matrix, Vector } from '@open-pencil/scene-graph/primitives'
+import type { NodeChange, Paint } from '@signal-forge/kiwi/fig/codec'
+import { stringToGuid } from '@signal-forge/kiwi/fig/guid'
+import type { SceneGraph, SceneNode } from '@signal-forge/scene-graph'
+import type { Color, GUID, Matrix, Vector } from '@signal-forge/scene-graph/primitives'
 
 /* eslint-disable max-lines */
 import { bytesToHex } from '#core/bytes/hex'

@@ -19,7 +19,7 @@ Il expose :
 ## Utilisation
 
 ```ts
-import { usePageList } from '@open-pencil/vue'
+import { usePageList } from '@signal-forge/vue'
 
 const pageList = usePageList()
 ```

@@ -2,9 +2,9 @@ import { beforeAll, describe, expect, test } from 'bun:test'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 
-import { exportFigFile, initCodec, parseFigFile, SceneGraph } from '@open-pencil/core'
-import { fontManager } from '@open-pencil/core/text'
-import { parseFigBuffer } from '@open-pencil/kiwi/fig/parse'
+import { exportFigFile, initCodec, parseFigFile, SceneGraph } from '@signal-forge/core'
+import { fontManager } from '@signal-forge/core/text'
+import { parseFigBuffer } from '@signal-forge/kiwi/fig/parse'
 
 import { HEAVY_TEST_TIMEOUT_MS } from '#tests/helpers/test-utils'
 

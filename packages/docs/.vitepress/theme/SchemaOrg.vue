@@ -8,7 +8,7 @@ const isEnHome = page.value.relativePath === 'index.md'
 const schema = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'OpenPencil',
+  name: 'SignalForge',
   applicationCategory: 'DesignApplication',
   operatingSystem: 'Windows, macOS, Linux, Web',
   offers: {
@@ -16,12 +16,12 @@ const schema = JSON.stringify({
     price: '0',
     priceCurrency: 'USD',
   },
-  url: 'https://app.openpencil.dev',
+  url: 'https://app.signalforge.dev',
   description:
     'Open-source, AI-native design editor. Figma-compatible with full .fig file support.',
   softwareVersion: '0.8.0',
   license: 'https://opensource.org/licenses/MIT',
-  screenshot: 'https://openpencil.dev/screenshot.png',
+  screenshot: 'https://signalforge.dev/screenshot.png',
   downloadUrl: 'https://github.com/open-pencil/open-pencil/releases/latest',
   featureList: [
     'Open .fig files natively',

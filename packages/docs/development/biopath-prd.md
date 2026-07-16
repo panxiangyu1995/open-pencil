@@ -15,7 +15,7 @@ LLMs understand biology deeply — gene/protein names, interactions, pathway log
 
 ### 1.2 Vision
 
-**BioPath** repurposes the OpenPencil design editor into an AI-native signaling pathway diagram tool where:
+**BioPath** repurposes the SignalForge design editor into an AI-native signaling pathway diagram tool where:
 
 1. Users describe pathways in natural language → AI generates publication-ready SBGN-compliant diagrams
 2. AI agents (Claude Code, Codex, Gemini CLI) create and modify pathway diagrams via MCP
@@ -422,7 +422,7 @@ All pathway tools are registered in the MCP server so external AI agents can use
 {
   "mcpServers": {
     "bio-path": {
-      "command": "openpencil-mcp"
+      "command": "signalforge-mcp"
     }
   }
 }

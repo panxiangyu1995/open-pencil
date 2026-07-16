@@ -1,4 +1,4 @@
-import type { LayerDragInstruction } from '@open-pencil/vue'
+import type { LayerDragInstruction } from '@signal-forge/vue'
 
 export interface LayerTreeItemActions {
   select: (additive: boolean) => void

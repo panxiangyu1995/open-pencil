@@ -2,7 +2,7 @@
 
 ## Try Online
 
-OpenPencil runs in the browser — no installation required. Open [app.openpencil.dev](https://app.openpencil.dev) to start designing.
+SignalForge runs in the browser — no installation required. Open [app.signalforge.dev](https://app.signalforge.dev) to start designing.
 
 If you want to build on top of it instead of only using the default app, see the [Programmable](/programmable/) section and the [Vue SDK](/programmable/sdk/).
 
@@ -38,7 +38,7 @@ This installs the latest signed release for macOS (Apple Silicon and Intel). The
 
 ```sh
 git clone https://github.com/open-pencil/open-pencil.git
-cd open-pencil
+cd signal-forge
 bun install
 ```
 

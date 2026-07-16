@@ -1,5 +1,5 @@
-import type { SceneGraph, SceneNode } from '@open-pencil/scene-graph'
-import { getPathwayData } from '@open-pencil/scene-graph'
+import type { SceneGraph, SceneNode } from '@signal-forge/scene-graph'
+import { getPathwayData } from '@signal-forge/scene-graph'
 
 import { parseColor } from '#core/color'
 

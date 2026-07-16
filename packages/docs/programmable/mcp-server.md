@@ -1,31 +1,31 @@
 ---
 title: MCP Server
-description: Connect Claude Code, Cursor, Windsurf, and other MCP clients to OpenPencil for AI-assisted design inspection and editing.
+description: Connect Claude Code, Cursor, Windsurf, and other MCP clients to SignalForge for AI-assisted design inspection and editing.
 ---
 
 # MCP Server
 
-OpenPencil includes an MCP (Model Context Protocol) server that lets AI coding tools — Claude Code, Cursor, Windsurf, etc. — read and modify designs through the running app.
+SignalForge includes an MCP (Model Context Protocol) server that lets AI coding tools — Claude Code, Cursor, Windsurf, etc. — read and modify designs through the running app.
 
 Two transports: **stdio** for MCP clients, **HTTP** for browser extensions and scripts.
 
 ## Install
 
 ```sh
-npm install -g @open-pencil/mcp
+npm install -g @signal-forge/mcp
 ```
 
 ## Stdio (Claude Code, Cursor, etc.)
 
-The stdio server connects to the running OpenPencil app via WebSocket (port 7601). Make sure the desktop app is open with a document loaded.
+The stdio server connects to the running SignalForge app via WebSocket (port 7601). Make sure the desktop app is open with a document loaded.
 
 ### Claude Code
 
 Install the MCP package and register it with Claude Code:
 
 ```sh
-npm install -g @open-pencil/mcp
-claude mcp add --scope user open-pencil -- openpencil-mcp
+npm install -g @signal-forge/mcp
+claude mcp add --scope user open-pencil -- signalforge-mcp
 ```
 
 Check the connection:
@@ -34,12 +34,12 @@ Check the connection:
 claude mcp list
 ```
 
-Claude Code asks before using each MCP tool unless you allow the server's tools. To auto-approve OpenPencil tools only, add this to `~/.claude/settings.json`:
+Claude Code asks before using each MCP tool unless you allow the server's tools. To auto-approve SignalForge tools only, add this to `~/.claude/settings.json`:
 
 ```json
 {
   "permissions": {
-    "allow": ["mcp__open-pencil__*"]
+    "allow": ["mcp__signal-forge__*"]
   }
 }
 ```
@@ -59,8 +59,8 @@ Add to your MCP config (for example `.cursor/mcp.json`):
 ```json
 {
   "mcpServers": {
-    "open-pencil": {
-      "command": "openpencil-mcp"
+    "signal-forge": {
+      "command": "signalforge-mcp"
     }
   }
 }
@@ -72,9 +72,9 @@ Or run from source without installing:
 ```json [Bun]
 {
   "mcpServers": {
-    "open-pencil": {
+    "signal-forge": {
       "command": "bun",
-      "args": ["/path/to/open-pencil/packages/mcp/src/stdio.ts"]
+      "args": ["/path/to/signal-forge/packages/mcp/src/stdio.ts"]
     }
   }
 }
@@ -82,9 +82,9 @@ Or run from source without installing:
 ```json [Node.js]
 {
   "mcpServers": {
-    "open-pencil": {
+    "signal-forge": {
       "command": "npx",
-      "args": ["tsx", "/path/to/open-pencil/packages/mcp/src/stdio.ts"]
+      "args": ["tsx", "/path/to/signal-forge/packages/mcp/src/stdio.ts"]
     }
   }
 }
@@ -96,7 +96,7 @@ Or run from source without installing:
 For browser extensions, scripts, CI, or any HTTP client:
 
 ```sh
-openpencil-mcp-http
+signalforge-mcp-http
 ```
 
 Or from source: `bun packages/mcp/src/index.ts` / `npx tsx packages/mcp/src/index.ts`
@@ -128,7 +128,7 @@ Most tools accept optional `document_id` and `page_id` fields. Pass them explici
 
 ## AI Agent Skill
 
-Teach your AI coding agent to use OpenPencil tools:
+Teach your AI coding agent to use SignalForge tools:
 
 ```sh
 npx skills add open-pencil/skills@open-pencil

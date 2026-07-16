@@ -1,11 +1,11 @@
 ---
 title: SDK-Architektur
-description: Ordnerstruktur, öffentliche API-Grenzen und Kompositionsmuster in @open-pencil/vue.
+description: Ordnerstruktur, öffentliche API-Grenzen und Kompositionsmuster in @signal-forge/vue.
 ---
 
 # SDK-Architektur
 
-`@open-pencil/vue` ist die Vue-seitige Schicht über `@open-pencil/core`.
+`@signal-forge/vue` ist die Vue-seitige Schicht über `@signal-forge/core`.
 
 Das Paket besitzt das Editor-Modell selbst nicht. Es passt den Kern-Editor an in:
 
@@ -107,7 +107,7 @@ Fokussierte Slot-Props oder direkte Composable-Verwendung gegenüber großen `v-
 
 ## Praktische Faustregel
 
-Wenn ein Stück Logik in einer anderen OpenPencil-basierten App wiederverwendet werden könnte, ohne App-Styling mitzubringen, gehört es wahrscheinlich in `@open-pencil/vue`.
+Wenn ein Stück Logik in einer anderen SignalForge-basierten App wiederverwendet werden könnte, ohne App-Styling mitzubringen, gehört es wahrscheinlich in `@signal-forge/vue`.
 
 ## Verwandte Seiten
 

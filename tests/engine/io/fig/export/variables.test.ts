@@ -1,7 +1,7 @@
 import { describe, test, expect, beforeAll } from 'bun:test'
 
-import { exportFigFile, parseFigFile, initCodec, SceneGraph } from '@open-pencil/core'
-import type { Color } from '@open-pencil/core'
+import { exportFigFile, parseFigFile, initCodec, SceneGraph } from '@signal-forge/core'
+import type { Color } from '@signal-forge/core'
 
 import { expectDefined } from '#tests/helpers/assert'
 

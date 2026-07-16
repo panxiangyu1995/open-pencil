@@ -1,4 +1,4 @@
-import type { SceneNode } from '@open-pencil/scene-graph'
+import type { SceneNode } from '@signal-forge/scene-graph'
 
 export type OverridePatchSource = 'symbol-override' | 'component-prop' | 'derived-symbol-data'
 

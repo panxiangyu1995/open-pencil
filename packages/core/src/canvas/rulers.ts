@@ -1,7 +1,7 @@
 import type { Canvas, CanvasKit } from 'canvaskit-wasm'
 
-import type { SceneNode, SceneGraph } from '@open-pencil/scene-graph'
-import { computeAbsoluteBounds } from '@open-pencil/scene-graph/geometry'
+import type { SceneNode, SceneGraph } from '@signal-forge/scene-graph'
+import { computeAbsoluteBounds } from '@signal-forge/scene-graph/geometry'
 
 import {
   RULER_SIZE,

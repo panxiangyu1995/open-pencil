@@ -1,7 +1,7 @@
 export { prefetchFigmaSchema } from '#core/clipboard'
 export { readFigFile, parseFigFile } from './fig/file'
 export { importNodeChanges } from './fig/import'
-export { deduplicateNodeChangePluginData } from '@open-pencil/kiwi/fig/parse'
+export { deduplicateNodeChangePluginData } from '@signal-forge/kiwi/fig/parse'
 export {
   initCodec,
   encodeMessage,
@@ -29,7 +29,7 @@ export {
   type VariableDataValuesEntry,
   type ParentIndex,
   type FigmaMessage
-} from '@open-pencil/kiwi/fig/codec'
+} from '@signal-forge/kiwi/fig/codec'
 export {
   MESSAGE_TYPES,
   NODE_TYPES,
@@ -48,4 +48,4 @@ export {
   getKiwiMessageType,
   parseVarint,
   FIG_WIRE_MAGIC
-} from '@open-pencil/kiwi/fig'
+} from '@signal-forge/kiwi/fig'

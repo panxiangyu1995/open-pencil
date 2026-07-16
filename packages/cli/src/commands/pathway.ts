@@ -16,7 +16,7 @@ export default defineCommand({
       },
       async run({ args }) {
         try {
-          const { readSbgnMl } = await import('@open-pencil/core/io/formats/sbgn-ml/read')
+          const { readSbgnMl } = await import('@signal-forge/core/io/formats/sbgn-ml/read')
           const { readFileSync, writeFileSync } = await import('node:fs')
 
           const xml = readFileSync(args.input, 'utf-8')
@@ -46,7 +46,7 @@ export default defineCommand({
       },
       async run({ args }) {
         try {
-          const { writeSbgnMl } = await import('@open-pencil/core/io/formats/sbgn-ml/write')
+          const { writeSbgnMl } = await import('@signal-forge/core/io/formats/sbgn-ml/write')
           const { loadRpcData } = await import('#cli/rpc-data')
 
           const data = await loadRpcData<{ graph: unknown }>(args.input, 'export', {}, args)
@@ -74,7 +74,7 @@ export default defineCommand({
       },
       async run({ args }) {
         try {
-          const { searchPathways, findPathwaysByGene, getPathwayDetails, getPathwayParticipants } = await import('@open-pencil/core/pathway/knowledge/reactome')
+          const { searchPathways, findPathwaysByGene, getPathwayDetails, getPathwayParticipants } = await import('@signal-forge/core/pathway/knowledge/reactome')
 
           let result: unknown
           switch (args.type) {

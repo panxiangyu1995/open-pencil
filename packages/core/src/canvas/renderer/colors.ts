@@ -1,5 +1,5 @@
-import type { Fill, SceneGraph, SceneNode, Stroke } from '@open-pencil/scene-graph'
-import type { Color } from '@open-pencil/scene-graph/primitives'
+import type { Fill, SceneGraph, SceneNode, Stroke } from '@signal-forge/scene-graph'
+import type { Color } from '@signal-forge/scene-graph/primitives'
 
 import { resolveNodeFillColor, resolveNodeStrokeColor } from '#core/color/management'
 import type { ResolvedRenderColor } from '#core/color/management'

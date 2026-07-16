@@ -1,5 +1,5 @@
-import type { SceneNode } from '@open-pencil/scene-graph'
-import type { PathwayNodeData } from '@open-pencil/scene-graph'
+import type { SceneNode } from '@signal-forge/scene-graph'
+import type { PathwayNodeData } from '@signal-forge/scene-graph'
 
 import { SBGN_STYLE } from './constants'
 

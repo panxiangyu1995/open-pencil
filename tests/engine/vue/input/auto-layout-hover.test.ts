@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'bun:test'
 
-import type { Editor } from '@open-pencil/core/editor'
-import type { SceneNode } from '@open-pencil/scene-graph'
+import type { Editor } from '@signal-forge/core/editor'
+import type { SceneNode } from '@signal-forge/scene-graph'
 
 import { resolveAutoLayoutHover } from '#vue/shared/input/auto-layout-hover'
 

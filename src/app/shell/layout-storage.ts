@@ -1,6 +1,6 @@
-import { IS_BROWSER } from '@open-pencil/core/constants'
+import { IS_BROWSER } from '@signal-forge/core/constants'
 
-const EDITOR_LAYOUT_KEY = 'open-pencil:editor-layout'
+const EDITOR_LAYOUT_KEY = 'signal-forge:editor-layout'
 const DEFAULT_EDITOR_LAYOUT = [18, 64, 18]
 
 export function loadEditorLayout(): number[] {

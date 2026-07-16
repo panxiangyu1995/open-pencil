@@ -1,6 +1,6 @@
 import type { Ref } from 'vue'
 
-import type { Editor } from '@open-pencil/core/editor'
+import type { Editor } from '@signal-forge/core/editor'
 
 import { startPenInput } from '#vue/canvas/pen-input/use'
 import { startPathwayArcInput } from '#vue/canvas/pathway-arc-input/use'

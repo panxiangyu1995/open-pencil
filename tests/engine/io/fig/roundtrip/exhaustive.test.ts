@@ -10,8 +10,8 @@ import {
   parseFigKiwiChunks,
   type SceneGraph,
   type SceneNode
-} from '@open-pencil/core'
-import type { JsonObject } from '@open-pencil/scene-graph/primitives'
+} from '@signal-forge/core'
+import type { JsonObject } from '@signal-forge/scene-graph/primitives'
 
 import {
   type Mismatch,

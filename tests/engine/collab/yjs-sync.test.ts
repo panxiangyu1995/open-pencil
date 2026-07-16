@@ -2,9 +2,9 @@ import { describe, test, expect } from 'bun:test'
 
 import * as Y from 'yjs'
 
-import type { Fill, GeometryPath, SceneNode } from '@open-pencil/scene-graph'
-import { SceneGraph } from '@open-pencil/scene-graph'
-import { nodeVisualBounds } from '@open-pencil/scene-graph/geometry'
+import type { Fill, GeometryPath, SceneNode } from '@signal-forge/scene-graph'
+import { SceneGraph } from '@signal-forge/scene-graph'
+import { nodeVisualBounds } from '@signal-forge/scene-graph/geometry'
 
 import {
   createYjsGraphSync,

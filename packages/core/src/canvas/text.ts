@@ -8,8 +8,8 @@ import type {
 } from 'canvaskit-wasm'
 import { uniq } from 'es-toolkit/array'
 
-import type { NodeChange } from '@open-pencil/kiwi/fig/codec'
-import type { SceneNode } from '@open-pencil/scene-graph'
+import type { NodeChange } from '@signal-forge/kiwi/fig/codec'
+import type { SceneNode } from '@signal-forge/scene-graph'
 
 import { getCanvasKit } from '#core/canvaskit'
 import { resolveRGBAForPreview } from '#core/color/management'

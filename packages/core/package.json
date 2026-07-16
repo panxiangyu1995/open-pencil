@@ -1,5 +1,5 @@
 {
-  "name": "@open-pencil/core",
+  "name": "@signal-forge/core",
   "version": "0.13.2",
   "license": "MIT",
   "repository": {
@@ -167,9 +167,9 @@
   "dependencies": {
     "@chenglou/pretext": "^0.0.7",
     "@iconify/utils": "^3.1.0",
-    "@open-pencil/kiwi": "workspace:*",
-    "@open-pencil/pen": "workspace:*",
-    "@open-pencil/scene-graph": "workspace:*",
+    "@signal-forge/kiwi": "workspace:*",
+    "@signal-forge/pen": "workspace:*",
+    "@signal-forge/scene-graph": "workspace:*",
     "@tauri-apps/api": "^2",
     "acorn": "^8.16.0",
     "canvaskit-wasm": "^0.40.0",

@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'bun:test'
 
-import type { Fill, Stroke, Effect, StyleRun, GeometryPath } from '@open-pencil/core'
+import type { Fill, Stroke, Effect, StyleRun, GeometryPath } from '@signal-forge/core'
 import {
   copyFill,
   copyFills,
@@ -8,7 +8,7 @@ import {
   copyEffect,
   copyStyleRun,
   copyGeometryPaths
-} from '@open-pencil/scene-graph/copy'
+} from '@signal-forge/scene-graph/copy'
 
 import { expectDefined } from '#tests/helpers/assert'
 

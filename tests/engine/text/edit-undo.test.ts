@@ -2,10 +2,10 @@ import { describe, test, expect } from 'bun:test'
 
 import type { CanvasKit } from 'canvaskit-wasm'
 
-import { SceneGraph, TextEditor, UndoManager } from '@open-pencil/core'
-import type { StyleRun } from '@open-pencil/core'
-import { createTextActions } from '@open-pencil/core/editor'
-import type { EditorContext, EditorState } from '@open-pencil/core/editor'
+import { SceneGraph, TextEditor, UndoManager } from '@signal-forge/core'
+import type { StyleRun } from '@signal-forge/core'
+import { createTextActions } from '@signal-forge/core/editor'
+import type { EditorContext, EditorState } from '@signal-forge/core/editor'
 
 import { expectDefined, getNodeOrThrow } from '#tests/helpers/assert'
 

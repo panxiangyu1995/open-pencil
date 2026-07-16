@@ -7,11 +7,11 @@ import {
   rgbaToOkHCL,
   setNodeFillOkHCL,
   setNodeStrokeOkHCL
-} from '@open-pencil/core/color'
-import type { OkHCLColor } from '@open-pencil/core/color'
-import { BLACK } from '@open-pencil/core/constants'
-import type { Editor } from '@open-pencil/core/editor'
-import type { SceneNode } from '@open-pencil/scene-graph'
+} from '@signal-forge/core/color'
+import type { OkHCLColor } from '@signal-forge/core/color'
+import { BLACK } from '@signal-forge/core/constants'
+import type { Editor } from '@signal-forge/core/editor'
+import type { SceneNode } from '@signal-forge/scene-graph'
 
 import type { ColorFieldFormat } from '#vue/primitives/ColorPicker/types'
 

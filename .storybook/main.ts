@@ -20,7 +20,7 @@ const config: StorybookConfig = {
   viteFinal(config) {
     const excludedPluginPrefixes = [
       'copy-canvaskit-wasm',
-      'open-pencil-automation',
+      'signal-forge-automation',
       'vite-plugin-pwa'
     ]
 

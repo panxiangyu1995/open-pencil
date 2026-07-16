@@ -18,7 +18,7 @@ description: Costruisci menu, azioni e UI guidata da comandi sopra l'editor.
 ## Utilizzo
 
 ```ts
-import { useEditorCommands } from '@open-pencil/vue'
+import { useEditorCommands } from '@signal-forge/vue'
 
 const { commands, menuItem, runCommand, moveSelectionToPage, otherPages } = useEditorCommands()
 ```

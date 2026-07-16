@@ -1,7 +1,7 @@
 import type { Canvas, Image as CKImage, Surface } from 'canvaskit-wasm'
 
-import type { SceneGraph } from '@open-pencil/scene-graph'
-import { computeDescendantVisualBounds } from '@open-pencil/scene-graph/geometry'
+import type { SceneGraph } from '@signal-forge/scene-graph'
+import { computeDescendantVisualBounds } from '@signal-forge/scene-graph/geometry'
 
 import type { SkiaRenderer } from '#core/canvas/renderer'
 import { clearSubtreePictureCache } from '#core/canvas/renderer/state'

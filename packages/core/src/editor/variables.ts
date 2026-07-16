@@ -3,7 +3,7 @@ import type {
   VariableCollection,
   VariableType,
   VariableValue
-} from '@open-pencil/scene-graph'
+} from '@signal-forge/scene-graph'
 
 import { randomHex } from '#core/random'
 

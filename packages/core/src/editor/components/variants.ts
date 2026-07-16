@@ -4,8 +4,8 @@ import type {
   ComponentPropertyDefinition,
   ComponentPropertyType,
   SceneNode
-} from '@open-pencil/scene-graph'
-import { buildVariantName, parseVariantName } from '@open-pencil/scene-graph/variant-name'
+} from '@signal-forge/scene-graph'
+import { buildVariantName, parseVariantName } from '@signal-forge/scene-graph/variant-name'
 
 import type { EditorContext } from '#core/editor/types'
 import { randomHex } from '#core/random'

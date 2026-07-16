@@ -1,5 +1,5 @@
-import type { SceneNode } from '@open-pencil/scene-graph'
-import type { useOkHCL } from '@open-pencil/vue'
+import type { SceneNode } from '@signal-forge/scene-graph'
+import type { useOkHCL } from '@signal-forge/vue'
 
 type OkhclControls = ReturnType<typeof useOkHCL>
 type FillFieldFormat = Parameters<OkhclControls['setFillFieldFormat']>[2]

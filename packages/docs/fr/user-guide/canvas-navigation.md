@@ -1,6 +1,6 @@
 ---
 title: Navigation sur le canevas
-description: Panoramique, zoom et outil main dans OpenPencil.
+description: Panoramique, zoom et outil main dans SignalForge.
 ---
 
 # Navigation sur le canevas

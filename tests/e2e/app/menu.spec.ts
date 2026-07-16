@@ -71,7 +71,7 @@ test('Object menu shows Group/Ungroup/Component', async () => {
 function getStoreStateNumber(key: 'selectedIds' | 'zoom') {
   return editor.page.evaluate((stateKey) => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     if (stateKey === 'selectedIds') return store.state.selectedIds.size
     return store.state.zoom
   }, key)
@@ -95,7 +95,7 @@ test('Duplicate via Edit menu works', async () => {
 
   const countBefore = await editor.page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     return store.graph.getChildren(store.state.currentPageId).length
   })
 
@@ -105,7 +105,7 @@ test('Duplicate via Edit menu works', async () => {
 
   const countAfter = await editor.page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     return store.graph.getChildren(store.state.currentPageId).length
   })
 

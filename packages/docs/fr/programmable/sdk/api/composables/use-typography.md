@@ -19,7 +19,7 @@ Il expose :
 ## Utilisation
 
 ```ts
-import { useTypography } from '@open-pencil/vue'
+import { useTypography } from '@signal-forge/vue'
 
 const typography = useTypography()
 ```

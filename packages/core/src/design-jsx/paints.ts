@@ -4,8 +4,8 @@ import type {
   FillType,
   GradientStop,
   GradientTransform
-} from '@open-pencil/scene-graph'
-import type { Color } from '@open-pencil/scene-graph/primitives'
+} from '@signal-forge/scene-graph'
+import type { Color } from '@signal-forge/scene-graph/primitives'
 
 import { colorToFill, parseColor } from '#core/color'
 import { TRANSPARENT } from '#core/constants'

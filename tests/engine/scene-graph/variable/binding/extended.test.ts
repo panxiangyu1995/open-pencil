@@ -1,8 +1,8 @@
 import { describe, expect, test } from 'bun:test'
 
-import { SceneGraph } from '@open-pencil/core'
-import { FigmaAPI } from '@open-pencil/core/figma-api'
-import { nodeProxyToJSON } from '@open-pencil/core/figma-api/serialization'
+import { SceneGraph } from '@signal-forge/core'
+import { FigmaAPI } from '@signal-forge/core/figma-api'
+import { nodeProxyToJSON } from '@signal-forge/core/figma-api/serialization'
 
 function pageId(graph: SceneGraph): string {
   return graph.getPages()[0].id

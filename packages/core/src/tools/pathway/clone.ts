@@ -1,6 +1,6 @@
 import { defineTool, nodeNotFound } from '#core/tools/schema'
-import type { PathwayNodeData } from '@open-pencil/scene-graph'
-import { getPathwayData, updatePathwayData } from '@open-pencil/scene-graph'
+import type { PathwayNodeData } from '@signal-forge/scene-graph'
+import { getPathwayData, updatePathwayData } from '@signal-forge/scene-graph'
 
 function createBooleanToggleTool(config: {
   name: string

@@ -1,4 +1,4 @@
-import type { Editor } from '@open-pencil/core/editor'
+import type { Editor } from '@signal-forge/core/editor'
 
 export function createProfilerActions(editor: Editor) {
   function viewportScreenCenter() {

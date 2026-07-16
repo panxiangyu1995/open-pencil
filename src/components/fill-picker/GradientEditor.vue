@@ -3,16 +3,16 @@ import AppSelect from '@/components/ui/AppSelect.vue'
 import Tip from '@/components/ui/Tip.vue'
 import ColorPickerPanel from '@/components/color-picker-panel/ColorPickerPanel.vue'
 import NumberField from '@/components/inputs/NumberField.vue'
-import { colorToCSS } from '@open-pencil/core/color'
+import { colorToCSS } from '@signal-forge/core/color'
 import {
   GradientEditorRoot,
   GradientEditorBar,
   GradientEditorStop,
   inputValue,
   useI18n
-} from '@open-pencil/vue'
+} from '@signal-forge/vue'
 
-import type { Fill } from '@open-pencil/scene-graph'
+import type { Fill } from '@signal-forge/scene-graph'
 
 const { fill } = defineProps<{ fill: Fill }>()
 const emit = defineEmits<{ update: [fill: Fill] }>()

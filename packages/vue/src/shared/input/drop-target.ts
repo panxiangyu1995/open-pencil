@@ -1,5 +1,5 @@
-import type { Editor } from '@open-pencil/core/editor'
-import type { SceneNode } from '@open-pencil/scene-graph'
+import type { Editor } from '@signal-forge/core/editor'
+import type { SceneNode } from '@signal-forge/scene-graph'
 
 export function findMoveDropTarget(cx: number, cy: number, editor: Editor): SceneNode | null {
   let dropTarget = editor.graph.hitTestFrame(

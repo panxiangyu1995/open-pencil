@@ -1,8 +1,8 @@
-import { renderTreeNode } from '@open-pencil/core/design-jsx'
-import type { FigmaAPI } from '@open-pencil/core/figma-api'
-import { computeAllLayouts } from '@open-pencil/core/layout'
-import { ALL_TOOLS } from '@open-pencil/core/tools'
-import type { JsonObject } from '@open-pencil/scene-graph/primitives'
+import { renderTreeNode } from '@signal-forge/core/design-jsx'
+import type { FigmaAPI } from '@signal-forge/core/figma-api'
+import { computeAllLayouts } from '@signal-forge/core/layout'
+import { ALL_TOOLS } from '@signal-forge/core/tools'
+import type { JsonObject } from '@signal-forge/scene-graph/primitives'
 
 import type { AutomationTarget } from '@/app/automation/bridge/target'
 import { ensureGraphFonts } from '@/app/editor/fonts'

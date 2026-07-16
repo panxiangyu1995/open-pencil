@@ -1,5 +1,5 @@
-import { createEditor } from '@open-pencil/core/editor'
-import type { Editor } from '@open-pencil/core/editor'
+import { createEditor } from '@signal-forge/core/editor'
+import type { Editor } from '@signal-forge/core/editor'
 
 export function setupEditorPage() {
   const editor = createEditor()

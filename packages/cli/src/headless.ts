@@ -1,8 +1,8 @@
 import { readFile } from 'node:fs/promises'
 
-import { BUILTIN_IO_FORMATS, IORegistry, initCanvasKit } from '@open-pencil/core/io'
-import { computeAllLayouts } from '@open-pencil/core/layout'
-import type { SceneGraph } from '@open-pencil/scene-graph'
+import { BUILTIN_IO_FORMATS, IORegistry, initCanvasKit } from '@signal-forge/core/io'
+import { computeAllLayouts } from '@signal-forge/core/layout'
+import type { SceneGraph } from '@signal-forge/scene-graph'
 
 export { initCanvasKit }
 

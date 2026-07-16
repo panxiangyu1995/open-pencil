@@ -35,8 +35,8 @@ Create `packages/core/src/pathway/labels.ts` — pathway label painter:
 
 ```typescript
 import type { Canvas, CanvasKit, Font } from 'canvaskit-wasm'
-import type { SceneNode } from '@open-pencil/scene-graph'
-import type { PathwayNodeData, PathwayGlyphType } from '@open-pencil/scene-graph'
+import type { SceneNode } from '@signal-forge/scene-graph'
+import type { PathwayNodeData, PathwayGlyphType } from '@signal-forge/scene-graph'
 import type { SkiaRenderer } from '#core/canvas/renderer'
 import { SBGN_STYLE } from './constants'
 
@@ -570,8 +570,8 @@ if (tool === 'PATHWAY_ARC') {
 
 CREATE `packages/vue/src/shared/input/pathway-arc.ts`:
 ```typescript
-import type { Editor } from '@open-pencil/core/editor'
-import { getPathwayData } from '@open-pencil/scene-graph'
+import type { Editor } from '@signal-forge/core/editor'
+import { getPathwayData } from '@signal-forge/scene-graph'
 
 import type { HitTestFns } from '#vue/shared/input/select'
 import type { DragPathwayArc, DragState } from '#vue/shared/input/types'

@@ -17,7 +17,7 @@ export default defineConfig({
     neverBundle: [
       '@hono/node-server',
       '@modelcontextprotocol/sdk',
-      '@open-pencil/core',
+      '@signal-forge/core',
       /^@open-pencil\/core\//,
       'hono',
       /^hono\//,

@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, setDefaultTimeout, test } from 'bun:test'
 
-import { type Fill, type SceneNode } from '@open-pencil/core'
+import { type Fill, type SceneNode } from '@signal-forge/core'
 
 import { parseGoldPreviewFixture } from '#tests/helpers/fig-fixtures'
 

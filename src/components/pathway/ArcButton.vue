@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { PathwayArcType } from '@open-pencil/scene-graph'
+import type { PathwayArcType } from '@signal-forge/scene-graph'
 
 const props = defineProps<{
   arcType: PathwayArcType

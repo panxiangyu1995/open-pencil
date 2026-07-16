@@ -1,9 +1,9 @@
 /* eslint-disable max-lines -- scene dispatch stays together while shape domains live in sibling modules */
 import type { Canvas, Path } from 'canvaskit-wasm'
 
-import type { SceneNode, SceneGraph, Fill } from '@open-pencil/scene-graph'
-import { computeDescendantVisualBounds } from '@open-pencil/scene-graph/geometry'
-import type { Color } from '@open-pencil/scene-graph/primitives'
+import type { SceneNode, SceneGraph, Fill } from '@signal-forge/scene-graph'
+import { computeDescendantVisualBounds } from '@signal-forge/scene-graph/geometry'
+import type { Color } from '@signal-forge/scene-graph/primitives'
 
 import { DROP_HIGHLIGHT_ALPHA, DROP_HIGHLIGHT_STROKE, SECTION_CORNER_RADIUS } from '#core/constants'
 import { renderPathwayGlyph, renderPathwayProcess, renderPathwayArc, renderCompartment } from '#core/pathway/render'

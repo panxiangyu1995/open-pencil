@@ -11,7 +11,7 @@ import {
   parseFigFile,
   rgbaToOkHCL,
   SceneGraph
-} from '@open-pencil/core'
+} from '@signal-forge/core'
 
 import { expectDefined } from '#tests/helpers/assert'
 

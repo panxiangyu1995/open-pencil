@@ -1,4 +1,4 @@
-import type { NodeType, SceneNode } from '@open-pencil/scene-graph'
+import type { NodeType, SceneNode } from '@signal-forge/scene-graph'
 
 import { DEFAULT_FRAME_FILL } from '#core/constants'
 

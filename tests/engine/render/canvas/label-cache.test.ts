@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'bun:test'
 
-import { SceneGraph, LabelCache } from '@open-pencil/core'
+import { SceneGraph, LabelCache } from '@signal-forge/core'
 
 function buildGraph() {
   const g = new SceneGraph()

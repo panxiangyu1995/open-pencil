@@ -1,8 +1,8 @@
 import { useEventListener } from '@vueuse/core'
 import { ref, type Ref } from 'vue'
 
-import type { Editor } from '@open-pencil/core/editor'
-import type { SceneNode } from '@open-pencil/scene-graph'
+import type { Editor } from '@signal-forge/core/editor'
+import type { SceneNode } from '@signal-forge/scene-graph'
 
 import {
   handleBendHandleMove,
@@ -27,7 +27,7 @@ import { useSpaceHeld } from '#vue/shared/input/space-key'
 import type { DragState } from '#vue/shared/input/types'
 
 /**
- * Wires pointer and mouse interaction to an OpenPencil canvas.
+ * Wires pointer and mouse interaction to an SignalForge canvas.
  *
  * This composable coordinates selection, dragging, resizing, rotation,
  * panning, drawing tools, scoped hit testing, and text-edit interaction.

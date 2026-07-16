@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { TypographyControlsRoot, useI18n } from '@open-pencil/vue'
+import { TypographyControlsRoot, useI18n } from '@signal-forge/vue'
 
 import FontPicker from '@/components/font-picker/FontPicker.vue'
 import FontSettingsPopover from '@/components/FontSettings/FontSettingsPopover.vue'

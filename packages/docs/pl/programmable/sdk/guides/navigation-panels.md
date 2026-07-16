@@ -5,7 +5,7 @@ description: Buduj paski boczne stron i warstw z PageListRoot, LayerTreeRoot i s
 
 # Panele nawigacyjne
 
-Paski boczne OpenPencil zazwyczaj łączą dwa obszary:
+Paski boczne SignalForge zazwyczaj łączą dwa obszary:
 
 - nawigację po stronach
 - nawigację po warstwach

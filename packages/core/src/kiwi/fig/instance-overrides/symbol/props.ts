@@ -1,6 +1,6 @@
-import type { NodeChange, Paint, Effect as KiwiEffect } from '@open-pencil/kiwi/fig/codec'
-import type { SceneNode, ArcData, TextAutoResize } from '@open-pencil/scene-graph'
-import type { Vector } from '@open-pencil/scene-graph/primitives'
+import type { NodeChange, Paint, Effect as KiwiEffect } from '@signal-forge/kiwi/fig/codec'
+import type { SceneNode, ArcData, TextAutoResize } from '@signal-forge/scene-graph'
+import type { Vector } from '@signal-forge/scene-graph/primitives'
 
 import {
   convertFills,

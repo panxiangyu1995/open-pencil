@@ -1,14 +1,14 @@
 import { computed, ref } from 'vue'
 import type { ComputedRef } from 'vue'
 
-import type { Editor } from '@open-pencil/core/editor'
+import type { Editor } from '@signal-forge/core/editor'
 import type {
   GridTrack,
   LayoutAlign,
   LayoutCounterAlign,
   LayoutSizing,
   SceneNode
-} from '@open-pencil/scene-graph'
+} from '@signal-forge/scene-graph'
 
 import type { useI18n } from '#vue/i18n'
 import { useSceneComputed } from '#vue/internal/scene-computed/use'

@@ -1,10 +1,10 @@
 import { describe, test, expect } from 'bun:test'
 
-import type { Vector } from '@open-pencil/core'
+import type { Vector } from '@signal-forge/core'
 import {
   computeDescendantVisualBounds,
   computeVisualBounds
-} from '@open-pencil/scene-graph/geometry'
+} from '@signal-forge/scene-graph/geometry'
 
 function commandsBlobFromPoints(points: Vector[]): Uint8Array {
   const blob = new Uint8Array(points.length * 9 + 1)

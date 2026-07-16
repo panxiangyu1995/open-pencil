@@ -1,8 +1,8 @@
 import { isNotNil } from 'es-toolkit/predicate'
 
-import type { NodeChange, VariableDataValuesEntry, Color, GUID } from '@open-pencil/kiwi/fig/codec'
-import { SceneGraph } from '@open-pencil/scene-graph'
-import type { VariableType, VariableValue } from '@open-pencil/scene-graph'
+import type { NodeChange, VariableDataValuesEntry, Color, GUID } from '@signal-forge/kiwi/fig/codec'
+import { SceneGraph } from '@signal-forge/scene-graph'
+import type { VariableType, VariableValue } from '@signal-forge/scene-graph'
 
 import { BLACK } from '#core/constants'
 import { populateAndApplyOverrides } from '#core/kiwi/fig/instance-overrides'

@@ -2,7 +2,7 @@ import { basename, extname, resolve } from 'node:path'
 
 import { defineCommand } from 'citty'
 
-import { BUILTIN_IO_FORMATS, IORegistry } from '@open-pencil/core/io'
+import { BUILTIN_IO_FORMATS, IORegistry } from '@signal-forge/core/io'
 import {
   createHeadlessCSSRuntime,
   htmlToDesignDocument,
@@ -10,7 +10,7 @@ import {
   tailwindHTMLToDesignDocument,
   tailwindHTMLToSceneGraph,
   type DesignDocument
-} from '@open-pencil/dom-css'
+} from '@signal-forge/dom-css'
 
 import { requireFile } from '#cli/app-client'
 import { fmtList, ok, printError } from '#cli/format'
@@ -101,7 +101,7 @@ async function writeOutput(
 }
 
 export default defineCommand({
-  meta: { description: 'Import HTML/CSS/Tailwind into an OpenPencil document' },
+  meta: { description: 'Import HTML/CSS/Tailwind into an SignalForge document' },
   args: {
     file: {
       type: 'positional',

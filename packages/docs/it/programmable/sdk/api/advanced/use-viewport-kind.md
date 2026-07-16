@@ -5,14 +5,14 @@ description: Leggi flag di viewport mobile e desktop per shell editor responsive
 
 # useViewportKind
 
-`useViewportKind()` restituisce semplici flag responsive usati dalla UI dell'editor OpenPencil.
+`useViewportKind()` restituisce semplici flag responsive usati dalla UI dell'editor SignalForge.
 
 Usalo quando la tua shell ha bisogno di una leggera astrazione sui breakpoint invece di cablare direttamente `useBreakpoints()`.
 
 ## Utilizzo
 
 ```ts
-import { useViewportKind } from '@open-pencil/vue'
+import { useViewportKind } from '@signal-forge/vue'
 
 const { isMobile, isDesktop } = useViewportKind()
 ```

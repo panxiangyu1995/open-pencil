@@ -1,4 +1,4 @@
-import { selectionToJSX, sceneNodeToJSX, type RasterExportFormat } from '@open-pencil/core/io'
+import { selectionToJSX, sceneNodeToJSX, type RasterExportFormat } from '@signal-forge/core/io'
 
 import type { AutomationTarget } from '@/app/automation/bridge/target'
 
@@ -25,7 +25,7 @@ export async function handleExport(target: AutomationTarget, args: unknown): Pro
 export async function handleExportJsx(target: AutomationTarget, args: unknown): Promise<unknown> {
   const store = target.store
   const jsxArgs = args as { nodeIds?: string[]; style?: string } | undefined
-  const style = (jsxArgs?.style ?? 'openpencil') as 'openpencil' | 'tailwind'
+  const style = (jsxArgs?.style ?? 'signalforge') as 'signalforge' | 'tailwind'
   const currentPage = store.graph.getNode(target.pageId)
   const nodeIds = jsxArgs?.nodeIds ?? currentPage?.childIds ?? []
   const jsx =

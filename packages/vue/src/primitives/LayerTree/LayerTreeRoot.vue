@@ -7,7 +7,7 @@ import { provideLayerTree } from '#vue/primitives/LayerTree/context'
 import { useLayerDrag } from '#vue/primitives/LayerTree/useLayerDrag'
 
 import type { LayerNode } from '#vue/primitives/LayerTree/context'
-import type { SceneNode } from '@open-pencil/scene-graph'
+import type { SceneNode } from '@signal-forge/scene-graph'
 
 const { indentPerLevel = 16 } = defineProps<{
   indentPerLevel?: number

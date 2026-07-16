@@ -1,5 +1,5 @@
-import type { NodeChange, Paint } from '@open-pencil/kiwi/fig/codec'
-import type { CharacterStyleOverride, SceneNode } from '@open-pencil/scene-graph'
+import type { NodeChange, Paint } from '@signal-forge/kiwi/fig/codec'
+import type { CharacterStyleOverride, SceneNode } from '@signal-forge/scene-graph'
 
 import { normalizeFontFamily, weightToFigmaStyle } from '#core/text/fonts'
 

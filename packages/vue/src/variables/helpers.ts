@@ -1,15 +1,15 @@
 import type { Ref } from 'vue'
 
-import { colorToHexRaw, parseColor } from '@open-pencil/core/color'
-import { BLACK } from '@open-pencil/core/constants'
-import type { Editor } from '@open-pencil/core/editor'
-import { randomHex } from '@open-pencil/core/random'
+import { colorToHexRaw, parseColor } from '@signal-forge/core/color'
+import { BLACK } from '@signal-forge/core/constants'
+import type { Editor } from '@signal-forge/core/editor'
+import { randomHex } from '@signal-forge/core/random'
 import type {
   Variable,
   VariableCollection,
   VariableType,
   VariableValue
-} from '@open-pencil/scene-graph'
+} from '@signal-forge/scene-graph'
 
 export function createVariableCollectionActions(editor: Editor, activeCollectionId: Ref<string>) {
   function setActiveCollection(id: string) {

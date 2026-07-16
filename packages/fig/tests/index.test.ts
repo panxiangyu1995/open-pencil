@@ -7,7 +7,7 @@ import {
   writeFigContainer
 } from '../src/index'
 
-describe('@open-pencil/fig package API', () => {
+describe('@signal-forge/fig package API', () => {
   it('exports container API status', () => {
     expect(FIG_PACKAGE_STATUS).toBe('container-api')
   })

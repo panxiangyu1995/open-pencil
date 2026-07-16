@@ -1,4 +1,4 @@
-import type { SceneGraph } from '@open-pencil/scene-graph'
+import type { SceneGraph } from '@signal-forge/scene-graph'
 
 export function createGraphReadActions(getGraph: () => SceneGraph) {
   return {

@@ -1,6 +1,6 @@
 # Vergleich mit Penpot
 
-OpenPencil und Penpot sind beides Open-Source-Design-Tools, aber sie unterscheiden sich grundlegend in Architektur, Rendering und Dateiformaten.
+SignalForge und Penpot sind beides Open-Source-Design-Tools, aber sie unterscheiden sich grundlegend in Architektur, Rendering und Dateiformaten.
 
 ## 1. Auf einen Blick
 

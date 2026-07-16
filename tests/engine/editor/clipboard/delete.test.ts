@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'bun:test'
 
-import { createEditor } from '@open-pencil/core/editor'
-import { computeAllLayouts } from '@open-pencil/core/layout'
+import { createEditor } from '@signal-forge/core/editor'
+import { computeAllLayouts } from '@signal-forge/core/layout'
 
 import { getNodeOrThrow } from '#tests/helpers/assert'
 import { autoFrame, rect } from '#tests/helpers/layout'

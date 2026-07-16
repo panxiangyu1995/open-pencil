@@ -4,9 +4,9 @@ export {
   useBindingProvider
 } from '#vue/controls/binding-provider/context'
 export {
-  useOpenPencilBindingProvider,
-  type OpenPencilBindingProviderOptions
-} from '#vue/controls/binding-provider/open-pencil'
+  useSignalForgeBindingProvider,
+  type SignalForgeBindingProviderOptions
+} from '#vue/controls/binding-provider/signal-forge'
 export {
   createAndBindNumberVariable,
   useNumberBindingProvider

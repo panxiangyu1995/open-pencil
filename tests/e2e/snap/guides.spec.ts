@@ -23,7 +23,7 @@ async function createRects() {
   await canvas.clearCanvas()
   await page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     store.createShape('RECTANGLE', 100, 100, 80, 80)
     const b = store.createShape('RECTANGLE', 300, 100, 80, 80)
     store.select([b])

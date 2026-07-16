@@ -9,8 +9,8 @@ import {
   ContextMenuTrigger
 } from 'reka-ui'
 
-import type { SceneNode } from '@open-pencil/scene-graph'
-import { PageListRoot, useFlatReorderDrag, useI18n, useInlineRename } from '@open-pencil/vue'
+import type { SceneNode } from '@signal-forge/scene-graph'
+import { PageListRoot, useFlatReorderDrag, useI18n, useInlineRename } from '@signal-forge/vue'
 
 import Tip from '@/components/ui/Tip.vue'
 import { useMenuUI } from '@/components/ui/menu'

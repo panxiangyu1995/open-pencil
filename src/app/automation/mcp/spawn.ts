@@ -1,7 +1,7 @@
 import { promiseTimeout } from '@vueuse/core'
 
-import { AUTOMATION_HTTP_PORT } from '@open-pencil/core/constants'
-import { randomHex } from '@open-pencil/core/random'
+import { AUTOMATION_HTTP_PORT } from '@signal-forge/core/constants'
+import { randomHex } from '@signal-forge/core/random'
 
 import { decodeTauriStderr } from '@/app/shell/ui'
 import { isTauri } from '@/app/tauri/env'
@@ -46,10 +46,10 @@ function assertCompatibleMcpVersion(health: AutomationHealth): void {
   if (health.version === APP_VERSION) return
   const runningVersion = health.version ? `v${health.version}` : 'an older version'
   const updateHint = health.installCommand
-    ? `Run: ${health.installCommand}, then restart OpenPencil.`
-    : `Update the global @open-pencil/mcp package to v${APP_VERSION} with your package manager, then restart OpenPencil.`
+    ? `Run: ${health.installCommand}, then restart SignalForge.`
+    : `Update the global @signal-forge/mcp package to v${APP_VERSION} with your package manager, then restart SignalForge.`
   throw new Error(
-    `OpenPencil desktop v${APP_VERSION} requires @open-pencil/mcp v${APP_VERSION}, ` +
+    `SignalForge desktop v${APP_VERSION} requires @signal-forge/mcp v${APP_VERSION}, ` +
       `but the running MCP server is ${runningVersion}. ${updateHint}`
   )
 }
@@ -94,13 +94,13 @@ export async function spawnMCPIfNeeded(): Promise<AutomationServerHandle | null>
   const { Command } = await import('@tauri-apps/plugin-shell')
   const isWindows = navigator.platform.includes('Win')
   const command = isWindows
-    ? Command.create('cmd', ['/c', 'openpencil-mcp-http'], {
+    ? Command.create('cmd', ['/c', 'signalforge-mcp-http'], {
         env: {
           OPENPENCIL_MCP_AUTH_TOKEN: authToken,
           OPENPENCIL_MCP_CORS_ORIGIN: window.location.origin
         }
       })
-    : Command.create('openpencil-mcp-http', [], {
+    : Command.create('signalforge-mcp-http', [], {
         env: {
           OPENPENCIL_MCP_AUTH_TOKEN: authToken,
           OPENPENCIL_MCP_CORS_ORIGIN: window.location.origin
@@ -131,6 +131,6 @@ export async function spawnMCPIfNeeded(): Promise<AutomationServerHandle | null>
 
   await child.kill()
   throw new Error(
-    `Failed to start MCP server. Install @open-pencil/mcp@${APP_VERSION} globally with your package manager, then restart OpenPencil.`
+    `Failed to start MCP server. Install @signal-forge/mcp@${APP_VERSION} globally with your package manager, then restart SignalForge.`
   )
 }

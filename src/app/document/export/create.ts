@@ -1,5 +1,5 @@
-import type { Editor, EditorState } from '@open-pencil/core/editor'
-import type { ExportRequest, IORegistry } from '@open-pencil/core/io'
+import type { Editor, EditorState } from '@signal-forge/core/editor'
+import type { ExportRequest, IORegistry } from '@signal-forge/core/io'
 
 import {
   bundleExportFiles,

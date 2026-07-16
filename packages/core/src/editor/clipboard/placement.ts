@@ -1,6 +1,6 @@
 import { isNotNil } from 'es-toolkit/predicate'
 
-import { computeBounds } from '@open-pencil/scene-graph/geometry'
+import { computeBounds } from '@signal-forge/scene-graph/geometry'
 
 import type { EditorContext } from '#core/editor/types'
 

@@ -1,10 +1,11 @@
 import { defineTool, nodeNotFound } from '#core/tools/schema'
 import {
   PATHWAY_PLUGIN_ID,
+  LEGACY_PATHWAY_PLUGIN_ID,
   ANNOTATION_PLUGIN_KEY,
   type PathwayAnnotation,
   type PathwayAnnotationType
-} from '@open-pencil/scene-graph'
+} from '@signal-forge/scene-graph'
 
 const VALID_ANNOTATION_TYPES: readonly string[] = ['doi', 'pmid', 'url', 'comment']
 
@@ -46,7 +47,7 @@ export const annotatePathway = defineTool({
     if (!target) return nodeNotFound(targetId)
 
     const idx = target.pluginData.findIndex(
-      e => e.pluginId === PATHWAY_PLUGIN_ID && e.key === ANNOTATION_PLUGIN_KEY
+      e => (e.pluginId === PATHWAY_PLUGIN_ID || e.pluginId === LEGACY_PATHWAY_PLUGIN_ID) && e.key === ANNOTATION_PLUGIN_KEY
     )
 
     const annotations: PathwayAnnotation[] = idx !== -1

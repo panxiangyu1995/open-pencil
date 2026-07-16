@@ -10,8 +10,8 @@ export function openPencilPwaPlugin() {
       navigateFallback: '/index.html'
     },
     manifest: {
-      name: 'OpenPencil',
-      short_name: 'OpenPencil',
+      name: 'SignalForge',
+      short_name: 'SignalForge',
       description: 'Open-source design editor',
       display: 'standalone',
       orientation: 'any',

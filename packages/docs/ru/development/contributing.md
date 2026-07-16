@@ -4,19 +4,19 @@
 
 ```
 packages/
-  core/              @open-pencil/core — движок (без DOM-зависимостей)
+  core/              @signal-forge/core — движок (без DOM-зависимостей)
     src/             Граф сцены, отрисовщик, компоновка, кодек, kiwi, типы
-  cli/               @open-pencil/cli — headless CLI для операций с .fig
+  cli/               @signal-forge/cli — headless CLI для операций с .fig
     src/commands/    info, tree, find, export, eval, analyze
-  mcp/               @open-pencil/mcp — MCP-сервер для AI-инструментов
+  mcp/               @signal-forge/mcp — MCP-сервер для AI-инструментов
     src/             stdio + HTTP (Hono) транспорты, 87 инструментов
 src/
   components/        Vue SFC (холст, панели, панель инструментов, палитра цветов)
     properties/      Секции панели свойств (Внешний вид, Заливка, Обводка и др.)
   composables/       Ввод на холсте, сочетания клавиш, хуки отрисовки
   stores/            Состояние редактора (реактивность Vue)
-  engine/            Шимы реэкспорта из @open-pencil/core
-  kiwi/              Шимы реэкспорта из @open-pencil/core
+  engine/            Шимы реэкспорта из @signal-forge/core
+  kiwi/              Шимы реэкспорта из @signal-forge/core
   types.ts           Общие типы (реэкспорт из core)
   constants.ts       Цвета UI, значения по умолчанию, пороги
 desktop/             Tauri v2 (Rust + конфигурация)

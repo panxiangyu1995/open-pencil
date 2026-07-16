@@ -1,6 +1,6 @@
-import type { GUID, NodeChange, VariableConsumptionEntry } from '@open-pencil/kiwi/fig/codec'
-import type { SceneGraph } from '@open-pencil/scene-graph'
-import type { Matrix, Vector } from '@open-pencil/scene-graph/primitives'
+import type { GUID, NodeChange, VariableConsumptionEntry } from '@signal-forge/kiwi/fig/codec'
+import type { SceneGraph } from '@signal-forge/scene-graph'
+import type { Matrix, Vector } from '@signal-forge/scene-graph/primitives'
 
 import type { ProtectionMap } from './patches'
 

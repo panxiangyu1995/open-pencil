@@ -1,5 +1,5 @@
-import { parseFigBuffer } from '@open-pencil/kiwi/fig/parse'
-import type { SceneGraph } from '@open-pencil/scene-graph'
+import { parseFigBuffer } from '@signal-forge/kiwi/fig/parse'
+import type { SceneGraph } from '@signal-forge/scene-graph'
 
 import { IS_BROWSER } from '#core/constants'
 import { importNodeChanges } from '#core/kiwi/fig/import'

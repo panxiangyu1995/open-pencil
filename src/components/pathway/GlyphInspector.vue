@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { SceneNode, PathwayNodeData, PathwayGlyphType } from '@open-pencil/scene-graph'
+import type { SceneNode, PathwayNodeData, PathwayGlyphType } from '@signal-forge/scene-graph'
 
-import { computeUpdatedPluginData } from '@open-pencil/scene-graph'
-import { useI18n } from '@open-pencil/vue'
+import { computeUpdatedPluginData } from '@signal-forge/scene-graph'
+import { useI18n } from '@signal-forge/vue'
 
 import { useEditorStore } from '@/app/editor/active-store'
 import NumberField from '@/components/inputs/NumberField.vue'

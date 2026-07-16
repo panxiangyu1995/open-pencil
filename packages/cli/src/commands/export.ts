@@ -3,13 +3,13 @@ import { basename, dirname, extname, join, resolve } from 'node:path'
 
 import { defineCommand } from 'citty'
 
-import { BUILTIN_IO_FORMATS, IORegistry } from '@open-pencil/core/io'
-import type { RasterExportFormat } from '@open-pencil/core/io'
+import { BUILTIN_IO_FORMATS, IORegistry } from '@signal-forge/core/io'
+import type { RasterExportFormat } from '@signal-forge/core/io'
 import {
   exportHTMLBundle,
   sceneGraphToDesignDocument,
   type ExportHTMLBundleOptions
-} from '@open-pencil/dom-css'
+} from '@signal-forge/dom-css'
 
 import { isAppMode, requireFile, rpc } from '#cli/app-client'
 import { appTargetOptions, appTargetRpcArgs } from '#cli/app-target'
@@ -19,7 +19,7 @@ import { loadDocument } from '#cli/headless'
 const io = new IORegistry(BUILTIN_IO_FORMATS)
 const RASTER_FORMATS = ['PNG', 'JPG', 'WEBP']
 const ALL_FORMATS = new Set([...RASTER_FORMATS, 'SVG', 'PDF', 'JSX', 'FIG', 'HTML'])
-const JSX_STYLES = new Set(['openpencil', 'tailwind'])
+const JSX_STYLES = new Set(['signalforge', 'tailwind'])
 const HTML_STYLES = new Set(['inline', 'tailwind'])
 const HTML_MODES = new Set(['fragment', 'standalone'])
 const HTML_ASSETS = new Set(['inline', 'external'])
@@ -258,7 +258,7 @@ export default defineCommand({
     style: {
       type: 'string',
       description: 'JSX style: openpencil or tailwind (default: openpencil)',
-      default: 'openpencil'
+      default: 'signalforge'
     },
     html: {
       type: 'string',

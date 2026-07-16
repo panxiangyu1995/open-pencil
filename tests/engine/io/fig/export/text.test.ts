@@ -6,8 +6,8 @@ import {
   initCodec,
   parseFigFile,
   SceneGraph
-} from '@open-pencil/core'
-import type { JsonObject } from '@open-pencil/scene-graph/primitives'
+} from '@signal-forge/core'
+import type { JsonObject } from '@signal-forge/scene-graph/primitives'
 
 import { expectDefined } from '#tests/helpers/assert'
 import { parseFixture } from '#tests/helpers/fig-fixtures'
@@ -70,8 +70,8 @@ describe('text node export', () => {
 
     const { unzipSync, inflateSync } = await import('fflate')
     const { decodeBinarySchema, compileSchema, ByteBuffer } =
-      await import('@open-pencil/kiwi/schema-runtime')
-    const { parseFigKiwiChunks } = await import('@open-pencil/core')
+      await import('@signal-forge/kiwi/schema-runtime')
+    const { parseFigKiwiChunks } = await import('@signal-forge/core')
 
     const graph = new SceneGraph()
     const page = graph.getPages()[0]
@@ -132,8 +132,8 @@ describe('text node export', () => {
 
     const { unzipSync, inflateSync } = await import('fflate')
     const { decodeBinarySchema, compileSchema, ByteBuffer } =
-      await import('@open-pencil/kiwi/schema-runtime')
-    const { parseFigKiwiChunks } = await import('@open-pencil/core')
+      await import('@signal-forge/kiwi/schema-runtime')
+    const { parseFigKiwiChunks } = await import('@signal-forge/core')
 
     const graph = new SceneGraph()
     const page = graph.getPages()[0]
@@ -178,8 +178,8 @@ describe('text node export', () => {
 
     const { unzipSync, inflateSync } = await import('fflate')
     const { decodeBinarySchema, compileSchema, ByteBuffer } =
-      await import('@open-pencil/kiwi/schema-runtime')
-    const { parseFigKiwiChunks } = await import('@open-pencil/core')
+      await import('@signal-forge/kiwi/schema-runtime')
+    const { parseFigKiwiChunks } = await import('@signal-forge/core')
 
     const graph = new SceneGraph()
     const page = graph.getPages()[0]
@@ -227,8 +227,8 @@ describe('text node export', () => {
 
     const { unzipSync, inflateSync } = await import('fflate')
     const { decodeBinarySchema, compileSchema, ByteBuffer } =
-      await import('@open-pencil/kiwi/schema-runtime')
-    const { parseFigKiwiChunks } = await import('@open-pencil/core')
+      await import('@signal-forge/kiwi/schema-runtime')
+    const { parseFigKiwiChunks } = await import('@signal-forge/core')
 
     const graph = new SceneGraph()
     const page = graph.getPages()[0]

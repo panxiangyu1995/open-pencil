@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'bun:test'
 
-import type { DesignElement, DesignNode } from '@open-pencil/dom-css'
+import type { DesignElement, DesignNode } from '@signal-forge/dom-css'
 import {
   compileTailwindCSS,
   createHeadlessCSSRuntime,
@@ -10,8 +10,8 @@ import {
   sceneGraphToDesignDocument,
   serializeHTML,
   tailwindHTMLToSceneGraph
-} from '@open-pencil/dom-css'
-import type { SceneGraph, SceneNode } from '@open-pencil/scene-graph'
+} from '@signal-forge/dom-css'
+import type { SceneGraph, SceneNode } from '@signal-forge/scene-graph'
 
 import {
   DOM_CSS_COLORS,
@@ -150,7 +150,7 @@ function expectStyleRoundTripHTML(graph: SceneGraph) {
   expectRoundTripHeadingStyle(roundTripHeading)
 }
 
-describe('@open-pencil/dom-css conversion', () => {
+describe('@signal-forge/dom-css conversion', () => {
   it('converts HTML and CSS to DesignDOM with one API call', async () => {
     const document = await htmlToDesignDocument(cssCardHTML, {
       cssText: cssCardCSS,
@@ -180,7 +180,7 @@ describe('@open-pencil/dom-css conversion', () => {
   it('converts Tailwind HTML through generated CSS to a scene graph', async () => {
     const classes = [...tailwindCardClasses]
     const graph = await tailwindHTMLToSceneGraph(
-      `<article class="${classes.join(' ')}"><h1>OpenPencil</h1></article>`,
+      `<article class="${classes.join(' ')}"><h1>SignalForge</h1></article>`,
       classes,
       { runtime: createHeadlessCSSRuntime() }
     )
@@ -210,7 +210,7 @@ describe('@open-pencil/dom-css conversion', () => {
 
     const title = card ? graph.getChildren(card.id)[0] : undefined
     expect(title?.type).toBe('TEXT')
-    expect(title?.text).toBe('OpenPencil')
+    expect(title?.text).toBe('SignalForge')
     expect(title?.fontSize).toBe(24)
     expect(title?.fontWeight).toBe(700)
   })
@@ -243,7 +243,7 @@ describe('@open-pencil/dom-css conversion', () => {
 
     const roundTrip = sceneGraphToDesignDocument(graph)
     const html = serializeHTML(roundTrip)
-    expect(html).toContain('OpenPencil')
+    expect(html).toContain('SignalForge')
     expect(html).toContain('Design with code-shaped CSS.')
     expect(html).toContain('box-shadow')
   })
@@ -519,10 +519,10 @@ describe('@open-pencil/dom-css conversion', () => {
     const document = await runtime.computeStyles(
       runtime.parseHTML(`
         <nav class="${navClasses.join(' ')}">
-          <span>OpenPencil</span>
+          <span>SignalForge</span>
           <span class="${badgeClasses.join(' ')}">Beta</span>
         </nav>
-        <input class="${inputClasses.join(' ')}" value="https://openpencil.dev" />
+        <input class="${inputClasses.join(' ')}" value="https://signalforge.dev" />
       `),
       await compileTailwindCSS(classes)
     )
@@ -559,7 +559,7 @@ describe('@open-pencil/dom-css conversion', () => {
     const runtime = createHeadlessCSSRuntime()
     const classes = [...tailwindCardClasses]
     const document = await runtime.computeStyles(
-      runtime.parseHTML(`<article class="${classes.join(' ')}"><h1>OpenPencil</h1></article>`),
+      runtime.parseHTML(`<article class="${classes.join(' ')}"><h1>SignalForge</h1></article>`),
       await compileTailwindCSS(classes)
     )
     const graph = designDocumentToSceneGraph(document)

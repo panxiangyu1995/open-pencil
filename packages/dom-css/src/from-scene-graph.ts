@@ -1,6 +1,6 @@
-import { colorToCSS } from '@open-pencil/core/color'
-import type { SceneGraph, SceneNode } from '@open-pencil/scene-graph'
-import { BLACK } from '@open-pencil/scene-graph/constants'
+import { colorToCSS } from '@signal-forge/core/color'
+import type { SceneGraph, SceneNode } from '@signal-forge/scene-graph'
+import { BLACK } from '@signal-forge/scene-graph/constants'
 
 import {
   dropShadowToCSS,

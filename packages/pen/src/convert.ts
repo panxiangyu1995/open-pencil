@@ -1,4 +1,4 @@
-import { generateId } from '@open-pencil/scene-graph'
+import { generateId } from '@signal-forge/scene-graph'
 import type {
   Color,
   Effect,
@@ -19,9 +19,9 @@ import type {
   VariableCollectionMode,
   VariableType,
   VariableValue
-} from '@open-pencil/scene-graph'
-import { BLACK } from '@open-pencil/scene-graph/constants'
-import type { Vector } from '@open-pencil/scene-graph/primitives'
+} from '@signal-forge/scene-graph'
+import { BLACK } from '@signal-forge/scene-graph/constants'
+import type { Vector } from '@signal-forge/scene-graph/primitives'
 
 import { parseColor } from './color'
 

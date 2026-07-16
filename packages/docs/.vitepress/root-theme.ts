@@ -19,7 +19,7 @@ export const rootThemeConfig = (): DefaultTheme.Config => ({
     { text: 'SDK', link: '/programmable/sdk/' },
     { text: 'Reference', link: '/reference/keyboard-shortcuts' },
     { text: 'Development', link: '/development/contributing' },
-    { text: 'Open App', link: 'https://app.openpencil.dev' },
+    { text: 'Open App', link: 'https://app.signalforge.dev' },
   ],
 
   sidebar: {

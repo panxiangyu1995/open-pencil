@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'bun:test'
 
-import { FigmaAPI, SceneGraph, matchByXPath, nodeToXPath, queryByXPath } from '@open-pencil/core'
+import { FigmaAPI, SceneGraph, matchByXPath, nodeToXPath, queryByXPath } from '@signal-forge/core'
 
 import { expectDefined } from '#tests/helpers/assert'
 

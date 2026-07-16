@@ -8,7 +8,7 @@ import {
 } from '../src/index'
 import { tailwindCardClasses, tailwindInputClasses } from './helpers'
 
-describe('@open-pencil/dom-css Tailwind', () => {
+describe('@signal-forge/dom-css Tailwind', () => {
   it('compiles utility candidates through Tailwind', async () => {
     const css = await compileTailwindCSS(['flex', 'w-80', 'p-6', 'rounded-xl'])
 
@@ -22,7 +22,7 @@ describe('@open-pencil/dom-css Tailwind', () => {
     const runtime = createHeadlessCSSRuntime()
     const classes = [...tailwindCardClasses]
     const document = await runtime.computeStyles(
-      runtime.parseHTML(`<article class="${classes.join(' ')}"><h1>OpenPencil</h1></article>`),
+      runtime.parseHTML(`<article class="${classes.join(' ')}"><h1>SignalForge</h1></article>`),
       await compileTailwindCSS(classes)
     )
     const card = document.children[0]
@@ -58,7 +58,7 @@ describe('@open-pencil/dom-css Tailwind', () => {
     const runtime = createHeadlessCSSRuntime()
     const classes = [...tailwindCardClasses]
     const document = await runtime.computeStyles(
-      runtime.parseHTML(`<article class="${classes.join(' ')}"><h1>OpenPencil</h1></article>`),
+      runtime.parseHTML(`<article class="${classes.join(' ')}"><h1>SignalForge</h1></article>`),
       await compileTailwindCSS(classes)
     )
     const graph = designDocumentToSceneGraph(document)

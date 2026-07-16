@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { LayerDragInstruction } from '@open-pencil/vue'
+import type { LayerDragInstruction } from '@signal-forge/vue'
 
 const { active, instruction, level, indent } = defineProps<{
   active: boolean

@@ -2,8 +2,8 @@ import { tinykeys } from 'tinykeys'
 import type { KeyBindingMap } from 'tinykeys'
 import { onScopeDispose } from 'vue'
 
-import { editorCommandMetadata } from '@open-pencil/vue'
-import type { EditorCommandId } from '@open-pencil/vue'
+import { editorCommandMetadata } from '@signal-forge/vue'
+import type { EditorCommandId } from '@signal-forge/vue'
 
 import { TOOL_SHORTCUTS } from '@/app/editor/session'
 import { isEditing } from '@/app/shell/keyboard/focus'

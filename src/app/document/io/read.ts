@@ -1,6 +1,6 @@
-import type { Editor, EditorState } from '@open-pencil/core/editor'
-import { readFigFile } from '@open-pencil/core/io/formats/fig'
-import { computeAllLayouts } from '@open-pencil/core/layout'
+import type { Editor, EditorState } from '@signal-forge/core/editor'
+import { readFigFile } from '@signal-forge/core/io/formats/fig'
+import { computeAllLayouts } from '@signal-forge/core/layout'
 
 import { yieldToUI } from '@/app/document/io/browser'
 import { applyImportedDocument } from '@/app/document/io/imported-document'

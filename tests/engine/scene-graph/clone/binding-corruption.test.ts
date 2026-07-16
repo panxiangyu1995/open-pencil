@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'bun:test'
 
-import { SceneGraph } from '@open-pencil/core'
-import { collectSubtrees } from '@open-pencil/core/editor/clipboard/subtree-history'
+import { SceneGraph } from '@signal-forge/core'
+import { collectSubtrees } from '@signal-forge/core/editor/clipboard/subtree-history'
 
 function pageId(graph: SceneGraph): string {
   return graph.getPages()[0].id

@@ -4,8 +4,8 @@ import {
   populateAllLazyFigImportRoots,
   populateLazyFigImportRoots,
   setLazyFigImportContext
-} from '@open-pencil/core/kiwi/fig/lazy-import'
-import { SceneGraph } from '@open-pencil/scene-graph'
+} from '@signal-forge/core/kiwi/fig/lazy-import'
+import { SceneGraph } from '@signal-forge/scene-graph'
 
 function createLazyGraph() {
   const graph = new SceneGraph()

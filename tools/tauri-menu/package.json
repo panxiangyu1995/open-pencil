@@ -1,5 +1,5 @@
 {
-  "name": "@open-pencil/tauri-menu-tools",
+  "name": "@signal-forge/tauri-menu-tools",
   "private": true,
   "type": "module"
 }

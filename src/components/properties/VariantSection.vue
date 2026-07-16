@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { useI18n, useSelectionState } from '@open-pencil/vue'
+import { useI18n, useSelectionState } from '@signal-forge/vue'
 
 import AppSelect from '@/components/ui/AppSelect.vue'
 import PanelSection from '@/components/ui/panel/PanelSection.vue'

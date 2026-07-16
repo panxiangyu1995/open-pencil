@@ -1,5 +1,5 @@
-import type { Editor } from '@open-pencil/core/editor'
-import { getAbsoluteRotation } from '@open-pencil/scene-graph/coordinate'
+import type { Editor } from '@signal-forge/core/editor'
+import { getAbsoluteRotation } from '@signal-forge/scene-graph/coordinate'
 
 import {
   buildResizeCursor,

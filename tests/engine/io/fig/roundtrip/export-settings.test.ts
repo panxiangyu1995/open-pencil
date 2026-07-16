@@ -7,9 +7,9 @@ import {
   parseFigFile,
   SceneGraph,
   type NodeChange
-} from '@open-pencil/core'
-import { parseFigBuffer } from '@open-pencil/kiwi/fig/parse'
-import { MAX_EXPORT_SCALE } from '@open-pencil/scene-graph'
+} from '@signal-forge/core'
+import { parseFigBuffer } from '@signal-forge/kiwi/fig/parse'
+import { MAX_EXPORT_SCALE } from '@signal-forge/scene-graph'
 
 function decodeExport(bytes: Uint8Array) {
   return parseFigBuffer(bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength))

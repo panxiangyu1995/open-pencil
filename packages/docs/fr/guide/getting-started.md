@@ -2,7 +2,7 @@
 
 ## Essayer en ligne
 
-OpenPencil fonctionne dans le navigateur — aucune installation requise. Ouvrez [app.openpencil.dev](https://app.openpencil.dev).
+SignalForge fonctionne dans le navigateur — aucune installation requise. Ouvrez [app.signalforge.dev](https://app.signalforge.dev).
 
 ## Télécharger l'application de bureau
 
@@ -20,7 +20,7 @@ Binaires pour macOS, Windows et Linux sur la [page des versions](https://github.
 
 ```sh
 git clone https://github.com/open-pencil/open-pencil.git
-cd open-pencil
+cd signal-forge
 bun install
 bun run dev
 ```

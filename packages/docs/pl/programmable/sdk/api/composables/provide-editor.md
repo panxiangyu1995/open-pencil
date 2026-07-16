@@ -1,18 +1,18 @@
 ---
 title: provideEditor
-description: Dostarcz instancję edytora OpenPencil do poddrzewa Vue przez wstrzykiwanie.
+description: Dostarcz instancję edytora SignalForge do poddrzewa Vue przez wstrzykiwanie.
 ---
 
 # provideEditor
 
-`provideEditor(editor)` udostępnia edytor OpenPencil potomnym kompozytom i bezstanowym prymitywom przez wstrzykiwanie Vue.
+`provideEditor(editor)` udostępnia edytor SignalForge potomnym kompozytom i bezstanowym prymitywom przez wstrzykiwanie Vue.
 
 To fundament dla `useEditor()`.
 
 ## Użycie
 
 ```ts
-import { provideEditor } from '@open-pencil/vue'
+import { provideEditor } from '@signal-forge/vue'
 
 provideEditor(editor)
 ```
@@ -21,9 +21,9 @@ provideEditor(editor)
 
 ```vue
 <script setup lang="ts">
-import { provideEditor } from '@open-pencil/vue'
+import { provideEditor } from '@signal-forge/vue'
 
-import type { Editor } from '@open-pencil/core/editor'
+import type { Editor } from '@signal-forge/core/editor'
 
 const props = defineProps<{
   editor: Editor
@@ -39,7 +39,7 @@ provideEditor(props.editor)
 
 ## Uwagi
 
-Obecny SDK używa bezpośrednio `provideEditor()` i `useEditor()`. Niektóre starsze przykłady i komunikaty błędów nadal odwołują się do komponentu `OpenPencilProvider`, ale model wstrzykiwania jest rzeczywistą powierzchnią API preferowaną w dokumentacji i kodzie aplikacji.
+Obecny SDK używa bezpośrednio `provideEditor()` i `useEditor()`. Niektóre starsze przykłady i komunikaty błędów nadal odwołują się do komponentu `SignalForgeProvider`, ale model wstrzykiwania jest rzeczywistą powierzchnią API preferowaną w dokumentacji i kodzie aplikacji.
 
 ## Powiązane API
 

@@ -13,7 +13,7 @@ import { BASE, LOCALE_PREFIXES, applyPageSeo, siteHead, withAlternateSitemapLink
 const repoRoot = fileURLToPath(new URL('../../..', import.meta.url))
 
 export default defineConfig({
-  title: 'OpenPencil',
+  title: 'SignalForge',
   description:
     'Open-source, AI-native design editor. Figma alternative built from scratch with full .fig file compatibility.',
   cleanUrls: true,
@@ -36,7 +36,7 @@ export default defineConfig({
           compilerOptions: {
             baseUrl: repoRoot,
             paths: {
-              '@open-pencil/vue': ['packages/vue/src/index.ts'],
+              '@signal-forge/vue': ['packages/vue/src/index.ts'],
               '#vue/*': ['packages/vue/src/*']
             }
           },
@@ -63,11 +63,11 @@ export default defineConfig({
         generateLLMFriendlyDocsForEachPage: true,
         injectLLMHint: false,
         customTemplateVariables: {
-          title: 'OpenPencil',
+          title: 'SignalForge',
           description:
             'Open-source, AI-native design editor and toolkit. Opens Figma .fig files, provides a programmable scene graph, CLI, MCP server, and Vue SDK for custom editor shells.',
           details:
-            'Use this file as the compact map for agents. For complete Markdown content, fetch https://openpencil.dev/llms-full.txt.'
+            'Use this file as the compact map for agents. For complete Markdown content, fetch https://signalforge.dev/llms-full.txt.'
         }
       })
     ]

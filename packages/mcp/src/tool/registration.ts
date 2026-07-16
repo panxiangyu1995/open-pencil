@@ -4,7 +4,7 @@ import { resolve } from 'node:path'
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { z } from 'zod'
 
-import { BIOPATH_TOOLS } from '@open-pencil/core/tools'
+import { BIOPATH_TOOLS } from '@signal-forge/core/tools'
 
 import type { RpcJsonObject } from '#mcp/json'
 import { MAX_RESULT_BYTES, fail, ok, resultTooLargeMessage } from '#mcp/result'
@@ -15,7 +15,7 @@ import { paramToZod } from './schema'
 export type RpcSender = (body: Record<string, unknown>) => Promise<unknown>
 
 const automationTargetSchema = {
-  document_id: z.string().describe('Optional OpenPencil document/tab ID to target').optional(),
+  document_id: z.string().describe('Optional SignalForge document/tab ID to target').optional(),
   page_id: z.string().describe('Optional page ID to target within the document').optional()
 }
 
@@ -107,7 +107,7 @@ export function registerTools(mcpServer: McpServer, options: RegisterToolsOption
     'list_documents',
     {
       description:
-        'List open OpenPencil documents/tabs with their IDs, file paths, current pages, and pages.',
+        'List open SignalForge documents/tabs with their IDs, file paths, current pages, and pages.',
       inputSchema: z.object({})
     },
     async () => {

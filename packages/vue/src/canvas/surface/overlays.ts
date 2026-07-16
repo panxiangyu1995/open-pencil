@@ -1,6 +1,6 @@
-import type { SkiaRenderer } from '@open-pencil/core/canvas'
-import { IS_BROWSER } from '@open-pencil/core/constants'
-import type { Editor } from '@open-pencil/core/editor'
+import type { SkiaRenderer } from '@signal-forge/core/canvas'
+import { IS_BROWSER } from '@signal-forge/core/constants'
+import type { Editor } from '@signal-forge/core/editor'
 
 import { useViewportKind } from '#vue/editor/viewport-kind/use'
 

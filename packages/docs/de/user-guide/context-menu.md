@@ -1,6 +1,6 @@
 ---
 title: Kontextmenü
-description: Rechtsklick-Kontextmenü-Aktionen in OpenPencil — Zwischenablage, Z-Reihenfolge, Gruppierung, Komponenten und mehr.
+description: Rechtsklick-Kontextmenü-Aktionen in SignalForge — Zwischenablage, Z-Reihenfolge, Gruppierung, Komponenten und mehr.
 ---
 
 # Kontextmenü

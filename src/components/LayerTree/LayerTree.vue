@@ -8,8 +8,8 @@ import {
   ContextMenuPortal
 } from 'reka-ui'
 
-import { LayerTreeRoot, LayerTreeItem, useInlineRename } from '@open-pencil/vue'
-import type { LayerDragInstruction, LayerNode } from '@open-pencil/vue'
+import { LayerTreeRoot, LayerTreeItem, useInlineRename } from '@signal-forge/vue'
+import type { LayerDragInstruction, LayerNode } from '@signal-forge/vue'
 import { useEditorStore } from '@/app/editor/active-store'
 import CanvasMenu from '../canvas/CanvasMenu.vue'
 import LayerTreeNodeRow from './LayerTreeNodeRow.vue'

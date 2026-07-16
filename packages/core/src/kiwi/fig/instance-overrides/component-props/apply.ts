@@ -1,4 +1,4 @@
-import { copyFills, copyStyleRuns } from '@open-pencil/scene-graph/copy'
+import { copyFills, copyStyleRuns } from '@signal-forge/scene-graph/copy'
 
 import { applyOverridePatch, type OverridePatch } from '#core/kiwi/fig/instance-overrides/patches'
 import { getComponentRoot } from '#core/kiwi/fig/instance-overrides/resolve'

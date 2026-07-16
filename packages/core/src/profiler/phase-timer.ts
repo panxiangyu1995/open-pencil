@@ -45,7 +45,7 @@ export class PhaseTimer {
         devtools: {
           dataType: 'track-entry',
           track: 'Renderer',
-          trackGroup: 'OpenPencil',
+          trackGroup: 'SignalForge',
           color: colorForPhase(name)
         }
       }

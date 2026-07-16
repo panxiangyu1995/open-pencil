@@ -1,10 +1,10 @@
-import { SceneGraph } from '@open-pencil/scene-graph'
+import { SceneGraph } from '@signal-forge/scene-graph'
 import type {
   SceneNode,
   Variable,
   VariableCollection,
   DocumentColorSpace
-} from '@open-pencil/scene-graph'
+} from '@signal-forge/scene-graph'
 
 import type { InstanceNodeChange } from '#core/kiwi/fig/instance-overrides'
 import { getLazyFigImportContext, setLazyFigImportContext } from '#core/kiwi/fig/lazy-import'

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { AppearanceControlsRoot, MIXED, useI18n } from '@open-pencil/vue'
+import { AppearanceControlsRoot, MIXED, useI18n } from '@signal-forge/vue'
 
 import NumberField from '@/components/inputs/NumberField.vue'
 import VariableNumberField from '@/components/properties/VariableNumberField.vue'
@@ -12,7 +12,7 @@ import PanelGrid from '@/components/ui/panel/PanelGrid.vue'
 import PanelRail from '@/components/ui/panel/PanelRail.vue'
 import PanelSection from '@/components/ui/panel/PanelSection.vue'
 
-import type { BlendMode } from '@open-pencil/scene-graph'
+import type { BlendMode } from '@signal-forge/scene-graph'
 
 const { panels } = useI18n()
 type BlendModeSelectValue = BlendMode | 'MIXED'

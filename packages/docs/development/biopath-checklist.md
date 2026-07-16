@@ -12,7 +12,7 @@
 
 ### Code Standards
 - No `any`, no `!`, no `Math.random()` — per AGENTS.md
-- Use `@open-pencil/scene-graph` types: `Color`, `Vector`, `SceneNode`, `NodeType`
+- Use `@signal-forge/scene-graph` types: `Color`, `Vector`, `SceneNode`, `NodeType`
 - Use `culori` for color, `crypto.getRandomValues()` for IDs
 - No inline comments unless asked
 - Follow existing file naming: lowercase/kebab-case for non-component files
@@ -648,9 +648,9 @@ Update `adapter.ts` to set `support: { read: true, write: true, export: true }` 
 **Specification**: Follow existing command pattern (`defineCommand` from `citty`, `loadRpcData` for dual-mode, `agentfmt` for output).
 
 **Acceptance criteria**:
-- ✓ `openpencil pathway import diagram.sbgn -o output.fig` converts SBGN-ML to .fig
-- ✓ `openpencil pathway export diagram.fig -o output.sbgn` converts .fig to SBGN-ML
-- ✓ `openpencil pathway query --source reactome --type search_pathway --query "JAK STAT"` returns results
+- ✓ `signalforge pathway import diagram.sbgn -o output.fig` converts SBGN-ML to .fig
+- ✓ `signalforge pathway export diagram.fig -o output.sbgn` converts .fig to SBGN-ML
+- ✓ `signalforge pathway query --source reactome --type search_pathway --query "JAK STAT"` returns results
 - ✓ `--json` flag produces machine-readable output
 
 ---

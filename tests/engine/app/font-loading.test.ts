@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'bun:test'
 
-import { fontManager, type FontFallbackScript } from '@open-pencil/core/text'
-import { SceneGraph } from '@open-pencil/scene-graph'
+import { fontManager, type FontFallbackScript } from '@signal-forge/core/text'
+import { SceneGraph } from '@signal-forge/scene-graph'
 
 import { ensureGraphFonts } from '@/app/editor/fonts'
 

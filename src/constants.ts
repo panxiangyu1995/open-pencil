@@ -1,4 +1,4 @@
-import { IS_BROWSER, IS_TAURI } from '@open-pencil/core/constants'
+import { IS_BROWSER, IS_TAURI } from '@signal-forge/core/constants'
 
 import ACP_DESIGN_CONTEXT from '@/app/ai/acp/design-context.md'
 
@@ -59,11 +59,11 @@ export {
   COMPONENT_LABEL_ICON_GAP,
   RULER_TARGET_PIXEL_SPACING,
   RULER_MAJOR_TOLERANCE
-} from '@open-pencil/core/constants'
+} from '@signal-forge/core/constants'
 
-import type { Color } from '@open-pencil/scene-graph/primitives'
+import type { Color } from '@signal-forge/scene-graph/primitives'
 
-export const TRYSTERO_APP_ID = 'openpencil'
+export const TRYSTERO_APP_ID = 'signalforge'
 export const ROOM_ID_LENGTH = 8
 export const ROOM_ID_CHARS = 'abcdefghijklmnopqrstuvwxyz0123456789'
 
@@ -93,7 +93,7 @@ export {
   ZOOM_DIVISOR,
   ZOOM_SCALE_MIN,
   ZOOM_SCALE_MAX
-} from '@open-pencil/core/constants'
+} from '@signal-forge/core/constants'
 
 export const HANDLE_SIZE = 6
 

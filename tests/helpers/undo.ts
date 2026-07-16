@@ -1,4 +1,4 @@
-import { UndoManager } from '@open-pencil/core'
+import { UndoManager } from '@signal-forge/core'
 
 export function noop() {
   return undefined

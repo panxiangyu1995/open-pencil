@@ -1,5 +1,5 @@
 {
-  "name": "@open-pencil/vue",
+  "name": "@signal-forge/vue",
   "version": "0.13.2",
   "license": "MIT",
   "type": "module",
@@ -31,7 +31,7 @@
     "provenance": true
   },
   "peerDependencies": {
-    "@open-pencil/core": "workspace:*",
+    "@signal-forge/core": "workspace:*",
     "canvaskit-wasm": ">=0.39.0",
     "vue": "^3.4.0"
   },
@@ -45,7 +45,7 @@
     "@atlaskit/pragmatic-drag-and-drop-hitbox": "^1.1.0",
     "@nanostores/i18n": "^1.2.2",
     "@nanostores/vue": "^1.1.0",
-    "@open-pencil/scene-graph": "workspace:*",
+    "@signal-forge/scene-graph": "workspace:*",
     "@tanstack/vue-table": "^8.21.3",
     "@vueuse/core": "^14.2.1",
     "nanostores": "^1.2.0",

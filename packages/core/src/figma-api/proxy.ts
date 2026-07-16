@@ -6,8 +6,8 @@ import type {
   Stroke,
   Effect,
   LayoutMode
-} from '@open-pencil/scene-graph'
-import type { Rect } from '@open-pencil/scene-graph/primitives'
+} from '@signal-forge/scene-graph'
+import type { Rect } from '@signal-forge/scene-graph/primitives'
 
 import {
   getFillOkHCL,

@@ -2,10 +2,10 @@
 import Tip from '@/components/ui/Tip.vue'
 import ToolButton from '@/components/Toolbar/ToolButton.vue'
 import ToolFlyout from '@/components/Toolbar/ToolFlyout.vue'
-import { toolbarToolTestId, ToolbarItem } from '@open-pencil/vue'
+import { toolbarToolTestId, ToolbarItem } from '@signal-forge/vue'
 
-import type { Tool } from '@open-pencil/vue'
-import type { EditorToolDef } from '@open-pencil/core/editor'
+import type { Tool } from '@signal-forge/vue'
+import type { EditorToolDef } from '@signal-forge/core/editor'
 import type { ToolbarUI, ToolIconMap, ToolLabels } from '@/components/Toolbar/types'
 
 const { tools, activeTool, toolIcons, toolLabels, toolShortcuts, ui } = defineProps<{

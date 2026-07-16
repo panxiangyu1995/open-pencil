@@ -1,15 +1,15 @@
 ---
 title: Vue SDK
-description: Erstellen Sie OpenPencil-gestützte Editoren mit headless Vue Composables und Primitiven.
+description: Erstellen Sie SignalForge-gestützte Editoren mit headless Vue Composables und Primitiven.
 ---
 
 # Vue SDK
 
-`@open-pencil/vue` gibt es, damit OpenPencil mehr als eine eigenständige Design-App sein kann.
+`@signal-forge/vue` gibt es, damit SignalForge mehr als eine eigenständige Design-App sein kann.
 
-Das Ziel ist es, OpenPencil zu einem Toolkit zu machen, das Sie in andere Produkte, interne Tools und workflow-spezifische Editoren einbetten können — nicht nur als einzelne Standard-UI.
+Das Ziel ist es, SignalForge zu einem Toolkit zu machen, das Sie in andere Produkte, interne Tools und workflow-spezifische Editoren einbetten können — nicht nur als einzelne Standard-UI.
 
-Die OpenPencil-App ist eine mögliche Zusammensetzung dieses Toolkits. Das SDK ist der Weg, eine andere zu bauen.
+Die SignalForge-App ist eine mögliche Zusammensetzung dieses Toolkits. Das SDK ist der Weg, eine andere zu bauen.
 
 Es bietet Ihnen:
 
@@ -41,7 +41,7 @@ Das SDK ist die Schicht, die all das ermöglicht.
 - **Headless-First**: Logik und Struktur, kein App-Styling
 - **Composable statt Wrapper**: Composables verwenden, wenn keine bedeutungsvolle strukturelle Koordination erforderlich ist
 - **Bewusste öffentliche API**: stabile Exporte aus `packages/vue/src/index.ts`
-- **Framework-bewusst**: Vue-Integration über `@open-pencil/core`
+- **Framework-bewusst**: Vue-Integration über `@signal-forge/core`
 
 ## Das Paket verstehen
 

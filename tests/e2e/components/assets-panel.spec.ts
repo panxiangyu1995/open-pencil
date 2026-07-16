@@ -6,7 +6,7 @@ import { CanvasHelper } from '#tests/helpers/canvas'
 async function selectedNodeSnapshot(page: Page) {
   return page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const selectedId = [...store.state.selectedIds][0]
     const selected = selectedId ? store.graph.getNode(selectedId) : null
     return selected
@@ -33,7 +33,7 @@ test('assets panel groups component sets and inserts the default variant', async
 
   const ids = await page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
 
     const pageNode = store.graph.getNode(store.state.currentPageId)
     if (!pageNode) throw new Error('Current page not found')
@@ -194,7 +194,7 @@ test('assets insertion accounts for entered container coordinates', async ({ pag
 
   const setup = await page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     store.state.panX = 0
     store.state.panY = 0
     store.state.zoom = 1
@@ -226,7 +226,7 @@ test('assets insertion accounts for entered container coordinates', async ({ pag
 
   const inserted = await page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const selectedId = [...store.state.selectedIds][0]
     const selected = selectedId ? store.graph.getNode(selectedId) : null
     if (!selected) return null

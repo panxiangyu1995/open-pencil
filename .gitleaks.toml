@@ -1,4 +1,4 @@
-title = "OpenPencil Gitleaks configuration"
+title = "SignalForge Gitleaks configuration"
 
 [extend]
 useDefault = true

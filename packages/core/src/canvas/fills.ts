@@ -1,7 +1,7 @@
 import type { Canvas, Paint } from 'canvaskit-wasm'
 
-import type { SceneNode, SceneGraph, Fill } from '@open-pencil/scene-graph'
-import type { Rect, Vector } from '@open-pencil/scene-graph/primitives'
+import type { SceneNode, SceneGraph, Fill } from '@signal-forge/scene-graph'
+import type { Rect, Vector } from '@signal-forge/scene-graph/primitives'
 
 import type { SkiaRenderer } from './renderer'
 import { makeSmoothRRectPath, nodeHasSmoothCorners } from './shapes'

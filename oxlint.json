@@ -44,7 +44,7 @@
         "paths": [
           {
             "name": "@/types",
-            "message": "Import types directly from @open-pencil/core."
+            "message": "Import types directly from @signal-forge/core."
           },
           {
             "name": "node:module",
@@ -59,7 +59,7 @@
             "group": [
               "@/engine/*"
             ],
-            "message": "Import from @open-pencil/core unless the module adds platform-specific logic.",
+            "message": "Import from @signal-forge/core unless the module adds platform-specific logic.",
             "allowImportNames": [
               "loadFont",
               "listFamilies",
@@ -72,7 +72,7 @@
               "../../packages/*",
               "../../../packages/*"
             ],
-            "message": "Use the workspace package name (e.g. @open-pencil/core) instead of relative paths to packages/."
+            "message": "Use the workspace package name (e.g. @signal-forge/core) instead of relative paths to packages/."
           }
         ]
       }
@@ -137,8 +137,8 @@
     ],
     "vue/require-default-export": "error",
     "vue/require-typed-ref": "error",
-    "open-pencil/no-import-type-annotations": "error",
-    "open-pencil/no-inline-named-types": [
+    "signal-forge/no-import-type-annotations": "error",
+    "signal-forge/no-inline-named-types": [
       "error",
       {
         "Vector": "x:number,y:number",
@@ -148,73 +148,73 @@
         "Matrix": "m00:number,m01:number,m02:number,m10:number,m11:number,m12:number"
       }
     ],
-    "open-pencil/no-structuredclone-scene-arrays": "error",
-    "open-pencil/no-vue-style-blocks": "error",
-    "open-pencil/no-native-title-attributes-in-vue": "error",
-    "open-pencil/no-hardcoded-tip-labels-in-vue": "error",
-    "open-pencil/no-raw-svg-in-app-vue-templates": "error",
-    "open-pencil/no-ui-helper-calls-in-vue-templates": "error",
-    "open-pencil/no-large-property-section-components": "error",
-    "open-pencil/no-raw-test-id-string-props": "error",
-    "open-pencil/no-dynamic-data-test-id-in-vue": "error",
-    "open-pencil/no-test-id-helper-bind-in-vue": "error",
-    "open-pencil/no-invalid-test-id-attributes": "error",
-    "open-pencil/no-raw-test-id-selectors-in-tests": "error",
-    "open-pencil/no-generated-test-id-literals": "error",
-    "open-pencil/no-browser-side-effects-in-vue": "error",
-    "open-pencil/no-document-query-selector-in-vue": "error",
-    "open-pencil/no-direct-selection-tool-state-mutation": "error",
-    "open-pencil/no-math-random": "error",
-    "open-pencil/no-hardcoded-color-constants": "error",
-    "open-pencil/no-hand-rolled-color": "error",
-    "open-pencil/no-raw-console-format": "off",
-    "open-pencil/no-silent-catch": "error",
-    "open-pencil/no-typeof-window-check": "error",
-    "open-pencil/no-vue-self-package-imports": "error",
-    "open-pencil/no-cross-package-source-imports": "error",
-    "open-pencil/no-app-imports-in-packages": "error",
-    "open-pencil/no-core-framework-imports": "error",
-    "open-pencil/no-direct-storage-access": "error",
-    "open-pencil/no-deep-parent-relative-imports": "error",
-    "open-pencil/no-broad-double-cast": "error",
-    "open-pencil/no-unknown-record-double-cast": "error",
-    "open-pencil/no-broad-unknown-type-assertions": "error",
-    "open-pencil/no-local-json-object-aliases": "error",
-    "open-pencil/no-duplicate-type-shapes": "error",
-    "open-pencil/no-ts-suppression-comments": "error",
-    "open-pencil/no-reflect-delete-global-this-outside-tests": "error",
-    "open-pencil/no-core-browser-globals": "error",
-    "open-pencil/no-direct-open-pencil-window-internals": "error",
-    "open-pencil/no-direct-open-pencil-browser-store": "error",
-    "open-pencil/no-function-alias-imports": "error",
-    "open-pencil/max-composition-root-lines": [
+    "signal-forge/no-structuredclone-scene-arrays": "error",
+    "signal-forge/no-vue-style-blocks": "error",
+    "signal-forge/no-native-title-attributes-in-vue": "error",
+    "signal-forge/no-hardcoded-tip-labels-in-vue": "error",
+    "signal-forge/no-raw-svg-in-app-vue-templates": "error",
+    "signal-forge/no-ui-helper-calls-in-vue-templates": "error",
+    "signal-forge/no-large-property-section-components": "error",
+    "signal-forge/no-raw-test-id-string-props": "error",
+    "signal-forge/no-dynamic-data-test-id-in-vue": "error",
+    "signal-forge/no-test-id-helper-bind-in-vue": "error",
+    "signal-forge/no-invalid-test-id-attributes": "error",
+    "signal-forge/no-raw-test-id-selectors-in-tests": "error",
+    "signal-forge/no-generated-test-id-literals": "error",
+    "signal-forge/no-browser-side-effects-in-vue": "error",
+    "signal-forge/no-document-query-selector-in-vue": "error",
+    "signal-forge/no-direct-selection-tool-state-mutation": "error",
+    "signal-forge/no-math-random": "error",
+    "signal-forge/no-hardcoded-color-constants": "error",
+    "signal-forge/no-hand-rolled-color": "error",
+    "signal-forge/no-raw-console-format": "off",
+    "signal-forge/no-silent-catch": "error",
+    "signal-forge/no-typeof-window-check": "error",
+    "signal-forge/no-vue-self-package-imports": "error",
+    "signal-forge/no-cross-package-source-imports": "error",
+    "signal-forge/no-app-imports-in-packages": "error",
+    "signal-forge/no-core-framework-imports": "error",
+    "signal-forge/no-direct-storage-access": "error",
+    "signal-forge/no-deep-parent-relative-imports": "error",
+    "signal-forge/no-broad-double-cast": "error",
+    "signal-forge/no-unknown-record-double-cast": "error",
+    "signal-forge/no-broad-unknown-type-assertions": "error",
+    "signal-forge/no-local-json-object-aliases": "error",
+    "signal-forge/no-duplicate-type-shapes": "error",
+    "signal-forge/no-ts-suppression-comments": "error",
+    "signal-forge/no-reflect-delete-global-this-outside-tests": "error",
+    "signal-forge/no-core-browser-globals": "error",
+    "signal-forge/no-direct-signal-forge-window-internals": "error",
+    "signal-forge/no-direct-signal-forge-browser-store": "error",
+    "signal-forge/no-function-alias-imports": "error",
+    "signal-forge/max-composition-root-lines": [
       "error",
       {
         "max": 260
       }
     ],
-    "open-pencil/no-core-parent-relative-imports": "error",
-    "open-pencil/no-mcp-parent-relative-imports": "error",
-    "open-pencil/no-vue-parent-relative-imports": "error",
-    "open-pencil/no-cli-parent-relative-imports": "error",
-    "open-pencil/no-mcp-core-barrel-imports": "error",
-    "open-pencil/no-cli-core-barrel-imports": "error",
-    "open-pencil/no-script-core-barrel-imports": "error",
-    "open-pencil/no-core-self-package-imports": "error",
-    "open-pencil/no-inline-prompt-constants": "error",
-    "open-pencil/no-app-vue-core-barrel-imports": "error",
-    "open-pencil/no-direct-graph-emitter-subscriptions": "error",
-    "open-pencil/no-on-unmounted-in-composition-roots": "error",
-    "open-pencil/no-composable-state-wrappers": "error",
-    "open-pencil/prefer-vueuse-intervals": "error",
-    "open-pencil/prefer-vueuse-timeouts": "error",
-    "open-pencil/vue-component-file-pascal-case": "error",
-    "open-pencil/component-namespace-casing": "error",
-    "open-pencil/non-component-source-directories-kebab-case": "error",
-    "open-pencil/no-component-root-sibling-folder": "error",
-    "open-pencil/no-flat-kiwi-modules": "error",
-    "open-pencil/no-top-level-prefixed-test-files": "error",
-    "open-pencil/no-sibling-domain-prefixed-files": "error",
+    "signal-forge/no-core-parent-relative-imports": "error",
+    "signal-forge/no-mcp-parent-relative-imports": "error",
+    "signal-forge/no-vue-parent-relative-imports": "error",
+    "signal-forge/no-cli-parent-relative-imports": "error",
+    "signal-forge/no-mcp-core-barrel-imports": "error",
+    "signal-forge/no-cli-core-barrel-imports": "error",
+    "signal-forge/no-script-core-barrel-imports": "error",
+    "signal-forge/no-core-self-package-imports": "error",
+    "signal-forge/no-inline-prompt-constants": "error",
+    "signal-forge/no-app-vue-core-barrel-imports": "error",
+    "signal-forge/no-direct-graph-emitter-subscriptions": "error",
+    "signal-forge/no-on-unmounted-in-composition-roots": "error",
+    "signal-forge/no-composable-state-wrappers": "error",
+    "signal-forge/prefer-vueuse-intervals": "error",
+    "signal-forge/prefer-vueuse-timeouts": "error",
+    "signal-forge/vue-component-file-pascal-case": "error",
+    "signal-forge/component-namespace-casing": "error",
+    "signal-forge/non-component-source-directories-kebab-case": "error",
+    "signal-forge/no-component-root-sibling-folder": "error",
+    "signal-forge/no-flat-kiwi-modules": "error",
+    "signal-forge/no-top-level-prefixed-test-files": "error",
+    "signal-forge/no-sibling-domain-prefixed-files": "error",
     "array-callback-return": "error",
     "block-scoped-var": "error",
     "default-case-last": "error",
@@ -420,7 +420,7 @@
         "packages/*/src/**/*.ts"
       ],
       "rules": {
-        "open-pencil/no-useless-pass-through-wrappers": "error"
+        "signal-forge/no-useless-pass-through-wrappers": "error"
       }
     },
     {
@@ -457,7 +457,7 @@
         "packages/cli/src/commands/**"
       ],
       "rules": {
-        "open-pencil/no-raw-console-format": "error"
+        "signal-forge/no-raw-console-format": "error"
       }
     },
     {
@@ -484,7 +484,7 @@
         "packages/scene-graph/src/constants.ts"
       ],
       "rules": {
-        "open-pencil/no-hardcoded-color-constants": "off"
+        "signal-forge/no-hardcoded-color-constants": "off"
       }
     },
     {
@@ -492,7 +492,7 @@
         "packages/scene-graph/src/index.ts"
       ],
       "rules": {
-        "open-pencil/no-direct-graph-emitter-subscriptions": "off"
+        "signal-forge/no-direct-graph-emitter-subscriptions": "off"
       }
     },
     {

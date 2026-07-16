@@ -1,6 +1,6 @@
 ---
 title: Édition de texte
-description: Créer et modifier du texte avec formatage riche dans OpenPencil.
+description: Créer et modifier du texte avec formatage riche dans SignalForge.
 ---
 # Édition de texte
 

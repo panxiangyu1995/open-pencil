@@ -1,4 +1,4 @@
-import { CONTAINER_TYPES } from '@open-pencil/scene-graph/node-defaults'
+import { CONTAINER_TYPES } from '@signal-forge/scene-graph/node-defaults'
 
 import type { EditorContext } from '#core/editor/types'
 

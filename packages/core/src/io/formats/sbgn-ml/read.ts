@@ -1,4 +1,4 @@
-import { SceneGraph, updatePathwayData, type PathwayGlyphType, type PathwayProcessType, type PathwayArcType } from '@open-pencil/scene-graph'
+import { SceneGraph, updatePathwayData, type PathwayGlyphType, type PathwayProcessType, type PathwayArcType } from '@signal-forge/scene-graph'
 
 const GLYPH_CLASS_MAP: Record<string, PathwayGlyphType> = {
   'macromolecule': 'macromolecule',
@@ -331,7 +331,7 @@ function buildSceneGraph(glyphs: SbgnGlyph[], arcs: SbgnArc[]): SceneGraph {
     })
     const data: Record<string, unknown> = { arcType, sourceId, targetId }
     if (spec.bendPoints) data.bendPoints = spec.bendPoints
-    updatePathwayData(node, data as Partial<import('@open-pencil/scene-graph').PathwayNodeData>)
+    updatePathwayData(node, data as Partial<import('@signal-forge/scene-graph').PathwayNodeData>)
   }
 
   return graph

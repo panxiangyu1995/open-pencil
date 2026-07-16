@@ -23,8 +23,8 @@ const { version } = await import('../package.json')
 
 const main = defineCommand({
   meta: {
-    name: 'openpencil',
-    description: 'OpenPencil CLI — inspect, export, and lint OpenPencil design documents',
+    name: 'signalforge',
+    description: 'SignalForge CLI — inspect, export, and lint SignalForge design documents',
     version
   },
   subCommands: {

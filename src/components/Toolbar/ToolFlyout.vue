@@ -18,10 +18,10 @@ import {
   toolbarToolTestId,
   vTestId,
   ToolbarItem
-} from '@open-pencil/vue'
+} from '@signal-forge/vue'
 
-import type { Tool } from '@open-pencil/vue'
-import type { EditorToolDef } from '@open-pencil/core/editor'
+import type { Tool } from '@signal-forge/vue'
+import type { EditorToolDef } from '@signal-forge/core/editor'
 import type { ToolbarUI, ToolIconMap, ToolLabels } from '@/components/Toolbar/types'
 
 const {

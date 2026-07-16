@@ -1,11 +1,11 @@
 ---
 title: Composables
-description: Core composable APIs in @open-pencil/vue.
+description: Core composable APIs in @signal-forge/vue.
 ---
 
 # Composables
 
-These are the main composables most `@open-pencil/vue` consumers will use.
+These are the main composables most `@signal-forge/vue` consumers will use.
 
 ## Context and canvas
 

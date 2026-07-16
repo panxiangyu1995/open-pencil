@@ -1,5 +1,5 @@
-import type { Paint, Effect as KiwiEffect } from '@open-pencil/kiwi/fig/codec'
-import { guidToString } from '@open-pencil/kiwi/fig/guid'
+import type { Paint, Effect as KiwiEffect } from '@signal-forge/kiwi/fig/codec'
+import { guidToString } from '@signal-forge/kiwi/fig/guid'
 import type {
   Fill,
   FillType,
@@ -10,8 +10,8 @@ import type {
   GradientTransform,
   StrokeCap,
   StrokeJoin
-} from '@open-pencil/scene-graph'
-import type { Color, Matrix } from '@open-pencil/scene-graph/primitives'
+} from '@signal-forge/scene-graph'
+import type { Color, Matrix } from '@signal-forge/scene-graph/primitives'
 
 import { normalizeColor } from '#core/color'
 

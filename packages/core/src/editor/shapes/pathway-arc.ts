@@ -1,4 +1,4 @@
-import { updatePathwayData, type PathwayArcType } from '@open-pencil/scene-graph'
+import { updatePathwayData, type PathwayArcType } from '@signal-forge/scene-graph'
 
 import type { EditorContext } from '../types'
 

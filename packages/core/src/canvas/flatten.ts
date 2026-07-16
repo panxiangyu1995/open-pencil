@@ -1,5 +1,5 @@
-import type { SceneGraph, SceneNode } from '@open-pencil/scene-graph'
-import { copyFills } from '@open-pencil/scene-graph/copy'
+import type { SceneGraph, SceneNode } from '@signal-forge/scene-graph'
+import { copyFills } from '@signal-forge/scene-graph/copy'
 
 import { parseSVGPath } from '#core/io/formats/svg/parse-path'
 

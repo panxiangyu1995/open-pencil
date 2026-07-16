@@ -2,7 +2,7 @@
 
 > Companion to `biopath-prd.md` · July 2026
 >
-> This document maps each PRD phase to concrete code changes across the OpenPencil monorepo, based on thorough analysis of the existing architecture.
+> This document maps each PRD phase to concrete code changes across the SignalForge monorepo, based on thorough analysis of the existing architecture.
 
 ## Architecture Summary (Current State)
 
@@ -241,7 +241,7 @@ export {
 
 #### `packages/core/src/canvas/pathway/` (NEW package) vs `packages/core/src/pathway/` (in core)
 
-**Decision: Start in `packages/core/src/pathway/`**. Pathway rendering is tightly coupled to the CanvasKit renderer and SceneGraph, which are both in core. A separate package would create circular dependency issues. If extraction becomes valuable later, we can move to a dedicated package following the pattern used for `@open-pencil/pen`.
+**Decision: Start in `packages/core/src/pathway/`**. Pathway rendering is tightly coupled to the CanvasKit renderer and SceneGraph, which are both in core. A separate package would create circular dependency issues. If extraction becomes valuable later, we can move to a dedicated package following the pattern used for `@signal-forge/pen`.
 
 #### `packages/core/src/pathway/glyphs.ts` (NEW)
 
@@ -462,7 +462,7 @@ function renderNodeContent(r, canvas, graph, node, nodeId, overlays) {
 Bridge between the renderer and pathway paint routines:
 
 ```typescript
-import { getPathwayData } from '@open-pencil/scene-graph'
+import { getPathwayData } from '@signal-forge/scene-graph'
 import { paintGlyphByType } from '../pathway/glyphs'
 import { paintProcessByType } from '../pathway/processes'
 import { paintPathwayArc } from '../pathway/arcs'

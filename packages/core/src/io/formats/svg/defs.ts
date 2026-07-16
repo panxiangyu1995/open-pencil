@@ -1,5 +1,5 @@
-import type { Effect, Fill, SceneGraph, SceneNode } from '@open-pencil/scene-graph'
-import type { Color } from '@open-pencil/scene-graph/primitives'
+import type { Effect, Fill, SceneGraph, SceneNode } from '@signal-forge/scene-graph'
+import type { Color } from '@signal-forge/scene-graph/primitives'
 
 import { colorToHex } from '#core/color'
 import { colorToDisplayCss, getDefaultRenderColorSpace } from '#core/color/management'

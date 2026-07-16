@@ -1,5 +1,5 @@
-import type { EditorState } from '@open-pencil/core/editor'
-import type { SceneNode, VectorSegment, VectorVertex } from '@open-pencil/scene-graph'
+import type { EditorState } from '@signal-forge/core/editor'
+import type { SceneNode, VectorSegment, VectorVertex } from '@signal-forge/scene-graph'
 
 export type PenState = EditorState
 type PenStateInit = NonNullable<EditorState['penState']>

@@ -7,10 +7,10 @@ import IconChevronRight from '~icons/lucide/chevron-right'
 import ToolButton from '@/components/Toolbar/ToolButton.vue'
 import ToolFlyout from '@/components/Toolbar/ToolFlyout.vue'
 import ToolbarActionGroup from '@/components/Toolbar/ToolbarActionGroup.vue'
-import { toolbarToolTestId, ToolbarItem } from '@open-pencil/vue'
+import { toolbarToolTestId, ToolbarItem } from '@signal-forge/vue'
 
-import type { Tool } from '@open-pencil/vue'
-import type { EditorToolDef } from '@open-pencil/core/editor'
+import type { Tool } from '@signal-forge/vue'
+import type { EditorToolDef } from '@signal-forge/core/editor'
 import type {
   ToolbarActionItem,
   ToolbarUI,

@@ -4,19 +4,19 @@
 
 ```
 packages/
-  core/              @open-pencil/core — motore (zero dipendenze DOM)
+  core/              @signal-forge/core — motore (zero dipendenze DOM)
     src/             Grafo scena, renderer, layout, codec, kiwi, tipi
-  cli/               @open-pencil/cli — CLI headless per operazioni .fig
+  cli/               @signal-forge/cli — CLI headless per operazioni .fig
     src/commands/    info, tree, find, export, eval, analyze
-  mcp/               @open-pencil/mcp — server MCP per strumenti IA
+  mcp/               @signal-forge/mcp — server MCP per strumenti IA
     src/             Trasporti stdio + HTTP (Hono), 87 strumenti
 src/
   components/        Vue SFCs (canvas, pannelli, barra strumenti, selettore colore)
     properties/      Sezioni pannello proprietà (Aspetto, Riempimento, Contorno, ecc.)
   composables/       Input canvas, scorciatoie tastiera, hook di rendering
   stores/            Stato editor (reattività Vue)
-  engine/            Shim di ri-esportazione da @open-pencil/core
-  kiwi/              Shim di ri-esportazione da @open-pencil/core
+  engine/            Shim di ri-esportazione da @signal-forge/core
+  kiwi/              Shim di ri-esportazione da @signal-forge/core
   types.ts           Tipi condivisi (ri-esportati da core)
   constants.ts       Colori UI, default, soglie
 desktop/             Tauri v2 (Rust + config)

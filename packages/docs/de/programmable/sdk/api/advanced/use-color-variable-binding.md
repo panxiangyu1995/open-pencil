@@ -12,7 +12,7 @@ Verwenden Sie es beim Erstellen von Farb-UIs, die Füllungen oder Konturen mit D
 ## Verwendung
 
 ```ts
-import { useColorVariableBinding } from '@open-pencil/vue'
+import { useColorVariableBinding } from '@signal-forge/vue'
 
 const fillBinding = useColorVariableBinding('fills')
 const strokeBinding = useColorVariableBinding('strokes')

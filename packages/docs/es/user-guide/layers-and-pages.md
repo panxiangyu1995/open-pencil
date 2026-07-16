@@ -1,6 +1,6 @@
 ---
 title: Capas y páginas
-description: Gestionar capas, páginas y panel de propiedades en OpenPencil.
+description: Gestionar capas, páginas y panel de propiedades en SignalForge.
 ---
 # Capas y páginas
 

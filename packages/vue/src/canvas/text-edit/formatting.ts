@@ -1,10 +1,10 @@
-import type { Editor } from '@open-pencil/core/editor'
+import type { Editor } from '@signal-forge/core/editor'
 import {
   toggleBoldInRange,
   toggleDecorationInRange,
   toggleItalicInRange
-} from '@open-pencil/core/text'
-import type { SceneNode } from '@open-pencil/scene-graph'
+} from '@signal-forge/core/text'
+import type { SceneNode } from '@signal-forge/scene-graph'
 
 export function createTextFormattingActions(store: Editor) {
   function applyFormatting(nodeId: string, changes: Partial<SceneNode>, label: string) {

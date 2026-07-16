@@ -1,5 +1,5 @@
-import { colorToCSS } from '@open-pencil/core/color'
-import type { Color, Fill, Variable } from '@open-pencil/scene-graph'
+import { colorToCSS } from '@signal-forge/core/color'
+import type { Color, Fill, Variable } from '@signal-forge/scene-graph'
 
 export type ColorVariableBindingApi = {
   store: {

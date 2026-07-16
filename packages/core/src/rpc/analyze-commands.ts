@@ -1,7 +1,7 @@
 import { orderBy, sortBy } from 'es-toolkit/array'
 
-import type { SceneGraph, SceneNode } from '@open-pencil/scene-graph'
-import type { Color } from '@open-pencil/scene-graph/primitives'
+import type { SceneGraph, SceneNode } from '@signal-forge/scene-graph'
+import type { Color } from '@signal-forge/scene-graph/primitives'
 
 import { colorToHex, colorDistance as colorDist } from '#core/color'
 import type { ColorUsageEntry } from '#core/color/analysis'

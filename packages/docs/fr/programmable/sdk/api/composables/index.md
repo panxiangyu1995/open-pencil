@@ -1,11 +1,11 @@
 ---
 title: Composables
-description: API des composables principales dans @open-pencil/vue.
+description: API des composables principales dans @signal-forge/vue.
 ---
 
 # Composables
 
-Ce sont les principaux composables que la plupart des consommateurs de `@open-pencil/vue` utiliseront.
+Ce sont les principaux composables que la plupart des consommateurs de `@signal-forge/vue` utiliseront.
 
 ## Contexte et canvas
 

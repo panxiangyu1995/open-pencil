@@ -5,8 +5,8 @@ import type {
   LayoutMode,
   SceneNode,
   Stroke
-} from '@open-pencil/scene-graph'
-import type { Color, JsonObject } from '@open-pencil/scene-graph/primitives'
+} from '@signal-forge/scene-graph'
+import type { Color, JsonObject } from '@signal-forge/scene-graph/primitives'
 
 import { colorToFill, parseColor } from '#core/color'
 import { TRANSPARENT } from '#core/constants'

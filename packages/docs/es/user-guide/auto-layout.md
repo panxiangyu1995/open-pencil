@@ -1,6 +1,6 @@
 ---
 title: Auto-layout
-description: Layout flex y grid en OpenPencil — dirección, espaciado, padding, alineación, dimensionamiento y tracks CSS Grid.
+description: Layout flex y grid en SignalForge — dirección, espaciado, padding, alineación, dimensionamiento y tracks CSS Grid.
 ---
 # Auto-layout
 

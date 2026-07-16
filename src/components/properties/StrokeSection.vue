@@ -7,7 +7,7 @@ import {
   useStrokeControls,
   useOkHCL,
   useI18n
-} from '@open-pencil/vue'
+} from '@signal-forge/vue'
 
 import ColorStyleRow from '@/components/properties/ColorStyleRow.vue'
 import PropertyListRoot from '@/components/properties/PropertyListRoot.vue'
@@ -19,7 +19,7 @@ import IconButton from '@/components/ui/IconButton.vue'
 import PanelSection from '@/components/ui/panel/PanelSection.vue'
 import Tip from '@/components/ui/Tip.vue'
 
-import type { Color, SceneNode, Stroke } from '@open-pencil/scene-graph'
+import type { Color, SceneNode, Stroke } from '@signal-forge/scene-graph'
 
 const strokeCtx = useStrokeControls()
 const strokeVarCtx = useColorVariableBinding('strokes')

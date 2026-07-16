@@ -1,4 +1,4 @@
-import { DEFAULT_SHAPE_FILL } from '@open-pencil/core/constants'
+import { DEFAULT_SHAPE_FILL } from '@signal-forge/core/constants'
 
 import { useColorVariableBinding } from '#vue/controls/color-variable-binding/use'
 

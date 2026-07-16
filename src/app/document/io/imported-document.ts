@@ -1,6 +1,6 @@
-import type { Editor } from '@open-pencil/core/editor'
-import { computeAllLayouts } from '@open-pencil/core/layout'
-import type { SceneGraph, SceneNode } from '@open-pencil/scene-graph'
+import type { Editor } from '@signal-forge/core/editor'
+import { computeAllLayouts } from '@signal-forge/core/layout'
+import type { SceneGraph, SceneNode } from '@signal-forge/scene-graph'
 
 export async function applyImportedDocument(editor: Editor, imported: SceneGraph) {
   const firstPage = imported.getPages()[0] as SceneNode | undefined

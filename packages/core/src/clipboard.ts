@@ -1,9 +1,9 @@
 import { inflateSync, deflateSync } from 'fflate'
 
-import { initCodec, getCompiledSchema, getSchemaBytes } from '@open-pencil/kiwi/fig/codec'
-import type { NodeChange as KiwiNodeChange } from '@open-pencil/kiwi/fig/codec'
-import { decodeBinarySchema, compileSchema, ByteBuffer } from '@open-pencil/kiwi/schema-runtime'
-import type { SceneGraph, SceneNode } from '@open-pencil/scene-graph'
+import { initCodec, getCompiledSchema, getSchemaBytes } from '@signal-forge/kiwi/fig/codec'
+import type { NodeChange as KiwiNodeChange } from '@signal-forge/kiwi/fig/codec'
+import { decodeBinarySchema, compileSchema, ByteBuffer } from '@signal-forge/kiwi/schema-runtime'
+import type { SceneGraph, SceneNode } from '@signal-forge/scene-graph'
 
 import { shapeTextForClipboard } from './canvas/text'
 import { populateAndApplyOverrides } from './kiwi/fig/instance-overrides'
@@ -386,8 +386,8 @@ export async function buildFigmaClipboardHTML(
 }
 
 export {
-  buildOpenPencilClipboardHTML,
-  parseOpenPencilClipboard,
-  type OpenPencilClipboardData,
+  buildSignalForgeClipboardHTML,
+  parseSignalForgeClipboard,
+  type SignalForgeClipboardData,
   type TextPictureBuilder
-} from './clipboard/openpencil'
+} from './clipboard/signalforge'

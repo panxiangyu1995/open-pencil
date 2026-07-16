@@ -1,8 +1,8 @@
-import type { Editor } from '@open-pencil/core/editor'
-import { randomHex } from '@open-pencil/core/random'
-import type { VariableCollection } from '@open-pencil/scene-graph'
+import type { Editor } from '@signal-forge/core/editor'
+import { randomHex } from '@signal-forge/core/random'
+import type { VariableCollection } from '@signal-forge/scene-graph'
 
-import { useOpenPencilBindingProvider } from '#vue/controls/binding-provider/open-pencil'
+import { useSignalForgeBindingProvider } from '#vue/controls/binding-provider/signal-forge'
 import type { BindingTarget } from '#vue/controls/binding-provider/types'
 
 const FALLBACK_NUMBER_VARIABLE_NAME = 'New number'
@@ -55,7 +55,7 @@ function setNumberVariableValue(editor: Editor, variableId: string, value: numbe
 }
 
 export function useNumberBindingProvider() {
-  return useOpenPencilBindingProvider<number>({
+  return useSignalForgeBindingProvider<number>({
     type: 'FLOAT',
     resolve: (editor, variableId) => editor.resolveNumberVariable(variableId),
     create: createAndBindNumberVariable,

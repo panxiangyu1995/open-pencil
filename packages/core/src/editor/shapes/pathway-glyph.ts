@@ -1,8 +1,8 @@
-import { updatePathwayData, type PathwayGlyphType, type PathwayArcType } from '@open-pencil/scene-graph'
+import { updatePathwayData, type PathwayGlyphType, type PathwayArcType } from '@signal-forge/scene-graph'
 
 import type { EditorContext } from '../types'
 
-export function createPathwayGlyphActions(ctx: EditorContext, createShape: (type: import('@open-pencil/scene-graph').NodeType, x: number, y: number, w: number, h: number, parentId?: string) => string) {
+export function createPathwayGlyphActions(ctx: EditorContext, createShape: (type: import('@signal-forge/scene-graph').NodeType, x: number, y: number, w: number, h: number, parentId?: string) => string) {
   let activeGlyphType: PathwayGlyphType = 'macromolecule'
 
   function setActiveGlyphType(type: PathwayGlyphType): void {

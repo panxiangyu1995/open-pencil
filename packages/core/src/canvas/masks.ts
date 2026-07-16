@@ -1,7 +1,7 @@
 import type { Canvas } from 'canvaskit-wasm'
 
-import type { MaskType } from '@open-pencil/scene-graph'
-import type { Rect } from '@open-pencil/scene-graph/primitives'
+import type { MaskType } from '@signal-forge/scene-graph'
+import type { Rect } from '@signal-forge/scene-graph/primitives'
 
 import type { SkiaRenderer } from './renderer'
 

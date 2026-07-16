@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { PopoverClose, PopoverContent, PopoverPortal, PopoverRoot, PopoverTrigger } from 'reka-ui'
 import { ref } from 'vue'
-import { useI18n } from '@open-pencil/vue'
+import { useI18n } from '@signal-forge/vue'
 
 import ApiKeySection from '@/components/chat/ProviderSettings/ApiKeySection.vue'
 import ApiTypeSection from '@/components/chat/ProviderSettings/ApiTypeSection.vue'

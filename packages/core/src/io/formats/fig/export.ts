@@ -1,11 +1,11 @@
 import type { CanvasKit } from 'canvaskit-wasm'
 import { deflateSync, inflateSync } from 'fflate'
 
-import { initCodec, getCompiledSchema, getSchemaBytes } from '@open-pencil/kiwi/fig/codec'
-import type { NodeChange } from '@open-pencil/kiwi/fig/codec'
-import { decodeBinarySchema, compileSchema, ByteBuffer } from '@open-pencil/kiwi/schema-runtime'
-import type { SceneGraph, VariableValue } from '@open-pencil/scene-graph'
-import type { GUID } from '@open-pencil/scene-graph/primitives'
+import { initCodec, getCompiledSchema, getSchemaBytes } from '@signal-forge/kiwi/fig/codec'
+import type { NodeChange } from '@signal-forge/kiwi/fig/codec'
+import { decodeBinarySchema, compileSchema, ByteBuffer } from '@signal-forge/kiwi/schema-runtime'
+import type { SceneGraph, VariableValue } from '@signal-forge/scene-graph'
+import type { GUID } from '@signal-forge/scene-graph/primitives'
 
 import type { SkiaRenderer } from '#core/canvas'
 import { CANVAS_BG_COLOR, IS_BROWSER, IS_TAURI } from '#core/constants'
@@ -436,7 +436,7 @@ export async function exportFigFile(
 
   const metaJson = JSON.stringify({
     version: 1,
-    app: 'OpenPencil',
+    app: 'SignalForge',
     createdAt: new Date().toISOString()
   })
 

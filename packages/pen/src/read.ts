@@ -1,7 +1,7 @@
-import { SceneGraph } from '@open-pencil/scene-graph'
-import type { LayoutMode, LayoutSizing, SceneNode, VectorNetwork } from '@open-pencil/scene-graph'
-import { copyEffects, copyFills, copyStrokes } from '@open-pencil/scene-graph/copy'
-import { populateInstanceChildren } from '@open-pencil/scene-graph/instances'
+import { SceneGraph } from '@signal-forge/scene-graph'
+import type { LayoutMode, LayoutSizing, SceneNode, VectorNetwork } from '@signal-forge/scene-graph'
+import { copyEffects, copyFills, copyStrokes } from '@signal-forge/scene-graph/copy'
+import { populateInstanceChildren } from '@signal-forge/scene-graph/instances'
 
 import {
   applyCornerRadius,

@@ -1,7 +1,7 @@
 import { defineCommand } from 'citty'
 
-import type { AnalyzeClustersResult } from '@open-pencil/core/rpc'
-import { calcClusterConfidence } from '@open-pencil/core/tools'
+import type { AnalyzeClustersResult } from '@signal-forge/core/rpc'
+import { calcClusterConfidence } from '@signal-forge/core/tools'
 
 import { appTargetOptions } from '#cli/app-target'
 import { bold, fmtList, fmtSummary } from '#cli/format'

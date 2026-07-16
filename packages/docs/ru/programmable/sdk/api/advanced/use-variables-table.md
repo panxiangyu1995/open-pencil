@@ -1,6 +1,6 @@
 ---
 title: useVariablesTable
-description: Создание определений колонок TanStack Table для UI переменных OpenPencil.
+description: Создание определений колонок TanStack Table для UI переменных SignalForge.
 ---
 
 # useVariablesTable
@@ -12,7 +12,7 @@ description: Создание определений колонок TanStack Tab
 ## Использование
 
 ```ts
-import { useVariablesTable } from '@open-pencil/vue'
+import { useVariablesTable } from '@signal-forge/vue'
 
 const { columns } = useVariablesTable(options)
 ```

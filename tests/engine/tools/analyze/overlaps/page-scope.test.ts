@@ -1,11 +1,11 @@
 import { describe, expect, test } from 'bun:test'
 
-import { FigmaAPI, SceneGraph } from '@open-pencil/core'
+import { FigmaAPI, SceneGraph } from '@signal-forge/core'
 import {
   analyzeOverlaps,
   computeOverlaps,
   findPageId
-} from '@open-pencil/core/tools/analyze/overlaps'
+} from '@signal-forge/core/tools/analyze/overlaps'
 
 import { pageId, rect } from './helpers'
 

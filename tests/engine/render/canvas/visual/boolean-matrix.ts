@@ -1,6 +1,6 @@
 import { writeFile } from 'node:fs/promises'
 
-import type { SceneNode } from '@open-pencil/scene-graph'
+import type { SceneNode } from '@signal-forge/scene-graph'
 
 import { initCanvasKit } from '#cli/headless'
 import { SkiaRenderer } from '#core/canvas'
@@ -12,7 +12,7 @@ import { expectDefined } from '#tests/helpers/assert'
 const CELL_W = 180
 const CELL_H = 150
 const COLUMNS = 4
-const OUT = '/tmp/open-pencil-boolean-matrix.png'
+const OUT = '/tmp/signal-forge-boolean-matrix.png'
 
 type Operation = 'union' | 'subtract' | 'intersect' | 'exclude'
 type CaseName = 'rect' | 'rounded' | 'ellipse' | 'arc' | 'line' | 'polygon' | 'star' | 'vector'

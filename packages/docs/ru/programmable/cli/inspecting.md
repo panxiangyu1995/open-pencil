@@ -9,7 +9,7 @@ CLI позволяет исследовать дизайн-документы б
 
 ::: tip Установка
 ```sh
-npm install -g @open-pencil/cli
+npm install -g @signal-forge/cli
 # или
 brew install open-pencil/tap/open-pencil
 ```
@@ -20,7 +20,7 @@ brew install open-pencil/tap/open-pencil
 Краткий обзор — количество страниц, общее число узлов, используемые шрифты, размер файла:
 
 ```sh
-openpencil info design.fig
+signalforge info design.fig
 ```
 
 ## Дерево узлов
@@ -28,7 +28,7 @@ openpencil info design.fig
 Вывод полной иерархии узлов:
 
 ```sh
-openpencil tree design.fig
+signalforge tree design.fig
 ```
 
 ```
@@ -45,13 +45,13 @@ openpencil tree design.fig
 Поиск по типу:
 
 ```sh
-openpencil find design.fig --type TEXT
+signalforge find design.fig --type TEXT
 ```
 
 Поиск по имени:
 
 ```sh
-openpencil find design.fig --name "Button"
+signalforge find design.fig --name "Button"
 ```
 
 Оба флага можно комбинировать для более точных результатов.
@@ -61,7 +61,7 @@ openpencil find design.fig --name "Button"
 Используйте XPath-селекторы для поиска узлов по типу, атрибутам и структуре дерева:
 
 ```sh
-openpencil query design.fig "//FRAME"
+signalforge query design.fig "//FRAME"
 ```
 
 ### Полезные шаблоны
@@ -69,34 +69,34 @@ openpencil query design.fig "//FRAME"
 **По типу:**
 
 ```sh
-openpencil query design.fig "//TEXT"                    # Все текстовые узлы
-openpencil query design.fig "//COMPONENT"               # Все компоненты
-openpencil query design.fig "//INSTANCE"                # Все экземпляры
+signalforge query design.fig "//TEXT"                    # Все текстовые узлы
+signalforge query design.fig "//COMPONENT"               # Все компоненты
+signalforge query design.fig "//INSTANCE"                # Все экземпляры
 ```
 
 **По атрибутам:**
 
 ```sh
-openpencil query design.fig "//FRAME[@width < 300]"                # Фреймы шириной менее 300px
-openpencil query design.fig "//*[@cornerRadius > 0]"               # Скруглённые углы
-openpencil query design.fig "//*[@visible = false]"                # Скрытые узлы
-openpencil query design.fig "//TEXT[@fontSize >= 24]"              # Крупный текст
-openpencil query design.fig "//*[@opacity < 1]"                    # Полупрозрачные узлы
+signalforge query design.fig "//FRAME[@width < 300]"                # Фреймы шириной менее 300px
+signalforge query design.fig "//*[@cornerRadius > 0]"               # Скруглённые углы
+signalforge query design.fig "//*[@visible = false]"                # Скрытые узлы
+signalforge query design.fig "//TEXT[@fontSize >= 24]"              # Крупный текст
+signalforge query design.fig "//*[@opacity < 1]"                    # Полупрозрачные узлы
 ```
 
 **По имени и текстовому содержимому:**
 
 ```sh
-openpencil query design.fig "//TEXT[contains(@name, 'Button')]"    # Имя содержит 'Button'
-openpencil query design.fig "//TEXT[contains(@text, 'Hello')]"     # Текст содержит 'Hello'
+signalforge query design.fig "//TEXT[contains(@name, 'Button')]"    # Имя содержит 'Button'
+signalforge query design.fig "//TEXT[contains(@text, 'Hello')]"     # Текст содержит 'Hello'
 ```
 
 **По иерархии:**
 
 ```sh
-openpencil query design.fig "//SECTION//TEXT"            # Текст внутри секций
-openpencil query design.fig "//FRAME/TEXT"               # Прямые дочерние тексты фреймов
-openpencil query design.fig "//COMPONENT_SET//INSTANCE"  # Экземпляры внутри наборов компонентов
+signalforge query design.fig "//SECTION//TEXT"            # Текст внутри секций
+signalforge query design.fig "//FRAME/TEXT"               # Прямые дочерние тексты фреймов
+signalforge query design.fig "//COMPONENT_SET//INSTANCE"  # Экземпляры внутри наборов компонентов
 ```
 
 ### Доступные атрибуты
@@ -120,7 +120,7 @@ openpencil query design.fig "//COMPONENT_SET//INSTANCE"  # Экземпляры 
 Просмотр всех свойств конкретного узла по его ID:
 
 ```sh
-openpencil node design.fig --id 1:23
+signalforge node design.fig --id 1:23
 ```
 
 ## Страницы
@@ -128,7 +128,7 @@ openpencil node design.fig --id 1:23
 Список всех страниц в документе:
 
 ```sh
-openpencil pages design.fig
+signalforge pages design.fig
 ```
 
 ## Переменные
@@ -136,7 +136,7 @@ openpencil pages design.fig
 Список дизайн-переменных и их коллекций:
 
 ```sh
-openpencil variables design.fig
+signalforge variables design.fig
 ```
 
 ## Режим работы с приложением
@@ -144,8 +144,8 @@ openpencil variables design.fig
 Когда настольное приложение запущено, опустите аргумент файла — CLI подключится по RPC и будет работать с активным холстом:
 
 ```sh
-openpencil tree              # просмотр текущего документа
-openpencil eval -c "..."     # запрос к редактору
+signalforge tree              # просмотр текущего документа
+signalforge eval -c "..."     # запрос к редактору
 ```
 
 ## Линтинг дизайна
@@ -153,10 +153,10 @@ openpencil eval -c "..."     # запрос к редактору
 Проверяйте документы на соответствие правилам именования, вёрстки, структуры и доступности:
 
 ```sh
-openpencil lint design.fig
-openpencil lint design.pen --preset strict
-openpencil lint design.fig --rule color-contrast
-openpencil lint design.fig --list-rules
+signalforge lint design.fig
+signalforge lint design.pen --preset strict
+signalforge lint design.fig --rule color-contrast
+signalforge lint design.fig --list-rules
 ```
 
 Используйте `--json` для машиночитаемого вывода.
@@ -166,5 +166,5 @@ openpencil lint design.fig --list-rules
 Все команды поддерживают `--json` для машиночитаемого вывода — передавайте в `jq`, используйте в CI-скриптах или обрабатывайте другими инструментами:
 
 ```sh
-openpencil tree design.fig --json | jq '.[] | .name'
+signalforge tree design.fig --json | jq '.[] | .name'
 ```

@@ -7,7 +7,7 @@ const editor = useEditorSetup()
 function getPageChildren() {
   return editor.page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     return store.graph.getChildren(store.state.currentPageId).map((n) => ({
       type: n.type,
       name: n.name,
@@ -21,7 +21,7 @@ test('pressing T activates text tool', async () => {
 
   const tool = await editor.page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     return store.state.activeTool
   })
   expect(tool).toBe('TEXT')
@@ -69,7 +69,7 @@ test('creating text via store works', async () => {
 
   await editor.page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const id = store.createShape('TEXT', 100, 300, 200, 30)
     store.graph.updateNode(id, { text: 'Hello World', fontSize: 24, fontFamily: 'Inter' })
     store.select([id])
@@ -110,7 +110,7 @@ test('Enter key opens text editing and selects all without erasing', async () =>
 
   const textId = await editor.page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const id = store.createShape('TEXT', 300, 300, 200, 30)
     store.graph.updateNode(id, { text: 'Keep this text' })
     store.select([id])
@@ -128,14 +128,14 @@ test('Enter key opens text editing and selects all without erasing', async () =>
 
   const editing = await editor.page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     return store.state.editingTextId
   })
   expect(editing).toBe(textId)
 
   const after = await editor.page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const id = store.state.editingTextId
     if (!id) return null
     return store.graph.getNode(id)?.text ?? null

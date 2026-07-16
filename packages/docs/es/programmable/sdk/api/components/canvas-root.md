@@ -1,11 +1,11 @@
 ---
 title: CanvasRoot
-description: Primitivo headless del canvas para las superficies de renderizado de OpenPencil.
+description: Primitivo headless del canvas para las superficies de renderizado de SignalForge.
 ---
 
 # CanvasRoot
 
-`CanvasRoot` es el primitivo estructural del canvas en `@open-pencil/vue`.
+`CanvasRoot` es el primitivo estructural del canvas en `@signal-forge/vue`.
 
 Úsalo cuando quieras la estructura y el contexto del canvas proporcionados por el SDK con layout y estilos propios de la app.
 

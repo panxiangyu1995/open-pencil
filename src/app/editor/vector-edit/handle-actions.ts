@@ -1,6 +1,6 @@
-import type { Editor } from '@open-pencil/core/editor'
-import { findAllHandles, findOppositeHandle, mirrorHandle } from '@open-pencil/core/vector'
-import type { Vector } from '@open-pencil/scene-graph/primitives'
+import type { Editor } from '@signal-forge/core/editor'
+import { findAllHandles, findOppositeHandle, mirrorHandle } from '@signal-forge/core/vector'
+import type { Vector } from '@signal-forge/scene-graph/primitives'
 
 import { constrainContinuousTangent } from './handles'
 import { getLiveNetwork } from './network'

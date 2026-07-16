@@ -2,13 +2,13 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 
-import type { JsonObject } from '@open-pencil/scene-graph/primitives'
+import type { JsonObject } from '@signal-forge/scene-graph/primitives'
 import {
   LOCALE_DIR_NAMES,
   TRANSLATED_LOCALES,
   messageDefaults,
   type TranslatedLocale
-} from '@open-pencil/vue'
+} from '@signal-forge/vue'
 
 const LOCALES_DIR = 'packages/vue/src/i18n/locales'
 const LOCALE_FILE_NAMES: Record<string, string> = {

@@ -10,13 +10,13 @@ Export designs from the terminal — raster images, vectors, `.fig` subsets, JSX
 ## Image Export
 
 ```sh
-openpencil export design.fig                           # PNG (default)
-openpencil export design.fig -f jpg -s 2 -q 90        # JPG at 2×, quality 90
-openpencil export design.fig -f webp -s 3             # WEBP at 3×
-openpencil export design.fig -f svg                   # SVG vector
-openpencil export design.fig -f fig --page "Page 1"   # export one page as .fig
-openpencil export design.fig -f fig --node 1:23        # export one node as .fig
-openpencil export design.fig -f html --css tailwind    # export an HTML fragment with Tailwind classes
+signalforge export design.fig                           # PNG (default)
+signalforge export design.fig -f jpg -s 2 -q 90        # JPG at 2×, quality 90
+signalforge export design.fig -f webp -s 3             # WEBP at 3×
+signalforge export design.fig -f svg                   # SVG vector
+signalforge export design.fig -f fig --page "Page 1"   # export one page as .fig
+signalforge export design.fig -f fig --node 1:23        # export one node as .fig
+signalforge export design.fig -f html --css tailwind    # export an HTML fragment with Tailwind classes
 ```
 
 Options:
@@ -33,7 +33,7 @@ Options:
 Export as JSX with Tailwind utility classes:
 
 ```sh
-openpencil export design.fig -f jsx --style tailwind
+signalforge export design.fig -f jsx --style tailwind
 ```
 
 Output:
@@ -45,33 +45,33 @@ Output:
 </div>
 ```
 
-Also supports `--style openpencil` for the native JSX format (see [JSX Renderer](../jsx-renderer)).
+Also supports `--style signalforge` for the native JSX format (see [JSX Renderer](../jsx-renderer)).
 
 ## HTML Export
 
 Export as an HTML fragment with inline styles by default, or Tailwind utility classes:
 
 ```sh
-openpencil export design.fig -f html
-openpencil export design.fig -f html --css tailwind
+signalforge export design.fig -f html
+signalforge export design.fig -f html --css tailwind
 ```
 
 Use `--html standalone` for a browser-openable HTML document with reset styles and a page wrapper. Standalone HTML is intended as a useful visual/code handoff, not a pixel-perfect renderer replacement:
 
 ```sh
-openpencil export design.fig -f html --html standalone --css inline
-openpencil export design.fig -f html --html standalone --css tailwind
-openpencil export design.fig -f html --html standalone --css tailwind --assets external
+signalforge export design.fig -f html --html standalone --css inline
+signalforge export design.fig -f html --html standalone --css tailwind
+signalforge export design.fig -f html --html standalone --css tailwind --assets external
 ```
 
-Standalone Tailwind output is compiled during export; it does not depend on the Tailwind browser runtime. Use `--assets external` to write CSS and extracted image assets next to the HTML file. Use `--fonts assets` with external assets to resolve detected SceneGraph text fonts through OpenPencil's configured web-font providers and emit local `@font-face` files.
+Standalone Tailwind output is compiled during export; it does not depend on the Tailwind browser runtime. Use `--assets external` to write CSS and extracted image assets next to the HTML file. Use `--fonts assets` with external assets to resolve detected SceneGraph text fonts through SignalForge's configured web-font providers and emit local `@font-face` files.
 
 HTML export is available in file mode.
 
 ## Thumbnails
 
 ```sh
-openpencil export design.fig --thumbnail --width 1920 --height 1080
+signalforge export design.fig --thumbnail --width 1920 --height 1080
 ```
 
 ## Live App Mode
@@ -79,5 +79,5 @@ openpencil export design.fig --thumbnail --width 1920 --height 1080
 Omit the file to export from the running app:
 
 ```sh
-openpencil export -f png    # screenshot the current canvas
+signalforge export -f png    # screenshot the current canvas
 ```

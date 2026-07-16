@@ -31,7 +31,7 @@ import {
   PropertySectionHeader,
   PropertySectionRoot,
   PropertySectionTitle
-} from '@open-pencil/vue'
+} from '@signal-forge/vue'
 </script>
 
 <template>

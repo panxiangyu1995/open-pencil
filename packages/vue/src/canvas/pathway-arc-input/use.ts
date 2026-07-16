@@ -1,6 +1,6 @@
-import type { Editor } from '@open-pencil/core/editor'
+import type { Editor } from '@signal-forge/core/editor'
 
-import { getPathwayData, updatePathwayData } from '@open-pencil/scene-graph'
+import { getPathwayData, updatePathwayData } from '@signal-forge/scene-graph'
 
 import type { HitTestFns } from '#vue/shared/input/select'
 import type { DragPathwayArc, DragState } from '#vue/shared/input/types'

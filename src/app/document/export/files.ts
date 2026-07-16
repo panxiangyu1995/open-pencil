@@ -1,14 +1,14 @@
 import { zipSync, type Zippable } from 'fflate'
 
-import type { Editor, EditorState } from '@open-pencil/core/editor'
+import type { Editor, EditorState } from '@signal-forge/core/editor'
 import type {
   ExportRequest,
   IOFormatAdapter,
   IORegistry,
   RasterExportFormat
-} from '@open-pencil/core/io'
-import { renderNodesToImage } from '@open-pencil/core/io/formats/raster'
-import type { SceneGraph } from '@open-pencil/scene-graph'
+} from '@signal-forge/core/io'
+import { renderNodesToImage } from '@signal-forge/core/io/formats/raster'
+import type { SceneGraph } from '@signal-forge/scene-graph'
 
 import type { ExportOptions } from '@/app/document/export/types'
 import { isTauri } from '@/app/tauri/env'
@@ -81,7 +81,7 @@ export function getExportOptions(formatId: string, options?: ExportOptions): unk
       quality: options?.quality
     }
   }
-  if (formatId === 'jsx') return { format: options?.jsxFormat ?? 'openpencil' }
+  if (formatId === 'jsx') return { format: options?.jsxFormat ?? 'signalforge' }
   return undefined
 }
 

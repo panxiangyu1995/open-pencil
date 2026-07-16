@@ -17,7 +17,7 @@ Es verwaltet:
 ## Verwendung
 
 ```ts
-import { useExport } from '@open-pencil/vue'
+import { useExport } from '@signal-forge/vue'
 
 const exportState = useExport()
 ```

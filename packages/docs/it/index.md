@@ -1,16 +1,16 @@
 ---
 layout: home
-title: OpenPencil — Editor di Design Open Source
+title: SignalForge — Editor di Design Open Source
 description: Alternativa open source a Figma. Apre file .fig, AI integrata, completamente programmabile.
 
 hero:
-  name: OpenPencil
+  name: SignalForge
   text: Editor di Design Open Source
   tagline: Apre file Figma. AI integrata. Completamente programmabile. Gratis per sempre.
   actions:
     - theme: brand
       text: Prova Online
-      link: https://app.openpencil.dev/demo
+      link: https://app.signalforge.dev/demo
     - theme: alt
       text: Scarica
       link: https://github.com/open-pencil/open-pencil/releases/latest
@@ -21,7 +21,7 @@ hero:
 features:
   - icon: 📂
     title: Compatibile con Figma
-    details: Apre file .fig nativamente. Copia e incolla tra Figma e OpenPencil. Codec binario Kiwi con fedeltà round-trip.
+    details: Apre file .fig nativamente. Copia e incolla tra Figma e SignalForge. Codec binario Kiwi con fedeltà round-trip.
   - icon: ⚡
     title: Programmabile
     details: CLI headless per ispezionare, esportare e analizzare file .fig. Figma Plugin API tramite eval. Esportazione Tailwind CSS. Output JSON per CI.

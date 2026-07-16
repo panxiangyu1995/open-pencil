@@ -10,7 +10,7 @@
 
 ### 目的
 
-将 OpenPencil 设计编辑器的 MCP/AI 工具体系从"通用 UI 设计编辑器"改造为"AI 原生 SBGN 信号通路编辑器"，使 AI agent（Chat、MCP、CLI）只能看到和使用与通路图相关的工具，消除设计专用工具对 AI 的干扰。
+将 SignalForge 设计编辑器的 MCP/AI 工具体系从"通用 UI 设计编辑器"改造为"AI 原生 SBGN 信号通路编辑器"，使 AI agent（Chat、MCP、CLI）只能看到和使用与通路图相关的工具，消除设计专用工具对 AI 的干扰。
 
 ### 预期效果
 
@@ -237,7 +237,7 @@ BIOPATH_TOOLS = BIOPATH_CORE_TOOLS + BIOPATH_EXTENDED_TOOLS (52 工具)
 
 2.  修改 packages/core/src/tools/index.ts
     — 增加 BIOPATH_CORE_TOOLS, BIOPATH_EXTENDED_TOOLS, BIOPATH_TOOLS 导出
-    — 验收: import { BIOPATH_TOOLS } from '@open-pencil/core/tools' 可用
+    — 验收: import { BIOPATH_TOOLS } from '@signal-forge/core/tools' 可用
 
 3.  修改 packages/mcp/src/tool/registration.ts
     — 替换 ALL_TOOLS → BIOPATH_TOOLS

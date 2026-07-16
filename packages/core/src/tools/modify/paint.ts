@@ -1,4 +1,4 @@
-import type { Matrix } from '@open-pencil/scene-graph/primitives'
+import type { Matrix } from '@signal-forge/scene-graph/primitives'
 
 import { parseColor } from '#core/color'
 import { BLACK } from '#core/constants'

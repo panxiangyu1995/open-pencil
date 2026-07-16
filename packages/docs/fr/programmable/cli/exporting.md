@@ -10,10 +10,10 @@ Exportez des designs depuis le terminal — images raster, vecteurs ou code JSX.
 ## Export d'images
 
 ```sh
-openpencil export design.fig                          # PNG (par défaut)
-openpencil export design.fig -f jpg -s 2 -q 90       # JPG en 2×, qualité 90
-openpencil export design.fig -f webp -s 3             # WEBP en 3×
-openpencil export design.fig -f svg                   # SVG vectoriel
+signalforge export design.fig                          # PNG (par défaut)
+signalforge export design.fig -f jpg -s 2 -q 90       # JPG en 2×, qualité 90
+signalforge export design.fig -f webp -s 3             # WEBP en 3×
+signalforge export design.fig -f svg                   # SVG vectoriel
 ```
 
 Options :
@@ -30,7 +30,7 @@ Options :
 Exportez en JSX avec des classes utilitaires Tailwind :
 
 ```sh
-openpencil export design.fig -f jsx --style tailwind
+signalforge export design.fig -f jsx --style tailwind
 ```
 
 Résultat :
@@ -42,12 +42,12 @@ Résultat :
 </div>
 ```
 
-Supporte aussi `--style openpencil` pour le format JSX natif (voir [Moteur de rendu JSX](../jsx-renderer)).
+Supporte aussi `--style signalforge` pour le format JSX natif (voir [Moteur de rendu JSX](../jsx-renderer)).
 
 ## Miniatures
 
 ```sh
-openpencil export design.fig --thumbnail --width 1920 --height 1080
+signalforge export design.fig --thumbnail --width 1920 --height 1080
 ```
 
 ## Mode application en direct
@@ -55,5 +55,5 @@ openpencil export design.fig --thumbnail --width 1920 --height 1080
 Omettez le fichier pour exporter depuis l'application en cours d'exécution :
 
 ```sh
-openpencil export -f png    # capture du canevas actuel
+signalforge export -f png    # capture du canevas actuel
 ```

@@ -5,7 +5,7 @@ import { createOpenAI } from '@ai-sdk/openai'
 import { createOpenRouter } from '@openrouter/ai-sdk-provider'
 import type { LanguageModel } from 'ai'
 
-import type { AIProviderID } from '@open-pencil/core/constants'
+import type { AIProviderID } from '@signal-forge/core/constants'
 
 import { isTauri } from '@/app/tauri/env'
 import { tauriFetch } from '@/app/tauri/http'
@@ -44,7 +44,7 @@ export function createLanguageModel(config: ModelConfig): LanguageModel {
         apiKey: config.apiKey,
         fetch,
         headers: {
-          'X-OpenRouter-Title': 'OpenPencil',
+          'X-OpenRouter-Title': 'SignalForge',
           'HTTP-Referer': 'https://github.com/open-pencil/open-pencil'
         }
       })

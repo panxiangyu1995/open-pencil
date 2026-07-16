@@ -1,22 +1,22 @@
-# OpenPencil
+# SignalForge
 
 Open-source design editor. Opens `.fig` and `.pen` design files, includes built-in AI, and ships as a programmable toolkit with a headless Vue SDK for building custom editors.
 
 > **Status:** Active development. Usable today, with some rough edges as features evolve.
 
-**[Try it online →](https://app.openpencil.dev/demo)** · [Download](https://github.com/open-pencil/open-pencil/releases/latest) · [Documentation](https://openpencil.dev) · [llms.txt](https://openpencil.dev/llms.txt)
+**[Try it online →](https://app.signalforge.dev/demo)** · [Download](https://github.com/open-pencil/open-pencil/releases/latest) · [Documentation](https://signalforge.dev) · [llms.txt](https://signalforge.dev/llms.txt)
 
-![OpenPencil](packages/docs/public/screenshot.png)
+![SignalForge](packages/docs/public/screenshot.png)
 
 ## Installation
 
 **macOS (Homebrew):**
 
 ```sh
-brew install openpencil
+brew install signalforge
 ```
 
-Or download from the [releases page](https://github.com/open-pencil/open-pencil/releases/latest), or [use the web app](https://app.openpencil.dev) — no install needed.
+Or download from the [releases page](https://github.com/open-pencil/open-pencil/releases/latest), or [use the web app](https://app.signalforge.dev) — no install needed.
 
 ## What it does
 
@@ -26,7 +26,7 @@ Or download from the [releases page](https://github.com/open-pencil/open-pencil/
 - **Lint, convert, and extract tokens** — inspect documents, lint naming/layout/accessibility, convert between supported formats, analyze colors/typography/spacing/clusters, and extract design tokens
 - **Components and variants** — create reusable components, group variants into component sets, insert local assets as instances, and switch variants from the inspector
 - **Design-to-code export** — export selections as JSX/Tailwind, generate token outputs, and map designs into component-oriented code workflows
-- **Vue SDK for custom editors** — headless components and composables for embedding OpenPencil into other apps or building workflow-specific editing surfaces. [Read the SDK docs →](https://openpencil.dev/programmable/sdk/)
+- **Vue SDK for custom editors** — headless components and composables for embedding SignalForge into other apps or building workflow-specific editing surfaces. [Read the SDK docs →](https://signalforge.dev/programmable/sdk/)
 - **Real-time collaboration** — P2P via WebRTC, no server, no account. Cursors, presence, follow mode
 - **Auto layout & CSS Grid** — flex and grid layout via Yoga WASM, with gap, padding, alignment, track sizing
 - **~7 MB desktop app** — Tauri v2 for macOS, Windows, Linux. Also runs in the browser as a PWA
@@ -34,8 +34,8 @@ Or download from the [releases page](https://github.com/open-pencil/open-pencil/
 ## CLI
 
 ```sh
-npm install -g @open-pencil/cli
-# or: bun add -g @open-pencil/cli
+npm install -g @signal-forge/cli
+# or: bun add -g @signal-forge/cli
 ```
 
 ### Inspect design files
@@ -43,10 +43,10 @@ npm install -g @open-pencil/cli
 Browse node trees, search by name or type, dig into properties — all without opening the editor:
 
 ```sh
-openpencil tree design.fig
-openpencil find design.pen --type TEXT
-openpencil node design.fig --id 1:23
-openpencil info design.fig
+signalforge tree design.fig
+signalforge find design.pen --type TEXT
+signalforge node design.fig --id 1:23
+signalforge info design.fig
 ```
 
 ```
@@ -63,11 +63,11 @@ openpencil info design.fig
 Use XPath selectors to find nodes by type, attributes, and structure:
 
 ```sh
-openpencil query design.fig "//FRAME"                              # All frames
-openpencil query design.fig "//FRAME[@width < 300]"                # Frames under 300px
-openpencil query design.fig "//TEXT[contains(@name, 'Button')]"     # Text with 'Button' in name
-openpencil query design.fig "//*[@cornerRadius > 0]"               # Rounded corners
-openpencil query design.fig "//SECTION//TEXT"                       # Text inside sections
+signalforge query design.fig "//FRAME"                              # All frames
+signalforge query design.fig "//FRAME[@width < 300]"                # Frames under 300px
+signalforge query design.fig "//TEXT[contains(@name, 'Button')]"     # Text with 'Button' in name
+signalforge query design.fig "//*[@cornerRadius > 0]"               # Rounded corners
+signalforge query design.fig "//SECTION//TEXT"                       # Text inside sections
 ```
 
 ### Export
@@ -75,21 +75,21 @@ openpencil query design.fig "//SECTION//TEXT"                       # Text insid
 Render to PNG, JPG, WEBP, SVG, `.fig`, or JSX — or export selections/pages as `.fig` and convert whole documents between supported formats:
 
 ```sh
-openpencil export design.fig                           # PNG
-openpencil export design.fig -f jpg -s 2 -q 90        # JPG at 2x, quality 90
-openpencil export design.fig -f fig --page "Page 1"   # Export a page as .fig
-openpencil export design.fig -f jsx --style tailwind   # Tailwind JSX
-openpencil export design.fig -f html --css tailwind    # Tailwind HTML fragment
-openpencil export design.fig -f html --html standalone --assets external # HTML + assets
-openpencil convert design.pen output.fig               # Convert between document formats
-openpencil import page.html --css styles.css -o page.fig # HTML/CSS → editable .fig
+signalforge export design.fig                           # PNG
+signalforge export design.fig -f jpg -s 2 -q 90        # JPG at 2x, quality 90
+signalforge export design.fig -f fig --page "Page 1"   # Export a page as .fig
+signalforge export design.fig -f jsx --style tailwind   # Tailwind JSX
+signalforge export design.fig -f html --css tailwind    # Tailwind HTML fragment
+signalforge export design.fig -f html --html standalone --assets external # HTML + assets
+signalforge convert design.pen output.fig               # Convert between document formats
+signalforge import page.html --css styles.css -o page.fig # HTML/CSS → editable .fig
 ```
 
-DOM/CSS input flows through `@open-pencil/dom-css`, so HTML, authored CSS, and Tailwind utility CSS can become editable OpenPencil layers:
+DOM/CSS input flows through `@signal-forge/dom-css`, so HTML, authored CSS, and Tailwind utility CSS can become editable SignalForge layers:
 
 ```sh
-openpencil import card.html --css card.css -o card.fig
-openpencil import card.html --tailwind "flex flex-col gap-3 w-80 p-6 rounded-xl bg-white" -o card.fig
+signalforge import card.html --css card.css -o card.fig
+signalforge import card.html --tailwind "flex flex-col gap-3 w-80 p-6 rounded-xl bg-white" -o card.fig
 ```
 
 ```html
@@ -104,10 +104,10 @@ openpencil import card.html --tailwind "flex flex-col gap-3 w-80 p-6 rounded-xl 
 Catch naming, layout, structure, and accessibility issues from the terminal:
 
 ```sh
-openpencil lint design.fig
-openpencil lint design.pen --preset strict
-openpencil lint design.fig --rule color-contrast
-openpencil lint design.fig --list-rules
+signalforge lint design.fig
+signalforge lint design.pen --preset strict
+signalforge lint design.fig --rule color-contrast
+signalforge lint design.fig --list-rules
 ```
 
 ### Analyze and extract design tokens
@@ -115,12 +115,12 @@ openpencil lint design.fig --list-rules
 Audit an entire design system from the terminal — find inconsistencies, extract the real palette, and spot components waiting to be extracted:
 
 ```sh
-openpencil analyze colors design.fig
-openpencil analyze typography design.fig
-openpencil analyze spacing design.fig
-openpencil analyze clusters design.fig
-openpencil analyze overlaps design.fig
-openpencil variables design.fig
+signalforge analyze colors design.fig
+signalforge analyze typography design.fig
+signalforge analyze spacing design.fig
+signalforge analyze clusters design.fig
+signalforge analyze overlaps design.fig
+signalforge variables design.fig
 ```
 
 ```
@@ -141,8 +141,8 @@ openpencil variables design.fig
 `eval` gives you the full Figma Plugin API. Modify the file, write it back:
 
 ```sh
-openpencil eval design.fig -c "figma.currentPage.children.length"
-openpencil eval design.fig -c "figma.currentPage.selection.forEach(n => n.opacity = 0.5)" -w
+signalforge eval design.fig -c "figma.currentPage.children.length"
+signalforge eval design.fig -c "figma.currentPage.selection.forEach(n => n.opacity = 0.5)" -w
 ```
 
 ### Control the running app
@@ -150,9 +150,9 @@ openpencil eval design.fig -c "figma.currentPage.selection.forEach(n => n.opacit
 When the desktop app is running, omit the file argument — the CLI connects via RPC and operates on the live canvas. Useful for automation scripts, CI pipelines, or AI agents that need to interact with the editor:
 
 ```sh
-openpencil tree                               # Inspect the live document
-openpencil export -f png                      # Screenshot the current canvas
-openpencil eval -c "figma.currentPage.name"   # Query the editor
+signalforge tree                               # Inspect the live document
+signalforge export -f png                      # Screenshot the current canvas
+signalforge eval -c "figma.currentPage.name"   # Query the editor
 ```
 
 All commands support `--json` for machine-readable output.
@@ -174,7 +174,7 @@ Use Claude Code, Codex, or Gemini CLI directly in the chat panel. The agent conn
    ```json
    {
      "permissions": {
-       "allow": ["mcp__open-pencil__*"]
+       "allow": ["mcp__signal-forge__*"]
      }
    }
    ```
@@ -182,13 +182,13 @@ Use Claude Code, Codex, or Gemini CLI directly in the chat panel. The agent conn
 
 ### MCP server
 
-Connect Claude Code, Cursor, Windsurf, or any MCP client to inspect, modify, and export design documents headlessly. 100+ tools. [Full docs →](https://openpencil.dev/reference/mcp-tools)
+Connect Claude Code, Cursor, Windsurf, or any MCP client to inspect, modify, and export design documents headlessly. 100+ tools. [Full docs →](https://signalforge.dev/reference/mcp-tools)
 
 **Stdio** (Claude Code, Cursor, Windsurf):
 
 ```sh
-npm install -g @open-pencil/mcp
-claude mcp add --scope user open-pencil -- openpencil-mcp
+npm install -g @signal-forge/mcp
+claude mcp add --scope user signal-forge -- signalforge-mcp
 ```
 
 For other MCP clients:
@@ -196,8 +196,8 @@ For other MCP clients:
 ```json
 {
   "mcpServers": {
-    "open-pencil": {
-      "command": "openpencil-mcp"
+    "signal-forge": {
+      "command": "signalforge-mcp"
     }
   }
 }
@@ -206,29 +206,29 @@ For other MCP clients:
 **HTTP** (scripts, CI):
 
 ```sh
-openpencil-mcp-http   # http://localhost:3100/mcp
+signalforge-mcp-http   # http://localhost:3100/mcp
 ```
 
 **File access:** Set `OPENPENCIL_MCP_ROOT` to scope file operations (`open_file`, `new_document`, export `path` param) to a directory. Defaults to the current working directory.
 
 ### AI agent skill
 
-Teach your AI coding agent to use OpenPencil — inspect designs, export assets, analyze tokens, modify .fig files:
+Teach your AI coding agent to use SignalForge — inspect designs, export assets, analyze tokens, modify .fig files:
 
 ```sh
-npx skills add open-pencil/skills@open-pencil
+npx skills add signal-forge/skills@signal-forge
 ```
 
 Works with Claude Code, Cursor, Windsurf, Codex, and any agent that supports [skills](https://skills.sh).
 
-For documentation-aware agents, the docs site publishes [llms.txt](https://openpencil.dev/llms.txt), [llms-full.txt](https://openpencil.dev/llms-full.txt), and per-page Markdown files generated from the VitePress docs.
+For documentation-aware agents, the docs site publishes [llms.txt](https://signalforge.dev/llms.txt), [llms-full.txt](https://signalforge.dev/llms-full.txt), and per-page Markdown files generated from the VitePress docs.
 
 ## Collaboration
 
 Share a link to co-edit in real time. No server, no account — peers connect directly via WebRTC.
 
 1. Click the share button in the top-right panel
-2. Share the generated link (`app.openpencil.dev/share/<room-id>`)
+2. Share the generated link (`app.signalforge.dev/share/<room-id>`)
 3. Collaborators see your cursor, selection, and edits in real time
 4. Click a peer's avatar to follow their viewport
 
@@ -236,9 +236,9 @@ Share a link to co-edit in real time. No server, no account — peers connect di
 
 Figma is a closed platform that actively fights programmatic access. Their MCP server is read-only. [figma-use](https://github.com/dannote/figma-use) added full read/write automation via CDP — then [Figma 126 killed CDP](https://forum.figma.com/report-a-problem-6/remote-debugging-port-not-working-in-figma-desktop-126-1-2-50858). Your design files are in a proprietary binary format that only their software can fully read. Your workflows break when they decide to ship a point release.
 
-OpenPencil is the alternative: open source (MIT), reads .fig files natively, every operation is scriptable, and your data never leaves your machine.
+SignalForge is the alternative: open source (MIT), reads .fig files natively, every operation is scriptable, and your data never leaves your machine.
 
-See the [roadmap](https://openpencil.dev/development/roadmap) for product direction and current Figma compatibility gaps.
+See the [roadmap](https://signalforge.dev/development/roadmap) for product direction and current Figma compatibility gaps.
 
 ## Contributing
 
@@ -263,16 +263,16 @@ bun run tauri dev  # Desktop app (requires Rust)
 
 ```
 packages/
-  scene-graph/    @open-pencil/scene-graph — nodes, primitives, hit testing, copy/snap/undo
-  pen/            @open-pencil/pen — Pencil document format helpers
-  kiwi/           @open-pencil/kiwi — Kiwi runtime and low-level .fig container parsing
-  fig/            @open-pencil/fig — focused .fig package entrypoint
-  core/           @open-pencil/core — editor engine, renderer, layout, tools, RPC, document I/O
-  dom-css/        @open-pencil/dom-css — HTML/CSS/Tailwind to editable design documents
-  vue/            @open-pencil/vue — headless Vue SDK
-  cli/            @open-pencil/cli — headless CLI
-  mcp/            @open-pencil/mcp — MCP server (stdio + HTTP)
-  docs/           Documentation site (openpencil.dev)
+  scene-graph/    @signal-forge/scene-graph — nodes, primitives, hit testing, copy/snap/undo
+  pen/            @signal-forge/pen — Pencil document format helpers
+  kiwi/           @signal-forge/kiwi — Kiwi runtime and low-level .fig container parsing
+  fig/            @signal-forge/fig — focused .fig package entrypoint
+  core/           @signal-forge/core — editor engine, renderer, layout, tools, RPC, document I/O
+  dom-css/        @signal-forge/dom-css — HTML/CSS/Tailwind to editable design documents
+  vue/            @signal-forge/vue — headless Vue SDK
+  cli/            @signal-forge/cli — headless CLI
+  mcp/            @signal-forge/mcp — MCP server (stdio + HTTP)
+  docs/           Documentation site (signalforge.dev)
 src/              Vue app (editor shell, AI, collaboration, document I/O)
 desktop/          Tauri v2 desktop app (Rust + config)
 tests/            E2E, visual, engine, and integration tests
@@ -300,7 +300,7 @@ bun run tauri build
 
 ## Acknowledgments
 
-Thanks to [@sld0Ant](https://github.com/sld0Ant) (Anton Soldatov) for creating and maintaining the [documentation site](https://openpencil.dev).
+Thanks to [@sld0Ant](https://github.com/sld0Ant) (Anton Soldatov) for creating and maintaining the [documentation site](https://signalforge.dev).
 
 ## License
 

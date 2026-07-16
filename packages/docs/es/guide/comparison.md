@@ -1,6 +1,6 @@
 # Open Pencil vs Penpot: Comparación de arquitectura y rendimiento
 
-¿Por qué comparar? OpenPencil existe porque las plataformas de diseño cerradas controlan lo que es posible. Entender las diferencias arquitectónicas muestra lo que una alternativa abierta y local-first puede hacer diferente.
+¿Por qué comparar? SignalForge existe porque las plataformas de diseño cerradas controlan lo que es posible. Entender las diferencias arquitectónicas muestra lo que una alternativa abierta y local-first puede hacer diferente.
 
 ::: info Renderer WASM de Penpot
 Penpot 2.x incluye un renderer Rust/Skia WASM (`render-wasm/v1`) activable vía flags del servidor o el parámetro URL `?wasm=true`. El renderer SVG antiguo sigue siendo el predeterminado. Esta página cubre ambos.
@@ -242,7 +242,7 @@ El enfoque de Open Pencil es más simple y con menos overhead.
 
 ## 11. Scripting y extensibilidad
 
-OpenPencil incluye un [comando `eval`](/programmable/cli/scripting) que proporciona una API de Plugin compatible con Figma para scripting headless. Además, 90 herramientas AI disponibles vía chat integrado, servidor MCP (stdio + HTTP) y CLI. Penpot tiene sistema de plugins con ejecución sandboxed pero sin API de scripting headless ni integración MCP.
+SignalForge incluye un [comando `eval`](/programmable/cli/scripting) que proporciona una API de Plugin compatible con Figma para scripting headless. Además, 90 herramientas AI disponibles vía chat integrado, servidor MCP (stdio + HTTP) y CLI. Penpot tiene sistema de plugins con ejecución sandboxed pero sin API de scripting headless ni integración MCP.
 
 ## Resumen
 

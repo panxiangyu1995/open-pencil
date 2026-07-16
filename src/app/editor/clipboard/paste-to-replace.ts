@@ -4,7 +4,7 @@ import { readTauriClipboardText } from '@/app/tauri/clipboard'
 import { isTauri } from '@/app/tauri/env'
 
 function isDesignClipboardHtml(text: string) {
-  return text.includes('<!--(openpencil)') || text.includes('(figma)')
+  return text.includes('<!--(signalforge)') || text.includes('<!--(openpencil)') || text.includes('(figma)')
 }
 
 async function readClipboardHtml() {

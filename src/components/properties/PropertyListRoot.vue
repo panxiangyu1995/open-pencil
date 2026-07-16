@@ -2,10 +2,10 @@
 import {
   PropertyListRoot as HeadlessPropertyListRoot,
   useEditorPropertyList
-} from '@open-pencil/vue'
+} from '@signal-forge/vue'
 
-import type { SceneNode } from '@open-pencil/scene-graph'
-import type { PropertyListKey, PropertyListRootSlotProps } from '@open-pencil/vue'
+import type { SceneNode } from '@signal-forge/scene-graph'
+import type { PropertyListKey, PropertyListRootSlotProps } from '@signal-forge/vue'
 import type { VNode } from 'vue'
 
 const { propKey, label } = defineProps<{

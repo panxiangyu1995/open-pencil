@@ -1,6 +1,6 @@
-import type { Tool } from '@open-pencil/core/editor'
-import type { NodeType, VectorNetwork } from '@open-pencil/scene-graph'
-import type { Rect, Vector } from '@open-pencil/scene-graph/primitives'
+import type { Tool } from '@signal-forge/core/editor'
+import type { NodeType, VectorNetwork } from '@signal-forge/scene-graph'
+import type { Rect, Vector } from '@signal-forge/scene-graph/primitives'
 
 export type HandlePosition = 'nw' | 'n' | 'ne' | 'e' | 'se' | 's' | 'sw' | 'w'
 

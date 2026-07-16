@@ -4,7 +4,7 @@ import {
   type PathwayArcType,
   getPathwayData,
   updatePathwayData
-} from '@open-pencil/scene-graph'
+} from '@signal-forge/scene-graph'
 
 import { defineTool, nodeSummary, nodeNotFound } from '#core/tools/schema'
 

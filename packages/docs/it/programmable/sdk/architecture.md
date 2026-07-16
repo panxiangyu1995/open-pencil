@@ -1,11 +1,11 @@
 ---
 title: Architettura dell'SDK
-description: Struttura delle cartelle, confini dell'API pubblica e pattern di composizione in @open-pencil/vue.
+description: Struttura delle cartelle, confini dell'API pubblica e pattern di composizione in @signal-forge/vue.
 ---
 
 # Architettura dell'SDK
 
-`@open-pencil/vue` è il livello Vue sopra `@open-pencil/core`.
+`@signal-forge/vue` è il livello Vue sopra `@signal-forge/core`.
 
 Non possiede il modello dell'editor stesso. Adatta l'editor core in:
 
@@ -107,7 +107,7 @@ Preferisci slot prop mirati o uso diretto dei composable rispetto a payload giga
 
 ## Regola pratica
 
-Se un pezzo di logica potrebbe essere riutilizzato in un'app diversa basata su OpenPencil senza portare lo stile dell'app con sé, probabilmente appartiene a `@open-pencil/vue`.
+Se un pezzo di logica potrebbe essere riutilizzato in un'app diversa basata su SignalForge senza portare lo stile dell'app con sé, probabilmente appartiene a `@signal-forge/vue`.
 
 ## Pagine correlate
 

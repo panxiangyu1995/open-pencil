@@ -1,8 +1,8 @@
 import { pick } from 'es-toolkit/object'
 
-import { cloneVectorNetwork, type SceneNode } from '@open-pencil/scene-graph'
-import type { Rect, Vector } from '@open-pencil/scene-graph/primitives'
-import type { UndoEntry } from '@open-pencil/scene-graph/undo'
+import { cloneVectorNetwork, type SceneNode } from '@signal-forge/scene-graph'
+import type { Rect, Vector } from '@signal-forge/scene-graph/primitives'
+import type { UndoEntry } from '@signal-forge/scene-graph/undo'
 
 import { restoreSubtree, snapshotSubtree } from './clipboard/subtree-history'
 import { collectNodePositions, pushPositionUndo } from './history/position'

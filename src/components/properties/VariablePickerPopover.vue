@@ -12,11 +12,11 @@ import {
 
 import { computed, nextTick, ref, useAttrs, watch } from 'vue'
 
-import { vTestId } from '@open-pencil/vue'
+import { vTestId } from '@signal-forge/vue'
 
 import { useTooltipUI } from '@/components/ui/tooltip'
 
-import type { Variable } from '@open-pencil/scene-graph'
+import type { Variable } from '@signal-forge/scene-graph'
 
 const searchTerm = defineModel<string>('searchTerm', { default: '' })
 

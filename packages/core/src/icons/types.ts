@@ -1,4 +1,4 @@
-import type { VectorNetwork, WindingRule } from '@open-pencil/scene-graph'
+import type { VectorNetwork, WindingRule } from '@signal-forge/scene-graph'
 
 export interface IconPath {
   vectorNetwork: VectorNetwork

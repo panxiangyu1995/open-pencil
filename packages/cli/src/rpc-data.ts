@@ -1,4 +1,4 @@
-import { executeRpcCommand } from '@open-pencil/core/rpc'
+import { executeRpcCommand } from '@signal-forge/core/rpc'
 
 import { isAppMode, requireFile, rpc } from '#cli/app-client'
 import { appTargetRpcArgs, type AppTargetCliArgs } from '#cli/app-target'

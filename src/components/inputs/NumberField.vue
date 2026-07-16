@@ -3,7 +3,7 @@ import type {
   NumberExpressionError,
   NumberFieldEditPolicy,
   NumberFieldSlotProps
-} from '@open-pencil/vue'
+} from '@signal-forge/vue'
 import type { VNode } from 'vue'
 
 import type { ComponentUI } from '@/components/ui/types'
@@ -38,7 +38,7 @@ export interface NumberFieldSlots {
 <script setup lang="ts">
 import { computed, normalizeClass, useAttrs } from 'vue'
 import { tv } from 'tailwind-variants'
-import { NumberFieldRoot, NumberFieldInput, NumberFieldValue } from '@open-pencil/vue'
+import { NumberFieldRoot, NumberFieldInput, NumberFieldValue } from '@signal-forge/vue'
 import { useEditorStore } from '@/app/editor/active-store'
 import theme from '@/theme/number-field'
 

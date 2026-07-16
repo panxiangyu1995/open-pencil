@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 
-import type { Effect } from '@open-pencil/scene-graph'
+import type { Effect } from '@signal-forge/scene-graph'
 
 import {
   EFFECT_OPTIONS,

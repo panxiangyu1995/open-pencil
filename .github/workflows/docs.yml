@@ -23,4 +23,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy packages/docs/.vitepress/dist --project-name=openpencil-docs --branch=master
+          command: pages deploy packages/docs/.vitepress/dist --project-name=signalforge-docs --branch=master

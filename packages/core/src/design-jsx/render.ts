@@ -1,6 +1,6 @@
 import { transform } from 'sucrase'
 
-import type { SceneGraph } from '@open-pencil/scene-graph'
+import type { SceneGraph } from '@signal-forge/scene-graph'
 
 import type { RenderOptions as RenderJSXOptions } from '#core/design-jsx/types'
 

@@ -22,10 +22,10 @@ import {
   useI18n,
   useLayoutControlsContext,
   useNumberVariableBinding
-} from '@open-pencil/vue'
+} from '@signal-forge/vue'
 
-import type { LayoutSizing } from '@open-pencil/scene-graph'
-import type { SizeLimitProp, TestId } from '@open-pencil/vue'
+import type { LayoutSizing } from '@signal-forge/scene-graph'
+import type { SizeLimitProp, TestId } from '@signal-forge/vue'
 
 type SizeSelectValue = LayoutSizing | `add-${SizeLimitProp}` | `remove-${SizeLimitProp}`
 

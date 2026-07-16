@@ -89,7 +89,7 @@ test('resize corner handle drag increases node dimensions', async () => {
 
   const viewport = await page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const id = [...store.state.selectedIds][0]
     const n = store.graph.getNode(id)
     if (!n) return null
@@ -138,7 +138,7 @@ test('rotation handle drag rotates node', async () => {
 
   const viewport = await page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const id = [...store.state.selectedIds][0]
     const n = store.graph.getNode(id)
     if (!n) return null
@@ -191,7 +191,7 @@ async function setupFrameChild(rotation: number) {
 
   const setup = await page.evaluate((frameRotation) => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const frameId = store.createShape('FRAME', 180, 160, 240, 160)
     if (!frameId) return null
     store.updateNode(frameId, { rotation: frameRotation })
@@ -209,7 +209,7 @@ async function setupFrameChild(rotation: number) {
 
   const state = await page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const pageId = store.state.currentPageId
     const pageNode = store.graph.getNode(pageId)
     const frame = pageNode?.childIds
@@ -251,7 +251,7 @@ test('frame children keep correct hover and click hit area without rotation', as
   const hoveredId = await page.evaluate(() =>
     (() => {
       const store = window.openPencil?.getStore?.()
-      if (!store) throw new Error('OpenPencil store not initialized')
+      if (!store) throw new Error('SignalForge store not initialized')
       return store.state.hoveredNodeId
     })()
   )
@@ -266,7 +266,7 @@ test('frame children keep correct hover and click hit area without rotation', as
   const hoveredMiss = await page.evaluate(() =>
     (() => {
       const store = window.openPencil?.getStore?.()
-      if (!store) throw new Error('OpenPencil store not initialized')
+      if (!store) throw new Error('SignalForge store not initialized')
       return store.state.hoveredNodeId
     })()
   )
@@ -281,7 +281,7 @@ test('rotated frame children keep correct hover and click hit area', async () =>
   const hoveredId = await page.evaluate(() =>
     (() => {
       const store = window.openPencil?.getStore?.()
-      if (!store) throw new Error('OpenPencil store not initialized')
+      if (!store) throw new Error('SignalForge store not initialized')
       return store.state.hoveredNodeId
     })()
   )
@@ -296,7 +296,7 @@ test('rotated frame children keep correct hover and click hit area', async () =>
   const hoveredMiss = await page.evaluate(() =>
     (() => {
       const store = window.openPencil?.getStore?.()
-      if (!store) throw new Error('OpenPencil store not initialized')
+      if (!store) throw new Error('SignalForge store not initialized')
       return store.state.hoveredNodeId
     })()
   )
@@ -312,7 +312,7 @@ test('rotation drag exposes live rotation preview state', async () => {
 
   const viewport = await page.evaluate(() => {
     const store = window.openPencil?.getStore?.()
-    if (!store) throw new Error('OpenPencil store not initialized')
+    if (!store) throw new Error('SignalForge store not initialized')
     const id = [...store.state.selectedIds][0]
     const n = store.graph.getNode(id)
     if (!n) return null
@@ -341,7 +341,7 @@ test('rotation drag exposes live rotation preview state', async () => {
   const preview = await page.evaluate(() =>
     (() => {
       const store = window.openPencil?.getStore?.()
-      if (!store) throw new Error('OpenPencil store not initialized')
+      if (!store) throw new Error('SignalForge store not initialized')
       return store.state.rotationPreview
     })()
   )
@@ -353,7 +353,7 @@ test('rotation drag exposes live rotation preview state', async () => {
   const clearedPreview = await page.evaluate(() =>
     (() => {
       const store = window.openPencil?.getStore?.()
-      if (!store) throw new Error('OpenPencil store not initialized')
+      if (!store) throw new Error('SignalForge store not initialized')
       return store.state.rotationPreview
     })()
   )

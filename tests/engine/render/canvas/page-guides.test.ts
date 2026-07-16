@@ -2,7 +2,7 @@ import { describe, expect, test } from 'bun:test'
 
 import type { Canvas } from 'canvaskit-wasm'
 
-import type { SceneGraph, SceneNode } from '@open-pencil/scene-graph'
+import type { SceneGraph, SceneNode } from '@signal-forge/scene-graph'
 
 import { drawPageGuides } from '#core/canvas/page-guides'
 

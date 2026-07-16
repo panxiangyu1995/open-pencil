@@ -1,4 +1,4 @@
-import type { ComponentPropertyDefinition, SceneNode } from '@open-pencil/scene-graph'
+import type { ComponentPropertyDefinition, SceneNode } from '@signal-forge/scene-graph'
 
 import { randomHex } from '#core/random'
 

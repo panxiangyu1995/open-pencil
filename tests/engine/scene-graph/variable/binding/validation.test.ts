@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'bun:test'
 
-import { SceneGraph } from '@open-pencil/core'
-import noHardcodedColors from '@open-pencil/core/lint/rules/no-hardcoded-colors'
+import { SceneGraph } from '@signal-forge/core'
+import noHardcodedColors from '@signal-forge/core/lint/rules/no-hardcoded-colors'
 
 function pageId(graph: SceneGraph): string {
   return graph.getPages()[0].id

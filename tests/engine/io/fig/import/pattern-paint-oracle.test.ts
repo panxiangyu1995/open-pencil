@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'bun:test'
 import { readFileSync } from 'node:fs'
 
-import type { Vector } from '@open-pencil/scene-graph/primitives'
+import type { Vector } from '@signal-forge/scene-graph/primitives'
 
 interface PatternOracleFill {
   type: string
@@ -42,8 +42,8 @@ interface PaintOracle {
         pairedRowCount: number
         avgDeltaY: number
         avgDeltaFirstX: number
-        missingOpenPencilRows: number
-        extraOpenPencilRows: number
+        missingSignalForgeRows: number
+        extraSignalForgeRows: number
       }
     >
   }

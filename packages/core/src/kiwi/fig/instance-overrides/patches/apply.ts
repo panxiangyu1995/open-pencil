@@ -1,4 +1,4 @@
-import type { SceneNode } from '@open-pencil/scene-graph'
+import type { SceneNode } from '@signal-forge/scene-graph'
 
 import { repopulateInstance } from '#core/kiwi/fig/instance-overrides/resolve'
 import type { OverrideContext } from '#core/kiwi/fig/instance-overrides/types'

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { useAttrs } from 'vue'
 
-import { ColorInputRoot, inputValue } from '@open-pencil/vue'
+import { ColorInputRoot, inputValue } from '@signal-forge/vue'
 
 import ColorPicker from '@/components/ColorPicker/ColorPicker.vue'
 
-import type { Color } from '@open-pencil/scene-graph/primitives'
-import type { OkHCLControls } from '@open-pencil/vue'
+import type { Color } from '@signal-forge/scene-graph/primitives'
+import type { OkHCLControls } from '@signal-forge/vue'
 
 defineOptions({ inheritAttrs: false })
 

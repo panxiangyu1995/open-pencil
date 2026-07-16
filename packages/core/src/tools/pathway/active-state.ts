@@ -1,5 +1,5 @@
 import { defineTool, nodeNotFound } from '#core/tools/schema'
-import { getPathwayData, updatePathwayData } from '@open-pencil/scene-graph'
+import { getPathwayData, updatePathwayData } from '@signal-forge/scene-graph'
 
 export const setActiveState = defineTool({
   name: 'set_active_state',

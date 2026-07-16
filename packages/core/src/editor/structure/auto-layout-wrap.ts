@@ -1,5 +1,5 @@
-import type { LayoutMode, SceneNode } from '@open-pencil/scene-graph'
-import { computeAbsoluteBounds } from '@open-pencil/scene-graph/geometry'
+import type { LayoutMode, SceneNode } from '@signal-forge/scene-graph'
+import { computeAbsoluteBounds } from '@signal-forge/scene-graph/geometry'
 
 import type { EditorContext } from '#core/editor/types'
 import { computeLayout } from '#core/layout'

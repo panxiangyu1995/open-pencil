@@ -1,4 +1,4 @@
-import type { SceneGraph, SceneNode } from '@open-pencil/scene-graph'
+import type { SceneGraph, SceneNode } from '@signal-forge/scene-graph'
 
 import type { FigmaAPI } from '#core/figma-api'
 import { defineTool } from '#core/tools/schema'

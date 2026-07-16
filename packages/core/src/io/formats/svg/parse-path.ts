@@ -1,1 +1,1 @@
-export { parseSVGPath } from '@open-pencil/scene-graph/parse-path'
+export { parseSVGPath } from '@signal-forge/scene-graph/parse-path'

@@ -3,15 +3,15 @@ import { readFileSync } from 'node:fs'
 
 import {
   buildFigmaClipboardHTML,
-  buildOpenPencilClipboardHTML,
+  buildSignalForgeClipboardHTML,
   importClipboardNodes,
   parseFigmaClipboard,
-  parseOpenPencilClipboard,
+  parseSignalForgeClipboard,
   readFigFile,
   initCodec,
   type SceneNode,
   SceneGraph
-} from '@open-pencil/core'
+} from '@signal-forge/core'
 
 import { expectDefined } from '#tests/helpers/assert'
 import { HEAVY_TEST_TIMEOUT_MS } from '#tests/helpers/test-utils'
@@ -43,10 +43,10 @@ describe('gold-preview.fig clipboard roundtrip', () => {
     { timeout: HEAVY_TEST_TIMEOUT_MS }
   )
 
-  it('OpenPencil format: zero property differences', () => {
-    const html = buildOpenPencilClipboardHTML(topLevelNodes, graph)
-    const parsed = parseOpenPencilClipboard(html)
-    const clipboard = expectDefined(parsed, 'OpenPencil clipboard')
+  it('SignalForge format: zero property differences', () => {
+    const html = buildSignalForgeClipboardHTML(topLevelNodes, graph)
+    const parsed = parseSignalForgeClipboard(html)
+    const clipboard = expectDefined(parsed, 'SignalForge clipboard')
 
     const origAll = flatten(graph, pageId)
 
@@ -77,8 +77,8 @@ describe('gold-preview.fig clipboard roundtrip', () => {
     expect(diffs).toBe(0)
   })
 
-  it('OpenPencil format: compressed data is under 1MB', () => {
-    const html = buildOpenPencilClipboardHTML(topLevelNodes, graph)
+  it('SignalForge format: compressed data is under 1MB', () => {
+    const html = buildSignalForgeClipboardHTML(topLevelNodes, graph)
     expect(html.length).toBeLessThan(5 * 1024 * 1024)
   })
 

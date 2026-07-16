@@ -7,17 +7,17 @@ import VariablePickerPopover from '@/components/properties/VariablePickerPopover
 import IconButton from '@/components/ui/IconButton.vue'
 import Tip from '@/components/ui/Tip.vue'
 
-import { useI18n, vTestId } from '@open-pencil/vue'
+import { useI18n, vTestId } from '@signal-forge/vue'
 
 import {
   opacityFromPercent,
   opacityPercent,
   variableSwatchBackground
 } from '@/components/properties/color-style-row'
-import { colorToHexRaw } from '@open-pencil/core/color'
+import { colorToHexRaw } from '@signal-forge/core/color'
 
 import type { ColorVariableBindingApi } from '@/components/properties/color-style-row'
-import type { Color } from '@open-pencil/scene-graph/primitives'
+import type { Color } from '@signal-forge/scene-graph/primitives'
 
 const { item, index, activeNodeId, bindingApi, variableColor, removeLabel } = defineProps<{
   item: { opacity: number; visible: boolean }

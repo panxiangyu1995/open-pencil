@@ -1,4 +1,4 @@
-import type { GeometryPath, SceneNode } from '@open-pencil/scene-graph'
+import type { GeometryPath, SceneNode } from '@signal-forge/scene-graph'
 
 import type { DerivedSymbolOverride } from '#core/kiwi/fig/instance-overrides/types'
 import { resolveGeometryPaths } from '#core/kiwi/fig/node-change/convert'

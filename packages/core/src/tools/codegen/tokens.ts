@@ -1,5 +1,5 @@
-import type { Variable, VariableCollection, VariableValue } from '@open-pencil/scene-graph'
-import type { Color } from '@open-pencil/scene-graph/primitives'
+import type { Variable, VariableCollection, VariableValue } from '@signal-forge/scene-graph'
+import type { Color } from '@signal-forge/scene-graph/primitives'
 
 import { colorToHex } from '#core/color'
 import { defineTool } from '#core/tools/schema'
